@@ -1,0 +1,17 @@
+// colors
+// neutral colors
+$neutral-500: #dcdcdc;
+$neutral-800: #1c242b;
+$neutral-900: #14191e;
+// shades
+$shades-00: #ffffff;
+
+// accents
+$accent-00: #00f0c8;
+$accent-100: #ff8d90;
+
+:root {
+	--text-color-neutral-800: $neutral-800;
+	--text-color-neutral-900: $neutral-900;
+	--bg-color-shade-00: $shades-00;
+}
