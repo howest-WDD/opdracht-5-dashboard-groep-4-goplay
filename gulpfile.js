@@ -17,7 +17,7 @@ function buildStyles() {
 }
 
 function watchTask() {
-	watch(['scss/*.scss'], buildStyles);
+	watch(['scss/**/*.scss'], buildStyles);
 	watch(['js/*.js'], buildJS);
 }
 
