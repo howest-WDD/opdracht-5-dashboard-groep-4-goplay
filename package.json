@@ -36,8 +36,5 @@
 		"postcss": "^8.4.19",
 		"postcss-cli": "^10.1.0",
 		"sass": "^1.56.1"
-	},
-	"dependencies": {
-		"plotly.js-dist": "^2.16.4"
 	}
 }
