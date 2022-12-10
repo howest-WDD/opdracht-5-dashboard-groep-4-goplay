@@ -42,7 +42,7 @@ const createPlot = function () {
 	// first checks if sex-chart exists
 	if (document.getElementById('sex-chart')) {
 		console.log('yes user sex chart');
-
+		// create the chart
 		Plotly.newPlot('sex-chart', data, layout);
 	} else {
 		console.log('no user sex chart');
