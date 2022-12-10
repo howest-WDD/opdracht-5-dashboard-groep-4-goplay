@@ -11,7 +11,7 @@ var data = [
 		name: 'Sex',
 		textinfo: 'none',
 		hoverinfo: 'none',
-		hole: 0.6,
+		hole: 0.7,
 		type: 'pie',
 		marker: {
 			colors: ['#14191e', '#00f0c8', '#dcdcdc'],
