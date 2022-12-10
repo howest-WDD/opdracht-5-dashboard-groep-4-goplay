@@ -8,7 +8,7 @@ const dataset = {
 	datasets: [
 		{
 			label: 'User Sex',
-			data: [300, 300, 10],
+			data: [2490, 2490, 20],
 			backgroundColor: ['#14191E', '#00f0c8', '#dcdcdc'],
 			hoverOffset: 4,
 		},
