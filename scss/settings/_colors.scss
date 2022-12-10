@@ -10,8 +10,13 @@ $shades-00: #ffffff;
 $accent-00: #00f0c8;
 $accent-100: #ff8d90;
 
+// changing colors
+$text-color-a: var(--text-color-a);
+$text-color-b: var(--text-color-b);
+$bg-color: var(--bg-color);
+
 :root {
-	--text-color-neutral-800: $neutral-800;
-	--text-color-neutral-900: $neutral-900;
-	--bg-color-shade-00: $shades-00;
+	--text-color-a: #1c242b;
+	--text-color-b: #14191e;
+	--bg-color: #ffffff;
 }
