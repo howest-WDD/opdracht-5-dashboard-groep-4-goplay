@@ -1,0 +1,14 @@
+@use '../settings/colors' as color;
+
+.c-graph {
+	width: 270px;
+	height: 300px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	border: solid color.$accent-00;
+	border-width: 1px;
+	border-radius: 20px;
+}
