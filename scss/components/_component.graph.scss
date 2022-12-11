@@ -174,3 +174,88 @@
 		}
 	}
 }
+
+.c-pieGraph {
+	width: 300px;
+	height: 300px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	border: solid color.$accent-00;
+	border-width: 1px;
+	border-radius: 20px;
+
+	position: relative;
+
+	&__chart {
+		position: absolute;
+		top: 15%;
+	}
+
+	&__title {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		font-size: 1.125rem;
+		font-weight: 700;
+
+		color: color.$shades-00;
+
+		h4 {
+			margin-left: 20px;
+			margin-top: 20px;
+			margin-bottom: 0;
+		}
+
+		h5 {
+			color: color.$accent-00;
+			margin-left: 20px;
+			margin-top: 4px;
+
+			font-size: 1.625rem;
+		}
+	}
+
+	&__legend {
+		position: absolute;
+		bottom: 5%;
+
+		width: 70%;
+
+		font-weight: 700;
+
+		div {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			color: color.$shades-00;
+
+			p {
+				margin: 2px;
+			}
+		}
+	}
+	&__circle {
+		border-radius: 100px;
+		border: none;
+
+		width: 8px;
+		height: 8px;
+
+		content: '';
+
+		&--1 {
+			background-color: color.$neutral-900;
+
+			outline: 1px solid color.$accent-00;
+		}
+
+		&--2 {
+			background-color: color.$accent-00;
+		}
+	}
+}
