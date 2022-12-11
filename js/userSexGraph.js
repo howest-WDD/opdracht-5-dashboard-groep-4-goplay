@@ -10,7 +10,7 @@ var data = [
 		domain: { column: 0 },
 		name: 'Sex',
 		textinfo: 'none',
-		hoverinfo: 'none',
+		hoverinfo: 'value+label+percent',
 		hole: 0.7,
 		type: 'pie',
 		marker: {
