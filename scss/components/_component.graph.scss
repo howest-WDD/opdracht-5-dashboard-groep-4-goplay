@@ -1,6 +1,10 @@
 @use '../settings/colors' as color;
 
-.c-pieGraph {
+.c-graphs {
+	display: flex;
+}
+
+.c-doGraph {
 	width: 270px;
 	height: 300px;
 
@@ -89,5 +93,84 @@
 	&__chart {
 		position: absolute;
 		top: 12%;
+	}
+}
+
+.c-barGraph {
+	width: 270px;
+	height: 300px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	border: solid color.$accent-00;
+	border-width: 1px;
+	border-radius: 20px;
+
+	position: relative;
+	&__chart {
+		position: absolute;
+		bottom: 10%;
+
+		&::after {
+			content: '';
+			height: 1px;
+			width: 100%;
+			position: absolute;
+			bottom: 5px;
+			background-color: color.$accent-00;
+		}
+	}
+
+	&__title {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		margin-left: 20px;
+
+		color: color.$shades-00;
+
+		h4 {
+			margin-top: 20px;
+			margin-bottom: 4px;
+		}
+
+		p {
+			margin: 4px 0;
+		}
+
+		:nth-child(2) {
+			color: color.$accent-00;
+			display: flex;
+			align-items: center;
+
+			font-size: 1.875rem;
+			font-weight: 700;
+
+			svg {
+				width: 30px;
+				height: 30px;
+			}
+		}
+	}
+
+	&__legend {
+		display: flex;
+		justify-content: space-between;
+
+		width: 86%;
+
+		position: absolute;
+		bottom: 12px;
+
+		color: color.$shades-00;
+
+		font-weight: 700;
+
+		p {
+			margin: 0;
+		}
 	}
 }
