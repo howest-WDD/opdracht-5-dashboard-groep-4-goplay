@@ -5,8 +5,8 @@ import 'https://cdn.plot.ly/plotly-2.16.4.min.js';
 // Creating the data used by the chart
 var data = [
 	{
-		values: [2485, 2485, 30],
-		labels: ['Mannen', 'Vrouwen', 'Non-binair'],
+		values: [1845, 695, 2460],
+		labels: ['13-30 jaar', '30-54 jaar', '55+ jaar'],
 		domain: { column: 0 },
 		name: 'Sex',
 		textinfo: 'none',
@@ -38,15 +38,15 @@ var layout = {
 	paper_bgcolor: 'transparent',
 };
 
-const createSexGraph = function () {
-	// first checks if sex-chart exists
-	if (document.getElementById('sex-chart')) {
-		console.log('yes user sex chart');
+const createAgeGraph = function () {
+	// first checks if age-chart exists
+	if (document.getElementById('age-chart')) {
+		console.log('yes user age chart');
 		// create the chart
-		Plotly.newPlot('sex-chart', data, layout);
+		Plotly.newPlot('age-chart', data, layout);
 	} else {
-		console.log('no user sex chart');
+		console.log('no user age chart');
 	}
 };
 
-document.addEventListener('DOMContentLoaded', createSexGraph());
+document.addEventListener('DOMContentLoaded', createAgeGraph());
