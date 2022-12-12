@@ -1,0 +1,50 @@
+@use '../settings/colors.scss' as color;
+
+.c-users{
+    &__userinput{
+
+        background-image: url("/assets/svg/magnify.svg");
+        background-repeat: no-repeat;
+    }
+    &__tablemainrow{
+        color: color.$text-color-a;
+        background-color: color.$neutral-900;
+        padding: 1rem 0rem;
+    }
+    &__tablerow{
+        color: color.$text-color-a;
+        text-align: center;
+
+        &--first{
+            border-bottom: 2px solid grey;
+        }
+       
+    }
+    &__category{
+        border-bottom: 2px solid grey;
+    }
+
+    &__id{
+        background-color: color.$neutral-900;
+        padding: 1rem 0rem;
+        
+        &--active{
+            background-color: color.$accent-00;
+        }
+    }
+    &__expandbutton{
+        background-color: transparent;
+        border: none;
+    }
+    &__expandicon{
+        background-color: color.$accent-00;
+        border: none;
+        font-size: 16px;
+        padding: 0.3rem 1.5rem;
+        border-radius: 35%;
+        width: 32px;
+        height: 32px ;
+        cursor: pointer;
+    }
+}
+
