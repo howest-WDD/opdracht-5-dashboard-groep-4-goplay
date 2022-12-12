@@ -37,7 +37,7 @@
 					<td class="c-users__category js-voornaam">Jonny</td>
 					<td class="c-users__category js-achternaam">Depp</td>
 					<td class="c-users__category js-mail">Jonny.Depp@gmail.com</td>
-					<td class="c-users__category js-geslacht">X</td>
+					<td class="c-users__category">X</td>
 					<td class="c-users__category">
 						<button class="c-users__expandbutton js-expand">
 							<svg class="c-users__expandicon" viewBox="0 0 24 24">
@@ -45,47 +45,65 @@
 							</svg>
 						</button>
 					</td>
-				
+				<table class="c-users__extracontainer">
 					<td class="c-users__extradata u-hidden js-extra">
-						<div class="c-users__extracontainer">
-							<label for="geboortedatum" class="c-users__label">Geboortedatum:</label>
-							<input type="text" id="geboortedatum" class="c-users__input"  placeholder="21/05/2005" name="geboortedatum" disabled>
-	
-							<label for="straatnaam" class="c-users__label">Straatnaam:</label>
-							<input type="text" id="straatnaam" class="c-users__input" placeholder="Louis Robbeplein" name="straatnaam" disabled>
-	
-							<label for="nieuwsbrief" class="c-users__label">Nieuwsbrief:</label>
-							<select name="jaofnee" class="c-users__select" id="ja">
-								<option value="ja" class="c-users__option" disabled>ja</option>
-								<option value="nee" class="c-users__option" disabled>nee</option>
-							</select>
-	
-							<label for="postcode" class="c-users__label">Postcode:</label>
-							<input type="text" id="postcode" class="c-users__input" placeholder="8600" name="postcode" disabled>
-	
-							<label for="nr" class="c-users__label">Nr:</label>
-							<input type="text" id="nr" class="c-users__input" placeholder="7" name="nr" disabled>
-	
-							<label for="reclame" class="c-users__label">Reclame:</label>
-							<select name="jaofnee" class="c-users__select" id="ja">
-								<option value="ja" class="c-users__option" disabled>ja</option>
-								<option value="nee" class="c-users__option" disabled>nee</option>
-							</select>
-	
-							<label for="gemeente" class="c-users__label">Gemeente:</label>
-							<input type="text" id="gemeente" class="c-users__input" placeholder="21/05/2005" name="gemeente" disabled>
-	
-							<label for="bus" v>Bus:</label>
-							<input type="text" id="bus" class="c-users__input" placeholder="Louis Robbeplein" name="bus" disabled>
-	
-							<label for="isAdmin" class="c-users__label">IsAdmin:</label>
-							<select name="jaofnee" class="c-users__select" id="ja">
-								<option value="ja" class="c-users__option" disabled>ja</option>
-								<option value="nee" class="c-users__option" disabled>nee</option>
-							</select>
-	
-							<label for="telefoonnummer" class="c-users__label">Telefoonnummer:</label>
-							<input type="text" id="telefoonnummer" class="c-users__input" placeholder="ja" name="telefoonnummer" disabled>
+						<div class="c-users__extrainformatie">
+							<div class="c-users__geboortedatum">
+								<label for="geboortedatum" class="c-users__label">Geboortedatum:</label>
+								<input type="text" id="geboortedatum" class="c-users__input"  placeholder="21/05/2005" name="geboortedatum" >	
+							</div>
+							<div class="c-users__straatnaam">
+								<label for="straatnaam" class="c-users__label">Straatnaam:</label>
+								<input type="text" id="straatnaam" class="c-users__input" placeholder="Louis Robbeplein" name="straatnaam" disabled>	
+							</div>
+							<div class="c-users__nieuwsbrief">
+								<label for="nieuwsbrief" class="c-users__label">Nieuwsbrief:</label>
+								<select name="jaofnee" class="c-users__select" id="ja">
+									<option value="ja" class="c-users__option" disabled>ja</option>
+									<option value="nee" class="c-users__option" disabled>nee</option>
+								</select>
+							</div>
+						</div>
+						<div class="c-users__extrainformatie">
+							<div class="c-users__postcode">
+								<label for="postcode" class="c-users__label">Postcode:</label>
+								<input type="text" id="postcode" class="c-users__input" placeholder="8600" name="postcode" disabled>
+							</div>
+							<div class="c-users__nr">
+								<label for="nr" class="c-users__label">Nr:</label>
+								<input type="text" id="nr" class="c-users__input" placeholder="7" name="nr" disabled>
+							</div>
+							<div class="c-users__reclame">
+								<label for="reclame" class="c-users__label">Reclame:</label>
+								<select name="jaofnee" class="c-users__select" id="ja">
+									<option value="ja" class="c-users__option" disabled>ja</option>
+									<option value="nee" class="c-users__option" disabled>nee</option>
+								</select>
+							</div>
+						</div>
+						<div class="c-users__extrainformatie">
+							<div class="c-users__gemeente">
+								<label for="gemeente" class="c-users__label">Gemeente:</label>
+								<input type="text" id="gemeente" class="c-users__input" placeholder="21/05/2005" name="gemeente" disabled>	
+							</div>
+							<div class="c-users__bus">
+								<label for="bus"  class="c-users__label">Bus:</label>
+								<input type="text" id="bus" class="c-users__input" placeholder="Louis Robbeplein" name="bus" disabled>
+		
+							</div>
+							<div class="c-users__isadmin">
+								<label for="isAdmin" class="c-users__label">IsAdmin:</label>
+								<select name="jaofnee" class="c-users__select" id="ja">
+									<option value="ja" class="c-users__option" disabled>ja</option>
+									<option value="nee" class="c-users__option" disabled>nee</option>
+								</select>
+							</div>
+						</div>
+						<div class="c-users__extrainformatie">
+							<div class="c-users__telefoonnummer">
+								<label for="telefoonnummer" class="c-users__label">Telefoonnummer:</label>
+								<input type="text" id="telefoonnummer" class="c-users__input" placeholder="0497/25/24/55" name="telefoonnummer" disabled>	
+							</div>
 						</div>
 						<div>
 							<button class="c-users__delete">
@@ -100,6 +118,7 @@
 							</button>
 						</div>
 					</td>
+				</table>
 				</tr>
 			</table>
 		</div>

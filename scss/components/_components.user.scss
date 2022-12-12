@@ -46,5 +46,35 @@
         height: 32px ;
         cursor: pointer;
     }
+    &__extracontainer{
+        width: 100%;
+        margin-left: 4rem;
+
+    }
+    &__extrainformatie{
+        text-align: justify;
+        display: flex;
+        
+        
+    }
+    &__label{
+        color: color.$text-color-a;
+    }
+    &__input{
+        background-color: transparent;
+        border:  2px solid grey;
+        border-radius: 2px;
+        &:active{
+            background-color: transparent;
+            border:  2px solid grey;
+            border-radius: 2px;
+        }
+        &:disabled{
+            
+            background-color: transparent;
+            border: none;
+        }
+    }
+
 }
 
