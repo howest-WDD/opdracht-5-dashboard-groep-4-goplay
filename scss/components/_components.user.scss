@@ -1,10 +1,15 @@
 @use '../settings/colors.scss' as color;
 
 .c-users{
+    margin-top: 2rem;
     &__userinput{
 
         background-image: url("/assets/svg/magnify.svg");
         background-repeat: no-repeat;
+        padding-left: 1.5rem;
+        background-color:color.$neutral-900 ;
+        margin-bottom: 2rem;
+        margin-left: 2rem;
     }
     &__tablemainrow{
         color: color.$text-color-a;
@@ -14,6 +19,8 @@
     &__tablerow{
         color: color.$text-color-a;
         text-align: center;
+        justify-content: center;
+        background-color: color.$neutral-900;
 
         &--first{
             border-bottom: 2px solid grey;
@@ -22,6 +29,8 @@
     }
     &__category{
         border-bottom: 2px solid grey;
+        justify-content: center;
+        text-align: center;
     }
 
     &__id{
@@ -48,32 +57,78 @@
     }
     &__extracontainer{
         width: 100%;
-        margin-left: 4rem;
+        padding-left: 4rem;
+        background-color: color.$neutral-900;
 
     }
     &__extrainformatie{
         text-align: justify;
         display: flex;
+        justify-content: space-around;
         
         
     }
     &__label{
         color: color.$text-color-a;
+        font-weight: bold;
+        margin-right: 2rem;
     }
     &__input{
-        background-color: transparent;
+        background-color: color.$neutral-800;
         border:  2px solid grey;
-        border-radius: 2px;
-        &:active{
-            background-color: transparent;
+        border-radius: 4px;
+        color: color.$text-color-a;
+        margin-right: 2rem;
+        line-height: 2rem;
+        text-align: center;
+        align-items: center;
+        &::placeholder{
+            color: color.$text-color-a;
+            border: none;
+        }
+        &:focus{
             border:  2px solid grey;
-            border-radius: 2px;
+            outline: none;
+        }
+        
+
+        
+        &:active{
+            background-color: color.$neutral-800;
+            border:  2px solid grey;
+            box-shadow: none;
+            border-radius: 4px;
         }
         &:disabled{
             
             background-color: transparent;
             border: none;
         }
+    }
+    &__delete{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    &__deletesvg{
+        background-color: transparent;
+    }
+    &__deletepath{
+        background-color: transparent;
+        fill: color.$accent-00;
+    }
+    &__edit{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    &__editsvg{
+        background-color: transparent;
+    }
+
+    &__editpath{
+        background-color: transparent;
+        fill: color.$accent-00;
     }
 
 }
