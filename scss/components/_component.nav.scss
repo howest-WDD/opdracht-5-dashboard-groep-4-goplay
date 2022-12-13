@@ -3,13 +3,15 @@
 .wrapper{
     display: flex;
     position: relative;
+    transition: 0.3s;
 
     .sidebar{
         width: 18.75rem;
         height: 100%;
         background-color: color.$bg-color-nav;
-        padding: 30px 0px;
+        padding: 1.875rem 0rem;
         position: fixed;
+        transition: 0.3s;
 
         .logo{
            padding-left: 5.1875rem;
@@ -19,7 +21,7 @@
         }
 
         .item{
-            padding: 15px;
+            padding: .9375rem;
             list-style: none;
             border-left:.1875rem solid color.$accent-00;
 
@@ -27,9 +29,11 @@
             display: block;
             text-decoration: none !important;
             text-align: center;
+            
 
             &.active{
                 background-color: color.$bg-color-hov;
+                transition: 0.3s;
             }
             a{
                 color: color.$text-color-b;
@@ -45,14 +49,14 @@
               }
         }   
         .dark{
-            padding: 15px;
+            padding: .9375rem;
             list-style: none !important;
             border-left:.1875rem solid color.$accent-00;
         }   
 
         &__account{
             position: absolute;
-            bottom: 100px;
+            bottom: 6.25rem;
             width: 18.75rem;
 
             h2{
