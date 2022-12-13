@@ -1,0 +1,80 @@
+@use '../settings/colors' as color;
+
+.wrapper{
+    display: flex;
+    position: relative;
+    transition: 0.3s;
+
+    .sidebar{
+        width: 18.75rem;
+        height: 100%;
+        background-color: color.$bg-color-nav;
+        padding: 1.875rem 0rem;
+        position: fixed;
+        transition: 0.3s;
+
+        .logo{
+           padding-left: 5.1875rem;
+           padding-right: 5.1875rem;
+           margin-left: 2.625rem;
+
+        }
+
+        .item{
+            padding: .9375rem;
+            list-style: none;
+            border-left:.1875rem solid color.$accent-00;
+
+            color: color.$text-color-b;
+            display: block;
+            text-decoration: none !important;
+            text-align: center;
+            
+
+            &.active{
+                background-color: color.$bg-color-hov;
+                transition: 0.3s;
+            }
+            a{
+                color: color.$text-color-b;
+                display: block;
+                text-decoration: none;
+                text-align: center;
+              }
+              &__accent{
+                color: color.$accent-100 !important;
+              }
+            &:hover{
+                background-color: color.$bg-color-hov;
+              }
+        }   
+        .dark{
+            padding: .9375rem;
+            list-style: none !important;
+            border-left:.1875rem solid color.$accent-00;
+        }   
+
+        &__account{
+            position: absolute;
+            bottom: 6.25rem;
+            width: 18.75rem;
+
+            h2{
+                color: color.$text-color-b;
+                text-align: center;
+                margin-left: 2.625rem;
+            }
+
+        }
+
+        
+      }
+  }
+
+  .profile-details{
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+  }

@@ -14,9 +14,13 @@ $accent-100: #ff8d90;
 $text-color-a: var(--text-color-a);
 $text-color-b: var(--text-color-b);
 $bg-color: var(--bg-color);
+$bg-color-nav: var(--bg-color-nav);
+$bg-color-hov: var(--bg-color-hov);
 
 :root {
 	--text-color-a: #1c242b;
 	--text-color-b: #14191e;
 	--bg-color: #ffffff;
+	--bg-color-nav: #F2F3F3;
+	--bg-color-hov: #DCDCDC;
 }
