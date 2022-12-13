@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,10 +16,10 @@
 		<!-- CSS -->
 		<link rel="stylesheet" href="./dist/index.css" />
 		<!-- JS -->
-		<script src="./dist/main-min.js"></script>
+		<script type="module" src="./dist/main-min.js"></script>
 	</head>
-	<body class="">
-		<nav>
+	<body class="o-darkmode">
+  <nav>
 			<div class="wrapper">
 				<div class="sidebar">
 					<img class="logo" src="/assets/svg/logo.svg" alt="GoPlay">
@@ -51,6 +51,127 @@
 				</div>
 			</div>
 		</nav>
-
+		<div class="c-graphs">
+			<div class="c-doGraph">
+				<div class="c-doGraph__title">
+					<h4>Geslacht</h4>
+				</div>
+				<div class="c-doGraph__legend">
+					<div>
+						<span class="c-doGraph__circle c-doGraph__circle--1"></span>
+						<p>Man</p>
+						<p>49%</p>
+					</div>
+					<div>
+						<span class="c-doGraph__circle c-doGraph__circle--2"></span>
+						<p>Vrouw</p>
+						<p>49%</p>
+					</div>
+					<div>
+						<span class="c-doGraph__circle c-doGraph__circle--3"></span>
+						<p>Non-binair</p>
+						<p>>1%</p>
+					</div>
+				</div>
+				<div class="c-doGraph__center">
+					<h4>1.5M</h4>
+				</div>
+				<div class="c-doGraph__info">
+					<div></div>
+					<div></div>
+				</div>
+				<!-- this is an empty div to create the chart with js -->
+				<div id="sex-chart" class="c-doGraph__chart"></div>
+			</div>
+			<div class="c-doGraph">
+				<div class="c-doGraph__title">
+					<h4>Leeftijd</h4>
+				</div>
+				<div class="c-doGraph__legend">
+					<div>
+						<span class="c-doGraph__circle c-doGraph__circle--1"></span>
+						<p>13-29 jaar</p>
+						<p>49%</p>
+					</div>
+					<div>
+						<span class="c-doGraph__circle c-doGraph__circle--2"></span>
+						<p>30-54 jaar</p>
+						<p>49%</p>
+					</div>
+					<div>
+						<span class="c-doGraph__circle c-doGraph__circle--3"></span>
+						<p>55+ jaar</p>
+						<p>>1%</p>
+					</div>
+				</div>
+				<div class="c-doGraph__center">
+					<h4>1.5M</h4>
+				</div>
+				<div class="c-doGraph__info">
+					<div></div>
+					<div></div>
+				</div>
+				<!-- this is an empty div to create the chart with js -->
+				<div id="age-chart" class="c-doGraph__chart"></div>
+			</div>
+			<div class="c-barGraph">
+				<div class="c-barGraph__title">
+					<h4>Gebruiker groei</h4>
+					<p>
+						12.5%
+						<span>
+							<svg viewBox="0 0 24 24">
+								<path fill="currentColor" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+							</svg>
+						</span>
+					</p>
+					<p>vergeleken met 7 maanden</p>
+				</div>
+				<div id="growth-graph" class="c-barGraph__chart"></div>
+				<div class="c-barGraph__legend">
+					<p>jan</p>
+					<p>feb</p>
+					<p>maart</p>
+					<p>apr</p>
+					<p>mei</p>
+					<p>jun</p>
+					<p>jul</p>
+				</div>
+			</div>
+			<div class="c-pieGraph">
+				<div class="c-pieGraph__title">
+					<h4>Dagelijkse gebruikers</h4>
+					<h5>150K</h5>
+				</div>
+				<div class="c-pieGraph__legend">
+					<div>
+						<span class="c-pieGraph__circle c-pieGraph__circle--1"></span>
+						<p>nieuwe gebruikers</p>
+					</div>
+					<div>
+						<span class="c-pieGraph__circle c-pieGraph__circle--2"></span>
+						<p>terugkerende gebruikers</p>
+					</div>
+				</div>
+				<div class="c-pieGraph__chart" id="daily-graph"></div>
+			</div>
+			<div class="c-pieGraph">
+				<div class="c-pieGraph__title">
+					<h4>Dagelijkse gebruikers</h4>
+					<h5>25K</h5>
+				</div>
+				<div class="c-pieGraph__legend">
+					<div>
+						<span class="c-pieGraph__circle c-pieGraph__circle--1"></span>
+						<p>maken account</p>
+					</div>
+					<div>
+						<span class="c-pieGraph__circle c-pieGraph__circle--2"></span>
+						<p>geen account</p>
+					</div>
+				</div>
+				<div class="c-pieGraph__chart" id="new-graph"></div>
+			</div>
+		</div>
 	</body>
 </html>
