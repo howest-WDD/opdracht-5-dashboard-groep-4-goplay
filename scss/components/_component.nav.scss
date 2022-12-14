@@ -25,7 +25,7 @@
 
 		&__item {
 			position: relative;
-			padding: 0.9375rem;
+			
 			list-style: none;
 			border-left: 0.1875rem solid color.$accent-00;
 
@@ -39,6 +39,7 @@
 				transition: 0.3s;
 			}
 			a {
+				padding: 0.9375rem;
 				color: color.$text-color-b;
 				display: block;
 				text-decoration: none;
@@ -87,6 +88,7 @@
 	}
 .c-profile {
 	width: 150px;
+	padding: 0.9375rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
