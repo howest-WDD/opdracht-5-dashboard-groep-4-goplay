@@ -1,0 +1,11 @@
+.o-grid {
+	display: grid;
+
+	grid-template-rows: 1fr;
+	grid-template-columns: 300px 1fr;
+
+	grid-template-areas: 'nav content';
+
+	gap: 0px;
+	height: 100%;
+}
