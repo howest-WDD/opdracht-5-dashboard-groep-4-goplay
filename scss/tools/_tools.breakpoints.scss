@@ -50,7 +50,7 @@ $grid-breakpoints: (
 }
 
 // Makes the @content apply to the given breakpoint and wider.
-@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+@mixin up($name, $breakpoints: $grid-breakpoints) {
 	$min: breakpoint-min($name, $breakpoints);
 	@if $min {
 		@media (min-width: $min) {
@@ -62,7 +62,7 @@ $grid-breakpoints: (
 }
 
 // Makes the @content apply to the given breakpoint and narrower.
-@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
+@mixin down($name, $breakpoints: $grid-breakpoints) {
 	$max: breakpoint-max($name, $breakpoints);
 	@if $max {
 		@media (max-width: $max) {
@@ -74,7 +74,7 @@ $grid-breakpoints: (
 }
 
 // Makes the @content apply between the min and max breakpoints
-@mixin media-breakpoint-between($lower, $upper, $breakpoints: $grid-breakpoints) {
+@mixin between($lower, $upper, $breakpoints: $grid-breakpoints) {
 	$min: breakpoint-min($lower, $breakpoints);
 	$max: breakpoint-max($upper, $breakpoints);
 
@@ -83,18 +83,18 @@ $grid-breakpoints: (
 			@content;
 		}
 	} @else if $max == null {
-		@include media-breakpoint-up($lower, $breakpoints) {
+		@include up($lower, $breakpoints) {
 			@content;
 		}
 	} @else if $min == null {
-		@include media-breakpoint-down($upper, $breakpoints) {
+		@include down($upper, $breakpoints) {
 			@content;
 		}
 	}
 }
 
 // Makes the @content apply only to the given breakpoint, not viewports any wider or narrower.
-@mixin media-breakpoint-only($name, $breakpoints: $grid-breakpoints) {
+@mixin only($name, $breakpoints: $grid-breakpoints) {
 	$min: breakpoint-min($name, $breakpoints);
 	$next: breakpoint-next($name, $breakpoints);
 	$max: breakpoint-max($next, $breakpoints);
@@ -104,11 +104,11 @@ $grid-breakpoints: (
 			@content;
 		}
 	} @else if $max == null {
-		@include media-breakpoint-up($name, $breakpoints) {
+		@include up($name, $breakpoints) {
 			@content;
 		}
 	} @else if $min == null {
-		@include media-breakpoint-down($next, $breakpoints) {
+		@include down($next, $breakpoints) {
 			@content;
 		}
 	}
