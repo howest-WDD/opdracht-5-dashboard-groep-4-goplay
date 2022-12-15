@@ -8,7 +8,7 @@ var layout = {
 	margin: {
 		l: 0,
 		r: 0,
-		b: 5,
+		b: 0,
 		t: 5,
 		pad: 4,
 	},
@@ -43,7 +43,19 @@ var layout = {
 	colorway: ['#00f0c8'],
 };
 
-var traces = [{ x: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], y: [2, 1, 4, 5, 2, 4, 8, 6, 9, 3, 4], fill: 'tozeroy', type: 'scatter', line: { shape: 'spline' }, mode: 'lines' }];
+var traces = [
+	{
+		x: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+		y: [2, 1, 4, 5, 2, 4, 8, 6, 9, 3, 4],
+		fill: 'tozeroy',
+		type: 'scatter',
+		line: {
+			shape: 'spline',
+		},
+		mode: 'lines',
+		hoverinfo: 'none',
+	},
+];
 
 var config = { responsive: true };
 

@@ -4,7 +4,7 @@
 	display: flex;
 	flex-wrap: wrap;
 
-  grid-area: 'content';
+	grid-area: 'content';
 
 	.modebar {
 		top: -25000px !important;
@@ -280,4 +280,43 @@
 	border-radius: 20px;
 
 	position: relative;
+
+	overflow: hidden;
+
+	&__chart {
+		position: absolute;
+		bottom: 0;
+	}
+
+	&__title {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		h4 {
+			margin: 0;
+			margin-top: 8px;
+			margin-left: 20px;
+
+			color: color.$shades-00;
+		}
+
+		h5 {
+			margin: 0;
+			margin-top: 8px;
+			margin-left: 20px;
+
+			color: color.$accent-00;
+		}
+	}
+
+	&__percentage {
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		margin-right: 8px;
+
+		color: color.$accent-00;
+	}
 }
