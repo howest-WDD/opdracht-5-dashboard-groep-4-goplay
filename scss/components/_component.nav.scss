@@ -1,7 +1,7 @@
 @use '../settings/colors' as color;
 
 .wrapper {
-	grid-area: nav;
+	grid-area: 'nav';
 
 	display: flex;
 	position: relative;
