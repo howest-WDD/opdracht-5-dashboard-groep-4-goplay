@@ -58,6 +58,17 @@
 			}
 			&--accent {
 				color: color.$accent-100 !important;
+				&::after{
+					content: '';
+					position: absolute;
+					left: 50%;
+					bottom: 0rem;
+					background-color: color.$accent-100 !important;
+					height: .125rem;
+					width: 0%;
+					transition: 0.3s;
+					transform: translateX(-50%);
+				}
 			}
 			
 			&:hover {
@@ -72,6 +83,7 @@
 			padding: 0.9375rem;
 			list-style: none !important;
 			border-left: 0.1875rem solid color.$accent-00;
+			
 		}
 
 		&__account {
