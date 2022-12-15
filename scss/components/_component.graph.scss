@@ -5,6 +5,10 @@
 	flex-wrap: wrap;
 
 	grid-area: content;
+
+	.modebar {
+		top: -25000px !important;
+	}
 }
 
 // donut graphs

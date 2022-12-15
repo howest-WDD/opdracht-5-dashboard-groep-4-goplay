@@ -36,6 +36,7 @@ var layout = {
 		showticklabels: false,
 	},
 	showgrid: false,
+	dragmode: false,
 	// adjust background color to transparent so it is always the color of the actual background
 	paper_bgcolor: 'transparent',
 	plot_bgcolor: 'transparent',
