@@ -37,5 +37,8 @@
 		"postcss": "^8.4.19",
 		"postcss-cli": "^10.1.0",
 		"sass": "^1.56.1"
+	},
+	"dependencies": {
+		"heatmap.js": "^2.0.5"
 	}
 }
