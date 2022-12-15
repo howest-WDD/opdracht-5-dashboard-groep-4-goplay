@@ -319,4 +319,16 @@
 
 		color: color.$accent-00;
 	}
+
+	&--cost {
+		.c-sineGraph__title {
+			h5 {
+				color: color.$accent-100;
+			}
+		}
+
+		.c-sineGraph__percentage {
+			color: color.$accent-100;
+		}
+	}
 }
