@@ -1,14 +1,24 @@
 
 let modal;
 let sect;
+let htmlString; 
 
 const listenToExpand = function(){
     const expand = document.querySelector(".js-expand");
     const extra = document.querySelector(".js-extra");
+    const expandButton = document.querySelector(".js-expandbutton")
     console.log(expand)
 
     expand.addEventListener("click",function(){
-        extra.classList.toggle("u-hidden")
+        if(extra.classList.contains("u-hidden")){
+            extra.classList.toggle("u-hidden")
+            expandButton.classList.toggle("c-users__expandicon--turnaround")
+        } else if(!extra.classList.contains("u-hidden")){
+            extra.classList.toggle("u-hidden")
+            expandButton.classList.toggle("c-users__expandicon--turnaround")
+        }
+        
+
         // console.log(extra)
         console.log("click")
     })
@@ -36,21 +46,44 @@ const listenTodelete = function(){
     const deletebutton = document.querySelector(".js-delete")
     const deleteusers = document.getElementsByClassName("js-deleteuser")
     
+    // deze zijn voor De modal window en aanpassingen aan de body
+    const darkbackground = document.querySelector(".js-darkbackground")
+    const modal = document.querySelector(".js-modal")
+    const verwijder = document.querySelector(".js-verwijder")
+    const cancel = document.querySelector(".js-cancel")
+
+    
    
     // console.log(deletebutton)
     // console.log(deleteusers)
 
     deletebutton.addEventListener("click",function(){
 
-        for(const deleteuser of deleteusers){
 
-            // console.log(deleteuser)
-            // console.log("click")
-            deleteuser.classList.add("u-hidden")
+        modal.classList.remove("u-hidden");
+        darkbackground.classList.add("c-darkbackground")
 
-        }
+        // for(const deleteuser of deleteusers){
+
+        //     // console.log(deleteuser)
+        //     // console.log("click")
+        //     deleteuser.classList.add("u-hidden")
+
+        // }
         
 
+    })
+    verwijder.addEventListener("click",function(){
+        for(const deleteuser of deleteusers){
+            deleteuser.classList.add("u-hidden")
+
+        }            
+        modal.classList.add("u-hidden")
+        darkbackground.classList.remove("c-darkbackground")
+    })
+    cancel.addEventListener("click",function(){
+        modal.classList.add("u-hidden")
+        darkbackground.classList.remove("c-darkbackground")
     })
 }
 
@@ -71,34 +104,49 @@ const listenToEditChange = function(){
            
     })
 }
+const checkIfWorks = function(){
+    const thbuttons = document.querySelectorAll(".js-filter")
 
-// const loadJson = function(){
+    for(const thbutton of thbuttons){
+        console.log(thbutton)
+        thbutton.addEventListener("click",function(){
+            if(thbutton.classList.contains("c-users__id--active")){
+                thbutton.classList.remove("c-users__id--active")
+            }
+            console.log("click")
+            thbutton.classList.toggle("c-users__id--active");
+            thbutton.innerHTML += `<svg xmlns="http://www.w3.org/2000/svg" class="c-users__activesvg" viewBox="0 0 24 24"><path class="c-users__activesvgpath" d="M7,10L12,15L17,10H7Z" /></svg>`
+        })
+    }
+}
+
+const loadJson = function(){
  
-//     fetch('../json/users.json')
-//     .then((response) => response.json())
-//     .then((json) => {
-//         const users = json.users;
-//         for(const user of users){
-//             const id = user.UID
-//             const voornaam = user.voornaam
-//             const achternaam = user.achternaam
-//             const mail = user.mail
-//             const geslacht = user.geslacht 
-//             const geboortedatum = user.geboortedatum
-//             const postcode = user.postcode
-//             const gemeente = user.gemeente
-//             const straatnaam = user.straatnaam 
-//             const phone = user.phone 
-//             const nr = user.nr 
-//             const bus = user.bus
-//             const nieuwsbrief = user.nieuwsbrief
-//             const reclame = user.reclame 
-//             const admin = user.admin
-//             console.log(bus) 
-//         }
-//         return users;
-//     });
-// }
+    fetch('../json/users.json')
+    .then((response) => response.json())
+    .then((json) => {
+        const users = json.users;
+        for(const user of users){
+            const id = user.UID
+            const voornaam = user.voornaam
+            const achternaam = user.achternaam
+            const mail = user.mail
+            const geslacht = user.geslacht 
+            const geboortedatum = user.geboortedatum
+            const postcode = user.postcode
+            const gemeente = user.gemeente
+            const straatnaam = user.straatnaam 
+            const phone = user.phone 
+            const nr = user.nr 
+            const bus = user.bus
+            const nieuwsbrief = user.nieuwsbrief
+            const reclame = user.reclame 
+            const admin = user.admin
+            console.log(bus) 
+        }
+        return users;
+    });
+}
 
 
 
@@ -107,6 +155,7 @@ const accordeonUsers = function(){
     listenToEdit();
     listenTodelete();
     listenToEditChange(); 
+    checkIfWorks();
     // loadJson();
 
 
