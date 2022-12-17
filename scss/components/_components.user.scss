@@ -3,11 +3,12 @@
 .c-users{
 
     grid-area: content;
-    overflow: hidden;
+    
     margin-top: 2rem;
 
     &__inputcontainer{
         position: relative;
+        margin-bottom: 2rem;
     }
     &__inputsvg{
         width: 16px;
@@ -17,15 +18,13 @@
         margin-top: 0.75rem;
         margin-left: 0.5rem;
         
-    }
-    &__inputsvgpath{
         
     }
-    &__userinput{
-
+    &__inputsvgpath{
+        fill: color.$text-color-a;
+    }
+    &__userinput{   
         border-radius: 10px;
-        background-image: url("/assets/svg/magnify.svg");
-        background-repeat: no-repeat;
         padding-left: 1.5rem;
         background-color:color.$neutral-900 ;
         border: 2px solid color.$accent-00;
@@ -55,21 +54,49 @@
         background-color: color.$neutral-900;
         padding: 1rem 0rem;
     }
+    &__table{
+        display: flex;
+        max-width: 100%;
+
+    }
+    &__id{
+        position: relative;
+    }
+    &__achternaam{
+
+    }
+    &__voornaam{
+
+    }
+    &__mail{
+
+    }
+    &__sex{
+
+    }
+    &__expand{
+
+    }
+    &__activesvg{
+        position: absolute;
+        top: .625rem;
+        width: 32px;
+        fill: color;
+    }  
+    &__activesvgpath{
+        fill: color.$text-color-a;
+    }
     &__tablerow{
         color: color.$text-color-a;
-        text-align: center;
-        justify-content: center;
+     
+    
         background-color: color.$neutral-900;
-
-        &--first{
-            border-bottom: 2px solid grey;
-        }
        
     }
     &__category{
         border-bottom: 2px solid grey;
-        justify-content: center;
-        text-align: center;
+      
+        
     }
 
     &__id{
@@ -98,15 +125,10 @@
         width: 100%;
         padding-left: 4rem;
         background-color: color.$neutral-900;
+        
 
     }
-    &__extrainformatie{
-        text-align: justify;
-        display: flex;
-        justify-content: space-around;
-        
-        
-    }
+
     &__label{
         color: color.$text-color-a;
         font-weight: bold;
@@ -119,7 +141,7 @@
         color: color.$text-color-a;
         margin-right: 2rem;
         line-height: 2rem;
-        text-align: center;
+
         align-items: center;
         &::placeholder{
             color: color.$text-color-a;
@@ -143,6 +165,9 @@
             background-color: transparent;
             border: none;
         }
+    }
+    &__extracontainer{
+        justify-content: space-between;
     }
     &__delete{
         background-color: transparent;

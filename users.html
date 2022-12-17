@@ -18,7 +18,7 @@
 		<!-- JS -->
 		<script type="module" src="./dist/main-min.js"></script>
 	</head>
-	<body class="o-darkmode o-grid">
+	<body class="o-darkmode o-grid js-page=">
 		<div class="c-users">
 			<div class="c-users__inputcontainer">
 				<svg xmlns="http://www.w3.org/2000/svg" class="c-users__inputsvg" viewBox="0 0 24 24">
@@ -29,17 +29,18 @@
 			
 			<table class="c-users__table" style="width: 100%">
 				<tr class="c-users__tablemainrow">
-					<th class="c-users__id c-users__id--active">ID span</th>
-					<th class="c-users__voornaam">Voornaam</th>
+					<th class="c-users__id c-users__id--active ">ID <span class="c-users__active"><svg xmlns="http://www.w3.org/2000/svg" class="c-users__activesvg" viewBox="0 0 24 24"><path class="c-users__activesvgpath" d="M7,10L12,15L17,10H7Z" /></svg></span></th>
 					<th class="c-users__achternaam">Achternaam</th>
+					<th class="c-users__voornaam">Voornaam</th>
 					<th class="c-users__mail">Mail</th>
 					<th class="c-users__sex">Geslacht</th>
 					<th class="c-users__expand"></th>
 				</tr>
 				<tr class="c-users__tablerow c-users__tablerow--first js-deleteuser">
-					<td class="c-users__category js-id"><input class="c-users__input js-geboortedatum js-disable" type="text" placeholder="00000001" disabled /></td>
-					<td class="c-users__category js-voornaam"><input class="c-users__input js-geboortedatum js-disable" type="text" placeholder="Jonny" disabled /></td>
+					<td class="c-users__category js-id"><input class="c-users__input js-geboortedatum js-adduser js-disable" type="text" placeholder="00000001" disabled /></td>
 					<td class="c-users__category js-achternaam"><input class="c-users__input js-geboortedatum js-disable" type="text" placeholder="Depp" disabled /></td>
+					<td class="c-users__category js-voornaam"><input class="c-users__input js-geboortedatum js-disable" type="text" placeholder="Jonny" disabled /></td>
+					
 					<td class="c-users__category js-mail"><input class="c-users__input js-geboortedatum js-disable" type="text" placeholder="Jonny.depp@gmail.com" disabled /></td>
 					<td class="c-users__category"><input class="c-users__input js-geboortedatum js-disable" type="text" placeholder="X" disabled /></td>
 					<td class="c-users__category">
@@ -54,7 +55,7 @@
 							<div class="c-users__extrainformatie">
 								<div class="c-users__geboortedatum">
 									<label for="geboortedatum" class="c-users__label">Geboortedatum:</label>
-									<input type="text" id="geboortedatum" class="c-users__input js-geboortedatum js-disable" placeholder="21/05/2005" name="geboortedatum" disabled />
+									<input type="text" id="geboortedatum" class=" c-users__input js-geboortedatum js-disable" placeholder="21/05/2005" name="geboortedatum" disabled />
 								</div>
 								<div class="c-users__straatnaam">
 									<label for="straatnaam" class="c-users__label">Straatnaam:</label>
@@ -117,7 +118,7 @@
 									</svg>
 								</button>
 								<button class="c-users__edit js-edit">
-									<svg style="width: 24px; height: 24px" class="c-users__editsvg" viewBox="0 0 24 24">
+									<svg style="width: 24px; height: 24px" class="c-users__editsvg c-users__editsvg--edit js-editsvg" viewBox="0 0 24 24">
 										<path fill="currentColor" class="c-users__editpath" d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
 									</svg>
 								</button>
@@ -127,5 +128,6 @@
 				</tr>
 			</table>
 		</div>
+		
 	</body>
 </html>
