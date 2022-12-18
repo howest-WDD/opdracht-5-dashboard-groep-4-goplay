@@ -5,7 +5,7 @@
 
     grid-area: content;
     
-    margin-top: 2rem;
+    
 
     &__inputcontainer{
         position: relative;
@@ -96,11 +96,12 @@
         color: color.$text-color-a;
      
     
-        background-color: color.$neutral-900;
+        
        
     }
     &__category{
         border-bottom: 2px solid grey;
+        background-color: color.$neutral-900;
         
         
     }
@@ -132,6 +133,7 @@
         padding-left: 4rem;
         background-color: color.$neutral-900;
         display: flex;
+        z-index: 5;
        
 
 
@@ -213,6 +215,7 @@
     }
     &__extracontainer{
         justify-content: space-between;
+        flex-direction: column;
     }
     &__delete{
         background-color: transparent;
