@@ -29,20 +29,20 @@
 				<input type="text" class="c-users__userinput" placeholder="Search users" />
 			</div>
 			
-			<table class="c-users__table  table table-responsive" style="overflow-x:auto;">
+			<table  class="c-users__table  table table-responsive" style="overflow-x:auto;">
 				<tr class="c-users__tablemainrow">
-					<th class="c-users__id c-users__id js-filter">Id <span class="c-users__active"><svg xmlns="http://www.w3.org/2000/svg" class="c-users__activesvg" viewBox="0 0 24 24"><path class="c-users__activesvgpath" d="M7,10L12,15L17,10H7Z" /></svg></span></th>
+					<th class="c-users__id c-users__id--active js-filter">Id <span class="c-users__active"><svg xmlns="http://www.w3.org/2000/svg" class="c-users__activesvg" viewBox="0 0 24 24"><path class="c-users__activesvgpath" d="M7,10L12,15L17,10H7Z" /></svg></span></th>
 					<th class="c-users__achternaam js-filter">Achternaam</th>
 					<th class="c-users__voornaam js-filter">Voornaam</th>
 					<th class="c-users__mail js-filter">Mail</th>
 					<th class="c-users__expand js-filter"></th>
 				</tr>
-				<tr class="c-users__tablerow c-users__tablerow--first js-deleteuser">
-					<td class="c-users__category js-id"><input class="c-users__input js-geboortedatum js-adduser js-disable" type="text" placeholder="00000001" disabled /></td>
-					<td class="c-users__category js-achternaam"><input class="c-users__input js-geboortedatum js-disable" type="text" placeholder="Depp" disabled /></td>
-					<td class="c-users__category js-voornaam"><input class="c-users__input js-geboortedatum js-disable" type="text" placeholder="Jonny" disabled /></td>
+				<tr id="menu" class="c-users__tablerow c-users__tablerow--first  js-deleteuser js-adduser ">
+					<td class="c-users__category js-id"><input class="c-users__input  js-adduser  js-geboortedatum js-disable" type="text" placeholder="00000001" disabled /></td>
+					<td class="c-users__category js-achternaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" type="text" placeholder="Depp" disabled /></td>
+					<td class="c-users__category js-voornaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" type="text" placeholder="Jonny" disabled /></td>
 					
-					<td class="c-users__category js-mail"><input class="c-users__input js-geboortedatum js-disable" type="text" placeholder="Jonny.depp@gmail.com" disabled /></td>
+					<td class="c-users__category js-mail"><input class="c-users__input js-adduser  js-geboortedatum js-disable" type="text" placeholder="Jonny.depp@gmail.com" disabled /></td>
 					<td class="c-users__category">
 						<button class="c-users__expandbutton js-expand">
 							<svg class="c-users__expandicon js-expandbutton" viewBox="0 0 24 24">
@@ -50,13 +50,13 @@
 							</svg>
 						</button>
 					</td>
-					<table class="c-users__extracontainer js-deleteuser" style="overflow-x:auto;">
-						<td class="c-users__extradata d-flex u-hidden js-extra">
+					<table id="extramenu" class="c-users__extracontainer js-deleteuser" style="overflow-x:auto;">
+						<td class="c-users__extradata u-hidden d-flex js-extra">
 							<div class="c-users__extrainformatie c-users__extrainformatie--1 ">
 
 								<div class="c-users__geboortedatum">
 									<label for="geboortedatum" class="c-users__label c-users__align1">Geboortedatum:</label>
-									<input type="text" id="geboortedatum" class=" c-users__input js-geboortedatum js-disable" placeholder="21/05/2005" name="geboortedatum" disabled />
+									<input type="text" id="geboortedatum" class=" c-users__input js-geboortedatum js-adduser  js-disable" placeholder="21/05/2005" name="geboortedatum" disabled />
 								</div>
 								<div class="c-users__straatnaam">
 									<label for="straatnaam" class="c-users__label c-users__align2">Straatnaam:</label>

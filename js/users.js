@@ -1,33 +1,47 @@
 
 let modal;
 let sect;
-let htmlString; 
+
+
+
+
+
+
+
 
 const listenToExpand = function(){
-    const expand = document.querySelector(".js-expand");
+    const expandButtons = document.getElementsByClassName("js-expand");
     const extra = document.querySelector(".js-extra");
-    const expandButton = document.querySelector(".js-expandbutton")
-    console.log(expand)
+    const expandSvg = document.querySelector(".js-expandbutton")
+    // console.log(expand)
+    for(const expandbutton of expandButtons){
+        console.log(expandbutton)
+        expandbutton.addEventListener("click",function(){
+            console.log("click")
+        })
+    }
 
-    expand.addEventListener("click",function(){
-        if(extra.classList.contains("u-hidden")){
-            extra.classList.toggle("u-hidden")
-            expandButton.classList.toggle("c-users__expandicon--turnaround")
-        } else if(!extra.classList.contains("u-hidden")){
-            extra.classList.toggle("u-hidden")
-            expandButton.classList.toggle("c-users__expandicon--turnaround")
-        }
+    //     expand.addEventListener("click",function(){
+    //         if(extra.classList.contains("u-hidden")){
+    //             extra.classList.toggle("u-hidden")
+    //             expandSvg.classList.toggle("c-users__expandicon--turnaround")
+    //         } else if(!extra.classList.contains("u-hidden")){
+    //             extra.classList.toggle("u-hidden")
+    //             expandSvg.classList.toggle("c-users__expandicon--turnaround")
+    //         }
         
 
-        // console.log(extra)
-        console.log("click")
-    })
+    //     // console.log(extra)
+    //     // console.log("click")
+    // })
+    
+
 }
 
 const listenToEdit= function(){
     const edit = document.querySelector(".js-edit");
     const inputs = document.getElementsByClassName("js-disable")
-    // console.log(inputs)
+    console.log(inputs)
     console.log(edit)
 
     edit.addEventListener("click",function(){
@@ -54,8 +68,8 @@ const listenTodelete = function(){
 
     
    
-    // console.log(deletebutton)
-    // console.log(deleteusers)
+    console.log(deletebutton)
+    console.log(deleteusers)
 
     deletebutton.addEventListener("click",function(){
 
@@ -108,57 +122,32 @@ const checkIfWorks = function(){
     const thbuttons = document.querySelectorAll(".js-filter")
 
     for(const thbutton of thbuttons){
-        console.log(thbutton)
+        // console.log(thbutton)
         thbutton.addEventListener("click",function(){
             if(thbutton.classList.contains("c-users__id--active")){
                 thbutton.classList.remove("c-users__id--active")
             }
-            console.log("click")
-            thbutton.classList.toggle("c-users__id--active");
+            // console.log("click")
+            thbutton.classList.add("c-users__id--active");
             thbutton.innerHTML += `<svg xmlns="http://www.w3.org/2000/svg" class="c-users__activesvg" viewBox="0 0 24 24"><path class="c-users__activesvgpath" d="M7,10L12,15L17,10H7Z" /></svg>`
         })
     }
 }
 
-const loadJson = function(){
- 
-    fetch('../json/users.json')
-    .then((response) => response.json())
-    .then((json) => {
-        const users = json.users;
-        for(const user of users){
-            const id = user.UID
-            const voornaam = user.voornaam
-            const achternaam = user.achternaam
-            const mail = user.mail
-            const geslacht = user.geslacht 
-            const geboortedatum = user.geboortedatum
-            const postcode = user.postcode
-            const gemeente = user.gemeente
-            const straatnaam = user.straatnaam 
-            const phone = user.phone 
-            const nr = user.nr 
-            const bus = user.bus
-            const nieuwsbrief = user.nieuwsbrief
-            const reclame = user.reclame 
-            const admin = user.admin
-            console.log(bus) 
-        }
-        return users;
-    });
-}
+
 
 
 
 const accordeonUsers = function(){
+    loadJson();
     listenToExpand();
     listenToEdit();
     listenTodelete();
     listenToEditChange(); 
     checkIfWorks();
-    // loadJson();
+    
 
 
 }
 
-document.addEventListener('DOMContentLoaded',accordeonUsers);
+document.addEventListener('DOMContentLoaded',accordeonUsers());
