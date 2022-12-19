@@ -40,14 +40,14 @@ const loadJson = function () {
                             
                             <td class="c-users__category js-mail"><input class="c-users__input js-adduser  js-geboortedatum js-disable" type="text" placeholder="${mail}" disabled /></td>
                             <td class="c-users__category">
-                                <button id="js-expandid${id}" class="c-users__expandbutton js-expand ">
+                                <button id="js-expandid${id}" class="c-users__expandbutton js-expand " data-id="${id}">
                                     <svg id="${id}" class="c-users__expandicon js-expandbutton js-expandbutton${id}" viewBox="0 0 24 24">
                                         <path fill="currentColor" d="M7,10L12,15L17,10H7Z" />
                                     </svg>
                                 </button>
                             </td>
                             <div id="extramenu" class="c-users__extracontainer js-deleteuser" style="overflow-x:auto;">
-                                <td id="js-extra${id}" class="c-users__extradata u-hidden d-flex js-extra js-extraid${id}">
+                                <td id="js-extra${id}" class="c-users__extradata u-hidden  d-flex js-extra ">
                                     <div class="c-users__extrainformatie c-users__extrainformatie--1 ">
 
                                         <div class="c-users__geboortedatum">
@@ -127,9 +127,7 @@ const loadJson = function () {
                             </div>
                         </tr>
                     
-                    </table>
-                
-				`;
+                    </table>`;
 
 
 
@@ -144,28 +142,23 @@ const loadJson = function () {
 };
 
 const listenToExpand = function () {
-
-	const expandButtons = document.querySelectorAll(`.js-expand`);
-	const expandSvg = document.querySelector(".js-expandbutton");
-	const extraTexts = document.getElementById(`js-extra${id}`);
-	const getUHidden = document.getElementsByClassName(`u-hidden${id}`)
-
-	for(const expandButton of expandButtons){
-		console.log(expandButton)
-		expandButton.addEventListener("click",function(){
-			console.log("click");
-			console.log(expandButton)
-			console.log(extraTexts)
-		})
-	}
-
-		
+    const expandButtons = document.querySelectorAll(`.js-expand`);
+    const expandSvg = document.querySelector('.js-expandbutton');
 	
-	
-
-	
+    for (const expandButton of expandButtons) {
+        // console.log(expandButton);
+        expandButton.addEventListener('click', function () {
+            const idnumber = expandButton.getAttribute('data-id');
+            const extraTexts = document.getElementById(`js-extra${idnumber}`);
+			extraTexts.classList.toggle("u-hidden");
+            const getUHidden = document.getElementsByClassName(`u-hidden${id}`);
+            console.log('click');
+            console.log(this.getAttribute('data-id'));
+            console.log(expandButton);
+            console.log(extraTexts);
+        });
+    }
 };
-
 const listenToEdit = function () {
 	const edit = document.querySelector(".js-edit");
 	const inputs = document.getElementsByClassName("js-disable");
@@ -234,7 +227,7 @@ const listenToEditChange = function () {
 		}
 	});
 };
-const checkIfWorks = function () {
+const filterbuttons = function () {
 	const thbuttons = document.querySelectorAll(".js-filter");
 
 	for (const thbutton of thbuttons) {
@@ -256,7 +249,7 @@ const accordeonUsers = function () {
 	setTimeout(listenToEditChange,5000)
 	setTimeout(listenTodelete,5000)
 	setTimeout(listenToEdit,5000)
-	setTimeout(checkIfWorks,5000)
+	setTimeout(filterbuttons,5000)
 };
 
 document.addEventListener("DOMContentLoaded", accordeonUsers());
