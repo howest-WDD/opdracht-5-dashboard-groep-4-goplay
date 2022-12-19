@@ -71,7 +71,7 @@
 			'income income costs -';
 	}
 
-	@include bp.up(fhd) {
+	@include bp.up(ll) {
 		grid-template-rows: 120px 352px 372px 122px;
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
