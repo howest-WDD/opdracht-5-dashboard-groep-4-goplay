@@ -1,9 +1,14 @@
 'use strict';
-//see anychart.js
+const checkHeatmap = function () {
+	if (document.getElementById('heatmapContainer')) {
+		console.log('yes heatmap');
+		createHeatmap();
+	} else {
+		console.log('no heatmap');
+	}
+};
 
-// drawing the map
-
-const creatHeatmap = function () {
+const createHeatmap = function () {
 	// create map
 	var map = anychart.map();
 
@@ -67,4 +72,4 @@ const creatHeatmap = function () {
 	map.draw();
 };
 
-document.addEventListener('DOMContentLoaded', creatHeatmap());
+document.addEventListener('DOMContentLoaded', checkHeatmap());
