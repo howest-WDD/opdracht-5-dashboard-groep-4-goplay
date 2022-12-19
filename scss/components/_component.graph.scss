@@ -1,10 +1,43 @@
 @use '../settings/colors' as color;
+@use '../tools/tools.breakpoints' as bp;
 
 .c-graphs {
-	display: flex;
-	flex-wrap: wrap;
-
 	grid-area: 'content';
+
+	margin-left: 50px;
+	margin-right: 100px;
+
+	height: 100%;
+	width: calc(100vw - 400px);
+
+	display: grid;
+
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
+
+	grid-template-areas:
+		'heading heading heading'
+		'growth daily returning'
+		'sex age genre'
+		'map map map'
+		'totals totals totals'
+		'income income costs';
+
+	gap: 20px;
+
+	@include bp.up(tl) {
+	}
+
+	@include bp.up(fhd) {
+		grid-template-rows: 120px 352px 372px 122px;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+		grid-template-areas:
+			'heading heading heading heading heading'
+			'growth daily returning sex age'
+			'map map genre totals totals'
+			'income income income costs costs';
+	}
 
 	.modebar {
 		top: -25000px !important;
@@ -13,7 +46,7 @@
 
 // donut graphs
 .c-doGraph {
-	width: 270px;
+	min-width: 270px;
 	height: 300px;
 
 	display: flex;
@@ -106,7 +139,7 @@
 
 // bar graphs
 .c-barGraph {
-	width: 270px;
+	min-width: 270px;
 	height: 300px;
 
 	display: flex;
@@ -186,7 +219,7 @@
 
 // pie chart graphs
 .c-pieGraph {
-	width: 300px;
+	min-width: 270px;
 	height: 300px;
 
 	display: flex;
@@ -272,7 +305,7 @@
 
 // sine graphs
 .c-sineGraph {
-	width: 500px;
+	min-width: 500px;
 	height: 120px;
 
 	border: solid color.$accent-00;
@@ -335,7 +368,7 @@
 
 // radargraph
 .c-genre {
-	width: 270px;
+	min-width: 270px;
 	height: 320px;
 
 	border: solid color.$accent-00;

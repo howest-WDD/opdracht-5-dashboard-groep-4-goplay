@@ -1,0 +1,19 @@
+@use '../settings/colors' as color;
+
+.c-heading {
+	margin-top: 40px;
+	margin-bottom: -25px;
+
+	width: 100%;
+
+	h1 {
+		color: color.$accent-00;
+		margin: 0;
+	}
+
+	p {
+		color: color.$shades-00;
+
+		margin: 0;
+	}
+}
