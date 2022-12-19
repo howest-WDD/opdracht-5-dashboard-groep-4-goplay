@@ -332,3 +332,44 @@
 		}
 	}
 }
+
+// radargraph
+.c-genre {
+	width: 270px;
+	height: 320px;
+
+	border: solid color.$accent-00;
+	border-width: 1px;
+	border-radius: 20px;
+
+	position: relative;
+
+	overflow: hidden;
+
+	display: flex;
+	justify-content: center;
+
+	&__graph {
+		width: 250px;
+		height: 250px;
+
+		position: absolute;
+		bottom: 0;
+	}
+
+	&__txt {
+		margin-left: 20px;
+
+		color: color.$shades-00;
+
+		h4 {
+			font-size: 18px;
+			margin-bottom: 0;
+			margin-top: 10px;
+		}
+
+		p {
+			margin-top: 4px;
+		}
+	}
+}

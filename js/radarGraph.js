@@ -56,6 +56,7 @@ const createGenreGraph = function () {
 					display: false,
 				},
 			},
+			responsive: true,
 		};
 
 		const ctx = document.getElementById('genreGraph');
