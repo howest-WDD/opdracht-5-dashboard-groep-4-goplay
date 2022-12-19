@@ -3,7 +3,7 @@
 
 .c-users{
 
-    grid-area: content;
+    grid-area: "content";
     
     
 
@@ -128,20 +128,13 @@
         height: 32px ;
         cursor: pointer;
     }
-    &__extracontainer{
-        width: 100%;
-        padding-left: 4rem;
-        background-color: color.$neutral-900;
-        display: flex;
-        z-index: 5;
-        position: relative;
-       
 
-
-    }
     &__extradata{
          position: absolute;
          left: 0;
+          
+         background-color: color.$neutral-900;
+
          
     }
     &__extrainformatie{
@@ -222,8 +215,9 @@
     &__extracontainer{
         justify-content: space-between;
         flex-direction: column;
-        position: absolute;
+        
         bottom: 0;
+        
     }
     &__delete{
         background-color: transparent;
@@ -307,7 +301,7 @@
     z-index: 2;
     background-color: rgba(black, $alpha: 0.3);
 }
-.c-spacebelow{
+
+.c-spacetop{
     margin-bottom: 5rem;
 }
-

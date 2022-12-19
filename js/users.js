@@ -32,7 +32,7 @@ const loadJson = function () {
 				// console.log(getExtra.innerHTML)
 				htmlString += `
                 
-                    <table  class="c-users__table" style="overflow-x:auto;">
+                    <table  class="c-users__table js-" style="overflow-x:auto;">
                         <tr id="menu" class="c-users__tablerow c-users__tablerow--first  js-deleteuser js-adduser ">
                             <td class="c-users__category js-id"><input class="c-users__input  js-adduser  js-geboortedatum js-disable" type="text" placeholder="${id}" disabled /></td>
                             <td class="c-users__category js-achternaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" type="text" placeholder="${achternaam}" disabled /></td>
@@ -46,8 +46,8 @@ const loadJson = function () {
                                     </svg>
                                 </button>
                             </td>
-                            <div id="extramenu" class="c-users__extracontainer js-deleteuser" style="overflow-x:auto;">
-                                <td id="js-extra${id}" class="c-users__extradata u-hidden  d-flex js-extra ">
+                            <div id="extramenu" class="c-users__extracontainer js-addspacetop js-deleteuser" data-space="${id}" style="overflow-x:auto;"> 	 	
+                                <td id="js-extra${id}" class="c-users__extradata u-hidden  d-flex js-extra " data-spacetop="${id}">
                                     <div class="c-users__extrainformatie c-users__extrainformatie--1 ">
 
                                         <div class="c-users__geboortedatum">
@@ -112,12 +112,12 @@ const loadJson = function () {
                                         <div class="c-users__telefoonnummer"></div>
                                     </div>
                                     <div>
-                                        <button class="c-users__delete js-delete">
+                                        <button class="c-users__delete js-delete" data-deleteid="${id}">
                                             <svg style="width: 24px; height: 24px" class="c-users__deletesvg" viewBox="0 0 24 24">
                                                 <path fill="currentColor" class="c-users__deletepath" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
                                             </svg>
                                         </button>
-                                        <button class="c-users__edit js-edit">
+                                        <button class="c-users__edit js-edit" data-editid="${id}">
                                             <svg style="width: 24px; height: 24px" class="c-users__editsvg c-users__editsvg--edit js-editsvg" viewBox="0 0 24 24">
                                                 <path fill="currentColor" class="c-users__editpath" d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
                                             </svg>
@@ -144,37 +144,45 @@ const loadJson = function () {
 const listenToExpand = function () {
     const expandButtons = document.querySelectorAll(`.js-expand`);
     const expandSvg = document.querySelector('.js-expandbutton');
-	
+	const spacetop = document.querySelector(`.js-addspacetop`);
     for (const expandButton of expandButtons) {
         // console.log(expandButton);
         expandButton.addEventListener('click', function () {
             const idnumber = expandButton.getAttribute('data-id');
-            const extraTexts = document.getElementById(`js-extra${idnumber}`);
+			const spacenumbers = spacetop.getAttribute('data-space')
+            const extraTexts = document.getElementById(`js-extra${idnumber}`);		
 			extraTexts.classList.toggle("u-hidden");
-            const getUHidden = document.getElementsByClassName(`u-hidden${id}`);
-            console.log('click');
-            console.log(this.getAttribute('data-id'));
-            console.log(expandButton);
-            console.log(extraTexts);
-        });
+			extraTexts.classList.toggle("c-spacetop")
+
+
+
+            // console.log('click');
+            // console.log(this.getAttribute('data-id'));
+            // console.log(expandButton);
+            // console.log(extraTexts);
+		});
+
     }
 };
 const listenToEdit = function () {
-	const edit = document.querySelector(".js-edit");
+	const editusers = document.querySelectorAll(".js-edit");
 	const inputs = document.getElementsByClassName("js-disable");
+	// console.log(editusers)
+	
 	// console.log(inputs);
 	// console.log(edit);
 
-	edit.addEventListener("click", function () {
-		for (const input of inputs) {
-			input.toggleAttribute("disabled");
-		}
-		// console.log("edit")
-	});
+
+	// edit.addEventListener("click", function () {
+	// 	for (const input of inputs) {
+	// 		input.toggleAttribute("disabled");
+	// 	}
+	// 	// console.log("edit")
+	// });
 };
 
 const listenTodelete = function () {
-	const deletebutton = document.querySelector(".js-delete");
+	const deletebuttons = document.querySelectorAll(".js-delete");
 	const deleteusers = document.getElementsByClassName("js-deleteuser");
 
 	// deze zijn voor De modal window en aanpassingen aan de body
@@ -183,21 +191,23 @@ const listenTodelete = function () {
 	const verwijder = document.querySelector(".js-verwijder");
 	const cancel = document.querySelector(".js-cancel");
 
+	
 	// console.log(deletebutton);
-	// console.log(deleteusers);
+	console.log(deleteusers);
+	console.log(deletebuttons)
 
-	deletebutton.addEventListener("click", function () {
-		modal.classList.remove("u-hidden");
-		darkbackground.classList.add("c-darkbackground");
+	// deletebutton.addEventListener("click", function () {
+	// 	modal.classList.remove("u-hidden");
+	// 	darkbackground.classList.add("c-darkbackground");
 
-		// for(const deleteuser of deleteusers){
+	// 	// for(const deleteuser of deleteusers){
 
-		//     // console.log(deleteuser)
-		//     // console.log("click")
-		//     deleteuser.classList.add("u-hidden")
+	// 	//     // console.log(deleteuser)
+	// 	//     // console.log("click")
+	// 	//     deleteuser.classList.add("u-hidden")
 
-		// }
-	});
+	// 	// }
+	// });
 	verwijder.addEventListener("click", function () {
 		for (const deleteuser of deleteusers) {
 			deleteuser.classList.add("u-hidden");
@@ -245,11 +255,11 @@ const filterbuttons = function () {
 
 const accordeonUsers = function () {
 	loadJson();
-	setTimeout(listenToExpand, 5000);
-	setTimeout(listenToEditChange,5000)
-	setTimeout(listenTodelete,5000)
-	setTimeout(listenToEdit,5000)
-	setTimeout(filterbuttons,5000)
+	setTimeout(listenToExpand, 1000);
+	setTimeout(listenToEditChange,1000)
+	setTimeout(listenTodelete,1000)
+	setTimeout(listenToEdit,1000)
+	setTimeout(filterbuttons,1000)
 };
 
 document.addEventListener("DOMContentLoaded", accordeonUsers());
