@@ -1,179 +1,176 @@
 <!DOCTYPE html>
 <html lang="nl">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Dashboard</title>
-		<!-- favicon -->
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-		<link rel="manifest" href="/site.webmanifest" />
-		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-		<meta name="msapplication-TileColor" content="#2b5797" />
-		<meta name="theme-color" content="#000000" />
-		<!-- CSS -->
-		<link rel="stylesheet" href="./dist/index.css" />
-		<!-- JS -->
-		<script type="module" src="./dist/main.js"></script>
-	</head>
-	<body class="o-darkmode o-grid">
-		<nav>
-			<div class="c-nav">
-				<div class="c-sidebar">
-					<img class="c-sidebar__logo js-logo" src="/assets/svg/logo.svg" alt="GoPlay">
-					<img class="c-sidebar__logo js-logo u-hidden" src="/assets/svg/logo_dark.svg" alt="GoPlay">
-					<ul>
-						<li class="c-sidebar__item active"><a href="index.html">Dashboard</a></li>
-						<li class="c-sidebar__item"><a href="users.html">User management</a></li>
-						<li class="c-sidebar__item"><a href="content.html">Content managment</a></li>
-					</ul>
-					<div class="c-sidebar__account">
-						<h2>Account</h2>
-						<ul>
-							<li class="c-sidebar__item">
-								<div class="c-profile">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#2b5797" />
+    <meta name="theme-color" content="#000000" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./dist/index.css" />
+    <!-- JS -->
+    <script type="module" src="./dist/main.js"></script>
+  </head>
+  <body class="o-darkmode o-grid">
+    <nav class="c-nav">
+        <div class="c-sidebar">
+          <img class="c-sidebar__logo js-logo" src="/assets/svg/logo.svg" alt="GoPlay" />
+          <img class="c-sidebar__logo js-logo u-hidden" src="/assets/svg/logo_dark.svg" alt="GoPlay" />
+          <ul>
+            <li class="c-sidebar__item active"><a href="index.html">Dashboard</a></li>
+            <li class="c-sidebar__item"><a href="users.html">User management</a></li>
+            <li class="c-sidebar__item"><a href="content.html">Content managment</a></li>
+          </ul>
+          <div class="c-sidebar__account">
+            <h2>Account</h2>
+            <ul>
+              <li class="c-sidebar__item">
+                <div class="c-profile">
+                  <div class="c-profile--details">
+                    <img src="assets/img/tony_stark.png" alt="profileImg" />
+                  </div>
 
-									<div class="c-profile--details">
-										<img src="assets/img/tony_stark.png" alt="profileImg">
-									</div>
-
-									<div class="name-job">
-									<div class="profile_name">Tony Stark</div>
-									<div class="role">Admin</div>
-									</div>
-								</div>
-							</li>
-							<li class="c-sidebar__item"><a href="#">Settings</a></li>
-							<li class="c-sidebar__item"><a class="c-sidebar__item--accent js-logout" href="#">Log Out</a></li>
-							<li class="c-sidebar__button"><a class="c-button js-darkmode" href="#">Light Mode</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</nav>
-		<div class="c-graphs">
-			<div class="c-doGraph">
-				<div class="c-doGraph__title">
-					<h4>Geslacht</h4>
-				</div>
-				<div class="c-doGraph__legend">
-					<div>
-						<span class="c-doGraph__circle c-doGraph__circle--1"></span>
-						<p>Man</p>
-						<p>49%</p>
-					</div>
-					<div>
-						<span class="c-doGraph__circle c-doGraph__circle--2"></span>
-						<p>Vrouw</p>
-						<p>49%</p>
-					</div>
-					<div>
-						<span class="c-doGraph__circle c-doGraph__circle--3"></span>
-						<p>Non-binair</p>
-						<p>>1%</p>
-					</div>
-				</div>
-				<div class="c-doGraph__center">
-					<h4>1.5M</h4>
-				</div>
-				<div class="c-doGraph__info">
-					<div></div>
-					<div></div>
-				</div>
-				<!-- this is an empty div to create the chart with js -->
-				<div id="sex-chart" class="c-doGraph__chart"></div>
-			</div>
-			<div class="c-doGraph">
-				<div class="c-doGraph__title">
-					<h4>Leeftijd</h4>
-				</div>
-				<div class="c-doGraph__legend">
-					<div>
-						<span class="c-doGraph__circle c-doGraph__circle--1"></span>
-						<p>13-29 jaar</p>
-						<p>49%</p>
-					</div>
-					<div>
-						<span class="c-doGraph__circle c-doGraph__circle--2"></span>
-						<p>30-54 jaar</p>
-						<p>49%</p>
-					</div>
-					<div>
-						<span class="c-doGraph__circle c-doGraph__circle--3"></span>
-						<p>55+ jaar</p>
-						<p>>1%</p>
-					</div>
-				</div>
-				<div class="c-doGraph__center">
-					<h4>1.5M</h4>
-				</div>
-				<div class="c-doGraph__info">
-					<div></div>
-					<div></div>
-				</div>
-				<!-- this is an empty div to create the chart with js -->
-				<div id="age-chart" class="c-doGraph__chart"></div>
-			</div>
-			<div class="c-barGraph">
-				<div class="c-barGraph__title">
-					<h4>Gebruiker groei</h4>
-					<p>
-						12.5%
-						<span>
-							<svg viewBox="0 0 24 24">
-								<path fill="currentColor" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-							</svg>
-						</span>
-					</p>
-					<p>vergeleken met 7 maanden</p>
-				</div>
-				<div id="growth-graph" class="c-barGraph__chart"></div>
-				<div class="c-barGraph__legend">
-					<p>jan</p>
-					<p>feb</p>
-					<p>maart</p>
-					<p>apr</p>
-					<p>mei</p>
-					<p>jun</p>
-					<p>jul</p>
-				</div>
-			</div>
-			<div class="c-pieGraph">
-				<div class="c-pieGraph__title">
-					<h4>Dagelijkse gebruikers</h4>
-					<h5>150K</h5>
-				</div>
-				<div class="c-pieGraph__legend">
-					<div>
-						<span class="c-pieGraph__circle c-pieGraph__circle--1"></span>
-						<p>nieuwe gebruikers</p>
-					</div>
-					<div>
-						<span class="c-pieGraph__circle c-pieGraph__circle--2"></span>
-						<p>terugkerende gebruikers</p>
-					</div>
-				</div>
-				<div class="c-pieGraph__chart" id="daily-graph"></div>
-			</div>
-			<div class="c-pieGraph">
-				<div class="c-pieGraph__title">
-					<h4>Dagelijkse gebruikers</h4>
-					<h5>25K</h5>
-				</div>
-				<div class="c-pieGraph__legend">
-					<div>
-						<span class="c-pieGraph__circle c-pieGraph__circle--1"></span>
-						<p>maken account</p>
-					</div>
-					<div>
-						<span class="c-pieGraph__circle c-pieGraph__circle--2"></span>
-						<p>geen account</p>
-					</div>
-				</div>
-				<div class="c-pieGraph__chart" id="new-graph"></div>
-			</div>
-		</div>
-	</body>
+                  <div class="name-job">
+                    <div class="profile_name">Tony Stark</div>
+                    <div class="role">Admin</div>
+                  </div>
+                </div>
+              </li>
+              <li class="c-sidebar__item"><a href="#">Settings</a></li>
+              <li class="c-sidebar__item"><a class="c-sidebar__item--accent js-logout" href="#">Log Out</a></li>
+              <li class="c-sidebar__button"><a class="c-button js-darkmode" href="#">Light Mode</a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <div class="c-graphs">
+      <div class="c-doGraph">
+        <div class="c-doGraph__title">
+          <h4>Geslacht</h4>
+        </div>
+        <div class="c-doGraph__legend">
+          <div>
+            <span class="c-doGraph__circle c-doGraph__circle--1"></span>
+            <p>Man</p>
+            <p>49%</p>
+          </div>
+          <div>
+            <span class="c-doGraph__circle c-doGraph__circle--2"></span>
+            <p>Vrouw</p>
+            <p>49%</p>
+          </div>
+          <div>
+            <span class="c-doGraph__circle c-doGraph__circle--3"></span>
+            <p>Non-binair</p>
+            <p>>1%</p>
+          </div>
+        </div>
+        <div class="c-doGraph__center">
+          <h4>1.5M</h4>
+        </div>
+        <div class="c-doGraph__info">
+          <div></div>
+          <div></div>
+        </div>
+        <!-- this is an empty div to create the chart with js -->
+        <div id="sex-chart" class="c-doGraph__chart"></div>
+      </div>
+      <div class="c-doGraph">
+        <div class="c-doGraph__title">
+          <h4>Leeftijd</h4>
+        </div>
+        <div class="c-doGraph__legend">
+          <div>
+            <span class="c-doGraph__circle c-doGraph__circle--1"></span>
+            <p>13-29 jaar</p>
+            <p>49%</p>
+          </div>
+          <div>
+            <span class="c-doGraph__circle c-doGraph__circle--2"></span>
+            <p>30-54 jaar</p>
+            <p>49%</p>
+          </div>
+          <div>
+            <span class="c-doGraph__circle c-doGraph__circle--3"></span>
+            <p>55+ jaar</p>
+            <p>>1%</p>
+          </div>
+        </div>
+        <div class="c-doGraph__center">
+          <h4>1.5M</h4>
+        </div>
+        <div class="c-doGraph__info">
+          <div></div>
+          <div></div>
+        </div>
+        <!-- this is an empty div to create the chart with js -->
+        <div id="age-chart" class="c-doGraph__chart"></div>
+      </div>
+      <div class="c-barGraph">
+        <div class="c-barGraph__title">
+          <h4>Gebruiker groei</h4>
+          <p>
+            12.5%
+            <span>
+              <svg viewBox="0 0 24 24">
+                <path fill="currentColor" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+              </svg>
+            </span>
+          </p>
+          <p>vergeleken met 7 maanden</p>
+        </div>
+        <div id="growth-graph" class="c-barGraph__chart"></div>
+        <div class="c-barGraph__legend">
+          <p>jan</p>
+          <p>feb</p>
+          <p>maart</p>
+          <p>apr</p>
+          <p>mei</p>
+          <p>jun</p>
+          <p>jul</p>
+        </div>
+      </div>
+      <div class="c-pieGraph">
+        <div class="c-pieGraph__title">
+          <h4>Dagelijkse gebruikers</h4>
+          <h5>150K</h5>
+        </div>
+        <div class="c-pieGraph__legend">
+          <div>
+            <span class="c-pieGraph__circle c-pieGraph__circle--1"></span>
+            <p>nieuwe gebruikers</p>
+          </div>
+          <div>
+            <span class="c-pieGraph__circle c-pieGraph__circle--2"></span>
+            <p>terugkerende gebruikers</p>
+          </div>
+        </div>
+        <div class="c-pieGraph__chart" id="daily-graph"></div>
+      </div>
+      <div class="c-pieGraph">
+        <div class="c-pieGraph__title">
+          <h4>Dagelijkse gebruikers</h4>
+          <h5>25K</h5>
+        </div>
+        <div class="c-pieGraph__legend">
+          <div>
+            <span class="c-pieGraph__circle c-pieGraph__circle--1"></span>
+            <p>maken account</p>
+          </div>
+          <div>
+            <span class="c-pieGraph__circle c-pieGraph__circle--2"></span>
+            <p>geen account</p>
+          </div>
+        </div>
+        <div class="c-pieGraph__chart" id="new-graph"></div>
+      </div>
+    </div>
+  </body>
 </html>
