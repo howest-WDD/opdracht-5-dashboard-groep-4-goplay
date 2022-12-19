@@ -1,0 +1,39 @@
+@use '../settings/colors' as color;
+
+.c-map {
+	width: 560px;
+	height: 320px;
+
+	border: solid 1px color.$accent-00;
+	border-radius: 20px;
+
+	position: relative;
+
+	&__graph {
+		width: 400px;
+		height: 320px;
+
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	&__legend {
+		margin-left: 20px;
+
+		color: color.$shades-00;
+
+		h4 {
+			font-size: 1.125rem;
+		}
+	}
+
+	&__list {
+		list-style: none;
+
+		padding: 0;
+	}
+
+	&__listitem {
+	}
+}
