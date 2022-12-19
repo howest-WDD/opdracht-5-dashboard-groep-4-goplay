@@ -1,6 +1,6 @@
 'use strict';
-// importing plotly
-import 'https://cdn.plot.ly/plotly-2.16.4.min.js';
+
+var graphWidth = document.querySelector('.js-income').clientWidth;
 
 // creating the layout for the chart
 var layout = {
@@ -14,7 +14,7 @@ var layout = {
 	},
 	// width and height of chart
 	height: 100,
-	width: 500,
+	width: graphWidth,
 	// disable legend (we create custom)
 	showlegend: false,
 	xaxis: {

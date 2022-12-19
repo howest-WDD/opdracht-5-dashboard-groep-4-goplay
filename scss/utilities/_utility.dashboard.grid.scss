@@ -1,3 +1,5 @@
+@use '../tools/tools.breakpoints' as bp;
+
 // grid row 1
 .u-grid__heading {
 	grid-area: heading;
@@ -38,15 +40,28 @@
 
 	display: grid;
 
-	grid-template-rows: 1fr 1fr;
-	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr;
 
 	grid-template-areas:
-		'label0 label3'
-		'label1 label2';
+		'label0'
+		'label3'
+		'label1'
+		'label2';
 
 	gap: 20px;
-	height: 322px;
+	height: auto;
+
+	@include bp.up(tl) {
+		grid-template-rows: 1fr 1fr;
+		grid-template-columns: 1fr 1fr;
+
+		grid-template-areas:
+			'label0 label3'
+			'label1 label2';
+
+		height: 322px;
+	}
 
 	&:nth-child(0) {
 		grid-area: label0;

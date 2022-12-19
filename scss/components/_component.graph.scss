@@ -1,31 +1,73 @@
 @use '../settings/colors' as color;
 @use '../tools/tools.breakpoints' as bp;
 
+.c-graphflex {
+	display: flex;
+	justify-content: center;
+
+	@include bp.up(tl) {
+		display: block;
+	}
+}
+
 .c-graphs {
 	grid-area: 'content';
 
-	margin-left: 50px;
-	margin-right: 100px;
+	// margin-left: 50px;
+	// margin-right: 100px;
 
 	height: 100%;
-	width: calc(100vw - 400px);
+	width: calc(100% - 75px);
 
 	display: grid;
 
-	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 100px 300px 300px 300px 300px 300px 300px 322px 1fr 120px 120px;
+	grid-template-columns: 300px 1px;
 
 	grid-template-areas:
-		'heading heading heading'
-		'growth daily returning'
-		'sex age genre'
-		'map map map'
-		'totals totals totals'
-		'income income costs';
+		'heading -'
+		'growth -'
+		'daily -'
+		'returning -'
+		'sex -'
+		'age -'
+		'genre -'
+		'map -'
+		'totals -'
+		'income -'
+		'costs -';
 
 	gap: 20px;
 
 	@include bp.up(tl) {
+		width: calc(100vw - 400px);
+	}
+
+	@include bp.up(ml) {
+		grid-template-rows: 100px 300px 300px 300px 320px 1fr 1fr;
+		grid-template-columns: 49% 49% 1fr;
+
+		grid-template-areas:
+			'heading heading -'
+			'growth daily -'
+			'returning sex  -'
+			'age genre -'
+			'map map  -'
+			'totals totals  -'
+			'income costs -';
+	}
+
+	@include bp.up(ls) {
+		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-template-columns: 32% 32% 32% 1fr;
+
+		grid-template-areas:
+			'heading heading heading -'
+			'growth daily returning -'
+			'sex age genre -'
+			'map map map -'
+			'totals totals totals -'
+			'income income costs -';
 	}
 
 	@include bp.up(fhd) {
@@ -305,7 +347,7 @@
 
 // sine graphs
 .c-sineGraph {
-	min-width: 500px;
+	// min-width: 500px;
 	height: 120px;
 
 	border: solid color.$accent-00;
@@ -369,7 +411,7 @@
 // radargraph
 .c-genre {
 	min-width: 270px;
-	height: 320px;
+	height: 300px;
 
 	border: solid color.$accent-00;
 	border-width: 1px;
@@ -392,6 +434,8 @@
 
 	&__txt {
 		margin-left: 20px;
+
+		position: absolute;
 
 		color: color.$shades-00;
 
