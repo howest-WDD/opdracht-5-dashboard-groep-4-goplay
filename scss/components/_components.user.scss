@@ -94,7 +94,7 @@
     }
     &__tablerow{
         color: color.$text-color-a;
-     
+        position: relative;
     
         
        
@@ -134,9 +134,15 @@
         background-color: color.$neutral-900;
         display: flex;
         z-index: 5;
+        position: relative;
        
 
 
+    }
+    &__extradata{
+         position: absolute;
+         left: 0;
+         
     }
     &__extrainformatie{
         text-align: left;
@@ -216,6 +222,8 @@
     &__extracontainer{
         justify-content: space-between;
         flex-direction: column;
+        position: absolute;
+        bottom: 0;
     }
     &__delete{
         background-color: transparent;
@@ -298,5 +306,8 @@
     bottom: 0;
     z-index: 2;
     background-color: rgba(black, $alpha: 0.3);
+}
+.c-spacebelow{
+    margin-bottom: 5rem;
 }
 

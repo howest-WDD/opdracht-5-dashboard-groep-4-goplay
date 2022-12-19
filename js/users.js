@@ -1,5 +1,6 @@
 let modal;
 let sect;
+let id;
 
 const loadJson = function () {
 	let htmlString = ``;
@@ -12,7 +13,7 @@ const loadJson = function () {
 			const users = json.users;
 
 			for (const user of users) {
-				const id = user.UID;
+				id = user.UID;
 				const voornaam = user.voornaam;
 				const achternaam = user.achternaam;
 				const mail = user.mail;
@@ -39,14 +40,14 @@ const loadJson = function () {
                             
                             <td class="c-users__category js-mail"><input class="c-users__input js-adduser  js-geboortedatum js-disable" type="text" placeholder="${mail}" disabled /></td>
                             <td class="c-users__category">
-                                <button class="c-users__expandbutton js-expand">
-                                    <svg class="c-users__expandicon js-expandbutton" viewBox="0 0 24 24">
+                                <button id="js-expandid${id}" class="c-users__expandbutton js-expand ">
+                                    <svg id="${id}" class="c-users__expandicon js-expandbutton js-expandbutton${id}" viewBox="0 0 24 24">
                                         <path fill="currentColor" d="M7,10L12,15L17,10H7Z" />
                                     </svg>
                                 </button>
                             </td>
-                            <table id="extramenu" class="c-users__extracontainer js-deleteuser" style="overflow-x:auto;">
-                                <td class="c-users__extradata u-hidden d-flex js-extra">
+                            <div id="extramenu" class="c-users__extracontainer js-deleteuser" style="overflow-x:auto;">
+                                <td id="js-extra${id}" class="c-users__extradata u-hidden d-flex js-extra js-extraid${id}">
                                     <div class="c-users__extrainformatie c-users__extrainformatie--1 ">
 
                                         <div class="c-users__geboortedatum">
@@ -123,14 +124,14 @@ const loadJson = function () {
                                         </button>
                                     </div>
                                 </td>
-                            </table>
+                            </div>
                         </tr>
                     
                     </table>
                 
 				`;
 
-		
+
 
 				// console.log(htmlString);
 			}
@@ -138,40 +139,38 @@ const loadJson = function () {
 
 			// console.log(htmlString)
 		});
+
+		
 };
 
 const listenToExpand = function () {
-	const expandButtons = document.getElementsByClassName("js-expand");
-	const extra = document.querySelector(".js-extra");
+
+	const expandButtons = document.querySelectorAll(`.js-expand`);
 	const expandSvg = document.querySelector(".js-expandbutton");
-	// console.log(expand)
+	const extraTexts = document.getElementById(`js-extra${id}`);
+	const getUHidden = document.getElementsByClassName(`u-hidden${id}`)
 
-    for(const expandbutton of expandButtons){
-        console.log(expandbutton)
-        expandbutton.addEventListener("click",function(){
-            console.log("click")
-        })
-    }
+	for(const expandButton of expandButtons){
+		console.log(expandButton)
+		expandButton.addEventListener("click",function(){
+			console.log("click");
+			console.log(expandButton)
+			console.log(extraTexts)
+		})
+	}
 
-	    expandButton.addEventListener("click",function(){
-	        if(extra.classList.contains("u-hidden")){
-	            extra.classList.toggle("u-hidden")
-	            expandSvg.classList.toggle("c-users__expandicon--turnaround")
-	        } else if(!extra.classList.contains("u-hidden")){
-	            extra.classList.toggle("u-hidden")
-	            expandSvg.classList.toggle("c-users__expandicon--turnaround")
-	        }
+		
+	
+	
 
-	    // console.log(extra)
-	    // console.log("click")
-	})
+	
 };
 
 const listenToEdit = function () {
 	const edit = document.querySelector(".js-edit");
 	const inputs = document.getElementsByClassName("js-disable");
-	console.log(inputs);
-	console.log(edit);
+	// console.log(inputs);
+	// console.log(edit);
 
 	edit.addEventListener("click", function () {
 		for (const input of inputs) {
@@ -191,8 +190,8 @@ const listenTodelete = function () {
 	const verwijder = document.querySelector(".js-verwijder");
 	const cancel = document.querySelector(".js-cancel");
 
-	console.log(deletebutton);
-	console.log(deleteusers);
+	// console.log(deletebutton);
+	// console.log(deleteusers);
 
 	deletebutton.addEventListener("click", function () {
 		modal.classList.remove("u-hidden");
@@ -253,11 +252,11 @@ const checkIfWorks = function () {
 
 const accordeonUsers = function () {
 	loadJson();
-	listenToExpand();
-	listenToEdit();
-	listenTodelete();
-	listenToEditChange();
-	checkIfWorks();
+	setTimeout(listenToExpand, 5000);
+	setTimeout(listenToEditChange,5000)
+	setTimeout(listenTodelete,5000)
+	setTimeout(listenToEdit,5000)
+	setTimeout(checkIfWorks,5000)
 };
 
 document.addEventListener("DOMContentLoaded", accordeonUsers());
