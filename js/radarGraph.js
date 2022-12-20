@@ -32,10 +32,10 @@ const createGenreGraph = function () {
 						stepSize: 1,
 					},
 					grid: {
-						color: '#00F0C8',
+						color: 'rgba(0, 240, 200, 0.5)',
 					},
 					pointLabels: {
-						color: '#ffffff',
+						color: '#00F0C8',
 						font: {
 							size: 14,
 						},

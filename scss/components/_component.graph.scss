@@ -7,6 +7,8 @@
 
 	@include bp.up(tl) {
 		display: block;
+
+		margin-left: 50px;
 	}
 }
 
@@ -120,7 +122,7 @@
 		font-size: 1.125rem;
 		font-weight: 700;
 
-		color: color.$shades-00;
+		color: color.$text-color-a;
 
 		h4 {
 			margin-left: 20px;
@@ -142,7 +144,7 @@
 			justify-content: space-between;
 			align-items: center;
 
-			color: color.$shades-00;
+			color: color.$text-color-a;
 
 			p {
 				margin: 2px;
@@ -215,7 +217,7 @@
 
 		margin-left: 20px;
 
-		color: color.$shades-00;
+		color: color.$text-color-a;
 
 		h4 {
 			margin-top: 20px;
@@ -224,6 +226,12 @@
 
 		p {
 			margin: 4px 0;
+
+			span {
+				svg {
+					rotate: 180deg;
+				}
+			}
 		}
 
 		:nth-child(2) {
@@ -250,7 +258,7 @@
 		position: absolute;
 		bottom: 12px;
 
-		color: color.$shades-00;
+		color: color.$text-color-a;
 
 		font-weight: 700;
 
@@ -288,7 +296,7 @@
 		font-size: 1.125rem;
 		font-weight: 700;
 
-		color: color.$shades-00;
+		color: color.$text-color-a;
 
 		h4 {
 			margin-left: 20px;
@@ -318,7 +326,7 @@
 			justify-content: space-between;
 			align-items: center;
 
-			color: color.$shades-00;
+			color: color.$text-color-a;
 
 			p {
 				margin: 2px;
@@ -374,7 +382,7 @@
 			margin-top: 8px;
 			margin-left: 20px;
 
-			color: color.$shades-00;
+			color: color.$text-color-a;
 		}
 
 		h5 {
@@ -412,7 +420,7 @@
 // radargraph
 .c-genre {
 	min-width: 270px;
-	height: 300px;
+	height: 320px;
 
 	border: solid color.$accent-00;
 	border-width: 1px;
@@ -424,6 +432,10 @@
 
 	display: flex;
 	justify-content: center;
+
+	@include bp.down(ll) {
+		height: 300px;
+	}
 
 	&__graph {
 		width: 250px;
@@ -438,7 +450,7 @@
 
 		position: absolute;
 
-		color: color.$shades-00;
+		color: color.$text-color-a;
 
 		h4 {
 			font-size: 18px;
