@@ -20,6 +20,36 @@
 	</head>
 
 	<body class="o-darkmode o-grid js-body c-users__body">
+		<nav class="wrapper">
+			<div class="sidebar">
+				<img class="logo" src="/assets/svg/logo.svg" alt="GoPlay" />
+				<ul>
+					<li class="item active"><a href="#">Dashboard</a></li>
+					<li class="item"><a href="#">User management</a></li>
+					<li class="item"><a href="#">Content managment</a></li>
+				</ul>
+				<div class="sidebar__account">
+					<h2>Account</h2>
+					<ul>
+						<li class="item">
+							<div class="profile-details">
+								<div class="profile-content">
+									<img src="assets/img/tony_stark.png" alt="profileImg" />
+								</div>
+
+								<div class="name-job">
+									<div class="profile_name">Tony Stark</div>
+									<div class="role">Admin</div>
+								</div>
+							</div>
+						</li>
+						<li class="item"><a href="#">Settings</a></li>
+						<li class="item"><a class="item__accent" href="#">Log Out</a></li>
+						<li class="dark"><a class="c-button js-darkmode" href="#">Light Mode</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 		<div class="js-darkbackground"></div>
 		<div class="c-users">
 			<div class="c-users__inputcontainer">
@@ -28,19 +58,22 @@
 				</svg>
 				<input type="text" class="c-users__userinput" placeholder="Search users" />
 			</div>
-			
-			<table id="menu" class="c-users__table  table table-responsive" style="overflow-x:auto;">
+
+			<table id="menu" class="c-users__table table table-responsive" style="overflow-x: auto">
 				<tr class="c-users__tablemainrow">
-					<th class="c-users__id c-users__id--active js-filter">Id <span class="c-users__active"><svg xmlns="http://www.w3.org/2000/svg" class="c-users__activesvg" viewBox="0 0 24 24"><path class="c-users__activesvgpath" d="M7,10L12,15L17,10H7Z" /></svg></span></th>
+					<th class="c-users__id c-users__id--active js-filter">
+						Id
+						<span class="c-users__active"
+							><svg xmlns="http://www.w3.org/2000/svg" class="c-users__activesvg" viewBox="0 0 24 24"><path class="c-users__activesvgpath" d="M7,10L12,15L17,10H7Z" /></svg
+						></span>
+					</th>
 					<th class="c-users__achternaam js-filter">Achternaam</th>
 					<th class="c-users__voornaam js-filter">Voornaam</th>
 					<th class="c-users__mail js-filter">Mail</th>
 					<th class="c-users__expand js-filter"></th>
 				</tr>
-
-				
 			</table>
-			
+
 			<div class="c-modal js-modal u-hidden">
 				<div class="c-modal__container">
 					<div class="c-modal__textcontainer">
@@ -51,9 +84,7 @@
 						<button class="c-modal__cancelknop js-cancel">Cancel</button>
 					</div>
 				</div>
-				
 			</div>
 		</div>
-		
 	</body>
 </html>
