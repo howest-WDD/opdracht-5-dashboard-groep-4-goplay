@@ -1,307 +1,296 @@
-@use '../settings/colors.scss' as color;
-@use '../tools/tools.breakpoints' as bp;
+@use "../settings/colors.scss" as color;
+@use "../tools/tools.breakpoints" as bp;
 
-.c-users{
+.c-users {
+	grid-area: "content";
 
-    grid-area: "content";
-    
-    
+	&__inputcontainer {
+		position: relative;
+		margin-bottom: 2rem;
+		justify-content: center;
+	}
+	&__inputsvg {
+		width: 16px;
+		height: 16px;
+		fill: color.$text-color-a;
+		position: absolute;
+		margin-top: 0.75rem;
+		margin-left: 0.5rem;
+	}
+	&__inputsvgpath {
+		fill: color.$text-color-a;
+	}
+	&__userinput {
+		border-radius: 10px;
+		padding-left: 1.5rem;
+		background-color: color.$neutral-900;
+		border: 2px solid color.$accent-00;
+		max-width: 100vh;
+		width: 100vh;
+		height: 32px;
+		justify-content: center;
+		box-shadow: none;
+		color: color.$text-color-a;
 
-    &__inputcontainer{
-        position: relative;
-        margin-bottom: 2rem;
-        justify-content: center;
-    }
-    &__inputsvg{
-        width: 16px;
-        height: 16px;
-        fill: color.$text-color-a   ;
-        position: absolute;
-        margin-top: 0.75rem;
-        margin-left: 0.5rem;
-        
-        
-        
-    }
-    &__inputsvgpath{
-        fill: color.$text-color-a;
-    }
-    &__userinput{   
-        border-radius: 10px;
-        padding-left: 1.5rem;
-        background-color:color.$neutral-900 ;
-        border: 2px solid color.$accent-00;
-        max-width: 100vh;
-        width: 100vh;
-        height: 32px;
-        justify-content: center;
-        box-shadow: none;
-        color: color.$text-color-a;
+		&:active {
+			box-shadow: none;
+			border: 2px solid color.$accent-00;
+		}
 
-        &:active{
-            box-shadow: none;
-            border: 2px solid color.$accent-00;
-        }
-        
-        &:focus{
-            box-shadow: none;
-            border: 2px solid color.$accent-00;
-        }
-        &::placeholder{
-            color: color.$text-color-a;
-            box-shadow: none;
-        }
-    }
-    &__tablemainrow{
-        color: color.$text-color-a;
-        background-color: color.$neutral-900;
-        padding: 1rem 0rem;
-    }
-    &__table{
-        width: 100%;
-      
+		&:focus {
+			box-shadow: none;
+			border: 2px solid color.$accent-00;
+		}
+		&::placeholder {
+			color: color.$text-color-a;
+			box-shadow: none;
+		}
+	}
+	&__tablemainrow {
+		color: color.$text-color-a;
+		background-color: color.$neutral-900;
+		padding: 1rem 0rem;
+	}
+	&__table {
+		width: 100%;
+	}
+	&__id {
+		position: relative;
+		cursor: pointer;
+	}
+	&__achternaam {
+		position: relative;
+		cursor: pointer;
+	}
+	&__voornaam {
+		position: relative;
+		cursor: pointer;
+	}
+	&__mail {
+		position: relative;
+		cursor: pointer;
+	}
+	&__expand {
+	}
+	&__activesvg {
+		position: absolute;
+		top: 0.625rem;
+		width: 32px;
+		fill: color;
+	}
+	&__activesvgpath {
+		fill: color.$text-color-a;
+	}
+	&__tablerow {
+		color: color.$text-color-a;
+		position: relative;
+	}
+	&__category {
+		border-bottom: 2px solid grey;
+		background-color: color.$neutral-900;
+		z-index: 4000;
+	}
 
+	&__id {
+		background-color: color.$neutral-900;
+		padding: 1rem 0rem;
 
+		&--active {
+			background-color: color.$accent-00;
+		}
+	}
+	&__expandbutton {
+		background-color: transparent;
+		border: none;
+	}
+	&__expandicon {
+		background-color: color.$accent-00;
+		border: none;
+		font-size: 16px;
+		padding: 0.3rem 1.5rem;
+		border-radius: 35%;
+		width: 32px;
+		height: 32px;
+		cursor: pointer;
+	}
 
-    }
-    &__id{
-        position: relative;
-        cursor: pointer;
-    }
-    &__achternaam{
-        position: relative;
-        cursor: pointer;
-    }
-    &__voornaam{
-        position: relative;
-        cursor: pointer;
-    }
-    &__mail{
-        position: relative;
-        cursor: pointer;
-    }
-    &__expand{
+	&__extradata {
+		position: absolute;
+		left: 0;
+		margin-top: 52px;
+		background-color: color.$neutral-900;
+	}
+	&__extrainformatie {
+		text-align: left;
+		display: flex;
+		justify-content: space-between;
+	}
+	&__align1 {
+		text-align: left;
+	}
+	&__align2 {
+		text-align: left;
+	}
+	&__align3 {
+	}
+	&__geboortedatum {
+		text-align: left;
+	}
+	&__straatnaam {
+	}
+	&__nieuwsbrief {
+	}
+	&__postcode {
+	}
+	&__nr {
+	}
+	&__reclame {
+	}
+	&__gemeente {
+	}
 
-    }
-    &__activesvg{
-        position: absolute;
-        top: .625rem;
-        width: 32px;
-        fill: color;
-    }  
-    &__activesvgpath{
-        fill: color.$text-color-a;
-    }
-    &__tablerow{
-        color: color.$text-color-a;
-        position: relative;
-    
-        
-       
-    }
-    &__category{
-        border-bottom: 2px solid grey;
-        background-color: color.$neutral-900;
-        
-        
-    }
+	&__label {
+		color: color.$text-color-a;
+		font-weight: bold;
+		margin-right: 2rem;
+	}
+	&__input {
+		background-color: color.$neutral-800;
+		border: 2px solid grey;
+		border-radius: 4px;
+		color: color.$text-color-a;
+		margin-right: 2rem;
+		line-height: 2rem;
 
-    &__id{
-        background-color: color.$neutral-900;
-        padding: 1rem 0rem;
-        
-        &--active{
-            background-color: color.$accent-00;
-        }
-    }
-    &__expandbutton{
-        background-color: transparent;
-        border: none;
-    }
-    &__expandicon{
-        background-color: color.$accent-00;
-        border: none;
-        font-size: 16px;
-        padding: 0.3rem 1.5rem;
-        border-radius: 35%;
-        width: 32px;
-        height: 32px ;
-        cursor: pointer;
-    }
+		align-items: center;
+		&::placeholder {
+			color: color.$text-color-a;
+			border: none;
+		}
+		&:focus {
+			border: 2px solid grey;
+			outline: none;
+		}
 
-    &__extradata{
-         position: absolute;
-         left: 0;
-          
-         background-color: color.$neutral-900;
+		&:active {
+			background-color: color.$neutral-800;
+			border: 2px solid grey;
+			box-shadow: none;
+			border-radius: 4px;
+		}
+		&:disabled {
+			background-color: transparent;
+			border: none;
+		}
+	}
+	&__extracontainer {
+		justify-content: space-between;
+		flex-direction: column;
 
-         
-    }
-    &__extrainformatie{
-        text-align: left;
-        display: flex;
-        justify-content: space-between;
-        
-        
-    }
-    &__align1{
-        text-align: left;
-    }
-    &__align2{
-        text-align: left;
-    }   
-    &__align3{
-        
-    }
-    &__geboortedatum{
-     text-align: left;
-    }
-    &__straatnaam{
+		bottom: 0;
+	}
+	&__delete {
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+	}
+	&__deletesvg {
+		background-color: transparent;
+	}
+	&__deletepath {
+		background-color: transparent;
+		fill: color.$accent-00;
+	}
+	&__edit {
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+	}
+	&__editsvg {
+		background-color: transparent;
+	}
 
-    }
-    &__nieuwsbrief{
-
-    }
-    &__postcode{
-
-    }
-    &__nr{
-
-    }
-    &__reclame{
-
-    }
-    &__gemeente{
-
-    }
-
-    &__label{
-        color: color.$text-color-a;
-        font-weight: bold;
-        margin-right: 2rem;
-    }
-    &__input{
-        background-color: color.$neutral-800;
-        border:  2px solid grey;
-        border-radius: 4px;
-        color: color.$text-color-a;
-        margin-right: 2rem;
-        line-height: 2rem;
-
-        align-items: center;
-        &::placeholder{
-            color: color.$text-color-a;
-            border: none;
-        }
-        &:focus{
-            border:  2px solid grey;
-            outline: none;
-        }
-        
-
-        
-        &:active{
-            background-color: color.$neutral-800;
-            border:  2px solid grey;
-            box-shadow: none;
-            border-radius: 4px;
-        }
-        &:disabled{
-            
-            background-color: transparent;
-            border: none;
-        }
-    }
-    &__extracontainer{
-        justify-content: space-between;
-        flex-direction: column;
-        
-        bottom: 0;
-        
-    }
-    &__delete{
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }
-    &__deletesvg{
-        background-color: transparent;
-    }
-    &__deletepath{
-        background-color: transparent;
-        fill: color.$accent-00;
-    }
-    &__edit{
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }
-    &__editsvg{
-        background-color: transparent;
-    }
-
-    &__editpath{
-        background-color: transparent;
-        fill: color.$accent-00;
-    }
-
+	&__editpath {
+		background-color: transparent;
+		fill: color.$accent-00;
+	}
 }
-.c-modal{
-    position: relative;
-    z-index: 300;
-    
-    &__container{
-       position: absolute;
-        justify-content: center;
-        background-color: color.$neutral-800;
-        border:2px solid color.$accent-00;
-        padding: 1rem;
-        left: 50vh;
-        top: 30vh;
-    }
-    &__textcontainer{
-
-    }
-    &__text{
-        color: color.$text-color-a;
-    }
-    &__buttoncontainer{
-        display: flex;
-        justify-content: center;
-        justify-content: space-around;
-    }
-    &__verwijderknop{
-        padding: 1rem;
-        background-color: color.$accent-100;
-        border: none;
-        cursor: pointer;
-    }
-    &__cancelknop{
-        padding: 1rem;
-        background-color: color.$accent-00;
-        border: none;
-        cursor: pointer;
-    }
+.c-modal {
+	position: fixed; /* Stay in place */
+	z-index: 4000
+    ; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+	&__container {
+		justify-content: center;
+		background-color: color.$neutral-800;
+		border: 2px solid color.$accent-00;
+		padding: 1rem;
+	}
+	&__textcontainer {
+	}
+	&__text {
+		color: color.$text-color-a;
+	}
+	&__buttoncontainer {
+		display: flex;
+		justify-content: center;
+		justify-content: space-around;
+	}
+	&__verwijderknop {
+		padding: 1rem;
+		background-color: color.$accent-100;
+		border: none;
+		cursor: pointer;
+	}
+	&__cancelknop {
+		padding: 1rem;
+		background-color: color.$accent-00;
+		border: none;
+		cursor: pointer;
+	}
 }
 
-.c-users__expandicon--turnaround{
-    transform:rotate(180deg);
-}
-.c-users__body{
+// .c-modal{
+//     position: fixed; /* Stay in place */
+//     z-index: 20; /* Sit on top */
+//     width: 50%; /* Full width */
+//     height: 50%; /* Full height */
+//     overflow: auto; /* Enable scroll if needed */
+//     background-color: rgb(0, 0, 0); /* Fallback color */
+//     background-color: rgba(0, 0, 0, 0.4);
 
+//
+// }
+
+.c-users__expandicon--turnaround {
+	transform: rotate(180deg);
 }
-.c-darkbackground{
-    position: fixed;
-    
-    height: 100vh;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-    background-color: rgba(black, $alpha: 0.3);
+.c-users__body {
+}
+.c-darkbackground {
+	position: fixed;
+
+	height: 100vh;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
+	background-color: rgba(black, $alpha: 0.3);
 }
 
-.c-spacetop{
-    margin-bottom: 5rem;
+.c-spacetop {
+	padding: 5rem;
+	margin-top: 5rem;
+}
+
+.c-changebackground {
+	border-bottom: 2px solid color.$accent-00;
+	background-color: color.$neutral-900;
 }
