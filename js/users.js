@@ -5,9 +5,9 @@ let id;
 const loadJson = function () {
 	let htmlString = ``;
 
-	const getElement = document.getElementById("menu");
+	const getElement = document.getElementById('menu');
 
-	fetch("../json/users.json")
+	fetch('../json/users.json')
 		.then((response) => response.json())
 		.then((json) => {
 			const users = json.users;
@@ -46,7 +46,7 @@ const loadJson = function () {
                                     </svg>
                                 </button>
                             </td>
-                            <div id="extramenu" class="c-users__extracontainer  c-spacetop js-deleteuser"  style="overflow-x:auto;"> 	 	
+                            <div id="extraMenu${id}" class="c-users__extracontainer js-deleteuser" extra-menu="${id}"  style="overflow-x:auto;" > 	 	
                                 <td id="js-extra${id}" class="c-users__extradata u-hidden  d-flex js-extra " >
                                     <div class="c-users__extrainformatie c-users__extrainformatie--1 ">
 
@@ -139,80 +139,87 @@ const loadJson = function () {
 
 const listenToExpand = function () {
 	const expandButtons = document.querySelectorAll(`.js-expand`);
-	const expandSvg = document.querySelector(".js-expandbutton");
+	const expandSvg = document.querySelector('.js-expandbutton');
 
 	for (const expandButton of expandButtons) {
 		// console.log(expandButton);
-		expandButton.addEventListener("click", function () {
-			const idnumber = expandButton.getAttribute("data-id");
+		expandButton.addEventListener('click', function () {
+			const idnumber = expandButton.getAttribute('data-id');
 			const extraTexts = document.getElementById(`js-extra${idnumber}`);
-			extraTexts.classList.toggle("u-hidden");
-
+			extraTexts.classList.toggle('u-hidden');
+			const extraMenu = document.getElementById(`extraMenu${idnumber}`);
+			// console.log(`extraMenu${idnumber}`);
+			// console.log(extraMenu);
+			extraMenu.classList.toggle('c-spacetop');
+			// const nextNumb = idnumber - 1;
+			// const nextText = document.getElementById(`js-extra${nextNumb}`);
+			// nextText.classList.toggle('c-spacetop');
 		});
 	}
 };
+
 const listenToEdit = function () {
-	const editusers = document.querySelectorAll(".js-edit");
-	const inputs = document.getElementsByClassName("js-disable");
+	const editusers = document.querySelectorAll('.js-edit');
+	const inputs = document.getElementsByClassName('js-disable');
 	for (const input of inputs) {
 		for (const edituser of editusers) {
-			console.log(edituser);
+			// console.log(edituser);
 
-			edituser.addEventListener("click", function () {
-				console.log("click");
+			edituser.addEventListener('click', function () {
+				console.log('click');
 
-				const deleteid = edituser.getAttribute("data-editid");
+				const deleteid = edituser.getAttribute('data-editid');
 				// console.log(deleteid);
 				const disable = document.getElementById(`js-editid${deleteid}`);
 				// console.log(disable);
 
-				input.toggleAttribute("disabled");
+				input.toggleAttribute('disabled');
 			});
 		}
 	}
 };
 
 const listenTodelete = function () {
-	const deletebuttons = document.querySelectorAll(".js-delete");
-	const deleteusers = document.getElementsByClassName("js-deleteuser");
+	const deletebuttons = document.querySelectorAll('.js-delete');
+	const deleteusers = document.getElementsByClassName('js-deleteuser');
 
 	// deze zijn voor De modal window en aanpassingen aan de body
-	const darkbackground = document.querySelector(".js-darkbackground");
-	const modal = document.querySelector(".js-modal");
-	const verwijder = document.querySelector(".js-verwijder");
-	const cancel = document.querySelector(".js-cancel");
-	for(const deletebutton of deletebuttons){
-		deletebutton.addEventListener("click", function () {
-			modal.classList.remove("u-hidden");
-			darkbackground.classList.add("c-darkbackground");
+	const darkbackground = document.querySelector('.js-darkbackground');
+	const modal = document.querySelector('.js-modal');
+	const verwijder = document.querySelector('.js-verwijder');
+	const cancel = document.querySelector('.js-cancel');
+	for (const deletebutton of deletebuttons) {
+		deletebutton.addEventListener('click', function () {
+			modal.classList.remove('u-hidden');
+			darkbackground.classList.add('c-darkbackground');
 		});
 	}
-	verwijder.addEventListener("click", function () {
+	verwijder.addEventListener('click', function () {
 		for (const deleteuser of deleteusers) {
-			deleteuser.classList.add("u-hidden");
+			deleteuser.classList.add('u-hidden');
 		}
-		modal.classList.add("u-hidden");
-		darkbackground.classList.remove("c-darkbackground");
+		modal.classList.add('u-hidden');
+		darkbackground.classList.remove('c-darkbackground');
 	});
-	cancel.addEventListener("click", function () {
-		modal.classList.add("u-hidden");
-		darkbackground.classList.remove("c-darkbackground");
+	cancel.addEventListener('click', function () {
+		modal.classList.add('u-hidden');
+		darkbackground.classList.remove('c-darkbackground');
 	});
 };
 
 const listenToEditChange = function () {
-	const editButtons = document.querySelectorAll(".js-edit");
-	const editSvgs = document.querySelectorAll(".js-editsvg");
+	const editButtons = document.querySelectorAll('.js-edit');
+	const editSvgs = document.querySelectorAll('.js-editsvg');
 	for (const editButton of editButtons) {
 		for (const editSvg of editSvgs) {
-			editButton.addEventListener("click", function () {
-				if (editSvg.classList.contains("c-users__editsvg--edit")) {
-					editSvg.classList.remove("c-users__editsvg--edit");
-					editSvg.classList.add("c-users__editsvg--save");
+			editButton.addEventListener('click', function () {
+				if (editSvg.classList.contains('c-users__editsvg--edit')) {
+					editSvg.classList.remove('c-users__editsvg--edit');
+					editSvg.classList.add('c-users__editsvg--save');
 					editSvg.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="c-users__editsvg" viewBox="0 0 24 24"><path class="c-users__editpath" d="M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z" /></svg>`;
-				} else if (editSvg.classList.contains("c-users__editsvg--save")) {
-					editSvg.classList.add("c-users__editsvg--edit");
-					editSvg.classList.remove("c-users__editsvg--save");
+				} else if (editSvg.classList.contains('c-users__editsvg--save')) {
+					editSvg.classList.add('c-users__editsvg--edit');
+					editSvg.classList.remove('c-users__editsvg--save');
 					editSvg.innerHTML = `<svg style="width: 24px; height: 24px" class="c-users__editsvg c-users__editsvg--edit js-editsvg" viewBox="0 0 24 24"><path fill="currentColor" class="c-users__editpath" d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" /></svg>`;
 				}
 			});
@@ -220,16 +227,16 @@ const listenToEditChange = function () {
 	}
 };
 const filterbuttons = function () {
-	const thbuttons = document.querySelectorAll(".js-filter");
+	const thbuttons = document.querySelectorAll('.js-filter');
 
 	for (const thbutton of thbuttons) {
 		// console.log(thbutton)
-		thbutton.addEventListener("click", function () {
-			if (thbutton.classList.contains("c-users__id--active")) {
-				thbutton.classList.remove("c-users__id--active");
+		thbutton.addEventListener('click', function () {
+			if (thbutton.classList.contains('c-users__id--active')) {
+				thbutton.classList.remove('c-users__id--active');
 			}
 			// console.log("click")
-			thbutton.classList.toggle("c-users__id--active");
+			thbutton.classList.toggle('c-users__id--active');
 			thbutton.innerHTML += `<svg xmlns="http://www.w3.org/2000/svg" class="c-users__activesvg" viewBox="0 0 24 24"><path class="c-users__activesvgpath" d="M7,10L12,15L17,10H7Z" /></svg>`;
 		});
 	}
@@ -244,4 +251,4 @@ const accordeonUsers = function () {
 	setTimeout(filterbuttons, 1000);
 };
 
-document.addEventListener("DOMContentLoaded", accordeonUsers());
+document.addEventListener('DOMContentLoaded', accordeonUsers());
