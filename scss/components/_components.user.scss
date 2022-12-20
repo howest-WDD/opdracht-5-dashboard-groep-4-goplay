@@ -298,20 +298,16 @@
 
 }
 .c-darkbackground{
-    position: fixed;
+    position: static;
     
     height: 100vh;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     z-index: 2;
     background-color: rgba(black, $alpha: 0.3);
 }
 
 .c-spacetop{
     
-    margin-top: 10rem;
+    margin-top: 11rem;
 }
 
 .c-changebackground{

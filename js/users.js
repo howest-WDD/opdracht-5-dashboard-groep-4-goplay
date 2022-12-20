@@ -46,7 +46,7 @@ const loadJson = function () {
                                     </svg>
                                 </button>
                             </td>
-                            <div id="extraMenu${id}" class="c-users__extracontainer js-deleteuser" extra-menu="${id}"  style="overflow-x:auto;" > 	 	
+                            <div id="extraMenu${id}" class="c-users__extracontainer" style="overflow-x:auto;" > 	 	
                                 <td id="js-extra${id}" class="c-users__extradata u-hidden  d-flex js-extra " >
                                     <div class="c-users__extrainformatie c-users__extrainformatie--1 ">
 
@@ -194,10 +194,13 @@ const listenTodelete = function () {
 			darkbackground.classList.add('c-darkbackground');
 		});
 	}
+	verwijder.addEventListener("click",function(){
+		
+
+	})
+
 	verwijder.addEventListener('click', function () {
-		for (const deleteuser of deleteusers) {
-			deleteuser.classList.add('u-hidden');
-		}
+
 		modal.classList.add('u-hidden');
 		darkbackground.classList.remove('c-darkbackground');
 	});
