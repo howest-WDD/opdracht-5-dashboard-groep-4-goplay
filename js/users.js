@@ -57,10 +57,8 @@ const loadJson = function () {
                                         </div>
                                         <div class="c-users__nieuwsbrief">
                                             <label for="nieuwsbrief" class="c-users__label  c-users__align3">Nieuwsbrief:</label>
-                                            <select name="jaofnee" value="${nieuwsbrief}" class="c-users__select js-nieuwsbrief js-disable" id="nieuwsbrief" data-disabledid="${id}" id="edit-input${id}" disabled>
-                                                <option value="ja" class="c-users__option js-disable">ja</option>
-                                                <option value="nee" class="c-users__option js-disable">nee</option>
-                                            </select>
+<select name="nieuwsbrief" value="${nieuwsbrief}" class="c-users__select js-nieuwsbrief js-disable" id="nieuwsbrief" data-disabledid="${id}" id="edit-input${id}" disabled nieuwsbrief-id="${id}" nieuwsbriefValue="${nieuwsbrief}">
+        </select>
                                         </div>
                                     </div>
                                     <div class="c-users__extrainformatie c-users__extrainformatie--2">
@@ -73,28 +71,24 @@ const loadJson = function () {
                                             <input type="text" id="nr" class="c-users__input js-nr js-disable" value="${nr}" name="nr" disabled data-disabledid="${id}" id="edit-input${id}" />
                                         </div>
                                         <div class="c-users__reclame">
-                                            <label for="reclame" class="c-users__label c-users__align3">Reclame:</label>
-                                            <select name="jaofnee" class="c-users__select js-reclame js-disable" disabled  data-disabledid="${id}" id="edit-input${id}">
-                                                <option value="ja" class="c-users__option">ja</option>
-                                                <option value="nee" class="c-users__option">nee</option>
-                                            </select>
+<label for="reclame" class="c-users__label c-users__align3">Reclame:</label>
+<select name="reclame" class="c-users__select js-reclame js-disable" disabled  data-disabledid="${id}" id="edit-input${id}" reclame-id='${id}' value='${reclame}'>
+</select>
                                         </div>
                                     </div>
                                     <div class="c-users__extrainformatie c-users__extrainformatie--3">
                                         <div class="c-users__gemeente">
-                                            <label for="gemeente" class="c-users__label  c-users__align1">Gemeente:</label>
-                                            <input type="text" id="gemeente" class="c-users__input js-gemeente js-disable" value="${gemeente}" data-disabledid="${id}" id="edit-input${id}" name="gemeente" disabled />
+											<label for="gemeente" class="c-users__label  c-users__align1">Gemeente:</label>
+											<input type="text" id="gemeente" class="c-users__input js-gemeente js-disable" value="${gemeente}" data-disabledid="${id}" id="edit-input${id}" name="gemeente" disabled />
                                         </div>
                                         <div class="c-users__bus">
-                                            <label for="bus" class="c-users__label c-users__align2">Bus:</label>
-                                            <input type="text" id="bus" class="c-users__input js-bus js-disable" value="${bus}" data-disabledid="${id}"id="edit-input${id}" name="bus" disabled />
+											<label for="bus" class="c-users__label c-users__align2">Bus:</label>
+											<input type="text" id="bus" class="c-users__input js-bus js-disable" value="${bus}" data-disabledid="${id}"id="edit-input${id}" name="bus" disabled />
                                         </div>
                                         <div class="c-users__isadmin">
-                                            <label class="c-users__label c-users__align3">IsAdmin:</label>
-                                            <select name="jaofnee" class="c-users__select js-admin js-disable" data-disabledid="${id}"id="edit-input${id}" disabled id="ja">
-                                                <option value="ja" class="c-users__option">ja</option>
-                                                <option value="nee" class="c-users__option">nee</option>
-                                            </select>
+<label class="c-users__label c-users__align3">IsAdmin:</label>
+<select name="data" class="c-users__select js-admin js-disable" data-disabledid="${id}"id="edit-input${id}" disabled value="${admin}" admin-id='${id}'>
+                    	</select>
                                         </div>
                                     </div>
                                     <div class="c-users__extrainformatie  c-users__extrainformatie--4">
@@ -103,8 +97,9 @@ const loadJson = function () {
                                             <input type="text" id="telefoonnummer" class="c-users__input js-telefoonnummer js-disable" value="${phone}" name="telefoonnummer"id="edit-input${id}" data-disabledid="${id}" disabled />
                                         </div>
                                         <div class="c-users__geslacht">
-                                            <label for="geslacht" class="c-users__label  c-users__align2">Geslacht:</label>
-                                            <input type="text" id="geslacht" class=" c-users__input js-geslacht js-disable" value="${geslacht}" id="edit-input${id}" name="geslacht" data-disabledid="${id}" disabled />
+<label for="geslacht" class="c-users__label  c-users__align2">Geslacht:</label>
+<select id="geslacht" class=" c-users__select js-geslacht js-disable" value="${geslacht}" id="edit-input${id}" name="geslacht" data-disabledid="${id}" disabled sex-id="${id}">
+</select>
                                         </div>
                                         <div class="c-users__telefoonnummer"></div>
                                     </div>
@@ -127,7 +122,73 @@ const loadJson = function () {
 
 				// console.log(htmlString);
 			}
+
 			getElement.innerHTML += htmlString;
+
+			// htmlstings for binary options
+			const htmlOption1 = `
+						<option value="ja" selected class="c-users__option">ja</option>
+						<option value="nee" class="c-users__option">nee</option>
+						`;
+			const htmlOption2 = `
+						<option value="ja" class="c-users__option">ja</option>
+						<option value="nee" selected class="c-users__option">nee</option>
+						`;
+
+			// htmlstrings for sex
+			const htmlOptionSex1 = `
+						<option value="0" selected class="c-users__option">Man</option>
+						<option value="1" class="c-users__option">Vrouw</option>
+						<option value="2"  class="c-users__option">Non-binair</option>
+						`;
+			const htmlOptionSex2 = `
+						<option value="0" class="c-users__option">Man</option>
+						<option value="1" selected class="c-users__option">Vrouw</option>
+						<option value="2"  class="c-users__option">Non-binair</option>
+						`;
+			const htmlOptionSex3 = `
+						<option value="0" class="c-users__option">Man</option>
+						<option value="1"  class="c-users__option">Vrouw</option>
+						<option value="2" selected class="c-users__option">Non-binair</option>
+						`;
+
+			for (const user of users) {
+				const uid = user.UID;
+
+				const nieuwsbriefSelector = document.querySelector(`[nieuwsbrief-id='${uid}']`);
+				// console.log(nieuwsbriefSelector.getAttribute(`value`));
+				if (nieuwsbriefSelector.getAttribute(`value`) == 0) {
+					nieuwsbriefSelector.innerHTML = htmlOption2;
+				} else {
+					nieuwsbriefSelector.innerHTML = htmlOption1;
+				}
+
+				const reclameSelectors = document.querySelector(`[reclame-id='${uid}']`);
+				// console.log(reclameSelectors.getAttribute(`value`));
+				if (reclameSelectors.getAttribute(`value`) == 0) {
+					reclameSelectors.innerHTML = htmlOption2;
+				} else {
+					reclameSelectors.innerHTML = htmlOption1;
+				}
+
+				const adminSelector = document.querySelector(`[admin-id='${uid}']`);
+				// console.log(adminSelector.getAttribute(`value`));
+				if (adminSelector.getAttribute(`value`) == 0) {
+					adminSelector.innerHTML = htmlOption2;
+				} else {
+					adminSelector.innerHTML = htmlOption1;
+				}
+
+				const sexSelector = document.querySelector(`[sex-id='${uid}']`);
+				// console.log(sexSelector.getAttribute(`value`));
+				if (sexSelector.getAttribute(`value`) == 0) {
+					sexSelector.innerHTML = htmlOptionSex1;
+				} else if (sexSelector.getAttribute(`value`) == 1) {
+					sexSelector.innerHTML = htmlOptionSex2;
+				} else {
+					sexSelector.innerHTML = htmlOptionSex3;
+				}
+			}
 
 			// console.log(htmlString)
 		});
@@ -189,9 +250,7 @@ const listenTodelete = function () {
 			darkbackground.classList.add('c-darkbackground');
 		});
 	}
-	verwijder.addEventListener('click', function () {
-
-	});
+	verwijder.addEventListener('click', function () {});
 
 	verwijder.addEventListener('click', function () {
 		modal.classList.add('u-hidden');
@@ -222,6 +281,7 @@ const listenToEditChange = function () {
 		}
 	}
 };
+
 const filterbuttons = function () {
 	const thbuttons = document.querySelectorAll('.js-filter');
 
