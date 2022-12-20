@@ -176,14 +176,33 @@
         margin-top: 52px;
         background-color: color.$neutral-900;
         width: 100%;
+        
          
     }
     &__extrainformatie{
         text-align: left;
         display: flex;
         justify-content: space-between;
+        margin-right: 1rem;
+        margin-left: 1rem;
         
         
+    }
+    &__editbuttoncontainer{
+        
+        height: 40px;
+        width: 100%;
+        .js-edit{
+            position: absolute;
+            left: 51%;
+        }
+        .js-delete {
+            position: absolute;
+            left: 49%;
+          
+        }
+          
+
     }
     &__align1{
         text-align: left;
@@ -267,6 +286,7 @@
     }
     &__deletesvg{
         background-color: transparent;
+
     }
     &__deletepath{
         background-color: transparent;
