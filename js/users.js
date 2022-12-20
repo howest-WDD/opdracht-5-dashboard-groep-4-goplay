@@ -46,7 +46,7 @@ const loadJson = function () {
                                     </svg>
                                 </button>
                             </td>
-                            <div id="extramenu" class="c-users__extracontainer js-deleteuser"  style="overflow-x:auto;"> 	 	
+                            <div id="extramenu" class="c-users__extracontainer  c-spacetop js-deleteuser"  style="overflow-x:auto;"> 	 	
                                 <td id="js-extra${id}" class="c-users__extradata u-hidden  d-flex js-extra " >
                                     <div class="c-users__extrainformatie c-users__extrainformatie--1 ">
 
@@ -145,15 +145,9 @@ const listenToExpand = function () {
 		// console.log(expandButton);
 		expandButton.addEventListener("click", function () {
 			const idnumber = expandButton.getAttribute("data-id");
-			
 			const extraTexts = document.getElementById(`js-extra${idnumber}`);
 			extraTexts.classList.toggle("u-hidden");
-		
 
-			// console.log('click');
-			// console.log(this.getAttribute('data-id'));
-			// console.log(expandButton);
-			// console.log(extraTexts);
 		});
 	}
 };
