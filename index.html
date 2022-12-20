@@ -20,7 +20,7 @@
   </head>
   <body class="o-darkmode o-grid">
     <nav class="c-nav">
-        <div class="c-sidebar">
+        <div class="c-sidebar c-nav__hide">
           <img class="c-sidebar__logo js-logo" src="/assets/svg/logo.svg" alt="GoPlay" />
           <img class="c-sidebar__logo js-logo u-hidden" src="/assets/svg/logo_dark.svg" alt="GoPlay" />
           <ul>
@@ -49,6 +49,37 @@
             </ul>
           </div>
         </div>
+
+        <div class="c-mobilenav">
+          <img class="c-mobilenav__logo js-logo" src="/assets/svg/logo.svg" alt="GoPlay" />
+          <img class="c-mobilenav__logo js-logo u-hidden" src="/assets/svg/logo_dark.svg" alt="GoPlay" />
+
+          <div class="c-mobilenav__hamburger js-togglenav">
+                    <input class="c-mobilenav__toggle" type="checkbox" />
+                    <span class="c-mobilenav__bar c-mobilenav__bar--top"></span>
+                    <span class="c-mobilenav__bar c-mobilenav__bar--mid"></span>
+                    <span class="c-mobilenav__bar c-mobilenav__bar--bottom"></span>
+          </div>
+
+          <div class="c-mobilenav__content u-hidden">
+            <ul>
+              <li class="c-sidebar__item active"><a href="index.html">Dashboard</a></li>
+              <li class="c-sidebar__item"><a href="users.html">User management</a></li>
+              <li class="c-sidebar__item"><a href="content.html">Content managment</a></li>
+            </ul>
+            <div class="c-mobilenav__account">
+              <h2>Account</h2>
+              <ul>
+                <li class="c-sidebar__item">
+            
+                </li>
+                <li class="c-sidebar__item"><a href="#">Settings</a></li>
+                <li class="c-sidebar__item"><a class="c-sidebar__item--accent js-logout" href="#">Log Out</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
     </nav>
     <div class="c-graphs">
       <div class="c-doGraph">
