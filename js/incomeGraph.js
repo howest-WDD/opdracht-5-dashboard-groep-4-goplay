@@ -4,6 +4,7 @@ const createIncomeGraph = function () {
 	// first checks if income-graph exists
 	if (document.getElementById('income-graph')) {
 		console.log('yes user income graph');
+
 		var graphWidth = document.querySelector('.js-income').clientWidth;
 
 		// creating the layout for the chart
@@ -18,7 +19,7 @@ const createIncomeGraph = function () {
 			},
 			// width and height of chart
 			height: 100,
-			// width: graphWidth,
+			width: graphWidth,
 			// disable legend (we create custom)
 			showlegend: false,
 			xaxis: {
