@@ -1,36 +1,150 @@
 @use '../settings/colors.scss' as color;
+@use '../tools/tools.breakpoints' as bp;
 
 .c-users{
-    margin-top: 2rem;
-    &__userinput{
 
-        background-image: url("/assets/svg/magnify.svg");
-        background-repeat: no-repeat;
+    grid-area: "content";
+    width: 100%;
+
+
+    &__inputcontainer{
+        position: relative;
+        margin-bottom: 2rem;
+        justify-content: center;
+    }
+    &__inputsvg{
+        width: 16px;
+        height: 16px;
+        fill: color.$text-color-a   ;
+        position: absolute;
+        margin-top: 0.75rem;
+        margin-left: 0.5rem;
+        
+        
+        
+    }
+    &__select{
+       
+        border: 2px solid color.$accent-00;
+        background-color: color.$neutral-800;
+        color: color.$text-color-a;
+        border-radius: 10px;
+        margin-bottom: 0.2rem;
+        padding: 0.5rem;
+
+        &:disabled{
+            color: grey;
+            border: 2px solid color.$accent-200;
+        }
+        &:active{
+            border: 2px solid color.$accent-00;
+            background-color: color.$neutral-800;
+            color: color.$text-color-a;
+            border-radius: 10px;
+            margin-bottom: 0.2rem;
+            padding: 0.5rem;
+        }
+        &:focus{
+            border: 2px solid color.$accent-00;
+            background-color: color.$neutral-800;
+            color: color.$text-color-a;
+            border-radius: 10px;
+            margin-bottom: 0.2rem;
+            padding: 0.5rem;
+        }
+        &:checked{
+            border: 2px solid color.$accent-00;
+            background-color: color.$neutral-800;
+            color: color.$text-color-a;
+            border-radius: 10px;
+            margin-bottom: 0.2rem;
+            padding: 0.5rem;
+        }
+    }
+    &__inputsvgpath{
+        fill: color.$text-color-a;
+    }
+    &__userinput{   
+        border-radius: 10px;
         padding-left: 1.5rem;
         background-color:color.$neutral-900 ;
-        margin-bottom: 2rem;
-        margin-left: 2rem;
+        border: 2px solid color.$accent-00;
+        max-width: 100vh;
+        width: 100vh;
+        height: 32px;
+        justify-content: center;
+        box-shadow: none;
+        color: color.$text-color-a;
+
+        &:active{
+            box-shadow: none;
+            border: 2px solid color.$accent-00;
+        }
+        
+        &:focus{
+            box-shadow: none;
+            border: 2px solid color.$accent-00;
+        }
+        &::placeholder{
+            color: color.$text-color-a;
+            box-shadow: none;
+        }
     }
     &__tablemainrow{
         color: color.$text-color-a;
         background-color: color.$neutral-900;
         padding: 1rem 0rem;
     }
+    &__table{
+        width: 100%;
+      
+
+
+
+    }
+    &__id{
+        position: relative;
+        cursor: pointer;
+    }
+    &__achternaam{
+        position: relative;
+        cursor: pointer;
+    }
+    &__voornaam{
+        position: relative;
+        cursor: pointer;
+    }
+    &__mail{
+        position: relative;
+        cursor: pointer;
+    }
+    &__expand{
+
+    }
+    &__activesvg{
+        position: absolute;
+        top: .625rem;
+        width: 32px;
+        fill: color;
+       
+    }  
+    &__activesvgpath{
+        fill: color.$text-color-a;
+    }
     &__tablerow{
         color: color.$text-color-a;
-        text-align: center;
-        justify-content: center;
-        background-color: color.$neutral-900;
-
-        &--first{
-            border-bottom: 2px solid grey;
-        }
+        position: relative;
+        
+    
+        
        
     }
     &__category{
         border-bottom: 2px solid grey;
-        justify-content: center;
-        text-align: center;
+        background-color: color.$neutral-900;
+        z-index: 4000;
+        
+        
     }
 
     &__id{
@@ -55,19 +169,72 @@
         height: 32px ;
         cursor: pointer;
     }
-    &__extracontainer{
-        width: 100%;
-        padding-left: 4rem;
-        background-color: color.$neutral-900;
 
+    &__extradata{
+        position: absolute;
+        left: 0;
+        margin-top: 52px;
+        background-color: color.$neutral-900;
+        width: 100%;
+        
+         
     }
     &__extrainformatie{
-        text-align: justify;
+        text-align: left;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
+        margin-right: 1rem;
+        margin-left: 1rem;
         
         
     }
+    &__editbuttoncontainer{
+        
+        height: 40px;
+        width: 100%;
+        .js-edit{
+            position: absolute;
+            left: 51%;
+        }
+        .js-delete {
+            position: absolute;
+            left: 49%;
+          
+        }
+          
+
+    }
+    &__align1{
+        text-align: left;
+    }
+    &__align2{
+        text-align: left;
+    }   
+    &__align3{
+        
+    }
+    &__geboortedatum{
+     text-align: left;
+    }
+    &__straatnaam{
+
+    }
+    &__nieuwsbrief{
+
+    }
+    &__postcode{
+
+    }
+    &__nr{
+
+    }
+    &__reclame{
+
+    }
+    &__gemeente{
+
+    }
+
     &__label{
         color: color.$text-color-a;
         font-weight: bold;
@@ -80,7 +247,7 @@
         color: color.$text-color-a;
         margin-right: 2rem;
         line-height: 2rem;
-        text-align: center;
+
         align-items: center;
         &::placeholder{
             color: color.$text-color-a;
@@ -105,6 +272,13 @@
             border: none;
         }
     }
+    &__extracontainer{
+        justify-content: space-between;
+        flex-direction: column;
+        
+        bottom: 0;
+        
+    }
     &__delete{
         background-color: transparent;
         border: none;
@@ -112,6 +286,7 @@
     }
     &__deletesvg{
         background-color: transparent;
+
     }
     &__deletepath{
         background-color: transparent;
@@ -132,4 +307,65 @@
     }
 
 }
+.c-modal2{
+     position: absolute !important;
+    margin: 0 !important;
+    top: 50% !important;
+    left: 65%;
+    height: 0 !important;
+    &__container{
+       
+        justify-content: center;
+        background-color: color.$neutral-800;
+        border:2px solid color.$accent-00;
+        padding: 1rem;
+    }
+    &__textcontainer{
+        text-align: center;
+        
+    }
+    &__text{
+        color: color.$text-color-a;
+    }
+    &__buttoncontainer{
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+    }
+    &__verwijderknop{
+        padding: 1rem;
+        background-color: color.$accent-100;
+        border: none;
+        cursor: pointer;
+    }
+    &__cancelknop{
+        padding: 1rem;
+        background-color: color.$accent-00;
+        border: none;
+        cursor: pointer;
+    }
+}
 
+.c-users__expandicon--turnaround{
+    transform:rotate(180deg);
+}
+.c-users__body{
+
+}
+.c-darkbackground{
+    position: static;
+    
+    height: 100vh;
+    z-index: 2;
+    background-color: rgba(black, $alpha: 0.3);
+}
+
+.c-spacetop{
+    
+    margin-top: 14rem;
+}
+
+.c-changebackground{
+    border-bottom: 2px solid color.$accent-00;
+    background-color: color.$neutral-900;
+}

@@ -1,20 +1,17 @@
 @use '../settings/colors' as color;
 @use '../tools/tools.breakpoints' as bp;
 
- .c-nav{
-
-	grid-area: 'nav';
-
+.c-nav{
+  grid-area: 'nav';
 	display: flex;
 	position: relative;
 	transition: 0.3s;
- &__hide{
-	display: none;
-	@include bp.up(tl) {
-		display: block;
-	}
- }
-	
+  &__hide{
+	  display: none;
+	  @include bp.up(tl) {
+		  display: block;
+	  }
+  }
 }
 .c-sidebar {
 	
