@@ -30,6 +30,8 @@ const loadJson = function () {
 				const admin = user.admin;
 
 				// console.log(getExtra.innerHTML)
+				
+				// dit is de htmlstring also known as the moshpit
 				htmlString += `
                     <table  class="c-users__table " style="overflow-x:auto;">
                         <tr id="menu" class="c-users__tablerow c-users__tablerow--first  js-deleteuser js-adduser ">

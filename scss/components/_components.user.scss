@@ -23,6 +23,44 @@
         
         
     }
+    &__select{
+       
+        border: 2px solid color.$accent-00;
+        background-color: color.$neutral-800;
+        color: color.$text-color-a;
+        border-radius: 10px;
+        margin-bottom: 0.2rem;
+        padding: 0.5rem;
+
+        &:disabled{
+            color: grey;
+            border: 2px solid color.$accent-200;
+        }
+        &:active{
+            border: 2px solid color.$accent-00;
+            background-color: color.$neutral-800;
+            color: color.$text-color-a;
+            border-radius: 10px;
+            margin-bottom: 0.2rem;
+            padding: 0.5rem;
+        }
+        &:focus{
+            border: 2px solid color.$accent-00;
+            background-color: color.$neutral-800;
+            color: color.$text-color-a;
+            border-radius: 10px;
+            margin-bottom: 0.2rem;
+            padding: 0.5rem;
+        }
+        &:checked{
+            border: 2px solid color.$accent-00;
+            background-color: color.$neutral-800;
+            color: color.$text-color-a;
+            border-radius: 10px;
+            margin-bottom: 0.2rem;
+            padding: 0.5rem;
+        }
+    }
     &__inputsvgpath{
         fill: color.$text-color-a;
     }
@@ -307,7 +345,7 @@
 
 .c-spacetop{
     
-    margin-top: 11rem;
+    margin-top: 14rem;
 }
 
 .c-changebackground{
