@@ -1,13 +1,14 @@
 @use '../settings/colors' as color;
 
-.wrapper {
 	grid-area: 'nav';
 
 	display: flex;
 	position: relative;
 	transition: 0.3s;
 
-	.sidebar {
+	
+}
+.c-sidebar {
 		width: 18.75rem;
 		height: 100%;
 		background-color: color.$bg-color-nav;
@@ -15,14 +16,15 @@
 		position: fixed;
 		transition: 0.3s;
 
-		.logo {
+		&__logo {
 			padding-left: 5.1875rem;
 			padding-right: 5.1875rem;
 			margin-left: 2.625rem;
 		}
 
-		.item {
-			padding: 0.9375rem;
+		&__item {
+			position: relative;
+			
 			list-style: none;
 			border-left: 0.1875rem solid color.$accent-00;
 
@@ -36,22 +38,51 @@
 				transition: 0.3s;
 			}
 			a {
+				padding: 0.9375rem;
 				color: color.$text-color-b;
 				display: block;
 				text-decoration: none;
 				text-align: center;
+				&::after{
+					content: '';
+					position: absolute;
+					left: 50%;
+					bottom: 0rem;
+					background-color: color.$accent-00;
+					height: .125rem;
+					width: 0%;
+					transition: 0.3s;
+					transform: translateX(-50%);
+				}
 			}
-			&__accent {
+			&--accent {
 				color: color.$accent-100 !important;
+				&::after{
+					content: '';
+					position: absolute;
+					left: 50%;
+					bottom: 0rem;
+					background-color: color.$accent-100 !important;
+					height: .125rem;
+					width: 0%;
+					transition: 0.3s;
+					transform: translateX(-50%);
+				}
 			}
+			
 			&:hover {
-				background-color: color.$bg-color-hov;
+				a{
+					&::after{
+						width: 50%;
+					}
+				}
 			}
 		}
-		.dark {
+		&__button {
 			padding: 0.9375rem;
 			list-style: none !important;
 			border-left: 0.1875rem solid color.$accent-00;
+			
 		}
 
 		&__account {
@@ -66,10 +97,9 @@
 			}
 		}
 	}
-}
-
-.profile-details {
+.c-profile {
 	width: 150px;
+	padding: 0.9375rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
