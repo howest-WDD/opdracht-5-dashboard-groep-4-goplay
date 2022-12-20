@@ -51,6 +51,7 @@ var layout = {
 	modebar: {
 		color: ['#14191e'],
 	},
+	dragmode: false,
 };
 
 const createGrowthGraph = function () {
