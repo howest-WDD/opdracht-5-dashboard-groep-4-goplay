@@ -31,13 +31,11 @@ const loadJson = function () {
 
 				// console.log(getExtra.innerHTML)
 				htmlString += `
-                
                     <table  class="c-users__table " style="overflow-x:auto;">
                         <tr id="menu" class="c-users__tablerow c-users__tablerow--first  js-deleteuser js-adduser ">
                             <td class="c-users__category js-id"><input class="c-users__input  js-adduser  js-geboortedatum js-disable" type="text" placeholder="${id}" disabled /></td>
                             <td class="c-users__category js-achternaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" type="text" placeholder="${achternaam}" disabled /></td>
                             <td class="c-users__category js-voornaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" type="text" placeholder="${voornaam}" disabled /></td>
-                            
                             <td class="c-users__category js-mail"><input class="c-users__input js-adduser  js-geboortedatum js-disable" type="text" placeholder="${mail}" disabled /></td>
                             <td class="c-users__category">
                                 <button id="js-expandid${id}" class="c-users__expandbutton js-expand " data-id="${id}">
@@ -46,10 +44,9 @@ const loadJson = function () {
                                     </svg>
                                 </button>
                             </td>
-                            <div id="extraMenu${id}" class="c-users__extracontainer" style="overflow-x:auto;" > 	 	
+                            <div id="extraMenu${id}" class="c-users__extracontainer" style="overflow-x:auto;" >
                                 <td id="js-extra${id}" class="c-users__extradata u-hidden  d-flex js-extra " >
                                     <div class="c-users__extrainformatie c-users__extrainformatie--1 ">
-
                                         <div class="c-users__geboortedatum">
                                             <label for="geboortedatum" class="c-users__label c-users__align1">Geboortedatum:</label>
                                             <input type="text" id="geboortedatum" class=" c-users__input js-geboortedatum js-adduser  js-disable" placeholder="${geboortedatum}" data-disabledid="${id}" id="edit-input${id}" name="geboortedatum" disabled />
@@ -126,7 +123,6 @@ const loadJson = function () {
                                 </td>
                             </div>
                         </tr>
-                    
                     </table>`;
 
 				// console.log(htmlString);
@@ -160,22 +156,21 @@ const listenToExpand = function () {
 
 const listenToEdit = function () {
 	const editusers = document.querySelectorAll('.js-edit');
-	const inputs = document.getElementsByClassName('js-disable');
-	for (const input of inputs) {
-		for (const edituser of editusers) {
-			// console.log(edituser);
+	for (const edituser of editusers) {
+		// console.log(edituser);
 
-			edituser.addEventListener('click', function () {
-				console.log('click');
-
-				const deleteid = edituser.getAttribute('data-editid');
-				// console.log(deleteid);
-				const disable = document.getElementById(`js-editid${deleteid}`);
-				// console.log(disable);
-
+		edituser.addEventListener('click', function () {
+			console.log('click');
+			const deleteid = edituser.getAttribute('data-editid');
+			// console.log(deleteid);
+			const inputs = document.querySelectorAll(`[data-disabledid='${deleteid}']`);
+			// console.log(inputs);
+			// console.log(disable);
+			for (const input of inputs) {
+				// console.log('disableing');
 				input.toggleAttribute('disabled');
-			});
-		}
+			}
+		});
 	}
 };
 
@@ -194,13 +189,9 @@ const listenTodelete = function () {
 			darkbackground.classList.add('c-darkbackground');
 		});
 	}
-	verwijder.addEventListener("click",function(){
-		
-
-	})
+	verwijder.addEventListener('click', function () {});
 
 	verwijder.addEventListener('click', function () {
-
 		modal.classList.add('u-hidden');
 		darkbackground.classList.remove('c-darkbackground');
 	});
