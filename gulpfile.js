@@ -22,7 +22,7 @@ function watchTask() {
 }
 
 function buildJS() {
-	return gulp.src('js/*.js').pipe(concat('main.js')).pipe(minify()).pipe(gulp.dest('dist'));
+	return gulp.src(['js/*.js']).pipe(concat('main.js')).pipe(minify()).pipe(gulp.dest('dist'));
 }
 
 exports.default = series(buildStyles, buildJS, watchTask);
