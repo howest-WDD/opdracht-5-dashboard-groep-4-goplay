@@ -1,6 +1,4 @@
 'use strict';
-// importing plotly
-import 'https://cdn.plot.ly/plotly-2.16.4.min.js';
 
 var graphWidth = document.querySelector('.js-costs').clientWidth;
 

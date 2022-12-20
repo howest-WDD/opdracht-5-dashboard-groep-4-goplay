@@ -1,6 +1,4 @@
 'use strict';
-// importing plotly
-import 'https://cdn.plot.ly/plotly-2.16.4.min.js';
 
 // Creating the data used by the graph
 var data = [

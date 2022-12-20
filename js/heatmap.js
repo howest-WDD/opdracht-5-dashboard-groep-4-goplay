@@ -1,4 +1,5 @@
 'use strict';
+
 const checkHeatmap = function () {
 	if (document.getElementById('heatmapContainer')) {
 		console.log('yes heatmap');
