@@ -93,7 +93,7 @@ const listenToGraphs = function () {
 
 		if (graphModule.graph) {
 			graphModule.graph.addEventListener('click', function () {
-				modalToggle(graphModule.modal, graphModule.modalClose, graphModule.name);
+				modalToggle(graphModule.modal, graphModule.modalClose, graphModule.name, graphModule.function);
 			});
 		} else {
 			console.log(`no ${graphModule.graph}  graph to press`);
@@ -101,4 +101,4 @@ const listenToGraphs = function () {
 	}
 };
 
-document.addEventListener('DOMContentLoaded', listenToGraphs());
+// document.addEventListener('DOMContentLoaded', listenToGraphs());
