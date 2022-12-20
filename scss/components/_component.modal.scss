@@ -2,9 +2,8 @@
 @use '../tools/tools.breakpoints' as bp;
 
 .c-modalContainer {
-	// display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
-	z-index: 1; /* Sit on top */
+	z-index: 20; /* Sit on top */
 	left: 0;
 	top: 0;
 	width: 100%; /* Full width */
@@ -15,23 +14,34 @@
 }
 
 .c-modal {
-	background-color: #fefefe;
+	background-color: color.$bg-color;
 	margin: 15% auto; /* 15% from the top and centered */
 	padding: 20px;
-	border: 1px solid #888;
 	width: 80%; /* Could be more or less, depending on screen size */
 
+	position: relative;
+
 	&__close {
-		color: #aaa;
-		float: right;
-		font-size: 28px;
+		color: color.$text-color-a;
+
+		position: absolute;
+		right: 20px;
+		top: 0;
+
+		font-size: 3.25rem;
 		font-weight: bold;
 
 		&:hover,
 		&:focus {
-			color: black;
+			color: color.$text-color-b;
 			text-decoration: none;
 			cursor: pointer;
 		}
+	}
+
+	&__content {
+		margin: 20px 0;
+
+		color: color.$text-color-a;
 	}
 }
