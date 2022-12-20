@@ -1,20 +1,31 @@
 @use '../settings/colors' as color;
+@use '../tools/tools.breakpoints' as bp;
 
-// 	grid-area: 'nav';
-
-// 	display: flex;
-// 	position: relative;
-// 	transition: 0.3s;
-
-	
-// }
+.c-nav{
+  grid-area: 'nav';
+	display: flex;
+	position: relative;
+	transition: 0.3s;
+  &__hide{
+	  display: none;
+	  @include bp.up(tl) {
+		  display: block;
+	  }
+  }
+}
 .c-sidebar {
+	
+		
+
+
 		width: 18.75rem;
 		height: 100%;
 		background-color: color.$bg-color-nav;
 		padding: 1.875rem 0rem;
 		position: fixed;
 		transition: 0.3s;
+
+		
 
 		&__logo {
 			padding-left: 5.1875rem;
@@ -96,11 +107,113 @@
 				margin-left: 2.625rem;
 			}
 		}
+
+		@include bp.up(tl) {
+			display: block;
+		}
+
+		
 	}
 .c-profile {
+	
 	width: 150px;
 	padding: 0.9375rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
+
+.c-mobilenav{
+		z-index: 1;
+		display: block;
+		width: 100%;
+		height: 6.25rem;
+		background-color: color.$bg-color-nav;
+		padding: none;
+		position: fixed;
+
+		&__logo {
+			padding-top: 2.5rem;
+			padding-left: 5.1875rem;
+			padding-right: 5.1875rem;
+			width: 5.75rem !important;
+		}
+
+		@include bp.up(tl) {
+			display: none;
+		}
+
+		&__hamburger {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			position: relative;
+			align-items: flex-end;
+			padding-right: 3rem;
+			margin-top: -22px;
+		}
+
+		
+		&__toggle {
+			display: block;
+			width: 2rem;
+			height: 1.5rem;
+			margin-right: 3rem;
+			position: absolute;
+			top: 0;
+			right: 0;
+			cursor: pointer;
+			opacity: 0;
+			z-index: 2;
+	
+			&:checked ~ .c-mobilenav__bar--top {
+				transform: rotate(28deg) translate(0px, -3px);
+				background-color: color.$accent-00;
+			}
+		
+			&:checked ~ .c-mobilenav__bar--mid {
+				transform: rotate(-90deg) translate(-4px, -15px);
+				background-color: color.$accent-00;
+			}
+		
+			&:checked ~ .c-mobilenav__bar--bottom {
+				transform: rotate(-28deg) translate(-4px, 10px);
+				background-color: color.$accent-00;
+			}
+		}
+		&__bar {
+			display: block;
+			width: 2rem;
+			height: .2rem;
+			margin-bottom: .3rem;
+			position: relative;
+			background-color: color.$accent-00;
+			border-radius: .2rem;
+			z-index: 1;
+			transition: transform 0.5s ease, opacity 0.2s ease;
+	
+			&--top {
+				transform-origin: 0;
+			}
+	
+			&--bottom {
+				transform-origin: 0 100%;
+			}
+		}
+		&__content{
+			background-color: color.$bg-color-nav;
+			height: 31.25rem;
+		}
+		&__account{
+			h2 {
+				color: color.$text-color-b;
+				text-align: center;
+				margin-left: 2.625rem;
+			}
+		}
+		
+}
+	
+
+
+
