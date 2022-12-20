@@ -33,10 +33,10 @@ const loadJson = function () {
 				htmlString += `
                     <table  class="c-users__table " style="overflow-x:auto;">
                         <tr id="menu" class="c-users__tablerow c-users__tablerow--first  js-deleteuser js-adduser ">
-                            <td class="c-users__category js-id"><input class="c-users__input  js-adduser  js-geboortedatum js-disable" type="text" placeholder="${id}" disabled /></td>
-                            <td class="c-users__category js-achternaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" placeholder="${achternaam}" disabled /></td>
-                            <td class="c-users__category js-voornaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" placeholder="${voornaam}" disabled /></td>
-                            <td class="c-users__category js-mail"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" placeholder="${mail}" disabled /></td>
+                            <td class="c-users__category js-id"><input class="c-users__input  js-adduser  js-geboortedatum js-disable" type="text" value="${id}" disabled /></td>
+                            <td class="c-users__category js-achternaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${achternaam}" disabled /></td>
+                            <td class="c-users__category js-voornaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${voornaam}" disabled /></td>
+                            <td class="c-users__category js-mail"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${mail}" disabled /></td>
                             <td class="c-users__category">
                                 <button id="js-expandid${id}" class="c-users__expandbutton js-expand " data-id="${id}">
                                     <svg id="${id}" class="c-users__expandicon js-expandbutton js-expandbutton${id}" viewBox="0 0 24 24">
@@ -49,15 +49,15 @@ const loadJson = function () {
                                     <div class="c-users__extrainformatie c-users__extrainformatie--1 ">
                                         <div class="c-users__geboortedatum">
                                             <label for="geboortedatum" class="c-users__label c-users__align1">Geboortedatum:</label>
-                                            <input type="text" id="geboortedatum" class=" c-users__input js-geboortedatum js-adduser  js-disable" placeholder="${geboortedatum}" data-disabledid="${id}" id="edit-input${id}" name="geboortedatum" disabled />
+                                            <input type="text" id="geboortedatum" class=" c-users__input js-geboortedatum js-adduser  js-disable" value="${geboortedatum}" data-disabledid="${id}" id="edit-input${id}" name="geboortedatum" disabled />
                                         </div>
                                         <div class="c-users__straatnaam">
                                             <label for="straatnaam" class="c-users__label c-users__align2">Straatnaam:</label>
-                                            <input type="text" id="straatnaam" class="c-users__input js-straatnaam js-disable" placeholder="${straatnaam}" data-disabledid="${id}" id="edit-input${id}" name="straatnaam" disabled />
+                                            <input type="text" id="straatnaam" class="c-users__input js-straatnaam js-disable" value="${straatnaam}" data-disabledid="${id}" id="edit-input${id}" name="straatnaam" disabled />
                                         </div>
                                         <div class="c-users__nieuwsbrief">
                                             <label for="nieuwsbrief" class="c-users__label  c-users__align3">Nieuwsbrief:</label>
-                                            <select name="jaofnee" class="c-users__select js-nieuwsbrief js-disable" id="nieuwsbrief" data-disabledid="${id}" id="edit-input${id}" disabled>
+                                            <select name="jaofnee" value="${nieuwsbrief}" class="c-users__select js-nieuwsbrief js-disable" id="nieuwsbrief" data-disabledid="${id}" id="edit-input${id}" disabled>
                                                 <option value="ja" class="c-users__option js-disable">ja</option>
                                                 <option value="nee" class="c-users__option js-disable">nee</option>
                                             </select>
@@ -66,11 +66,11 @@ const loadJson = function () {
                                     <div class="c-users__extrainformatie c-users__extrainformatie--2">
                                         <div class="c-users__postcode">
                                             <label for="postcode" class="c-users__label  c-users__align1">Postcode:</label>
-                                            <input type="text" id="postcode" class="c-users__input js-postcode js-disable" placeholder="${postcode}" data-disabledid="${id}" id="edit-input${id}" name="postcode" disabled />
+                                            <input type="text" id="postcode" class="c-users__input js-postcode js-disable" value="${postcode}" data-disabledid="${id}" id="edit-input${id}" name="postcode" disabled />
                                         </div>
                                         <div class="c-users__nr">
                                             <label for="nr" class="c-users__label c-users__align2">Nr:</label>
-                                            <input type="text" id="nr" class="c-users__input js-nr js-disable" placeholder="${nr}" name="nr" disabled data-disabledid="${id}" id="edit-input${id}" />
+                                            <input type="text" id="nr" class="c-users__input js-nr js-disable" value="${nr}" name="nr" disabled data-disabledid="${id}" id="edit-input${id}" />
                                         </div>
                                         <div class="c-users__reclame">
                                             <label for="reclame" class="c-users__label c-users__align3">Reclame:</label>
@@ -83,11 +83,11 @@ const loadJson = function () {
                                     <div class="c-users__extrainformatie c-users__extrainformatie--3">
                                         <div class="c-users__gemeente">
                                             <label for="gemeente" class="c-users__label  c-users__align1">Gemeente:</label>
-                                            <input type="text" id="gemeente" class="c-users__input js-gemeente js-disable" placeholder="${gemeente}" data-disabledid="${id}" id="edit-input${id}" name="gemeente" disabled />
+                                            <input type="text" id="gemeente" class="c-users__input js-gemeente js-disable" value="${gemeente}" data-disabledid="${id}" id="edit-input${id}" name="gemeente" disabled />
                                         </div>
                                         <div class="c-users__bus">
                                             <label for="bus" class="c-users__label c-users__align2">Bus:</label>
-                                            <input type="text" id="bus" class="c-users__input js-bus js-disable" placeholder="${bus}" data-disabledid="${id}"id="edit-input${id}" name="bus" disabled />
+                                            <input type="text" id="bus" class="c-users__input js-bus js-disable" value="${bus}" data-disabledid="${id}"id="edit-input${id}" name="bus" disabled />
                                         </div>
                                         <div class="c-users__isadmin">
                                             <label class="c-users__label c-users__align3">IsAdmin:</label>
@@ -100,11 +100,11 @@ const loadJson = function () {
                                     <div class="c-users__extrainformatie  c-users__extrainformatie--4">
                                         <div class="c-users__telefoonnummer">
                                             <label for="telefoonnummer" class="c-users__label c-users__align1">Telefoonnummer:</label>
-                                            <input type="text" id="telefoonnummer" class="c-users__input js-telefoonnummer js-disable" placeholder="${phone}" name="telefoonnummer"id="edit-input${id}" data-disabledid="${id}" disabled />
+                                            <input type="text" id="telefoonnummer" class="c-users__input js-telefoonnummer js-disable" value="${phone}" name="telefoonnummer"id="edit-input${id}" data-disabledid="${id}" disabled />
                                         </div>
                                         <div class="c-users__geslacht">
                                             <label for="geslacht" class="c-users__label  c-users__align2">Geslacht:</label>
-                                            <input type="text" id="geslacht" class=" c-users__input js-geslacht js-disable" placeholder="${geslacht}" id="edit-input${id}" name="geslacht" data-disabledid="${id}" disabled />
+                                            <input type="text" id="geslacht" class=" c-users__input js-geslacht js-disable" value="${geslacht}" id="edit-input${id}" name="geslacht" data-disabledid="${id}" disabled />
                                         </div>
                                         <div class="c-users__telefoonnummer"></div>
                                     </div>
@@ -189,7 +189,9 @@ const listenTodelete = function () {
 			darkbackground.classList.add('c-darkbackground');
 		});
 	}
-	verwijder.addEventListener('click', function () {});
+	verwijder.addEventListener('click', function () {
+
+	});
 
 	verwijder.addEventListener('click', function () {
 		modal.classList.add('u-hidden');
