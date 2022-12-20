@@ -50,7 +50,7 @@
 				</div>
 			</div>
 		</nav>
-		<div class="js-darkbackground"></div>
+
 		<div class="c-users">
 			<div class="c-users__inputcontainer">
 				<svg xmlns="http://www.w3.org/2000/svg" class="c-users__inputsvg" viewBox="0 0 24 24">
@@ -63,9 +63,7 @@
 				<tr class="c-users__tablemainrow">
 					<th class="c-users__id c-users__id--active js-filter">
 						Id
-						<span class="c-users__active"
-							><svg xmlns="http://www.w3.org/2000/svg" class="c-users__activesvg" viewBox="0 0 24 24"><path class="c-users__activesvgpath" d="M7,10L12,15L17,10H7Z" /></svg
-						></span>
+						<span class="c-users__active"><svg xmlns="http://www.w3.org/2000/svg" class="c-users__activesvg" viewBox="0 0 24 24"><path class="c-users__activesvgpath" d="M7,10L12,15L17,10H7Z" /></svg></span>
 					</th>
 					<th class="c-users__achternaam js-filter">Achternaam</th>
 					<th class="c-users__voornaam js-filter">Voornaam</th>
@@ -74,17 +72,19 @@
 				</tr>
 			</table>
 
-			<div class="c-modal js-modal u-hidden">
-				<div class="c-modal__container">
-					<div class="c-modal__textcontainer">
-						<p class="c-modal__text">Bent u zeker dat u dit wil verwijderen</p>
+			<div class="c-modal2 u-hidden js-modal js-darkbackground">
+				<div class="c-modal2__container">
+					<div class="c-modal2__textcontainer">
+						<p class="c-modal2__text">Bent u zeker dat u dit wil verwijderen</p>
 					</div>
-					<div class="c-modal__buttoncontainer d-flex justify-content-center">
-						<button class="c-modal__verwijderknop js-verwijder">Verwijder</button>
-						<button class="c-modal__cancelknop js-cancel">Cancel</button>
+					<div class="c-modal2__buttoncontainer d-flex justify-content-center">
+						<button class="c-modal2__verwijderknop js-verwijder">Verwijder</button>
+						<button class="c-modal2__cancelknop js-cancel">Cancel</button>
 					</div>
 				</div>
 			</div>
+			
 		</div>
+		
 	</body>
 </html>
