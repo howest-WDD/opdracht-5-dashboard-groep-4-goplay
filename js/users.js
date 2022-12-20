@@ -34,9 +34,9 @@ const loadJson = function () {
                     <table  class="c-users__table " style="overflow-x:auto;">
                         <tr id="menu" class="c-users__tablerow c-users__tablerow--first  js-deleteuser js-adduser ">
                             <td class="c-users__category js-id"><input class="c-users__input  js-adduser  js-geboortedatum js-disable" type="text" placeholder="${id}" disabled /></td>
-                            <td class="c-users__category js-achternaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" type="text" placeholder="${achternaam}" disabled /></td>
-                            <td class="c-users__category js-voornaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" type="text" placeholder="${voornaam}" disabled /></td>
-                            <td class="c-users__category js-mail"><input class="c-users__input js-adduser  js-geboortedatum js-disable" type="text" placeholder="${mail}" disabled /></td>
+                            <td class="c-users__category js-achternaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" placeholder="${achternaam}" disabled /></td>
+                            <td class="c-users__category js-voornaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" placeholder="${voornaam}" disabled /></td>
+                            <td class="c-users__category js-mail"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" placeholder="${mail}" disabled /></td>
                             <td class="c-users__category">
                                 <button id="js-expandid${id}" class="c-users__expandbutton js-expand " data-id="${id}">
                                     <svg id="${id}" class="c-users__expandicon js-expandbutton js-expandbutton${id}" viewBox="0 0 24 24">
