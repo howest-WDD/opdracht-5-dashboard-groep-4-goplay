@@ -1,0 +1,9 @@
+@use '../settings/colors' as color;
+
+.c-content-card {
+  margin-left: 1rem;
+
+  &__title {
+    color: color.$neutral-500;
+  }
+}
