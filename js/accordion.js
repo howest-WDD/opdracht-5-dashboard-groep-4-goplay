@@ -1,7 +1,7 @@
 'use strict';
 
 // creates the functionality of the accordions
-const createAcoordionFunc = function () {
+const createAccordionFunc = function () {
 	var accordions = document.querySelectorAll('.js-accordion');
 
 	for (var i = 0; i < accordions.length; i++) {
@@ -24,7 +24,7 @@ const createAcoordionFunc = function () {
 // checks if there is an accordion in the file
 const checkAccordion = function () {
 	if (document.querySelector('.js-accordion')) {
-		createAcoordionFunc();
+		createAccordionFunc();
 	} else {
 		console.log('no accordion here');
 	}
