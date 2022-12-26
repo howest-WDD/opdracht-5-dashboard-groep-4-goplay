@@ -1,0 +1,16 @@
+@use '../settings/colors' as color;
+@use '../tools/tools.breakpoints' as bp;
+
+.c-color {
+	&__container {
+	}
+
+	&__input {
+	}
+
+	&__value {
+	}
+
+	&__label {
+	}
+}
