@@ -12,10 +12,12 @@ const createAccordionFunc = function () {
 
 			/* Toggle between hiding and showing the active panel */
 			var panel = this.nextElementSibling;
-			if (panel.style.display === 'block') {
-				panel.style.display = 'none';
+			if (panel.style.maxHeight) {
+				panel.style.maxHeight = null;
+				panel.classList.toggle('c-panel--active');
 			} else {
-				panel.style.display = 'block';
+				panel.style.maxHeight = panel.scrollHeight + 'px';
+				panel.classList.toggle('c-panel--active');
 			}
 		});
 	}
