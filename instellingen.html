@@ -79,21 +79,83 @@
 		</nav>
 		<section class="c-settings__container">
 			<article class="c-settings">
+				<!-- user settings accordion -->
 				<button class="c-accordion js-accordion" id="button-userSettings">User Instellingen</button>
 				<div class="c-panel" id="panel-userSettings">
 					<p>User Instellingen content</p>
 				</div>
+				<!-- subscription settings accordion -->
 				<button class="c-accordion js-accordion" id="button-subscriptions">Abonementen</button>
 				<div class="c-panel" id="panel-subscriptions">
 					<p>Abonementen content</p>
 				</div>
+				<!-- promos settings accordion -->
 				<button class="c-accordion js-accordion" id="button-promos">Promo's</button>
 				<div class="c-panel" id="panel-promos">
 					<p>Promo's content</p>
 				</div>
+				<!-- layout settings accordion -->
 				<button class="c-accordion js-accordion" id="button-layout">Layout</button>
 				<div class="c-panel" id="panel-layout">
-					<p>Layout content</p>
+					<!-- logo settings -->
+					<div id="logo-settings">
+						<!-- title -->
+						<h2>logo</h2>
+						<!-- light logo select -->
+						<div id="light-logo">
+							<p>Light</p>
+							<img src="./assets/svg/logo.svg" alt="logo-light" width="200" />
+						</div>
+						<!-- dark logo select -->
+						<div id="dark-logo">
+							<p>dark</p>
+							<img src="./assets/svg/logo_dark.svg" alt="logo-dark" width="200" />
+						</div>
+					</div>
+					<!-- color settings -->
+					<div id="site-colors">
+						<h2>Kleuren</h2>
+						<!-- background colors -->
+						<div>
+							<h4>achtergrond kleuren</h4>
+							<!-- background color for dark -->
+							<div class="c-color__container">
+								<label class="c-color__label" for="background-dark"> Achtergrond kleur dark-mode </label>
+								<input class="c-color__input" type="color" id="background-dark" name="background-dark" value="#1C242B" />
+								<p class="c-color__value" id="background-dark-value">value:</p>
+							</div>
+							<!-- background color for nav dark -->
+							<div class="c-color__container">
+								<label class="c-color__label" for="background-nav-dark"> Achtergrond kleur navigatie dark-mode </label>
+								<input class="c-color__input" type="color" id="background-nav-dark" name="background-nav-dark" value="#14191E" />
+								<p class="c-color__value" id="background-nav-dark-value">value:</p>
+							</div>
+							<!-- background color for nav dark hover -->
+							<div class="c-color__container">
+								<label class="c-color__label" for="background-nav-hov-dark"> Achtergrond kleur navigatie dark-mode hover </label>
+								<input class="c-color__input" type="color" id="background-nav-hov-dark" name="background-nav-hov-dark" value="#1C242B" />
+								<p class="c-color__value" id="background-nav-hov-dark-value">value:</p>
+							</div>
+							<!-- background color for light -->
+							<div class="c-color__container">
+								<label class="c-color__label" for="background-light"> Achtergrond kleur light-mode </label>
+								<input class="c-color__input" type="color" id="background-light" name="background-light" value="#ffffff" />
+								<p class="c-color__value" id="background-light-value">value:</p>
+							</div>
+							<!-- background color for nav light -->
+							<div class="c-color__container">
+								<label class="c-color__label" for="background-nav-light"> Achtergrond kleur navigatie light-mode </label>
+								<input class="c-color__input" type="color" id="background-nav-light" name="background-nav-light" value="#f2f3f3" />
+								<p class="c-color__value" id="background-nav-light-value">value:</p>
+							</div>
+							<!-- background color for nav light hover -->
+							<div class="c-color__container">
+								<label class="c-color__label" for="background-nav-hov-light"> Achtergrond kleur navigatie light-mode hover </label>
+								<input class="c-color__input" type="color" id="background-nav-hov-light" name="background-nav-hov-light" value="#dcdcdc" />
+								<p class="c-color__value" id="background-nav-hov-light-value">value:</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</article>
 		</section>
