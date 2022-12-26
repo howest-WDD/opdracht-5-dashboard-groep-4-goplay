@@ -16,7 +16,7 @@ const createValues = function () {
 			// console.log(value);
 			let AELvalueDescriptor = input.nextElementSibling;
 			changeValues(AELvalueDescriptor, AELvalue);
-			console.log('change');
+			// console.log('change');
 		});
 	}
 };
