@@ -101,4 +101,38 @@ const listenToGraphs = function () {
 	}
 };
 
-// document.addEventListener('DOMContentLoaded', listenToGraphs());
+// checks modal for settings page logo upload
+const listenToLogo = function () {
+	const logoLight = document.querySelector('.js-logo-light');
+	const logoLightModal = document.getElementById('js-logo-light-modal');
+	const logoLightModalClose = document.getElementById('js-logo-light-modal-close');
+	const logoDark = document.querySelector('.js-logo-dark');
+	const logoDarkModal = document.getElementById('js-logo-dark-modal');
+	const logoDarkModalClose = document.getElementById('js-logo-dark-modal-close');
+
+	if (logoLight) {
+		logoLight.addEventListener('click', function () {
+			modalToggle(logoLightModal, logoLightModalClose, 'light logo');
+		});
+	} else {
+		console.log(`no Logo light to press`);
+	}
+
+	if (logoDark) {
+		logoDark.addEventListener('click', function () {
+			modalToggle(logoDarkModal, logoDarkModalClose, 'light logo');
+		});
+	} else {
+		console.log(`no Logo light to press`);
+	}
+};
+
+const checksModals = function () {
+	if (document.querySelector('.js-page-settings')) {
+		listenToLogo();
+	} else if (document.querySelector('.js-page-index')) {
+		// listenToGraphs();
+	}
+};
+
+document.addEventListener('DOMContentLoaded', checksModals());

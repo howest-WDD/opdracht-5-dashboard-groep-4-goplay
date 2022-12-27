@@ -3,14 +3,46 @@
 
 .c-color {
 	&__container {
+		margin: 20px 0;
 	}
 
 	&__input {
+		width: 100%;
 	}
 
 	&__value {
+		margin: 0;
+		margin-top: 6px;
 	}
 
 	&__label {
+		margin-right: 20px;
+	}
+
+	&__bigContainer {
+		display: flex;
+		justify-content: space-evenly;
+
+		&--1 {
+			width: 50%;
+		}
+		&--2 {
+			width: 50%;
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+
+		h2 {
+			width: 100%;
+		}
+	}
+}
+
+.c-logo {
+	&__wrapper {
+		display: flex;
+		justify-content: space-evenly;
 	}
 }

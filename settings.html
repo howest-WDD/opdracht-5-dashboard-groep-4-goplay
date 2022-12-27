@@ -98,105 +98,137 @@
 				<button class="c-accordion js-accordion" id="button-layout">Layout</button>
 				<div class="c-panel" id="panel-layout">
 					<!-- logo settings -->
-					<div id="logo-settings">
-						<!-- title -->
-						<h2>logo</h2>
+					<!-- title -->
+					<h2>logo</h2>
+					<div id="logo-settings" class="c-logo__wrapper">
 						<!-- light logo select -->
-						<div id="light-logo">
-							<p>Light</p>
+						<div class="js-logo-light" id="light-logo">
+							<h4>Light</h4>
 							<img src="./assets/svg/logo.svg" alt="logo-light" width="200" />
 						</div>
 						<!-- dark logo select -->
-						<div id="dark-logo">
-							<p>dark</p>
+						<div class="js-logo-dark" id="dark-logo">
+							<h4>dark</h4>
 							<img src="./assets/svg/logo_dark.svg" alt="logo-dark" width="200" />
+						</div>
+						<!-- Modal light logo -->
+						<div id="js-logo-light-modal" class="c-modalContainer u-hidden">
+							<!-- content -->
+							<div class="c-modal c-modal--logo">
+								<span class="c-modal__close" id="js-logo-light-modal-close">&times;</span>
+								<div class="c-modal__content c-modal__content--logo">
+									<label>
+										upload new light logo
+										<input type="file" accept="image/*" />
+									</label>
+									<input type="submit" value="upload" class="c-button" />
+								</div>
+							</div>
+						</div>
+						<!-- Modal dark logo -->
+						<div id="js-logo-dark-modal" class="c-modalContainer u-hidden">
+							<!-- content -->
+							<div class="c-modal c-modal--logo">
+								<span class="c-modal__close" id="js-logo-dark-modal-close">&times;</span>
+								<div class="c-modal__content c-modal__content--logo">
+									<label>
+										upload new dark logo
+										<input type="file" accept="image/*" />
+									</label>
+									<input type="submit" value="upload" class="c-button" />
+								</div>
+							</div>
 						</div>
 					</div>
 					<!-- color settings -->
-					<div id="site-colors">
-						<h2>Kleuren</h2>
+					<h2>Kleuren</h2>
+					<div id="site-colors" class="c-color__wrapper">
 						<!-- background colors -->
-						<div>
-							<h4>achtergrond kleuren</h4>
-							<!-- background color for dark -->
-							<div class="c-color__container">
-								<label class="c-color__label" for="background-dark"> Achtergrond kleur dark-mode </label>
-								<input class="c-color__input js-color-input" type="color" id="background-dark" name="background-dark" value="#1C242B" />
-								<p class="c-color__value" id="background-dark-value">value:</p>
-							</div>
-							<!-- background color for nav dark -->
-							<div class="c-color__container">
-								<label class="c-color__label" for="background-nav-dark"> Achtergrond kleur navigatie dark-mode </label>
-								<input class="c-color__input js-color-input" type="color" id="background-nav-dark" name="background-nav-dark" value="#14191E" />
-								<p class="c-color__value" id="background-nav-dark-value">value:</p>
-							</div>
-							<!-- background color for nav dark hover -->
-							<div class="c-color__container">
-								<label class="c-color__label" for="background-nav-hov-dark"> Achtergrond kleur navigatie dark-mode hover </label>
-								<input class="c-color__input js-color-input" type="color" id="background-nav-hov-dark" name="background-nav-hov-dark" value="#1C242B" />
-								<p class="c-color__value" id="background-nav-hov-dark-value">value:</p>
-							</div>
-							<!-- background color for light -->
-							<div class="c-color__container">
-								<label class="c-color__label" for="background-light"> Achtergrond kleur light-mode </label>
-								<input class="c-color__input js-color-input" type="color" id="background-light" name="background-light" value="#ffffff" />
-								<p class="c-color__value" id="background-light-value">value:</p>
-							</div>
-							<!-- background color for nav light -->
-							<div class="c-color__container">
-								<label class="c-color__label" for="background-nav-light"> Achtergrond kleur navigatie light-mode </label>
-								<input class="c-color__input js-color-input" type="color" id="background-nav-light" name="background-nav-light" value="#f2f3f3" />
-								<p class="c-color__value" id="background-nav-light-value">value:</p>
-							</div>
-							<!-- background color for nav light hover -->
-							<div class="c-color__container">
-								<label class="c-color__label" for="background-nav-hov-light"> Achtergrond kleur navigatie light-mode hover </label>
-								<input class="c-color__input js-color-input" type="color" id="background-nav-hov-light" name="background-nav-hov-light" value="#dcdcdc" />
-								<p class="c-color__value" id="background-nav-hov-light-value">value:</p>
+						<div class="c-color__bigContainer c-color__bigContainer--1">
+							<div>
+								<h4>achtergrond kleuren</h4>
+								<!-- background color for dark -->
+								<div class="c-color__container">
+									<label class="c-color__label" for="background-dark"> Achtergrond kleur dark-mode </label>
+									<input class="c-color__input js-color-input" type="color" id="background-dark" name="background-dark" value="#1C242B" />
+									<p class="c-color__value" id="background-dark-value">value:</p>
+								</div>
+								<!-- background color for nav dark -->
+								<div class="c-color__container">
+									<label class="c-color__label" for="background-nav-dark"> Achtergrond kleur navigatie dark-mode </label>
+									<input class="c-color__input js-color-input" type="color" id="background-nav-dark" name="background-nav-dark" value="#14191E" />
+									<p class="c-color__value" id="background-nav-dark-value">value:</p>
+								</div>
+								<!-- background color for nav dark hover -->
+								<div class="c-color__container">
+									<label class="c-color__label" for="background-nav-hov-dark"> Achtergrond kleur navigatie dark-mode hover </label>
+									<input class="c-color__input js-color-input" type="color" id="background-nav-hov-dark" name="background-nav-hov-dark" value="#1C242B" />
+									<p class="c-color__value" id="background-nav-hov-dark-value">value:</p>
+								</div>
+								<!-- background color for light -->
+								<div class="c-color__container">
+									<label class="c-color__label" for="background-light"> Achtergrond kleur light-mode </label>
+									<input class="c-color__input js-color-input" type="color" id="background-light" name="background-light" value="#ffffff" />
+									<p class="c-color__value" id="background-light-value">value:</p>
+								</div>
+								<!-- background color for nav light -->
+								<div class="c-color__container">
+									<label class="c-color__label" for="background-nav-light"> Achtergrond kleur navigatie light-mode </label>
+									<input class="c-color__input js-color-input" type="color" id="background-nav-light" name="background-nav-light" value="#f2f3f3" />
+									<p class="c-color__value" id="background-nav-light-value">value:</p>
+								</div>
+								<!-- background color for nav light hover -->
+								<div class="c-color__container">
+									<label class="c-color__label" for="background-nav-hov-light"> Achtergrond kleur navigatie light-mode hover </label>
+									<input class="c-color__input js-color-input" type="color" id="background-nav-hov-light" name="background-nav-hov-light" value="#dcdcdc" />
+									<p class="c-color__value" id="background-nav-hov-light-value">value:</p>
+								</div>
 							</div>
 						</div>
 						<!-- accent colors -->
-						<div>
-							<h4>accent kleuren</h4>
-							<!-- accent color 00-->
-							<div class="c-color__container">
-								<label class="c-color__label" for="accent-00">Accent kleur 00</label>
-								<input class="c-color__input js-color-input" type="color" id="accent-00" name="background-dark" value="#00f0c8" />
-								<p class="c-color__value" id="accent-00-value">value:</p>
+						<div class="c-color__bigContainer c-color__bigContainer--2">
+							<div>
+								<h4>accent kleuren</h4>
+								<!-- accent color 00-->
+								<div class="c-color__container">
+									<label class="c-color__label" for="accent-00">Accent kleur 00</label>
+									<input class="c-color__input js-color-input" type="color" id="accent-00" name="background-dark" value="#00f0c8" />
+									<p class="c-color__value" id="accent-00-value">value:</p>
+								</div>
+								<!-- accent color 100-->
+								<div class="c-color__container">
+									<label class="c-color__label" for="accent-100">Accent kleur 100</label>
+									<input class="c-color__input js-color-input" type="color" id="accent-100" name="background-nav-dark" value="#ff8d90" />
+									<p class="c-color__value" id="accent-100-value">value:</p>
+								</div>
+								<!-- accent color 200-->
+								<div class="c-color__container">
+									<label class="c-color__label" for="accent-200">Accent kleur 200</label>
+									<input class="c-color__input js-color-input" type="color" id="accent-200" name="background-nav-dark" value="#00f0c8" />
+									<p class="c-color__value" id="accent-200-value">value:</p>
+								</div>
 							</div>
-							<!-- accent color 100-->
-							<div class="c-color__container">
-								<label class="c-color__label" for="accent-100">Accent kleur 100</label>
-								<input class="c-color__input js-color-input" type="color" id="accent-100" name="background-nav-dark" value="#ff8d90" />
-								<p class="c-color__value" id="accent-100-value">value:</p>
-							</div>
-							<!-- accent color 200-->
-							<div class="c-color__container">
-								<label class="c-color__label" for="accent-200">Accent kleur 200</label>
-								<input class="c-color__input js-color-input" type="color" id="accent-200" name="background-nav-dark" value="#00f0c8" />
-								<p class="c-color__value" id="accent-200-value">value:</p>
-							</div>
-						</div>
-						<!-- text colors -->
-						<div>
-							<h4>text kleuren</h4>
-							<!-- text color light-->
-							<div class="c-color__container">
-								<label class="c-color__label" for="text-color-light">tekst kleur light</label>
-								<input class="c-color__input js-color-input" type="color" id="text-color-light" name="background-dark" value="#ffffff" />
-								<p class="c-color__value" id="text-color-light-value">value:</p>
-							</div>
-							<!-- text color light-->
-							<div class="c-color__container">
-								<label class="c-color__label" for="text-color-a-dark">tekst kleur dark a</label>
-								<input class="c-color__input js-color-input" type="color" id="text-color-a-dark" name="background-dark" value="#1c242b" />
-								<p class="c-color__value" id="text-color-a-dark-value">value:</p>
-							</div>
-							<!-- text color light-->
-							<div class="c-color__container">
-								<label class="c-color__label" for="text-color-b-dark">tekst kleur dark b</label>
-								<input class="c-color__input js-color-input" type="color" id="text-color-b-dark" name="background-dark" value="#14191e" />
-								<p class="c-color__value" id="text-color-b-dark-value">value:</p>
+							<!-- text colors -->
+							<div>
+								<h4>text kleuren</h4>
+								<!-- text color light-->
+								<div class="c-color__container">
+									<label class="c-color__label" for="text-color-light">tekst kleur light</label>
+									<input class="c-color__input js-color-input" type="color" id="text-color-light" name="background-dark" value="#ffffff" />
+									<p class="c-color__value" id="text-color-light-value">value:</p>
+								</div>
+								<!-- text color light-->
+								<div class="c-color__container">
+									<label class="c-color__label" for="text-color-a-dark">tekst kleur dark a</label>
+									<input class="c-color__input js-color-input" type="color" id="text-color-a-dark" name="background-dark" value="#1c242b" />
+									<p class="c-color__value" id="text-color-a-dark-value">value:</p>
+								</div>
+								<!-- text color light-->
+								<div class="c-color__container">
+									<label class="c-color__label" for="text-color-b-dark">tekst kleur dark b</label>
+									<input class="c-color__input js-color-input" type="color" id="text-color-b-dark" name="background-dark" value="#14191e" />
+									<p class="c-color__value" id="text-color-b-dark-value">value:</p>
+								</div>
 							</div>
 						</div>
 					</div>
