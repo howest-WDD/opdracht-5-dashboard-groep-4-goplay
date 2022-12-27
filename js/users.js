@@ -324,14 +324,14 @@ const filterbuttons = function () { // functie die een active state terug geeft 
 
 const searchBar = function(){
 	const searchbar = document.querySelector(".js-searchbar")
-
+	const getElement = document.getElementById('menu'); //  nodig voor de juiste persoo nterug te geven 
 	
 	let htmlString;
 	let id;
 	let voornaam; 
 	let achternaam; 
 	let mail; 
-	let geslacht; 
+
 	let geboortedatum; 
 	let postcode; 
 	let gemeente; 
@@ -339,9 +339,7 @@ const searchBar = function(){
 	let phone; 
 	let nr; 
 	let bus; 
-	let nieuwsbrief; 
-	let reclame; 
-	let admin; 
+	
 
 	fetch('../json/users.json')
 	.then((response) => response.json())
@@ -352,24 +350,19 @@ const searchBar = function(){
 			id = user.filter(item => item.UID.toLowerCase().includes(htmlString.toLowerCase())); // kijkt voor id 
 			voornaam = user.filter(item => item.voornaam.toLowerCase().includes(htmlString.toLowerCase())); // kijkt voor voornaam
 			achternaam = user.filter(item => item.achternaam.toLowerCase().includes(htmlString.toLowerCase())); // kijkt voor achternaam
-			mail = user.filter(item => item.mail.toLowerCase().includes(htmlString.toLowerCase())); // mail kijken
-			geslacht = user.filter(item => item.geslacht.toLowerCase().includes(htmlString.toLowerCase())); // geslacht
-			geboortedatum = user.filter(item => item.geboortedatum.toLowerCase().includes(htmlString.toLowerCase())); // geboortedatum
+			mail = user.filter(item => item.mail.toLowerCase().includes(htmlString.toLowerCase())); // mail kijken			geboortedatum = user.filter(item => item.geboortedatum.toLowerCase().includes(htmlString.toLowerCase())); // geboortedatum
 			postcode = user.filter(item => item.postcode.toLowerCase().includes(htmlString.toLowerCase())); // postcode
 			gemeente = user.filter(item => item.gemeente.toLowerCase().includes(htmlString.toLowerCase())); // gemeente
 			straatnaam = user.filter(item => item.straatnaam.toLowerCase().includes(htmlString.toLowerCase())); // straatnaam
 			phone = user.filter(item => item.phone.toLowerCase().includes(htmlString.toLowerCase())); // phone
 			nr = user.filter(item => item.nr.toLowerCase().includes(htmlString.toLowerCase())); // nr 
 			bus = user.filter(item => item.bus.toLowerCase().includes(htmlString.toLowerCase())); // bus kijken
-			nieuwsbrief = user.filter(item => item.nieuwsbrief.toLowerCase().includes(htmlString.toLowerCase())); // nieuwsbrief kijken
-			reclame = user.filter(item => item.reclame.toLowerCase().includes(htmlString.toLowerCase())); // reclame kijken
-			admin = user.filter(item => item.admin.toLowerCase().includes(htmlString.toLowerCase())); // admin kijken
 			
 			console.log(id)
 			console.log(voornaam)
 			console.log(achternaam)
 			console.log(mail)
-			console.log(geslacht)
+	
 			console.log(geboortedatum)
 			console.log(postcode)
 			console.log(gemeente)
@@ -377,9 +370,9 @@ const searchBar = function(){
 			console.log(phone)
 			console.log(nr)
 			console.log(bus)
-			console.log(nieuwsbrief)
-			console.log(reclame)
-			console.log(admin)
+
+
+			
 		})
 		
 	})
