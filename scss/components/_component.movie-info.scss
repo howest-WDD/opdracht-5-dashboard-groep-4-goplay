@@ -22,6 +22,10 @@
     &__title, &__description{
       color: color.$neutral-500;
     }
+
+    &__airdate{
+      color: color.$accent-00;
+    }
   }
 }
 
