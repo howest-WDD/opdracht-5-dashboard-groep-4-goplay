@@ -1,18 +1,19 @@
 let modal;
 let sect;
 let id;
-
+let htmlString = ``;
+let users;
 const loadJson = function () {
-	let htmlString = ``;
+	
 
 	const getElement = document.getElementById('menu');
 
 	fetch('../json/users.json')
 		.then((response) => response.json())
 		.then((json) => {
-			const users = json.users;
+			users = json.users;
 
-			for (const user of users) {
+			for (let user of users) {
 				id = user.UID;
 				const voornaam = user.voornaam;
 				const achternaam = user.achternaam;
@@ -34,7 +35,7 @@ const loadJson = function () {
 				// dit is de htmlstring also known as the moshpit
 				htmlString += `
                     <table  class="c-users__table " style="overflow-x:auto;">
-                        <tr id="menu" class="c-users__tablerow c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
+                        <tr id="menu" class="c-users__tablerow js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
                             <td class="c-users__category js-id"><input class="c-users__input  js-adduser  js-geboortedatum js-disable" type="text" value="${id}" disabled /></td>
                             <td class="c-users__category js-achternaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${achternaam}" disabled /></td>
                             <td class="c-users__category js-voornaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${voornaam}" disabled /></td>
@@ -305,7 +306,7 @@ const listenToEditChange = function () { // de functie die zorg dat het penceelt
 	}
 };
 
-const filterbuttons = function () {
+const filterbuttons = function () { // functie die een active state terug geeft aan de filter buttons
 	const thbuttons = document.querySelectorAll('.js-filter'); // de filter buttons die geactiveerd worde n
 
 	for (const thbutton of thbuttons) {
@@ -321,6 +322,70 @@ const filterbuttons = function () {
 	}
 };
 
+const searchBar = function(){
+	const searchbar = document.querySelector(".js-searchbar")
+
+	
+	let htmlString;
+	let id;
+	let voornaam; 
+	let achternaam; 
+	let mail; 
+	let geslacht; 
+	let geboortedatum; 
+	let postcode; 
+	let gemeente; 
+	let straatnaam; 
+	let phone; 
+	let nr; 
+	let bus; 
+	let nieuwsbrief; 
+	let reclame; 
+	let admin; 
+
+	fetch('../json/users.json')
+	.then((response) => response.json())
+	.then((json) => {
+		const user = json.users
+		searchbar.addEventListener("input",function(){
+			htmlString = document.getElementById('filterInput').value
+			id = user.filter(item => item.UID.toLowerCase().includes(htmlString.toLowerCase())); // kijkt voor id 
+			voornaam = user.filter(item => item.voornaam.toLowerCase().includes(htmlString.toLowerCase())); // kijkt voor voornaam
+			achternaam = user.filter(item => item.achternaam.toLowerCase().includes(htmlString.toLowerCase())); // kijkt voor achternaam
+			mail = user.filter(item => item.mail.toLowerCase().includes(htmlString.toLowerCase())); // mail kijken
+			geslacht = user.filter(item => item.geslacht.toLowerCase().includes(htmlString.toLowerCase())); // geslacht
+			geboortedatum = user.filter(item => item.geboortedatum.toLowerCase().includes(htmlString.toLowerCase())); // geboortedatum
+			postcode = user.filter(item => item.postcode.toLowerCase().includes(htmlString.toLowerCase())); // postcode
+			gemeente = user.filter(item => item.gemeente.toLowerCase().includes(htmlString.toLowerCase())); // gemeente
+			straatnaam = user.filter(item => item.straatnaam.toLowerCase().includes(htmlString.toLowerCase())); // straatnaam
+			phone = user.filter(item => item.phone.toLowerCase().includes(htmlString.toLowerCase())); // phone
+			nr = user.filter(item => item.nr.toLowerCase().includes(htmlString.toLowerCase())); // nr 
+			bus = user.filter(item => item.bus.toLowerCase().includes(htmlString.toLowerCase())); // bus kijken
+			nieuwsbrief = user.filter(item => item.nieuwsbrief.toLowerCase().includes(htmlString.toLowerCase())); // nieuwsbrief kijken
+			reclame = user.filter(item => item.reclame.toLowerCase().includes(htmlString.toLowerCase())); // reclame kijken
+			admin = user.filter(item => item.admin.toLowerCase().includes(htmlString.toLowerCase())); // admin kijken
+			
+			console.log(id)
+			console.log(voornaam)
+			console.log(achternaam)
+			console.log(mail)
+			console.log(geslacht)
+			console.log(geboortedatum)
+			console.log(postcode)
+			console.log(gemeente)
+			console.log(straatnaam)
+			console.log(phone)
+			console.log(nr)
+			console.log(bus)
+			console.log(nieuwsbrief)
+			console.log(reclame)
+			console.log(admin)
+		})
+		
+	})
+
+}
+
 const accordeonUsers = function () { // de init
 
 	if(document.getElementById("menu")){
@@ -330,6 +395,8 @@ const accordeonUsers = function () { // de init
 		setTimeout(listenTodelete, 1000);
 		setTimeout(listenToEdit, 1000);
 		setTimeout(filterbuttons, 1000);
+		setTimeout(searchBar, 1000)
+
 	} else{
 		console.log("no menu")
 	}
