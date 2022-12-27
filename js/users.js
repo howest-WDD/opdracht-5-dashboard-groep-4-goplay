@@ -34,20 +34,20 @@ const loadJson = function () {
 				// dit is de htmlstring also known as the moshpit
 				htmlString += `
                     <table  class="c-users__table " style="overflow-x:auto;">
-                        <tr id="menu" class="c-users__tablerow c-users__tablerow--first  js-deleteuser js-adduser ">
+                        <tr id="menu" class="c-users__tablerow c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
                             <td class="c-users__category js-id"><input class="c-users__input  js-adduser  js-geboortedatum js-disable" type="text" value="${id}" disabled /></td>
                             <td class="c-users__category js-achternaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${achternaam}" disabled /></td>
                             <td class="c-users__category js-voornaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${voornaam}" disabled /></td>
                             <td class="c-users__category js-mail"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${mail}" disabled /></td>
-                            <td class="c-users__category">
+                            <td class="c-users__category ">
                                 <button id="js-expandid${id}" class="c-users__expandbutton js-expand " data-id="${id}">
                                     <svg id="${id}" class="c-users__expandicon js-expandbutton js-expandbutton${id}" viewBox="0 0 24 24">
                                         <path fill="currentColor" d="M7,10L12,15L17,10H7Z" />
                                     </svg>
                                 </button>
                             </td>
-                            <div id="extraMenu${id}" class="c-users__extracontainer" style="overflow-x:auto;" >
-                                <td id="js-extra${id}" class="c-users__extradata u-hidden  d-flex js-extra " >
+                            <div id="extraMenu${id}" class="c-users__extracontainer " style="overflow-x:auto;" >
+                                <td id="js-extra${id}" class="c-users__extradata u-hidden  d-flex js-extra c-expandborder" >
                                     <div class="c-users__extrainformatie c-users__extrainformatie--1 ">
                                         <div class="c-users__geboortedatum">
                                             <label for="geboortedatum" class="c-users__label c-users__align1">Geboortedatum:</label>
@@ -103,7 +103,7 @@ const loadJson = function () {
 <select id="geslacht" class=" c-users__select js-geslacht js-disable" value="${geslacht}" id="edit-input${id}" name="geslacht" data-disabledid="${id}" disabled sex-id="${id}">
 </select>
                                         </div>
-                                        <div class="c-users__telefoonnummer"></div>
+                                        <div class="c-users__randomding"></div>
                                     </div>
                                     <div class="c-users__editbuttoncontainer">
                                         <button class="c-users__delete js-delete" data-deleteid="${id}">
@@ -196,20 +196,25 @@ const loadJson = function () {
 		});
 };
 
-const listenToExpand = function () {
-	const expandButtons = document.querySelectorAll(`.js-expand`);
-	const expandSvg = document.querySelector('.js-expandbutton');
+const listenToExpand = function () { // function for the expand window 
+	const expandButtons = document.querySelectorAll(`.js-expand`); // de button
+	const expandSvg = document.querySelector('.js-expandbutton'); // de svg die op de button staat
+	
 
 	for (const expandButton of expandButtons) {
 		// console.log(expandButton);
 		expandButton.addEventListener('click', function () {
-			const idnumber = expandButton.getAttribute('data-id');
-			const extraTexts = document.getElementById(`js-extra${idnumber}`);
-			extraTexts.classList.toggle('u-hidden');
+			const idnumber = expandButton.getAttribute('data-id'); // de expand button id 
+			const extraTexts = document.getElementById(`js-extra${idnumber}`); // welke expand is het
+			// extraTexts.classList.toggle('u-hidden');
+			extraTexts.classList.toggle("u-hidden") // spreekt voor zichzelf
+			extraTexts.classList.toggle("c-expandanimation") // animation voor het eruit te latne komen 
+		
 			const extraMenu = document.getElementById(`extraMenu${idnumber}`);
 			// console.log(`extraMenu${idnumber}`);
 			// console.log(extraMenu);
 			extraMenu.classList.toggle('c-spacetop');
+			extraMenu.classList.toggle("c-makespace")
 			// const nextNumb = idnumber - 1;
 			// const nextText = document.getElementById(`js-extra${nextNumb}`);
 			// nextText.classList.toggle('c-spacetop');
@@ -218,15 +223,15 @@ const listenToExpand = function () {
 };
 
 const listenToEdit = function () {
-	const editusers = document.querySelectorAll('.js-edit');
-	for (const edituser of editusers) {
+	const editusers = document.querySelectorAll('.js-edit'); // edit button 
+	for (const edituser of editusers) { // overlopen van alle editbutton
 		// console.log(edituser);
 
 		edituser.addEventListener('click', function () {
 			console.log('click');
-			const deleteid = edituser.getAttribute('data-editid');
+			const deleteid = edituser.getAttribute('data-editid'); // data attribuut in de editbutton
 			// console.log(deleteid);
-			const inputs = document.querySelectorAll(`[data-disabledid='${deleteid}']`);
+			const inputs = document.querySelectorAll(`[data-disabledid='${deleteid}']`); //disabled attribuut in de input fields
 			// console.log(inputs);
 			// console.log(disable);
 			for (const input of inputs) {
@@ -238,33 +243,49 @@ const listenToEdit = function () {
 };
 
 const listenTodelete = function () {
-	const deletebuttons = document.querySelectorAll('.js-delete');
-	const deleteusers = document.getElementsByClassName('js-deleteuser');
+	const deletebuttons = document.querySelectorAll('.js-delete'); // deletbuttons 
+	// const deleteusers = document.getElementsByClassName('js-deleteuser');
+
 
 	// deze zijn voor De modal window en aanpassingen aan de body
-	const darkbackground = document.querySelector('.js-darkbackground');
-	const modal = document.querySelector('.js-modal');
-	const verwijder = document.querySelector('.js-verwijder');
-	const cancel = document.querySelector('.js-cancel');
+	const darkbackground = document.querySelector('.js-darkbackground'); //darkbackground voor de modal 
+	const modal = document.querySelector('.js-modal'); // modal win dow 
+	const verwijder = document.querySelector('.js-verwijder'); // verwijder userbutton 
+	const cancel = document.querySelector('.js-cancel'); // cancel button 
 	for (const deletebutton of deletebuttons) {
-		deletebutton.addEventListener('click', function () {
+		deletebutton.addEventListener('click', function () { // de forloop die zorgt dat als je op de deletebutotn klikt dat de modal window en darkbackground tevoorschijn komt
 			modal.classList.remove('u-hidden');
-			darkbackground.classList.add('c-darkbackground');
+			darkbackground.classList.toggle('c-darkbackground');
+
+			if(!modal.classList.remove("u-hidden")){
+				
+			}
 		});
 	}
-	verwijder.addEventListener('click', function () {});
 
-	verwijder.addEventListener('click', function () {
+
+	verwijder.addEventListener('click', function () { // verwijder de user en de modal window 
 		modal.classList.add('u-hidden');
 		darkbackground.classList.remove('c-darkbackground');
+		
+		for(const deletebutton of deletebuttons){
+			deletebutton.addEventListener("click",function(){
+				const deleteuserid = deletebutton.getAttribute(`data-deleteid`)
+				
+				const deleteuser = document.querySelector(`[data-deleteuser="${deleteuserid}"]`)
+				console.log(deleteuser)
+				deleteuser.classList.add("u-hidden")
+			})
+
+		}
 	});
-	cancel.addEventListener('click', function () {
+	cancel.addEventListener('click', function () { // cancel de modal  window 
 		modal.classList.add('u-hidden');
 		darkbackground.classList.remove('c-darkbackground');
 	});
 };
 
-const listenToEditChange = function () {
+const listenToEditChange = function () { // de functie die zorg dat het penceeltje word vervangne door een casette 
 	const editButtons = document.querySelectorAll('.js-edit');
 	const editSvgs = document.querySelectorAll('.js-editsvg');
 	for (const editButton of editButtons) {
@@ -285,7 +306,7 @@ const listenToEditChange = function () {
 };
 
 const filterbuttons = function () {
-	const thbuttons = document.querySelectorAll('.js-filter');
+	const thbuttons = document.querySelectorAll('.js-filter'); // de filter buttons die geactiveerd worde n
 
 	for (const thbutton of thbuttons) {
 		// console.log(thbutton)
@@ -300,7 +321,7 @@ const filterbuttons = function () {
 	}
 };
 
-const accordeonUsers = function () {
+const accordeonUsers = function () { // de init
 
 	if(document.getElementById("menu")){
 		loadJson();

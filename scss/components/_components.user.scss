@@ -168,25 +168,34 @@
         width: 32px;
         height: 32px ;
         cursor: pointer;
+
+        &:hover{
+            background-color: color.$accent-300;
+        }
     }
 
     &__extradata{
         position: absolute;
         left: 0;
+        padding-top: 1rem;
         margin-top: 52px;
         background-color: color.$neutral-900;
         width: 100%;
+
+        
         
          
     }
     &__extrainformatie{
-        text-align: left;
+        text-align: center;
         display: flex;
         justify-content: space-between;
         margin-right: 1rem;
         margin-left: 1rem;
         
-        
+        &--4{
+            justify-content:space-between;
+        }
     }
     &__editbuttoncontainer{
         
@@ -194,11 +203,11 @@
         width: 100%;
         .js-edit{
             position: absolute;
-            left: 51%;
+            left: 52%;
         }
         .js-delete {
             position: absolute;
-            left: 49%;
+            left: 48%;
           
         }
           
@@ -238,6 +247,7 @@
     &__label{
         color: color.$text-color-a;
         font-weight: bold;
+        text-align: center;
         margin-right: 2rem;
     }
     &__input{
@@ -308,10 +318,10 @@
 
 }
 .c-modal2{
-     position: absolute !important;
+    position: absolute !important;
     margin: 0 !important;
-    top: 50% !important;
-    left: 65%;
+    top: 40% !important;
+    left: 50%;
     height: 0 !important;
     &__container{
        
@@ -354,18 +364,45 @@
 }
 .c-darkbackground{
     position: static;
-    
-    height: 100vh;
-    z-index: 2;
     background-color: rgba(black, $alpha: 0.3);
 }
 
 .c-spacetop{
-    
-    margin-top: 14rem;
+    margin-top:14.3rem;
+}
+.c-expandanimation{
+    animation: slideOut ;
+    animation-duration: 1s;
 }
 
 .c-changebackground{
     border-bottom: 2px solid color.$accent-00;
     background-color: color.$neutral-900;
+}
+
+.c-expandborder{
+    border-bottom: 2px solid color.$accent-00;
+}
+.c-makespace{
+    animation:makeSpace;
+    animation-duration: 1s;
+}
+
+@keyframes slideOut{
+    from{
+        margin-top: 0px;
+        padding-top: 0rem;
+    }
+    to{
+        padding-top: 1rem;
+        margin-top: 52px;
+    }
+}
+@keyframes makeSpace{
+    from{
+        margin-top: 0rem;
+    }
+    to{
+        margin-top:14.3rem;
+    }
 }
