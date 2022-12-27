@@ -2,22 +2,24 @@
 @use '../tools/tools.breakpoints' as bp;
 
 .c-users{
-
+    
     grid-area: "content";
-    width: 100%;
+    width: calc(100vw - 300px);
 
+    // width 100% op mobile 
 
     &__inputcontainer{
         position: relative;
         margin-bottom: 2rem;
         justify-content: center;
+        
     }
     &__inputsvg{
         width: 16px;
         height: 16px;
         fill: color.$text-color-a   ;
         position: absolute;
-        margin-top: 0.75rem;
+        margin-top: 2.7rem;
         margin-left: 0.5rem;
         
         
@@ -65,6 +67,7 @@
         fill: color.$text-color-a;
     }
     &__userinput{   
+        margin-top: 2rem;
         border-radius: 10px;
         padding-left: 1.5rem;
         background-color:color.$neutral-900 ;
@@ -122,6 +125,7 @@
 
     }
     &__activesvg{
+        
         position: absolute;
         top: .625rem;
         width: 32px;
@@ -168,25 +172,34 @@
         width: 32px;
         height: 32px ;
         cursor: pointer;
+
+        &:hover{
+            background-color: color.$accent-300;
+        }
     }
 
     &__extradata{
         position: absolute;
         left: 0;
+        padding-top: 1rem;
         margin-top: 52px;
         background-color: color.$neutral-900;
         width: 100%;
+
+        
         
          
     }
     &__extrainformatie{
-        text-align: left;
+        text-align: center;
         display: flex;
         justify-content: space-between;
         margin-right: 1rem;
         margin-left: 1rem;
         
-        
+        &--4{
+            justify-content:space-between;
+        }
     }
     &__editbuttoncontainer{
         
@@ -194,11 +207,11 @@
         width: 100%;
         .js-edit{
             position: absolute;
-            left: 51%;
+            left: 52%;
         }
         .js-delete {
             position: absolute;
-            left: 49%;
+            left: 48%;
           
         }
           
@@ -234,10 +247,15 @@
     &__gemeente{
 
     }
+    &__geslacht{
+        position: absolute;
+        right: 0;
+    }
 
     &__label{
         color: color.$text-color-a;
         font-weight: bold;
+        text-align: center;
         margin-right: 2rem;
     }
     &__input{
@@ -308,10 +326,10 @@
 
 }
 .c-modal2{
-     position: absolute !important;
+    position: absolute !important;
     margin: 0 !important;
-    top: 50% !important;
-    left: 65%;
+    top: 40% !important;
+    left: 50%;
     height: 0 !important;
     &__container{
        
@@ -354,18 +372,53 @@
 }
 .c-darkbackground{
     position: static;
-    
-    height: 100vh;
-    z-index: 2;
     background-color: rgba(black, $alpha: 0.3);
 }
 
 .c-spacetop{
-    
-    margin-top: 14rem;
+    margin-top:14.3rem;
+}
+.c-expandanimation{
+    animation: slideOut ;
+    animation-duration: 1s;
 }
 
 .c-changebackground{
     border-bottom: 2px solid color.$accent-00;
     background-color: color.$neutral-900;
+}
+
+.c-expandborder{
+    border-bottom: 2px solid color.$accent-00;
+}
+.c-makespace{
+    animation:makeSpace;
+    animation-duration: 1s;
+}
+
+.c-turnfilterbutton{
+    transform: rotate(180deg);
+}
+
+.c-changetablerowbackground{
+    background-color: hotpink;
+}
+
+@keyframes slideOut{
+    from{
+        margin-top: 0px;
+        padding-top: 0rem;
+    }
+    to{
+        padding-top: 1rem;
+        margin-top: 52px;
+    }
+}
+@keyframes makeSpace{
+    from{
+        margin-top: 0rem;
+    }
+    to{
+        margin-top:14.3rem;
+    }
 }
