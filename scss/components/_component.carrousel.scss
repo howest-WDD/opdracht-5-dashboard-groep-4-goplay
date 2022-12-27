@@ -1,0 +1,13 @@
+.c-carousel {
+  margin-top: 50px;
+  padding: 10px;
+
+  &__cell {
+    background-image: url("https://wmimages.goplay.be/styles/2a4e9f9d7142af06c50511f683da39ad08740d60/meta/stilljeanclaude-rmrvyr.jpg?style=W3sicmVzaXplIjp7ImZpdCI6ImNvdmVyIiwid2lkdGgiOjY3MCwiaGVpZ2h0IjozNzAsImdyYXZpdHkiOiJjZW50ZXIiLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjg1fX1d&sign=4707d2d7d417c6efcd22b72efc4f3be5fa89b30cb54c926fe302b600945adf3a");
+    width: 25%;
+    margin-right: 10px;
+    border-radius: 5px;
+    counter-increment: gallery-cell;
+    background-color: #00f0c8;
+  }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Edit Content</title>
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+    <link rel="manifest" href="/site.webmanifest"/>
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
+    <meta name="msapplication-TileColor" content="#2b5797"/>
+    <meta name="theme-color" content="#000000"/>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./dist/index.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <!-- JS -->
+    <script type="module" src="./dist/main-min.js" defer></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" defer></script>
+</head>
+<body>
+<div class="c-background-image">
+    <div class="c-movie-info">
+        <section class="c-movie-info--section">
+            <h1 class="c-movie-info--section__title">The Sky is the Limit</h1>
+            <h2 class="c-movie-info--section__airdate">Maandag 21.00</h2>
+            <p class="c-movie-info--section__description">The Sky is the Limit werpt een exclusieve blik op de levens
+                van succesvolle landgenoten voor wie de bomen tot in de hemel groeien - en soms zelfs hoger.</p>
+            <div class="c-movie-info--section__buttons">
+                <button class="c-button">afspelen</button>
+                <button class="c-button">edit</button>
+            </div>
+        </section>
+        <section class="c-movie-info--poster">
+            <picture>
+                <source media="(max-width: 767px)"
+                        srcset="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2021-06/onlinempl1050x1500abirthmotherssecret-qvfaz5.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=100470a7183567457f87cb0c81e20279d629f797217a2372dbe1446ba8fd177c">
+                <source media="(min-width: 768px)"
+                        srcset="https://wmimages.goplay.be/styles/fc9f8afb7a8416cc9fcf5a03e3f4fb0fee0b3ef0/2021-06/onlinempl1050x1500abirthmotherssecret-qvfaz5.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjoxMDIwLCJoZWlnaHQiOjE0ODAsIndpdGhvdXRFbmxhcmdlbWVudCI6ZmFsc2V9fSx7ImpwZWciOnsicXVhbGl0eSI6OTV9fV0=&sign=b5b5d00314bec32424bbf01a8740391fcb14d205a3266c09d3daac3bb6bf6e5d">
+                <img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2021-06/onlinempl1050x1500abirthmotherssecret-qvfaz5.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=100470a7183567457f87cb0c81e20279d629f797217a2372dbe1446ba8fd177c"
+                     alt="A Birthmother's Secret" width="510" height="740">
+            </picture>
+        </section>
+    </div>
+    <div class="c-carousel"
+         data-flickity='{ "cellAlign": "left", "contain": true, "groupCells": "60%" , "pageDots": false,"imagesLoaded": true}'>
+        <div class="c-carousel__cell"></div>
+        <div class="c-carousel__cell"></div>
+        <div class="c-carousel__cell"></div>
+        <div class="c-carousel__cell"></div>
+        <div class="c-carousel__cell"></div>
+        <div class="c-carousel__cell"></div>
+        <div class="c-carousel__cell"></div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="13.503" height="23.619" viewBox="0 0 13.503 23.619">
+            <path id="Icon_ionic-ios-arrow-back" data-name="Icon ionic-ios-arrow-back" d="M15.321,18l8.937-8.93a1.688,1.688,0,0,0-2.391-2.384L11.742,16.8a1.685,1.685,0,0,0-.049,2.327L21.86,29.32a1.688,1.688,0,0,0,2.391-2.384Z" transform="translate(-11.251 -6.194)" fill="#f1f1f1"/>
+    </svg>
+
+</div>
+</body>
+</html>
