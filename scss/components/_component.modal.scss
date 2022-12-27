@@ -24,6 +24,11 @@
 
 	position: relative;
 
+	&--logo {
+		width: 20% !important;
+		height: 10% !important;
+	}
+
 	&__close {
 		color: color.$text-color-a;
 
@@ -48,6 +53,49 @@
 		color: color.$text-color-a;
 
 		.c-modal__content--pie & {
+		}
+
+		&--logo {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			p {
+				width: 50%;
+
+				img {
+					width: 100%;
+				}
+			}
+
+			label {
+				display: inline-block;
+				padding: 12px 18px;
+				cursor: pointer;
+				border-radius: 5px;
+				background-color: color.$accent-00;
+				font-size: 1.2rem;
+				font-weight: 600;
+				color: color.$neutral-900;
+			}
+
+			input[type='file'] {
+				// color: color.$accent-00;
+
+				position: absolute;
+				z-index: -1;
+				top: 10px;
+				left: 8px;
+				font-size: 17px;
+			}
+
+			input[type='submit'] {
+				margin-left: 0;
+				margin-top: 120px;
+				font-weight: 600;
+
+				position: absolute;
+			}
 		}
 	}
 
