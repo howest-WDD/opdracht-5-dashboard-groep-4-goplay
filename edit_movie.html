@@ -22,7 +22,7 @@
 </head>
 <body>
 <div class="c-background-image">
-    <div id="modalContent" class="c-modalContainer">
+    <div id="modalContent" class="c-modalContainer u-hidden">
         <!-- content -->
         <div class="c-modal">
             <form>
@@ -40,6 +40,7 @@
                 <button>upload Background image</button>
                 <input type="submit" value="Update">
             </form>
+            <button id="cancelButton" class="c-button">Annuleer</button>
         </div>
     </div>
     <div class="c-movie-info">
@@ -53,7 +54,7 @@
                 winnen.</p>
             <div class="c-movie-info--section__buttons">
                 <button class="c-button">afspelen</button>
-                <button class="c-button">edit</button>
+                <button class="c-button" id="editMovies">edit</button>
             </div>
         </section>
         <section class="c-movie-info--poster">
