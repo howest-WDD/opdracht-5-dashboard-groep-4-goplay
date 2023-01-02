@@ -1,0 +1,87 @@
+@use '../settings/colors' as color;
+@use '../tools/tools.breakpoints' as bp;
+
+.c-subscription {
+	width: 200px;
+	height: 300px;
+
+	outline: color.$accent-00 1px solid;
+
+	border-radius: 15px;
+
+	padding: 10px;
+
+	input,
+	textarea {
+		background-color: color.$neutral-800;
+		border: 2px solid grey;
+		border-radius: 4px;
+		color: color.$text-color-a;
+		margin-right: 2rem;
+		line-height: 2rem;
+
+		align-items: center;
+		&::placeholder {
+			color: color.$text-color-a;
+			border: none;
+		}
+		&:focus {
+			border: 2px solid grey;
+			outline: none;
+		}
+
+		&:active {
+			background-color: color.$neutral-800;
+			border: 2px solid grey;
+			box-shadow: none;
+			border-radius: 4px;
+		}
+		&:disabled {
+			background-color: transparent;
+			border: none;
+		}
+	}
+
+	&--new {
+		display: flex;
+		justify-content: center;
+
+		position: relative;
+
+		h2 {
+			width: 100%;
+			text-align: center;
+		}
+
+		div {
+			position: absolute;
+			top: 40%;
+
+			width: 100px;
+			height: 100px;
+
+			border-radius: 100%;
+			background-color: color.$neutral-500;
+
+			font-size: 80px;
+			color: color.$neutral-900;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			span {
+				height: fit-content;
+
+				position: absolute;
+				top: 0;
+			}
+		}
+	}
+
+	&__desc {
+	}
+
+	&__price {
+	}
+}
