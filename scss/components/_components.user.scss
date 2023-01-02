@@ -202,16 +202,18 @@
         }
     }
     &__editbuttoncontainer{
-        
+        z-index: 5;
         height: 40px;
         width: 100%;
         .js-edit{
             position: absolute;
             left: 52%;
+           
         }
         .js-delete {
             position: absolute;
             left: 48%;
+            
           
         }
           
@@ -382,6 +384,7 @@
 .c-expandanimation{
     animation: slideOut ;
     animation-duration: 1s;
+    
 }
 
 .c-changebackground{
@@ -399,6 +402,7 @@
 
 .c-turnfilterbutton{
     transform: rotate(180deg);
+    
 }
 
 .c-changetablerowbackground{
@@ -409,10 +413,12 @@
     from{
         margin-top: 0px;
         padding-top: 0rem;
+        z-index: -1;
     }
     to{
         padding-top: 1rem;
         margin-top: 52px;
+        z-index: -1;
     }
 }
 @keyframes makeSpace{
