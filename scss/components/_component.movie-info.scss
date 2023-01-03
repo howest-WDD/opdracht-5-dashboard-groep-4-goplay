@@ -1,38 +1,17 @@
 @use '../settings/colors' as color;
+@use '../tools/tools.breakpoints' as bp;
 
-.c-movie-info{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
-  padding: 30px 30px 0 30px;
-
-  &--section{
-    max-width: 480px;
-    display: flex;
-    flex-direction:column;
-    justify-content:flex-end;
-    &__buttons{
-      display: flex;
-    }
-    button{
-      &:first-child{
-        margin-left: 0;
-      }
-    }
-    &__title, &__description{
-      color: color.$neutral-500;
-    }
-
-    &__airdate{
-      color: color.$accent-00;
-    }
-  }
+.c-movie-info {
+  z-index: 30;
 }
 
-.c-background-image{
-  background-image: url("https://wmimages.goplay.be/styles/f7331df9e0140370408293ff5186b3cc1ba2ff25/meta/wallpaper3840x2160abirthmotherssecret-qvfaxv.jpg?style=W3sianBlZyI6eyJxdWFsaXR5Ijo5MH19LHsicmVzaXplIjp7ImZpdCI6ImNvdmVyIiwid2lkdGgiOjM4NDAsImhlaWdodCI6MjE2MCwiZ3Jhdml0eSI6bnVsbCwid2l0aG91dEVubGFyZ2VtZW50IjpmYWxzZX19XQ==&sign=b7c3b62fbe56da2b0c7941f237dc3bf52cb85f324b704e3c937bdf4bff06c92f");
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-position: center;
+.c-background-image {
+  background-image: url("https://wmimages.goplay.be/styles/f7331df9e0140370408293ff5186b3cc1ba2ff25/meta/onlinewallpaper3840x2160wintersdream-r3segs.jpg?style=W3sianBlZyI6eyJxdWFsaXR5Ijo5MH19LHsicmVzaXplIjp7ImZpdCI6ImNvdmVyIiwid2lkdGgiOjM4NDAsImhlaWdodCI6MjE2MCwiZ3Jhdml0eSI6bnVsbCwid2l0aG91dEVubGFyZ2VtZW50IjpmYWxzZX19XQ==&sign=308f352a5d07363dd9d00fd6573380d0fbcf93046137b1e4930445124ed37a6e");
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-size: cover;
+  background-position: top center;
+  height: calc(100% + env(safe-area-inset-top));
 }

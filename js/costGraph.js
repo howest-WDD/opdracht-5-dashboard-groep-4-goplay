@@ -66,4 +66,4 @@ const createCostGraph = function () {
 	}
 };
 
-document.addEventListener('DOMContentLoaded', createCostGraph());
+document.addEventListener('DOMContentLoaded', createCostGraph);

@@ -11,8 +11,11 @@
     margin-left: 2.625rem;
     text-decoration: none;
     transition: 0.1s;
- 
-    
+
+    &--offline{
+        @extend .c-button;
+        background-color: color.$accent-100;
+    }
 }
 .c-button2{
     display: flex;
@@ -24,8 +27,5 @@
     margin-left: 2.625rem;
     text-decoration: none;
     transition: 0.1s;
-
-
-    
 }
 
