@@ -5,6 +5,7 @@
     
     grid-area: "content";
     width: calc(100vw - 300px);
+    
 
     // width 100% op mobile 
 
@@ -12,6 +13,7 @@
         position: relative;
         margin-bottom: 2rem;
         justify-content: center;
+        max-width: 100%;
         
     }
     &__inputsvg{
@@ -25,6 +27,26 @@
         
         
     }
+    &__goback{
+        display: flex;
+        position: relative;
+    }
+    &__gobacktext{
+        color: color.$text-color-a;
+        font-size: 24px;
+        cursor: pointer;
+        background-color: color.$accent-300;
+
+        padding: 1rem;
+        border-radius: 0.5px;
+    }
+    &__gobacksvg{
+        padding-right: 2rem;
+        position: absolute;
+       
+        
+    }
+
     &__select{
        
         border: 2px solid color.$accent-00;
@@ -184,7 +206,7 @@
         padding-top: 1rem;
         margin-top: 52px;
         background-color: color.$neutral-900;
-        width: 100%;
+        width: calc(100vw - 300px);
 
         
         
@@ -202,16 +224,18 @@
         }
     }
     &__editbuttoncontainer{
-        
+        z-index: 5;
         height: 40px;
         width: 100%;
         .js-edit{
             position: absolute;
             left: 52%;
+           
         }
         .js-delete {
             position: absolute;
             left: 48%;
+            
           
         }
           
@@ -228,6 +252,7 @@
     }
     &__geboortedatum{
      text-align: left;
+ 
     }
     &__straatnaam{
 
@@ -249,7 +274,7 @@
     }
     &__geslacht{
         position: absolute;
-        right: 0;
+        right: 17px;
     }
 
     &__label{
@@ -293,6 +318,7 @@
     &__extracontainer{
         justify-content: space-between;
         flex-direction: column;
+        
         
         bottom: 0;
         
@@ -376,12 +402,9 @@
 }
 
 .c-spacetop{
-    margin-top:14.3rem;
+    margin-top:13.8rem;
 }
-.c-expandanimation{
-    animation: slideOut ;
-    animation-duration: 1s;
-}
+
 
 .c-changebackground{
     border-bottom: 2px solid color.$accent-00;
@@ -396,8 +419,15 @@
     animation-duration: 1s;
 }
 
+.c-expandanimation{
+    animation: slideOut ;
+    animation-duration: 1s;
+    
+}
+
 .c-turnfilterbutton{
     transform: rotate(180deg);
+    
 }
 
 .c-changetablerowbackground{
@@ -408,10 +438,12 @@
     from{
         margin-top: 0px;
         padding-top: 0rem;
+        z-index: -1;
     }
     to{
         padding-top: 1rem;
         margin-top: 52px;
+        z-index: -1;
     }
 }
 @keyframes makeSpace{
@@ -419,6 +451,6 @@
         margin-top: 0rem;
     }
     to{
-        margin-top:14.3rem;
+        margin-top:13.8rem;
     }
 }
