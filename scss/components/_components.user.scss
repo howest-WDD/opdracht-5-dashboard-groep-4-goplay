@@ -5,6 +5,7 @@
     
     grid-area: "content";
     width: calc(100vw - 300px);
+    
 
     // width 100% op mobile 
 
@@ -12,6 +13,7 @@
         position: relative;
         margin-bottom: 2rem;
         justify-content: center;
+        max-width: 100%;
         
     }
     &__inputsvg{
@@ -27,14 +29,20 @@
     }
     &__goback{
         display: flex;
+        position: relative;
     }
     &__gobacktext{
-        color: color.$neutral-500;
+        color: color.$text-color-a;
         font-size: 24px;
         cursor: pointer;
+        background-color: color.$accent-300;
+
+        padding: 1rem;
+        border-radius: 0.5px;
     }
     &__gobacksvg{
         padding-right: 2rem;
+        position: absolute;
        
         
     }
@@ -198,7 +206,7 @@
         padding-top: 1rem;
         margin-top: 52px;
         background-color: color.$neutral-900;
-        width: 100%;
+        width: calc(100vw - 300px);
 
         
         
@@ -266,7 +274,7 @@
     }
     &__geslacht{
         position: absolute;
-        right: 0;
+        right: 17px;
     }
 
     &__label{
@@ -310,6 +318,7 @@
     &__extracontainer{
         justify-content: space-between;
         flex-direction: column;
+        
         
         bottom: 0;
         
@@ -393,13 +402,9 @@
 }
 
 .c-spacetop{
-    margin-top:14.3rem;
+    margin-top:13.8rem;
 }
-.c-expandanimation{
-    animation: slideOut ;
-    animation-duration: 1s;
-    
-}
+
 
 .c-changebackground{
     border-bottom: 2px solid color.$accent-00;
@@ -412,6 +417,12 @@
 .c-makespace{
     animation:makeSpace;
     animation-duration: 1s;
+}
+
+.c-expandanimation{
+    animation: slideOut ;
+    animation-duration: 1s;
+    
 }
 
 .c-turnfilterbutton{
@@ -440,6 +451,6 @@
         margin-top: 0rem;
     }
     to{
-        margin-top:14.3rem;
+        margin-top:13.8rem;
     }
 }
