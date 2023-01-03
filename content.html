@@ -1,143 +1,143 @@
 <!DOCTYPE html>
 <html lang="nl">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Content management</title>
-		<!-- favicon -->
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-		<link rel="manifest" href="/site.webmanifest" />
-		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-		<meta name="msapplication-TileColor" content="#2b5797" />
-		<meta name="theme-color" content="#000000" />
-		<!-- CSS -->
-		<link rel="stylesheet" href="./dist/index.css" />
-		<!-- JS -->
-		<script type="module" src="./dist/main-min.js"></script>
-	</head>
-	<body class="o-darkmode o-grid">
-		<nav class="c-nav">
-			<div class="c-sidebar c-nav__hide">
-			  <img class="c-sidebar__logo js-logo" src="/assets/svg/logo.svg" alt="GoPlay" />
-			  <img class="c-sidebar__logo js-logo u-hidden" src="/assets/svg/logo_dark.svg" alt="GoPlay" />
-			  <ul>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Content management</title>
+	<!-- favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+	<link rel="manifest" href="/site.webmanifest" />
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+	<meta name="msapplication-TileColor" content="#2b5797" />
+	<meta name="theme-color" content="#000000" />
+	<!-- CSS -->
+	<link rel="stylesheet" href="./dist/index.css" />
+	<!-- JS -->
+	<script type="module" src="./dist/main-min.js"></script>
+</head>
+<body class="o-darkmode o-grid">
+<nav class="c-nav">
+	<div class="c-sidebar c-nav__hide">
+		<img class="c-sidebar__logo js-logo" src="/assets/svg/logo.svg" alt="GoPlay" />
+		<img class="c-sidebar__logo js-logo u-hidden" src="/assets/svg/logo_dark.svg" alt="GoPlay" />
+		<ul>
+			<li class="c-sidebar__item"><a href="index.html">Dashboard</a></li>
+			<li class="c-sidebar__item"><a href="users.html">User management</a></li>
+			<li class="c-sidebar__item active"><a href="content.html">Content managment</a></li>
+		</ul>
+		<div class="c-sidebar__account">
+			<h2>Account</h2>
+			<ul>
+				<li class="c-sidebar__item">
+					<div class="c-profile">
+						<div class="c-profile--details">
+							<img src="assets/img/tony_stark.png" alt="profileImg" />
+						</div>
+
+						<div class="name-job">
+							<div class="profile_name">Tony Stark</div>
+							<div class="role">Admin</div>
+						</div>
+					</div>
+				</li>
+				<li class="c-sidebar__item"><a href="#">Settings</a></li>
+				<li class="c-sidebar__item"><a class="c-sidebar__item--accent js-logout" href="#">Log Out</a></li>
+				<li class="c-sidebar__button"><a class="c-button js-darkmode" href="#">Light Mode</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="c-mobilenav">
+		<img class="c-mobilenav__logo js-logo" src="/assets/svg/logo.svg" alt="GoPlay" />
+		<img class="c-mobilenav__logo js-logo u-hidden" src="/assets/svg/logo_dark.svg" alt="GoPlay" />
+
+		<div class="c-mobilenav__hamburger js-togglenav">
+			<input class="c-mobilenav__toggle" type="checkbox" />
+			<span class="c-mobilenav__bar c-mobilenav__bar--top"></span>
+			<span class="c-mobilenav__bar c-mobilenav__bar--mid"></span>
+			<span class="c-mobilenav__bar c-mobilenav__bar--bottom"></span>
+		</div>
+
+		<div class="c-mobilenav__content u-hidden">
+			<ul>
 				<li class="c-sidebar__item"><a href="index.html">Dashboard</a></li>
 				<li class="c-sidebar__item"><a href="users.html">User management</a></li>
 				<li class="c-sidebar__item active"><a href="content.html">Content managment</a></li>
-			  </ul>
-			  <div class="c-sidebar__account">
+			</ul>
+			<div class="c-mobilenav__account">
 				<h2>Account</h2>
 				<ul>
-				  <li class="c-sidebar__item">
-					<div class="c-profile">
-					  <div class="c-profile--details">
-						<img src="assets/img/tony_stark.png" alt="profileImg" />
-					  </div>
-	
-					  <div class="name-job">
-						<div class="profile_name">Tony Stark</div>
-						<div class="role">Admin</div>
-					  </div>
-					</div>
-				  </li>
-				  <li class="c-sidebar__item"><a href="#">Settings</a></li>
-				  <li class="c-sidebar__item"><a class="c-sidebar__item--accent js-logout" href="#">Log Out</a></li>
-				  <li class="c-sidebar__button"><a class="c-button js-darkmode" href="#">Light Mode</a></li>
-				</ul>
-			  </div>
-			</div>
-	
-			<div class="c-mobilenav">
-			  <img class="c-mobilenav__logo js-logo" src="/assets/svg/logo.svg" alt="GoPlay" />
-			  <img class="c-mobilenav__logo js-logo u-hidden" src="/assets/svg/logo_dark.svg" alt="GoPlay" />
-	
-			  <div class="c-mobilenav__hamburger js-togglenav">
-						<input class="c-mobilenav__toggle" type="checkbox" />
-						<span class="c-mobilenav__bar c-mobilenav__bar--top"></span>
-						<span class="c-mobilenav__bar c-mobilenav__bar--mid"></span>
-						<span class="c-mobilenav__bar c-mobilenav__bar--bottom"></span>
-			  </div>
-	
-			  <div class="c-mobilenav__content u-hidden">
-				<ul>
-				  <li class="c-sidebar__item"><a href="index.html">Dashboard</a></li>
-				  <li class="c-sidebar__item"><a href="users.html">User management</a></li>
-				  <li class="c-sidebar__item active"><a href="content.html">Content managment</a></li>
-				</ul>
-				<div class="c-mobilenav__account">
-				  <h2>Account</h2>
-				  <ul>
 					<li class="c-sidebar__item">
-				
+
 					</li>
 					<li class="c-sidebar__item"><a href="#">Settings</a></li>
 					<li class="c-sidebar__item"><a class="c-sidebar__item--accent js-logout" href="#">Log Out</a></li>
-				  </ul>
-				</div>
-			  </div>
+				</ul>
 			</div>
-			
-		</nav>
+		</div>
+	</div>
+
+</nav>
 
 <main>
-    <div class="c-filters">
-        <label for="search" class="c-filters__search--label">search movie/serie</label>
-        <input type="text" id="search" class="c-filters__input" placeholder="movie/serie">
+	<div class="c-filters">
+		<label for="search" class="c-filters__search--label">search movie/serie</label>
+		<input type="text" id="search" class="c-filters__input" placeholder="movie/serie">
 
-        <label for="type">Choose a type:</label>
-        <select name="type" id="type">
-            <option value="All">All</option>
-            <option value="Movie">Movie</option>
-            <option value="Series">Series</option>
-            <option value="Podcast">Podcast</option>
-        </select>
+		<label for="type">Choose a type:</label>
+		<select name="type" id="type">
+			<option value="All">All</option>
+			<option value="Movie">Movie</option>
+			<option value="Series">Series</option>
+			<option value="Podcast">Podcast</option>
+		</select>
 
-        <label for="genre">Choose a genre:</label>
-        <select name="genre" id=genre>
-            <option value="all">all</option>
-            <option value="Action">Ation</option>
-            <option value="Adventure">Adventure</option>
-            <option value="Drama">Drama</option>
-        </select>
-    </div>
+		<label for="genre">Choose a genre:</label>
+		<select name="genre" id=genre>
+			<option value="all">all</option>
+			<option value="Action">Ation</option>
+			<option value="Adventure">Adventure</option>
+			<option value="Drama">Drama</option>
+		</select>
+	</div>
 
-    <div class="o-content">
-        <div class="c-content-card">
-            <h1 class="c-content-card__title">sky is the limit</h1>
-            <img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-11/goplaympmpl1050x1500tsitls6-rktd75.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=13591f5f1bd39a4ffa2ca1e0a5267fcde1fe77b2e3bab42a9dab35bc50effacd"
-                 alt="image" class="c-content-card__image">
-        </div>
+	<div class="o-content">
+		<div class="c-content-card">
+			<h1 class="c-content-card__title">sky is the limit</h1>
+			<img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-11/goplaympmpl1050x1500tsitls6-rktd75.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=13591f5f1bd39a4ffa2ca1e0a5267fcde1fe77b2e3bab42a9dab35bc50effacd"
+				 alt="image" class="c-content-card__image">
+		</div>
 
-        <div class="c-content-card">
-            <h1 class="c-content-card__title">Bake off Vlaanderen</h1>
-            <img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-12/goplaympmpl1050x1500bovkerstspecial-rmtn1j.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=4a35dc454961a3714524096cb87aec560b4a2069cd2e038fbdad773d65be651e"
-                 alt="image" class="c-content-card__image">
-        </div>
-        <div class="c-content-card">
-            <h1 class="c-content-card__title">Patient Pedro</h1>
-            <img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-11/goplaympmpl1050x1500patientpedro-rm42pi.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=0fd93a612aa12234a6693bf87840f2da2f2d1b94a6aa986e0aaee38618852132" alt="image" class="c-content-card__image">
-        </div>
+		<div class="c-content-card">
+			<h1 class="c-content-card__title">Bake off Vlaanderen</h1>
+			<img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-12/goplaympmpl1050x1500bovkerstspecial-rmtn1j.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=4a35dc454961a3714524096cb87aec560b4a2069cd2e038fbdad773d65be651e"
+				 alt="image" class="c-content-card__image">
+		</div>
+		<div class="c-content-card">
+			<h1 class="c-content-card__title">Patient Pedro</h1>
+			<img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-11/goplaympmpl1050x1500patientpedro-rm42pi.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=0fd93a612aa12234a6693bf87840f2da2f2d1b94a6aa986e0aaee38618852132" alt="image" class="c-content-card__image">
+		</div>
 
-        <div class="c-content-card">
-            <h1 class="c-content-card__title">Is Crypto het nieuwe goud?</h1>
-            <img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-12/cryptoposter-rmxldg.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=1d9fe16be5b867ea54030d30d2bd1372190ae51ff6a157b241e64c918f8b40b1" alt="image" class="c-content-card__image">
-        </div>
-        <div class="c-content-card">
-            <h1 class="c-content-card__title">Karen Damen De Musical</h1>
-            <img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-12/goplaympmpl1050x1500jdmkarendamen-rmrtui.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=d7692b8bee5f9680a2a4707f3257acc13c68a9521eee73ad95fdb20c2336ecec" alt="image" class="c-content-card__image">
-        </div>
-        <div class="c-content-card">
-            <h1 class="c-content-card__title">De Mol</h1>
-            <img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-02/goplaympmpl1050x1500demol2022-r80eko.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=bd461b80faa61c49c84c35dc6e4d972eb7ca6bd1fdb0a594a2c106a959511697" alt="image" class="c-content-card__image">
-        </div>
-        <div class="c-content-card">
-            <h1 class="c-content-card__title">Klopjacht</h1>
-            <img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-08/goplaympmpl1050x1500klopjacht-rg3aep.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=abab3c5af022e25dc1f0597a02fcc37da4f0120614c957fb499be1d7920282bb" alt="image" class="c-content-card__image">
-        </div>
-    </div>
+		<div class="c-content-card">
+			<h1 class="c-content-card__title">Is Crypto het nieuwe goud?</h1>
+			<img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-12/cryptoposter-rmxldg.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=1d9fe16be5b867ea54030d30d2bd1372190ae51ff6a157b241e64c918f8b40b1" alt="image" class="c-content-card__image">
+		</div>
+		<div class="c-content-card">
+			<h1 class="c-content-card__title">Karen Damen De Musical</h1>
+			<img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-12/goplaympmpl1050x1500jdmkarendamen-rmrtui.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=d7692b8bee5f9680a2a4707f3257acc13c68a9521eee73ad95fdb20c2336ecec" alt="image" class="c-content-card__image">
+		</div>
+		<div class="c-content-card">
+			<h1 class="c-content-card__title">De Mol</h1>
+			<img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-02/goplaympmpl1050x1500demol2022-r80eko.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=bd461b80faa61c49c84c35dc6e4d972eb7ca6bd1fdb0a594a2c106a959511697" alt="image" class="c-content-card__image">
+		</div>
+		<div class="c-content-card">
+			<h1 class="c-content-card__title">Klopjacht</h1>
+			<img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-08/goplaympmpl1050x1500klopjacht-rg3aep.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=abab3c5af022e25dc1f0597a02fcc37da4f0120614c957fb499be1d7920282bb" alt="image" class="c-content-card__image">
+		</div>
+	</div>
 </main>
 </body>
 </html>

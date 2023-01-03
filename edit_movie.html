@@ -15,63 +15,56 @@
     <meta name="theme-color" content="#000000"/>
     <!-- CSS -->
     <link rel="stylesheet" href="./dist/index.css"/>
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <!-- JS -->
     <script type="module" src="./dist/main-min.js" defer></script>
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js" defer></script>
 </head>
-<body>
-<div class="c-background-image">
-    <div id="modalContent" class="c-modalContainer u-hidden">
-        <!-- content -->
-        <div class="c-modal">
-            <form id="editForm" class="c-formContent">
-                <label for="ftitle">Title:</label><br>
-                <input type="text" id="ftitle" name="ftitle"
-                       value="A Birthmother's Secret"><br>
-                <label for="fdesc">Description:</label><br>
-                <textarea type="text" id="fdesc" name="fdesc" rows="10" cols="60">Nadat de 16-jarige Tara haar biologische moeder, Grace, op een DNA-website heeft gevonden, worstelt haar toegewijde adoptiemoeder, Amy, om haar dochter te beschermen. Terwijl de wild onvoorspelbare geboortemoeder hun leven binnenstormt met grillige liefde voor Tara en venijn voor Amy. Maar is Grace echt wie ze zegt dat ze is? De gestoorde biologische moeder moet haar verbluffende geheim begraven houden terwijl ze haar plan uitvoert om Amy te elimineren en Tara terug te winnen.</textarea><br>
-                <div class="c-formContent__upload--buttons">
-                    <button class="c-button">upload thumbnail</button>
-                    <button class="c-button">upload Background image</button>
-                </div>
+<body class="o-content">
+<main>
+    <div id="editContentModal" class="modaloverlay u-hidden">
+        <div class="modal">
+            <form id="fContent" method="POST">
+
             </form>
-            <div class="c-form-actions">
-                <button id="cancelButton" class="c-button">Annuleer</button>
-                <button type="submit" form="editForm" value="Submit" class="c-button">Update</button>
-            </div>
+            <button class="c-button">Update</button>
+            <button class="c-button" id="cancelButton">Annuleer</button>
         </div>
     </div>
-    <div class="c-movie-info">
-        <section class="c-movie-info--section">
-            <h1 class="c-movie-info--section__title">A Birthmother's Secret</h1>
-            <p class="c-movie-info--section__description">Nadat de 16-jarige Tara haar biologische moeder, Grace, op een
-                DNA-website heeft gevonden, worstelt haar toegewijde adoptiemoeder, Amy, om haar dochter te beschermen.
-                Terwijl de wild onvoorspelbare geboortemoeder hun leven binnenstormt met grillige liefde voor Tara en
-                venijn voor Amy. Maar is Grace echt wie ze zegt dat ze is? De gestoorde biologische moeder moet haar
-                verbluffende geheim begraven houden terwijl ze haar plan uitvoert om Amy te elimineren en Tara terug te
-                winnen.</p>
-            <div class="c-movie-info--section__buttons">
-                <button class="c-button">afspelen</button>
-                <button class="c-button" id="">Mijn Lijst</button>
+    <header>
+        <div class="hero hero--program is-movie">
+            <div class="hero__bg has-blur"
+                 style="background-image: url(&quot;https://wmimages.goplay.be/styles/f7331df9e0140370408293ff5186b3cc1ba2ff25/meta/onlinewallpaper3840x2160wintersdream-r3segs.jpg?style=W3sianBlZyI6eyJxdWFsaXR5Ijo5MH19LHsicmVzaXplIjp7ImZpdCI6ImNvdmVyIiwid2lkdGgiOjM4NDAsImhlaWdodCI6MjE2MCwiZ3Jhdml0eSI6bnVsbCwid2l0aG91dEVubGFyZ2VtZW50IjpmYWxzZX19XQ==&amp;sign=308f352a5d07363dd9d00fd6573380d0fbcf93046137b1e4930445124ed37a6e&quot;);"></div>
+            <div class="hero__bg-readable"></div>
+            <div class="hero__container hero__movie-container" style="margin-top: 25px">
+                <div class="hero-video__container">
+                    <div class="hero-video__content l-spacer">
+                        <div class="hero-video__inner"><h1 class="hero-video__title">Winter's Dream</h1>
+                            <div class="hero__unpublish-date metadata__unpublish-date">Deze video is te bekijken
+                                tot <span class="date">za 28/01/23</span></div>
+                            <div class="hero-video__description"><p>Voormalig profskiër Kat wordt gevraagd een
+                                zestienjarig talent te coachen. Ze stort zich weer op haar oude passie en krijgt
+                                al snel gevoelens voor de vader van haar pupil, weduwnaar Ty.</p>
+                            </div>
+                            <div class="hero__actions">
+                                <a class="c-button"
+                                   href="https://www.goplay.be/video/winters-dream#autoplay" target="_blank">
+                                    <span class="button__text">Afspelen</span>
+                                </a>
+                                <button class="c-button">Online</button>
+                                <button class="c-button">Terug naar Content</button>
+                                <button class="c-button" id="editButton">Aanpassen</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="hero__poster c-button--poster" type="button">
+                    <div class="play-button"></div>
+                    <picture class="l-spacer">
+                        <img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2021-12/onlinempl1050x1500wintersdream-r3sehk.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&amp;sign=52ae04c41d6c734d4ff0b3d9169eaf66959d910f45ed59614eca325eebd76db9"
+                             alt="Winter's Dream" width="510" height="740"></picture>
+                </button>
             </div>
-            <div class="c-movie-info--section__editButtons">
-                <button class="c-button">Online</button>
-                <button class="c-button">back to content</button>
-                <button class="c-button" id="editMovies">edit</button>
-            </div>
-        </section>
-        <section class="c-movie-info--poster">
-            <picture>
-                <source media="(max-width: 767px)"
-                        srcset="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2021-06/onlinempl1050x1500abirthmotherssecret-qvfaz5.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=100470a7183567457f87cb0c81e20279d629f797217a2372dbe1446ba8fd177c">
-                <source media="(min-width: 768px)"
-                        srcset="https://wmimages.goplay.be/styles/fc9f8afb7a8416cc9fcf5a03e3f4fb0fee0b3ef0/2021-06/onlinempl1050x1500abirthmotherssecret-qvfaz5.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjoxMDIwLCJoZWlnaHQiOjE0ODAsIndpdGhvdXRFbmxhcmdlbWVudCI6ZmFsc2V9fSx7ImpwZWciOnsicXVhbGl0eSI6OTV9fV0=&sign=b5b5d00314bec32424bbf01a8740391fcb14d205a3266c09d3daac3bb6bf6e5d">
-                <img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2021-06/onlinempl1050x1500abirthmotherssecret-qvfaz5.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=100470a7183567457f87cb0c81e20279d629f797217a2372dbe1446ba8fd177c"
-                     alt="A Birthmother's Secret" width="510" height="740">
-            </picture>
-        </section>
-    </div>
-</div>
+        </div>
+    </header>
+</main>
 </body>
 </html>

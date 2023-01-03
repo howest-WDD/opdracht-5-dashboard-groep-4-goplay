@@ -1,6 +1,7 @@
 const modalContentToggle = function () {
+    console.log("i got it")
     //select the modal window
-    const modal = document.querySelector("#modalContent");
+    const modal = document.querySelector("#editContentModal");
     const classes = modal.classList
     //makes the modal window visible if clicked on edit button
     if (classes.contains('u-hidden')) {
@@ -17,8 +18,9 @@ const loadContentModal = function () {
     const url = window.location.href;
     // check if you are on the movie/serie editing page
     if (url.includes("edit_movie.html") || url.includes("edit_serie.html")) {
+        console.log("yeah boys")
         //select the buttons and check for click events
-        const editButton = document.querySelector("#editMovies");
+        const editButton = document.querySelector("#editButton");
         const cancelButton = document.querySelector("#cancelButton");
         editButton.addEventListener('click', modalContentToggle);
         cancelButton.addEventListener('click', modalContentToggle);
