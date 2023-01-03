@@ -128,7 +128,7 @@ const loadJson = function () {
 				// console.log(htmlString);
 			}
 			
-			getElement.innerHTML += htmlString;
+			getElement.innerHTML = htmlString;
 
 			
 
@@ -237,7 +237,7 @@ const searchBar = function(){
 	.then((json) => {
 		const user = json.users
 		searchbar.addEventListener("keyup",function(event){
-
+			
 			if (event.key === "Enter"){
 				event.preventDefault()
 				htmlStrings = document.getElementById('filterInput').value
@@ -279,8 +279,8 @@ const searchBar = function(){
 					const bus = geboortevalue.bus 
 					const geboortedatum = geboortevalue.geboortedatum
 					htmlString = `
-					<table  class="c-users__table " style="overflow-x:auto;">
-						<tr id="menu" class="c-users__tablerow js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
+					<table  class="c-users__table "  style="overflow-x:auto;">
+						<tr id="menu" class="c-users__tablerow js-goback js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
 							<td class="c-users__category js-id"><input class="c-users__input  js-adduser  js-geboortedatum js-disable" type="text" value="${id}" disabled /></td>
 							<td class="c-users__category js-achternaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${achternaam}" disabled /></td>
 							<td class="c-users__category js-voornaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${voornaam}" disabled /></td>
@@ -367,7 +367,7 @@ const searchBar = function(){
 					const geboortedatum = busvalue.geboortedatum
 					htmlString = `
 					<table  class="c-users__table " style="overflow-x:auto;">
-						<tr id="menu" class="c-users__tablerow js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
+						<tr id="menu" class="c-users__tablerow js-goback js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
 							<td class="c-users__category js-id"><input class="c-users__input  js-adduser  js-geboortedatum js-disable" type="text" value="${id}" disabled /></td>
 							<td class="c-users__category js-achternaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${achternaam}" disabled /></td>
 							<td class="c-users__category js-voornaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${voornaam}" disabled /></td>
@@ -454,7 +454,7 @@ const searchBar = function(){
 					const geboortedatum = nrvalue.geboortedatum
 					htmlString = `
 					<table  class="c-users__table " style="overflow-x:auto;">
-						<tr id="menu" class="c-users__tablerow js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
+						<tr id="menu" class="c-users__tablerow js-goback js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
 							<td class="c-users__category js-id"><input class="c-users__input  js-adduser  js-geboortedatum js-disable" type="text" value="${id}" disabled /></td>
 							<td class="c-users__category js-achternaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${achternaam}" disabled /></td>
 							<td class="c-users__category js-voornaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${voornaam}" disabled /></td>
@@ -541,7 +541,7 @@ const searchBar = function(){
 					const geboortedatum = phonevalue.geboortedatum
 					htmlString = `
 					<table  class="c-users__table " style="overflow-x:auto;">
-						<tr id="menu" class="c-users__tablerow js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
+						<tr id="menu" class="c-users__tablerow js-goback js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
 							<td class="c-users__category js-id"><input class="c-users__input  js-adduser  js-geboortedatum js-disable" type="text" value="${id}" disabled /></td>
 							<td class="c-users__category js-achternaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${achternaam}" disabled /></td>
 							<td class="c-users__category js-voornaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${voornaam}" disabled /></td>
@@ -628,7 +628,7 @@ const searchBar = function(){
 					const geboortedatum = straatvalue.geboortedatum
 					htmlString = `
 					<table  class="c-users__table " style="overflow-x:auto;">
-						<tr id="menu" class="c-users__tablerow js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
+						<tr id="menu" class="c-users__tablerow js-goback js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
 							<td class="c-users__category js-id"><input class="c-users__input  js-adduser  js-geboortedatum js-disable" type="text" value="${id}" disabled /></td>
 							<td class="c-users__category js-achternaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${achternaam}" disabled /></td>
 							<td class="c-users__category js-voornaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${voornaam}" disabled /></td>
@@ -715,7 +715,7 @@ const searchBar = function(){
 					const geboortedatum = gemeentevalue.geboortedatum
 					htmlString = `
 					<table  class="c-users__table " style="overflow-x:auto;">
-						<tr id="menu" class="c-users__tablerow js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
+						<tr id="menu" class="c-users__tablerow js-goback js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
 							<td class="c-users__category js-id"><input class="c-users__input  js-adduser  js-geboortedatum js-disable" type="text" value="${id}" disabled /></td>
 							<td class="c-users__category js-achternaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${achternaam}" disabled /></td>
 							<td class="c-users__category js-voornaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${voornaam}" disabled /></td>
@@ -802,7 +802,7 @@ const searchBar = function(){
 					const geboortedatum = postcodevalue.geboortedatum
 					htmlString = `
 					<table  class="c-users__table " style="overflow-x:auto;">
-						<tr id="menu" class="c-users__tablerow js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
+						<tr id="menu" class="c-users__tablerow js-goback js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
 							<td class="c-users__category js-id"><input class="c-users__input  js-adduser  js-geboortedatum js-disable" type="text" value="${id}" disabled /></td>
 							<td class="c-users__category js-achternaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${achternaam}" disabled /></td>
 							<td class="c-users__category js-voornaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${voornaam}" disabled /></td>
@@ -889,7 +889,7 @@ const searchBar = function(){
 					const geboortedatum = mailvalue.geboortedatum
 					htmlString = `
 					<table  class="c-users__table " style="overflow-x:auto;">
-						<tr id="menu" class="c-users__tablerow js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
+						<tr id="menu" class="c-users__tablerow js-goback js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
 							<td class="c-users__category js-id"><input class="c-users__input  js-adduser  js-geboortedatum js-disable" type="text" value="${id}" disabled /></td>
 							<td class="c-users__category js-achternaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${achternaam}" disabled /></td>
 							<td class="c-users__category js-voornaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${voornaam}" disabled /></td>
@@ -976,7 +976,7 @@ const searchBar = function(){
 					const geboortedatum = achternaamvalue.geboortedatum
 					htmlString = `
 					<table  class="c-users__table " style="overflow-x:auto;">
-						<tr id="menu" class="c-users__tablerow js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
+						<tr id="menu" class="c-users__tablerow js-goback js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
 							<td class="c-users__category js-id"><input class="c-users__input  js-adduser  js-geboortedatum js-disable" type="text" value="${id}" disabled /></td>
 							<td class="c-users__category js-achternaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${achternaam}" disabled /></td>
 							<td class="c-users__category js-voornaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${voornaam}" disabled /></td>
@@ -1065,7 +1065,7 @@ const searchBar = function(){
 
 					htmlString = `
 					<table  class="c-users__table " style="overflow-x:auto;">
-						<tr id="menu" class="c-users__tablerow js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
+						<tr id="menu" class="c-users__tablerow js-goback js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
 							<td class="c-users__category js-id"><input class="c-users__input  js-adduser  js-geboortedatum js-disable" type="text" value="${id}" disabled /></td>
 							<td class="c-users__category js-achternaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${achternaam}" disabled /></td>
 							<td class="c-users__category js-voornaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${voornaam}" disabled /></td>
@@ -1154,7 +1154,7 @@ const searchBar = function(){
 					
 					htmlString = `
 					<table  class="c-users__table " style="overflow-x:auto;">
-						<tr id="menu" class="c-users__tablerow js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
+						<tr id="menu" class="c-users__tablerow js-goback js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
 							<td class="c-users__category js-id"><input class="c-users__input  js-adduser  js-geboortedatum js-disable" type="text" value="${id}" disabled /></td>
 							<td class="c-users__category js-achternaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${achternaam}" disabled /></td>
 							<td class="c-users__category js-voornaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${voornaam}" disabled /></td>
@@ -1228,67 +1228,69 @@ const searchBar = function(){
 				}
 
 				getElement.innerHTML = htmlString;
+				listenToGoBack()
 
 			}
 
-			// const editusers = document.querySelectorAll('.js-edit'); // edit button 
-			// for (const edituser of editusers) { // overlopen van alle editbutton
-			// 	// console.log(edituser);
+			const editusers = document.querySelectorAll('.js-edit'); // edit button 
+			for (const edituser of editusers) { // overlopen van alle editbutton
+				// console.log(edituser);
 		
-			// 	edituser.addEventListener('click', function () {
-			// 		console.log('click');
-			// 		const deleteid = edituser.getAttribute('data-editid'); // data attribuut in de editbutton
-			// 		// console.log(deleteid);
-			// 		const inputs = document.querySelectorAll(`[data-disabledid='${deleteid}']`); //disabled attribuut in de input fields
-			// 		// console.log(inputs);
-			// 		// console.log(disable);
-			// 		for (const input of inputs) {
-			// 			// console.log('disableing');
-			// 			input.toggleAttribute('disabled');
-			// 		}
-			// 	});
-			// }
+				edituser.addEventListener('click', function () {
+					console.log('click');
+					const deleteid = edituser.getAttribute('data-editid'); // data attribuut in de editbutton
+					// console.log(deleteid);
+					const inputs = document.querySelectorAll(`[data-disabledid='${deleteid}']`); //disabled attribuut in de input fields
+					// console.log(inputs);
+					// console.log(disable);
+					for (const input of inputs) {
+						// console.log('disableing');
+						input.toggleAttribute('disabled');
+					}
+				});
+			}
 
-			// const deletebuttons = document.querySelectorAll('.js-delete'); // deletbuttons 
-			// // const deleteusers = document.getElementsByClassName('js-deleteuser');
+			const deletebuttons = document.querySelectorAll('.js-delete'); // deletbuttons 
+			// const deleteusers = document.getElementsByClassName('js-deleteuser');
 		
 		
-			// // deze zijn voor De modal window en aanpassingen aan de body
-			// const darkbackground = document.querySelector('.js-darkbackground'); //darkbackground voor de modal 
-			// const modal = document.querySelector('.js-modal'); // modal win dow 
-			// const verwijder = document.querySelector('.js-verwijder'); // verwijder userbutton 
-			// const cancel = document.querySelector('.js-cancel'); // cancel button 
-			// for (const deletebutton of deletebuttons) {
-			// 	deletebutton.addEventListener('click', function () { // de forloop die zorgt dat als je op de deletebutotn klikt dat de modal window en darkbackground tevoorschijn komt
-			// 		modal.classList.remove('u-hidden');
-			// 		darkbackground.classList.toggle('c-darkbackground');
+			// deze zijn voor De modal window en aanpassingen aan de body
+			const darkbackground = document.querySelector('.js-darkbackground'); //darkbackground voor de modal 
+			const modal = document.querySelector('.js-modal'); // modal win dow 
+			const verwijder = document.querySelector('.js-verwijder'); // verwijder userbutton 
+			const cancel = document.querySelector('.js-cancel'); // cancel button 
+			for (const deletebutton of deletebuttons) {
+				deletebutton.addEventListener('click', function () { // de forloop die zorgt dat als je op de deletebutotn klikt dat de modal window en darkbackground tevoorschijn komt
+					modal.classList.remove('u-hidden');
+					darkbackground.classList.toggle('c-darkbackground');
 		
-			// 		if(!modal.classList.remove("u-hidden")){
+					if(!modal.classList.remove("u-hidden")){
 						
-			// 		}
-			// 	});
-			// }
+					}
+				});
+			}
 		
 		
-			// verwijder.addEventListener('click', function () { // verwijder de user en de modal window 
-			// 	modal.classList.add('u-hidden');
-			// 	darkbackground.classList.remove('c-darkbackground');
+			verwijder.addEventListener('click', function () { // verwijder de user en de modal window 
+				modal.classList.add('u-hidden');
+				darkbackground.classList.remove('c-darkbackground');
 				
-			// 	for(const deletebutton of deletebuttons){
-			// 		deletebutton.addEventListener("click",function(){
-			// 			const deleteuserid = deletebutton.getAttribute(`data-deleteid`)
+				for(const deletebutton of deletebuttons){
+					deletebutton.addEventListener("click",function(){
+						const deleteuserid = deletebutton.getAttribute(`data-deleteid`)
 						
-			// 			const deleteuser = document.querySelector(`[data-deleteuser="${deleteuserid}"]`)
-			// 			console.log(deleteuser)
-			// 			deleteuser.classList.add("u-hidden")
-			// 		})
+						const deleteuser = document.querySelector(`[data-deleteuser="${deleteuserid}"]`)
+						console.log(deleteuser)
+						deleteuser.classList.add("u-hidden")
+					})
 		
-			// 	}
-			// });
-			// cancel.addEventListener('click', function () { // cancel de modal  window 
-			// 	modal.classList.add('u-hidden');
-			// 	darkbackground.classList.remove('c-darkbackground');
-			// });
+				}
+			});
+			cancel.addEventListener('click', function () { // cancel de modal  window 
+				modal.classList.add('u-hidden');
+				darkbackground.classList.remove('c-darkbackground');
+			});
+			
 			
 			
 		})
@@ -1432,11 +1434,28 @@ const filterbuttons = function () { // functie die een active state terug geeft 
 	}
 };
 
+const listenToGoBack = function(){
+	const goBackButton = document.querySelector(".js-goback");
+	goBackButton.classList.remove("u-hidden")
+	goBackButton.addEventListener("click",function(){
+		
+		location.reload()
+		
+			
+		
+
+	
+		
+	})
+
+}
+
 
 
 const accordeonUsers = function () { // de init
 
 	if(document.getElementById("menu")){
+		
 		loadJson();
 		setTimeout(listenToExpand, 1000);
 		setTimeout(listenToEditChange, 1000);
@@ -1444,6 +1463,8 @@ const accordeonUsers = function () { // de init
 		setTimeout(listenToEdit, 1000);
 		setTimeout(filterbuttons, 1000);
 		setTimeout(searchBar, 1000)
+		
+		
 
 	} else{
 		console.log("no menu")

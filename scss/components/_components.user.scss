@@ -25,6 +25,20 @@
         
         
     }
+    &__goback{
+        display: flex;
+    }
+    &__gobacktext{
+        color: color.$neutral-500;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    &__gobacksvg{
+        padding-right: 2rem;
+       
+        
+    }
+
     &__select{
        
         border: 2px solid color.$accent-00;
