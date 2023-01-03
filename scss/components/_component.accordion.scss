@@ -1,0 +1,92 @@
+@use '../settings/colors' as color;
+@use '../tools/tools.breakpoints' as bp;
+
+.c-accordion {
+	background-color: transparent;
+
+	position: relative;
+
+	color: color.$text-color-a;
+
+	cursor: pointer;
+
+	padding: 18px;
+	margin-top: 20px;
+
+	width: 100%;
+
+	text-align: left;
+
+	transition: 0.4s;
+
+	border: 1px color.$accent-00 solid;
+
+	border-radius: 15px;
+
+	outline: none;
+
+	transition: all 0.4s;
+
+	&:hover {
+		outline: 5px color.$accent-00 solid;
+		transition: outline 0.4s;
+
+		background-color: color.$bg-color-hov;
+	}
+
+	&::after {
+		position: absolute;
+		right: 20px;
+
+		color: color.$text-color-a;
+
+		transition: all 0.4s;
+
+		content: '\02795'; /* unicode for + */
+	}
+
+	&--active {
+		background-color: transparent;
+
+		border: 2px color.$accent-00 solid !important;
+
+		border-bottom: none !important;
+
+		&::after {
+			content: '\2796'; /* unicode for - */
+		}
+
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+}
+
+.c-panel {
+	padding: 0px 20px;
+
+	background-color: color.$bg-color-nav;
+
+	max-height: 0;
+
+	overflow: hidden;
+
+	transition: max-height 0.2s ease-out;
+
+	border: none;
+
+	color: color.$text-color-a;
+
+	&--active {
+		border-top: none !important;
+
+		border: 2px color.$accent-00 solid;
+
+		padding: 30px 20px;
+	}
+
+	&--subscriptions {
+		display: flex;
+
+		gap: 50px;
+	}
+}
