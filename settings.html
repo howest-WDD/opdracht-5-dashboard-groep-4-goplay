@@ -36,7 +36,6 @@
 								<div class="c-profile--details">
 									<img src="assets/img/tony_stark.png" alt="profileImg" />
 								</div>
-
 								<div class="name-job">
 									<div class="profile_name">Tony Stark</div>
 									<div class="role">Admin</div>
@@ -81,21 +80,471 @@
 			<article class="c-settings">
 				<!-- user settings accordion -->
 				<button class="c-accordion js-accordion" id="button-userSettings">User Instellingen</button>
+				<!-- user settings content -->
 				<div class="c-panel" id="panel-userSettings">
-					<p>User Instellingen content</p>
+					<div class="c-usersettings__container">
+						<div class="c-usersettings__accountcontainer">
+							<h2>sectie naam: <input type="text" value="Accountgegevens" /></h2>
+							<div class="c-usersettings__setting">
+								<label>
+									Input naam:
+									<input type="text" value="E-mailadres" />
+								</label>
+								<label>
+									Input type:
+									<select>
+										<option value="tekst">tekst</option>
+										<option value="nummer">nummer</option>
+										<option value="e-mail" selected>E-mail</option>
+										<option value="telefoon">telefoon</option>
+										<option value="datum">datum</option>
+										<option value="select">select</option>
+										<option value="check">Checkbox</option>
+									</select>
+								</label>
+								<button class="c-users__delete js-setting-delete">
+									<svg style="width: 24px; height: 24px" class="c-users__deletesvg" viewBox="0 0 24 24">
+										<path fill="currentColor" class="c-users__deletepath" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
+									</svg>
+								</button>
+							</div>
+							<div class="c-usersettings__setting">
+								<label>
+									Input naam:
+									<input type="text" value="Wachtwoord" />
+								</label>
+								<label>
+									Input type:
+									<select>
+										<option value="tekst" selected>tekst</option>
+										<option value="nummer">nummer</option>
+										<option value="e-mail">e-mail</option>
+										<option value="telefoon">telefoon</option>
+										<option value="datum">datum</option>
+										<option value="select">select</option>
+										<option value="check">Checkbox</option>
+									</select>
+								</label>
+								<button class="c-users__delete js-setting-delete">
+									<svg style="width: 24px; height: 24px" class="c-users__deletesvg" viewBox="0 0 24 24">
+										<path fill="currentColor" class="c-users__deletepath" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
+									</svg>
+								</button>
+							</div>
+							<h5 class="c-usersettings__add">
+								Voeg een nieuwe setting toe voor deze sectie
+								<span class="c-usersettings__plus">&#43;</span>
+							</h5>
+						</div>
+						<div class="c-usersettings__personalcontainer">
+							<h2>sectie naam: <input type="text" value="Persoonlijke gegevens" /></h2>
+							<div class="c-usersettings__setting">
+								<label>
+									Input naam:
+									<input type="text" value="Voornaam" />
+								</label>
+								<label>
+									Input type:
+									<select>
+										<option value="tekst" selected>tekst</option>
+										<option value="nummer">nummer</option>
+										<option value="e-mail">E-mail</option>
+										<option value="telefoon">telefoon</option>
+										<option value="datum">datum</option>
+										<option value="select">select</option>
+										<option value="check">Checkbox</option>
+									</select>
+								</label>
+								<button class="c-users__delete js-setting-delete">
+									<svg style="width: 24px; height: 24px" class="c-users__deletesvg" viewBox="0 0 24 24">
+										<path fill="currentColor" class="c-users__deletepath" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
+									</svg>
+								</button>
+							</div>
+							<div class="c-usersettings__setting">
+								<label>
+									Input naam:
+									<input type="text" value="Achternaam" />
+								</label>
+								<label>
+									Input type:
+									<select>
+										<option value="tekst" selected>tekst</option>
+										<option value="nummer">nummer</option>
+										<option value="e-mail">E-mail</option>
+										<option value="telefoon">telefoon</option>
+										<option value="datum">datum</option>
+										<option value="select">select</option>
+										<option value="check">Checkbox</option>
+									</select>
+								</label>
+								<button class="c-users__delete js-setting-delete">
+									<svg style="width: 24px; height: 24px" class="c-users__deletesvg" viewBox="0 0 24 24">
+										<path fill="currentColor" class="c-users__deletepath" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
+									</svg>
+								</button>
+							</div>
+							<div class="c-usersettings__setting">
+								<label>
+									Input naam:
+									<input type="text" value="Geslacht" />
+								</label>
+								<label>
+									Input type:
+									<select>
+										<option value="tekst">tekst</option>
+										<option value="nummer">nummer</option>
+										<option value="e-mail">E-mail</option>
+										<option value="telefoon">telefoon</option>
+										<option value="datum">datum</option>
+										<option value="select" selected>select</option>
+										<option value="check">Checkbox</option>
+									</select>
+								</label>
+								<button class="c-users__delete js-setting-delete">
+									<svg style="width: 24px; height: 24px" class="c-users__deletesvg" viewBox="0 0 24 24">
+										<path fill="currentColor" class="c-users__deletepath" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
+									</svg>
+								</button>
+							</div>
+							<div class="c-usersettings__setting">
+								<label>
+									Input naam:
+									<input type="text" value="Geboortedatum" />
+								</label>
+								<label>
+									Input type:
+									<select>
+										<option value="tekst">tekst</option>
+										<option value="nummer">nummer</option>
+										<option value="e-mail">E-mail</option>
+										<option value="telefoon">telefoon</option>
+										<option value="datum" selected>datum</option>
+										<option value="select">select</option>
+										<option value="check">Checkbox</option>
+									</select>
+								</label>
+								<button class="c-users__delete js-setting-delete">
+									<svg style="width: 24px; height: 24px" class="c-users__deletesvg" viewBox="0 0 24 24">
+										<path fill="currentColor" class="c-users__deletepath" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
+									</svg>
+								</button>
+							</div>
+							<h5 class="c-usersettings__add">
+								Voeg een nieuwe setting toe voor deze sectie
+								<span class="c-usersettings__plus">&#43;</span>
+							</h5>
+						</div>
+						<div class="c-usersettings__contactcontainer">
+							<h2>sectie naam: <input type="text" value="Contactgegevens" /></h2>
+							<div class="c-usersettings__setting">
+								<label>
+									Input naam:
+									<input type="text" value="Straatnaam" />
+								</label>
+								<label>
+									Input type:
+									<select>
+										<option value="tekst" selected>tekst</option>
+										<option value="nummer">nummer</option>
+										<option value="e-mail">E-mail</option>
+										<option value="telefoon">telefoon</option>
+										<option value="datum">datum</option>
+										<option value="select">select</option>
+										<option value="check">Checkbox</option>
+									</select>
+								</label>
+								<button class="c-users__delete js-setting-delete">
+									<svg style="width: 24px; height: 24px" class="c-users__deletesvg" viewBox="0 0 24 24">
+										<path fill="currentColor" class="c-users__deletepath" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
+									</svg>
+								</button>
+							</div>
+							<div class="c-usersettings__setting">
+								<label>
+									Input naam:
+									<input type="text" value="Huisnummer" />
+								</label>
+								<label>
+									Input type:
+									<select>
+										<option value="tekst">tekst</option>
+										<option value="nummer" selected>nummer</option>
+										<option value="e-mail">E-mail</option>
+										<option value="telefoon">telefoon</option>
+										<option value="datum">datum</option>
+										<option value="select">select</option>
+										<option value="check">Checkbox</option>
+									</select>
+								</label>
+								<button class="c-users__delete js-setting-delete">
+									<svg style="width: 24px; height: 24px" class="c-users__deletesvg" viewBox="0 0 24 24">
+										<path fill="currentColor" class="c-users__deletepath" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
+									</svg>
+								</button>
+							</div>
+							<div class="c-usersettings__setting">
+								<label>
+									Input naam:
+									<input type="text" value="Bus" />
+								</label>
+								<label>
+									Input type:
+									<select>
+										<option value="tekst">tekst</option>
+										<option value="nummer" selected>nummer</option>
+										<option value="e-mail">E-mail</option>
+										<option value="telefoon">telefoon</option>
+										<option value="datum">datum</option>
+										<option value="select">select</option>
+										<option value="check">Checkbox</option>
+									</select>
+								</label>
+								<button class="c-users__delete js-setting-delete">
+									<svg style="width: 24px; height: 24px" class="c-users__deletesvg" viewBox="0 0 24 24">
+										<path fill="currentColor" class="c-users__deletepath" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
+									</svg>
+								</button>
+							</div>
+							<div class="c-usersettings__setting">
+								<label>
+									Input naam:
+									<input type="text" value="Postcode" />
+								</label>
+								<label>
+									Input type:
+									<select>
+										<option value="tekst">tekst</option>
+										<option value="nummer" selected>nummer</option>
+										<option value="e-mail">E-mail</option>
+										<option value="telefoon">telefoon</option>
+										<option value="datum">datum</option>
+										<option value="select">select</option>
+										<option value="check">Checkbox</option>
+									</select>
+								</label>
+								<button class="c-users__delete js-setting-delete">
+									<svg style="width: 24px; height: 24px" class="c-users__deletesvg" viewBox="0 0 24 24">
+										<path fill="currentColor" class="c-users__deletepath" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
+									</svg>
+								</button>
+							</div>
+							<div class="c-usersettings__setting">
+								<label>
+									Input naam:
+									<input type="text" value="Gemeente" />
+								</label>
+								<label>
+									Input type:
+									<select>
+										<option value="tekst" selected>tekst</option>
+										<option value="nummer">nummer</option>
+										<option value="e-mail">E-mail</option>
+										<option value="telefoon">telefoon</option>
+										<option value="datum">datum</option>
+										<option value="select">select</option>
+										<option value="check">Checkbox</option>
+									</select>
+								</label>
+								<button class="c-users__delete js-setting-delete">
+									<svg style="width: 24px; height: 24px" class="c-users__deletesvg" viewBox="0 0 24 24">
+										<path fill="currentColor" class="c-users__deletepath" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
+									</svg>
+								</button>
+							</div>
+							<div class="c-usersettings__setting">
+								<label>
+									Input naam:
+									<input type="text" value="Telefoonnummer" />
+								</label>
+								<label>
+									Input type:
+									<select>
+										<option value="tekst">tekst</option>
+										<option value="nummer">nummer</option>
+										<option value="e-mail">E-mail</option>
+										<option value="telefoon" selected>telefoon</option>
+										<option value="datum">datum</option>
+										<option value="select">select</option>
+										<option value="check">Checkbox</option>
+									</select>
+								</label>
+								<button class="c-users__delete js-setting-delete">
+									<svg style="width: 24px; height: 24px" class="c-users__deletesvg" viewBox="0 0 24 24">
+										<path fill="currentColor" class="c-users__deletepath" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
+									</svg>
+								</button>
+							</div>
+							<h5 class="c-usersettings__add">
+								Voeg een nieuwe setting toe voor deze sectie
+								<span class="c-usersettings__plus">&#43;</span>
+							</h5>
+						</div>
+						<div class="c-usersettings__checkcontainer">
+							<h2>sectie naam: <input type="text" value="Voorkeuren" /></h2>
+							<div class="c-usersettings__setting">
+								<label>
+									Input naam:
+									<input type="text" value="Nieuwsbrief" />
+								</label>
+								<label>
+									Input type:
+									<select>
+										<option value="tekst">tekst</option>
+										<option value="nummer">nummer</option>
+										<option value="e-mail">E-mail</option>
+										<option value="telefoon">telefoon</option>
+										<option value="datum">datum</option>
+										<option value="select">select</option>
+										<option value="check" selected>Checkbox</option>
+									</select>
+								</label>
+								<button class="c-users__delete js-setting-delete">
+									<svg style="width: 24px; height: 24px" class="c-users__deletesvg" viewBox="0 0 24 24">
+										<path fill="currentColor" class="c-users__deletepath" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
+									</svg>
+								</button>
+							</div>
+							<div class="c-usersettings__setting">
+								<label>
+									Input naam:
+									<input type="text" value="Gepersonaliseerde reclame" />
+								</label>
+								<label>
+									Input type:
+									<select>
+										<option value="tekst">tekst</option>
+										<option value="nummer">nummer</option>
+										<option value="e-mail">E-mail</option>
+										<option value="telefoon">telefoon</option>
+										<option value="datum">datum</option>
+										<option value="select">select</option>
+										<option value="check" selected>Checkbox</option>
+									</select>
+								</label>
+								<button class="c-users__delete js-setting-delete">
+									<svg style="width: 24px; height: 24px" class="c-users__deletesvg" viewBox="0 0 24 24">
+										<path fill="currentColor" class="c-users__deletepath" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
+									</svg>
+								</button>
+							</div>
+							<h5 class="c-usersettings__add">
+								Voeg een nieuwe setting toe voor deze sectie
+								<span class="c-usersettings__plus">&#43;</span>
+							</h5>
+						</div>
+						<h3 class="c-usersettings__add">
+							Voeg een nieuwe sectie toe
+							<span class="c-usersettings__plus">&#43;</span>
+						</h3>
+					</div>
+					<div class="c-usersettings__buttons">
+						<button class="c-usersettings__button js-userSettings-edit">Sla veranderingen op</button>
+					</div>
 				</div>
 				<!-- subscription settings accordion -->
 				<button class="c-accordion js-accordion" id="button-subscriptions">Abonementen</button>
-				<div class="c-panel" id="panel-subscriptions">
-					<p>Abonementen content</p>
+				<!-- subscription settings content -->
+				<div class="c-panel c-panel--subscriptions" id="panel-subscriptions">
+					<!-- add new subscription panel -->
+					<div class="c-subscription c-subscription--new">
+						<h2>voeg nieuwe subscription toe</h2>
+						<div>
+							<span>&#43;</span>
+						</div>
+					</div>
+					<!-- new subscription modal -->
+					<div class="c-modalContainer u-hidden" id="modalAddSubscription">
+						<div class="c-modal c-modal__newSub">
+							<span class="c-modal__close" id="modalAddSubscriptionClose">&times;</span>
+							<p>titel <input type="text" /></p>
+							<p class="">descriptie:</p>
+							<textarea name="desc" id="panel-desc" cols="20" rows="6"></textarea>
+							<p>prijs/maand: &euro;<input type="number" value="5" /></p>
+							<div class="c-modal__buttons">
+								<button class="c-modal__button c-modal__button--delete" id="js-save">creëren</button>
+								<button class="c-modal__button c-modal__button--no" id="js-cancel">cancel</button>
+							</div>
+						</div>
+					</div>
+					<!-- basic no commercials subscription panel -->
+					<div class="c-subscription">
+						<h2>geen reclame</h2>
+						<div>
+							<p class="c-subscription__price">prijs/maand: &euro;<input type="number" value="5" disabled class="js-sub-input" /></p>
+							<p class="c-subscription__desc">
+								descriptie:
+								<textarea name="desc" id="panel-desc2" cols="20" rows="3" disabled class="js-sub-input">Geen reclame zolang je dit abbonement hebt</textarea>
+							</p>
+							<!-- buttons come from users list -->
+							<div class="c-subscription__buttons">
+								<button class="c-users__delete js-sub-delete" id="js-sub-delete">
+									<svg style="width: 24px; height: 24px" class="c-users__deletesvg" viewBox="0 0 24 24">
+										<path fill="currentColor" class="c-users__deletepath" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
+									</svg>
+								</button>
+								<button class="c-users__edit js-settings-edit">
+									<svg style="width: 24px; height: 24px" class="c-users__editsvg c-users__editsvg--edit js-editsvg" viewBox="0 0 24 24">
+										<path fill="currentColor" class="c-users__editpath" d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
+									</svg>
+								</button>
+							</div>
+						</div>
+					</div>
 				</div>
 				<!-- promos settings accordion -->
 				<button class="c-accordion js-accordion" id="button-promos">Promo's</button>
-				<div class="c-panel" id="panel-promos">
-					<p>Promo's content</p>
+				<!-- promos settings content -->
+				<div class="c-panel c-panel--subscriptions" id="panel-promos">
+					<!-- add new subscription panel -->
+					<div class="c-subscription c-subscription--new c-promo--new">
+						<h2>voeg nieuwe promo toe</h2>
+						<div>
+							<span>&#43;</span>
+						</div>
+					</div>
+					<!-- new subscription modal -->
+					<div class="c-modalContainer u-hidden" id="modalAddPromo">
+						<div class="c-modal c-modal__newSub">
+							<span class="c-modal__close" id="modalAddPromoClose">&times;</span>
+							<p>Voor: <input type="text" /></p>
+							<p class="">descriptie:</p>
+							<textarea name="desc" id="panel-desc3" cols="20" rows="6"></textarea>
+							<p class="c-subscription__price--promo">Hoeveel<input type="number" value="5" />%</p>
+							<div class="c-modal__buttons">
+								<button class="c-modal__button c-modal__button--delete" id="js-save-promo">creëren</button>
+								<button class="c-modal__button c-modal__button--no" id="js-cancel-promo">cancel</button>
+							</div>
+						</div>
+					</div>
+					<!-- basic no commercials subscription panel -->
+					<div class="c-subscription">
+						<h2>Voor: geen reclame</h2>
+						<div>
+							<p class="c-subscription__price c-subscription__price--promo">Hoeveel<input type="number" value="10" max="100" min="5" disabled class="js-sub-input" />%</p>
+							<p class="c-subscription__desc">
+								descriptie:
+								<textarea name="desc" id="panel-desc4" cols="20" rows="3" disabled class="js-sub-input">Geen reclame zolang je dit abbonement hebt</textarea>
+							</p>
+							<!-- buttons come from users list -->
+							<div class="c-subscription__buttons">
+								<button class="c-users__delete js-sub-delete" id="js-promo-delete">
+									<svg style="width: 24px; height: 24px" class="c-users__deletesvg" viewBox="0 0 24 24">
+										<path fill="currentColor" class="c-users__deletepath" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
+									</svg>
+								</button>
+								<button class="c-users__edit js-settings-edit">
+									<svg style="width: 24px; height: 24px" class="c-users__editsvg c-users__editsvg--edit js-editsvg" viewBox="0 0 24 24">
+										<path fill="currentColor" class="c-users__editpath" d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
+									</svg>
+								</button>
+							</div>
+						</div>
+					</div>
 				</div>
 				<!-- layout settings accordion -->
 				<button class="c-accordion js-accordion" id="button-layout">Layout</button>
+				<!-- layout settings content -->
 				<div class="c-panel" id="panel-layout">
 					<!-- logo settings -->
 					<!-- title -->
@@ -230,6 +679,18 @@
 									<p class="c-color__value" id="text-color-b-dark-value">value:</p>
 								</div>
 							</div>
+						</div>
+					</div>
+				</div>
+				<!-- modal for when you click on delete for anything -->
+				<div id="js-modal-delete" class="c-modalContainer u-hidden">
+					<!-- content -->
+					<div class="c-modal c-modal--delete">
+						<span class="c-modal__close" id="js-modal-delete-close">&times;</span>
+						<h2>ben je zeker dat je deze wilt verwijderen</h2>
+						<div class="c-modal__buttons">
+							<button class="c-modal__button c-modal__button--delete" id="js-delete">ja</button>
+							<button class="c-modal__button c-modal__button--no" id="js-keep">nee</button>
 						</div>
 					</div>
 				</div>

@@ -101,7 +101,7 @@ const listenToGraphs = function () {
 	}
 };
 
-// checks modal for settings page logo upload
+// creates modal for logo adjusting settings.html
 const listenToLogo = function () {
 	const logoLight = document.querySelector('.js-logo-light');
 	const logoLightModal = document.getElementById('js-logo-light-modal');
@@ -127,9 +127,96 @@ const listenToLogo = function () {
 	}
 };
 
+const listenToSettingsDeleteButtons = function (modal) {
+	const deleteButton = document.getElementById('js-delete');
+	const noButton = document.getElementById('js-keep');
+
+	deleteButton.addEventListener('click', function () {
+		modal.classList.toggle('u-hidden');
+	});
+	noButton.addEventListener('click', function () {
+		modal.classList.toggle('u-hidden');
+	});
+};
+
+// creates modals for deleting things in settings.html
+const listenToSettingsDelete = function () {
+	const subDelete = document.getElementById('js-sub-delete');
+	const PromoDelete = document.getElementById('js-promo-delete');
+	const deleteModal = document.getElementById('js-modal-delete');
+	const deleteModalClose = document.getElementById('js-modal-delete-close');
+
+	if (subDelete) {
+		subDelete.addEventListener('click', function () {
+			modalToggle(deleteModal, deleteModalClose, 'delete');
+			listenToSettingsDeleteButtons(deleteModal);
+		});
+	}
+	if (PromoDelete) {
+		PromoDelete.addEventListener('click', function () {
+			modalToggle(deleteModal, deleteModalClose, 'delete');
+			listenToSettingsDeleteButtons(deleteModal);
+		});
+	}
+};
+
+// creates modal for when you want to add new subscription in settings.html
+const newSub = function () {
+	const newSubPanel = document.querySelector('.c-subscription--new');
+	const newSubModal = document.getElementById('modalAddSubscription');
+	const newSubModalClose = document.getElementById('modalAddSubscriptionClose');
+
+	if (newSubPanel) {
+		newSubPanel.addEventListener('click', function () {
+			modalToggle(newSubModal, newSubModalClose, 'newSubModal');
+			listenToSettingsNewSubButtons(newSubModal);
+		});
+	}
+};
+
+const listenToSettingsNewSubButtons = function (modal) {
+	const deleteButton = document.getElementById('js-save');
+	const noButton = document.getElementById('js-cancel');
+
+	deleteButton.addEventListener('click', function () {
+		modal.classList.toggle('u-hidden');
+	});
+	noButton.addEventListener('click', function () {
+		modal.classList.toggle('u-hidden');
+	});
+};
+
+const newPromo = function () {
+	const newSubPanel = document.querySelector('.c-promo--new');
+	const newSubModal = document.getElementById('modalAddPromo');
+	const newSubModalClose = document.getElementById('modalAddPromoClose');
+
+	if (newSubPanel) {
+		newSubPanel.addEventListener('click', function () {
+			modalToggle(newSubModal, newSubModalClose, 'newSubModal');
+			listenToSettingsNewPromoButtons(newSubModal);
+		});
+	}
+};
+
+const listenToSettingsNewPromoButtons = function (modal) {
+	const deleteButton = document.getElementById('js-save-promo');
+	const noButton = document.getElementById('js-cancel-promo');
+
+	deleteButton.addEventListener('click', function () {
+		modal.classList.toggle('u-hidden');
+	});
+	noButton.addEventListener('click', function () {
+		modal.classList.toggle('u-hidden');
+	});
+};
+
 const checksModals = function () {
 	if (document.querySelector('.js-page-settings')) {
 		listenToLogo();
+		listenToSettingsDelete();
+		newSub();
+		newPromo();
 	} else if (document.querySelector('.js-page-index')) {
 		// listenToGraphs();
 	}

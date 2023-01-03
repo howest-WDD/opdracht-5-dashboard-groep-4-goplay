@@ -11,6 +11,7 @@
 	cursor: pointer;
 
 	padding: 18px;
+	margin-top: 20px;
 
 	width: 100%;
 
@@ -80,6 +81,12 @@
 
 		border: 2px color.$accent-00 solid;
 
-		padding: 10px 20px;
+		padding: 30px 20px;
+	}
+
+	&--subscriptions {
+		display: flex;
+
+		gap: 50px;
 	}
 }
