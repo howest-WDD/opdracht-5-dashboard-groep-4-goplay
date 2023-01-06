@@ -22,11 +22,22 @@
 <main>
     <div id="editContentModal" class="modaloverlay u-hidden">
         <div class="modal">
-            <form id="fContent" method="POST">
-
+            <form id="fContent" method="POST" action="edit_movie.html">
+                <label for="fname">Film Titel</label><br>
+                <input type="text" id="fname" name="fname" value="Winter's Dream"><br>
+                <label for="w3review">Film Descriptie</label><br>
+                <textarea id="w3review" name="w3review" rows="4" cols=50%>Voormalig profskiër Kat wordt gevraagd een zestienjarig talent te coachen. Ze stort zich weer op haar oude passie en krijgt al snel gevoelens voor de vader van haar pupil, weduwnaar Ty.</textarea><br>
+                <div style="display: flex; flex-wrap: wrap">
+                    <input type="file" id="uploadBackgroundImg" hidden/>
+                    <label for="uploadBackgroundImg" class="c-button" style="margin-left: 0">Upload Background</label>
+                    <input type="file" id="ThumbnailImg" hidden/>
+                    <label for="ThumbnailImg" class="c-button" style="margin-left: 0">Upload Thumbnail</label>
+                </div>
             </form>
-            <button class="c-button">Update</button>
-            <button class="c-button" id="cancelButton">Annuleer</button>
+            <div class="" style="display: flex">
+                <button class="c-button" type="submit" form="fContent" value="Submit">Update</button>
+                <button class="c-button" id="cancelButton">Annuleer</button>
+            </div>
         </div>
     </div>
     <header>
@@ -49,9 +60,9 @@
                                    href="https://www.goplay.be/video/winters-dream#autoplay" target="_blank">
                                     <span class="button__text">Afspelen</span>
                                 </a>
-                                <button class="c-button">Online</button>
-                                <button class="c-button">Terug naar Content</button>
-                                <button class="c-button" id="editButton">Aanpassen</button>
+                                <a href="#" class="c-button"><span>Online</span></a>
+                                <a href="content.html" class="c-button"><span>Terug naar Content</span></a>
+                                <a href="#" class="c-button" id="editButton"><span>Aanpassen</span></a>
                             </div>
                         </div>
                     </div>

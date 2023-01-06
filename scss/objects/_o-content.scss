@@ -1,33 +1,25 @@
 .o-content {
-  position: relative;
-  background-color: #14191e;
-  overflow-x: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-
-  *, :before, :after {
-    background-repeat: no-repeat;
-    box-sizing: border-box
-  }
-
-  .u-margin__0 {
-    margin: 0;
-  }
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(6, 250px);
 
   img {
-    max-width: 100%;
-    vertical-align: middle;
-    height: auto;
+    max-width: 250px;
   }
 
-  .c-button--poster {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border: 0;
-    cursor: pointer;
-    padding: 0;
-    color: inherit;
-    background-color: #0000;
+  @media only screen and (max-width: 768px){
+    grid-template-columns: repeat(3, 250px);
+
+    img{
+      max-width: 200px;
+    }
+  }
+
+  @media only screen and (max-width: 425px){
+    grid-template-columns: repeat(2, 250px);
+  }
+
+  @media only screen and (max-width: 375px){
+    grid-template-columns: repeat(1, 250px);
   }
 }
