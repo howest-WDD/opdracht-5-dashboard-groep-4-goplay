@@ -2,8 +2,13 @@
 
 .c-content-card {
   margin-left: 1rem;
+  text-decoration: none;
+  position: relative;
 
   &__title {
     color: color.$neutral-500;
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
   }
 }
