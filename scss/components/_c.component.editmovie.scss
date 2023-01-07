@@ -7,7 +7,7 @@ $font-family_1: Barlow, -apple-system, blinkmacsystemfont, Segoe UI, roboto, oxy
 $background-color_1: #14191e;
 $background-color_2: #0000;
 
-.hero {
+.c-movie-hero {
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -15,30 +15,30 @@ $background-color_2: #0000;
   color: $color_1;
 }
 
-.hero--program {
+.c-movie-hero--program {
   display: flex;
   min-height: 133.3333333333vw;
 
-  .hero__info {
+  .c-movie-hero__info {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
   }
 }
 
-.hero--video {
+.c-movie-hero--video {
   background-color: $background-color_1;
 
-  .hero__bg {
+  .c-movie-hero__bg {
     display: none;
   }
 
-  .hero__info {
+  .c-movie-hero__info {
     pointer-events: none;
   }
 }
 
-.hero__actions {
+.c-movie-hero__actions {
   display: flex;
   flex-wrap: wrap;
   margin: -5px;
@@ -48,7 +48,7 @@ $background-color_2: #0000;
   }
 }
 
-.hero__bg {
+.c-movie-hero__bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -75,12 +75,12 @@ $background-color_2: #0000;
   }
 }
 
-.hero__bg.has-blur {
+.c-movie-hero__bg.has-blur {
   -webkit-filter: blur(20px);
   filter: blur(20px);
 }
 
-.hero__bg-readable {
+.c-movie-hero__bg-readable {
   position: absolute;
   top: 0;
   left: 0;
@@ -91,7 +91,7 @@ $background-color_2: #0000;
   z-index: 1;
 }
 
-.hero__video {
+.c-movie-hero__video {
   transition: background-color .2s ease-in-out;
 
   .video-container {
@@ -100,32 +100,32 @@ $background-color_2: #0000;
   }
 }
 
-.hero__container {
+.c-movie-hero__container {
   position: relative;
   z-index: 30;
 }
 
-.hero__movie-container {
+.c-movie-hero__movie-container {
   display: flex;
   flex-direction: column-reverse;
   width: 100%;
 }
 
-.hero__poster {
+.c-movie-hero__poster {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.hero__title {
+.c-movie-hero__title {
   color: $color_1;
   font-size: max(38px, min(3vw, 48px));
   font-weight: 700;
   text-transform: none;
 }
 
-.hero__subtitle {
+.c-movie-hero__subtitle {
   margin-top: 5px !important;
   color: $color_3;
   font-size: 18px;
@@ -133,18 +133,18 @@ $background-color_2: #0000;
   font-weight: 700;
 }
 
-.hero__unpublish-date {
+.c-movie-hero__unpublish-date {
   margin-top: 30px !important;
 }
 
-.hero__description {
+.c-movie-hero__description {
   max-width: 70%;
   overflow: hidden;
   font-size: 14px;
   line-height: 20px;
 }
 
-.hero__header {
+.c-movie-hero__header {
   max-width: 720px;
 
   > * {
@@ -156,7 +156,7 @@ $background-color_2: #0000;
   }
 }
 
-.hero__footer {
+.c-movie-hero__footer {
   > * {
     + {
       * {
@@ -166,7 +166,7 @@ $background-color_2: #0000;
   }
 }
 
-.hero__info {
+.c-movie-hero__info {
   z-index: 30;
   width: 100%;
   height: 100%;
@@ -181,23 +181,23 @@ $background-color_2: #0000;
   }
 }
 
-.hero__info.is-hidden {
+.c-movie-hero__info.is-hidden {
   opacity: 0;
 }
 
-.hero__follow-block {
+.c-movie-hero__follow-block {
   pointer-events: all;
 }
 
-.hero__button {
+.c-movie-hero__button {
   pointer-events: all;
 }
 
-.hero__child {
+.c-movie-hero__child {
   display: none;
 }
 
-.hero__playlist {
+.c-movie-hero__playlist {
   margin: 20px 0;
 
   .flickity-prev-next-button {
@@ -213,7 +213,7 @@ $background-color_2: #0000;
   }
 }
 
-.hero-video {
+.c-movie-hero-video {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -226,14 +226,14 @@ $background-color_2: #0000;
   background-size: cover;
 }
 
-.hero-video__container {
+.c-movie-hero-video__container {
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 100%;
 }
 
-.hero-video__overlay {
+.c-movie-hero-video__overlay {
   position: absolute;
   inset: 0;
   z-index: 5;
@@ -259,7 +259,7 @@ $background-color_2: #0000;
   }
 }
 
-.hero-video__readability {
+.c-movie-hero-video__readability {
   position: absolute;
   inset: 0;
   z-index: 5;
@@ -273,7 +273,7 @@ $background-color_2: #0000;
   }
 }
 
-.hero-video__player {
+.c-movie-hero-video__player {
   position: absolute;
   inset: 0;
   z-index: 5;
@@ -307,7 +307,7 @@ $background-color_2: #0000;
   }
 }
 
-.hero-video__content {
+.c-movie-hero-video__content {
   position: relative;
   z-index: 10;
   display: flex;
@@ -324,17 +324,17 @@ $background-color_2: #0000;
   }
 }
 
-.hero-video__title {
+.c-movie-hero-video__title {
   font-weight: 600;
   font-size: 36px;
 }
 
-.hero-video__description {
+.c-movie-hero-video__description {
   font-size: 14px;
   line-height: 1.4;
 }
 
-.hero-video__actions {
+.c-movie-hero-video__actions {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -345,7 +345,7 @@ $background-color_2: #0000;
   }
 }
 
-.hero-video__inner {
+.c-movie-hero-video__inner {
   max-width: 480px;
 
   > * {
@@ -367,27 +367,27 @@ $background-color_2: #0000;
 }
 
 @media (min-width: 768px) {
-  .hero--program {
+  .c-movie-hero--program {
     min-height: 56.25vw;
     padding-bottom: 18.75vw;
     margin-bottom: -18.75vw;
   }
-  .hero__subtitle {
+  .c-movie-hero__subtitle {
     font-size: 24px;
   }
-  .hero__info {
+  .c-movie-hero__info {
     padding: 15px 30px;
   }
-  .hero-video {
+  .c-movie-hero-video {
     min-height: 56.25vw;
     margin-top: -90px;
     padding-bottom: 18.75vw;
     margin-bottom: -16.375vw;
   }
-  .hero-video__content {
+  .c-movie-hero-video__content {
     padding-top: max(185px, 16vw);
   }
-  .hero-video__title {
+  .c-movie-hero-video__title {
     font-size: 44px;
   }
   .l-spacer {
@@ -397,41 +397,41 @@ $background-color_2: #0000;
 }
 
 @media (min-width: 576px) {
-  .hero__bg {
+  .c-movie-hero__bg {
     background-position: top right;
   }
 }
 
 @media (min-width: 992px) {
-  .hero__video {
+  .c-movie-hero__video {
     top: 0;
     -webkit-transform: none;
     transform: none;
   }
-  .hero__movie-container {
+  .c-movie-hero__movie-container {
     flex-direction: row;
   }
-  .hero__title {
+  .c-movie-hero__title {
     font-size: 64px;
   }
-  .hero__info {
+  .c-movie-hero__info {
     padding: 45px 60px;
   }
-  .hero--video {
-    .hero__info {
+  .c-movie-hero--video {
+    .c-movie-hero__info {
       position: absolute;
       top: 0;
       left: 0;
     }
   }
-  .hero__child {
+  .c-movie-hero__child {
     display: block;
   }
 }
 
 @media screen and (max-width: 1199px) and (orientation: landscape) {
   .is-app {
-    .hero__video {
+    .c-movie-hero__video {
       .video-container {
         max-width: 160vh !important;
         max-height: 90vh !important;
@@ -441,7 +441,7 @@ $background-color_2: #0000;
 }
 
 @media (max-width: 991px) {
-  .hero-video__controls {
+  .c-movie-hero-video__controls {
     position: absolute;
     right: 30px;
     bottom: 0;
@@ -449,13 +449,13 @@ $background-color_2: #0000;
 }
 
 @media (max-width: 767px) {
-  .hero-video__controls {
+  .c-movie-hero-video__controls {
     right: 5px;
   }
 }
 
 @media (min-width: 1200px) {
-  .hero-video__title {
+  .c-movie-hero-video__title {
     font-size: 60px;
   }
 }

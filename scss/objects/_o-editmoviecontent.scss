@@ -1,0 +1,33 @@
+.o-editmoviecontent {
+  position: relative;
+  background-color: #14191e;
+  overflow-x: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  *, :before, :after {
+    background-repeat: no-repeat;
+    box-sizing: border-box
+  }
+
+  .u-margin__0 {
+    margin: 0;
+  }
+
+  img {
+    max-width: 100%;
+    vertical-align: middle;
+    height: auto;
+  }
+
+  .c-button--poster {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    color: inherit;
+    background-color: #0000;
+  }
+}
