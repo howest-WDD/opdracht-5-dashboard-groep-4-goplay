@@ -81,34 +81,26 @@
     </div>
 
 </nav>
-
 <main>
-    <div class="c-filters">
-        <label for="search" class="c-filters__search--label">search movie/serie</label>
-        <input type="text" id="search" class="c-filters__input" placeholder="movie/serie">
-
-        <label for="type">Choose a type:</label>
-        <select name="type" id="type">
-            <option value="All">All</option>
-            <option value="Movie">Movie</option>
-            <option value="Series">Series</option>
-            <option value="Podcast">Podcast</option>
-        </select>
-
-        <label for="genre">Choose a genre:</label>
-        <select name="genre" id=genre>
-            <option value="all">all</option>
-            <option value="Action">Ation</option>
-            <option value="Adventure">Adventure</option>
-            <option value="Drama">Drama</option>
-        </select>
+    <div class="c-content-filter">
+        <input type="text" class="c-content-filter__search" id="filterInput" placeholder="Search movies/shows">
+        <div class="c-content-filter__genre"><label for="language" hidden>
+            Language:</label>
+            <select name="language" id="language">
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+                <option value="c++" disabled>C++</option>
+                <option value="java" selected>Java</option>
+            </select></div>
+        <button class="c-button">add new</button>
     </div>
-
+    </div>
     <div class="o-content">
         <a class="c-content-card" href="#">
-            <p class="c-content-card__title">this is a test</p>
-            <img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-11/goplaympmpl1050x1500tsitls6-rktd75.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=13591f5f1bd39a4ffa2ca1e0a5267fcde1fe77b2e3bab42a9dab35bc50effacd"
-                 alt="image" class="c-content-card__image">
+            <figure class="c-content-card__figure">
+                <img class="c-content-card__figure--img" src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-11/goplaympmpl1050x1500tsitls6-rktd75.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=13591f5f1bd39a4ffa2ca1e0a5267fcde1fe77b2e3bab42a9dab35bc50effacd" alt="Image" />
+                <figcaption class="c-content-card__figure--text">This is the title</figcaption>
+            </figure>
         </a>
 
         <div class="c-content-card">
