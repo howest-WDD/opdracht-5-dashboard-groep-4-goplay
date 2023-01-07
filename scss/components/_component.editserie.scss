@@ -1,0 +1,432 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background-color: #0000;
+  color: #fff
+}
+
+.hero--program {
+  display: flex;
+  min-height: 133.3333333333vw
+}
+
+@media (min-width: 768px) {
+  .hero--program {
+    min-height: 56.25vw;
+    padding-bottom: 18.75vw;
+    margin-bottom: -18.75vw
+  }
+}
+
+.hero--video {
+  background-color: #14191e
+}
+
+.hero--video .hero__bg {
+  display: none
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -5px
+}
+
+.hero__actions > * {
+  margin: 5px
+}
+
+.hero__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% + env(safe-area-inset-top));
+  background-size: cover;
+  background-position: top center
+}
+
+.hero__bg:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-image: linear-gradient(180deg, rgba(20, 25, 30, 0) 66%, rgba(20, 25, 30, .5) 75%, #14191e 100%)
+}
+
+.hero__bg:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(transparent, #14191e)
+}
+
+@media (min-width: 576px) {
+  .hero__bg {
+    background-position: top right
+  }
+}
+
+.hero__bg.has-blur {
+  -webkit-filter: blur(20px);
+  filter: blur(20px)
+}
+
+.hero__bg-readable {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  opacity: .5;
+  background: linear-gradient(90deg, #14191e 0%, rgba(20, 25, 30, 0) 100%);
+  z-index: 1
+}
+
+.hero__video {
+  transition: background-color .2s ease-in-out
+}
+
+@media (min-width: 992px) {
+  .hero__video {
+    top: 0;
+    -webkit-transform: none;
+    transform: none
+  }
+}
+
+.hero__video .video-container {
+  max-width: 980px;
+  margin: 0 auto
+}
+
+@media screen and (max-width: 1199px)and (orientation: landscape) {
+  .is-app .hero__video .video-container {
+    max-width: 160vh !important;
+    max-height: 90vh !important
+  }
+}
+
+.hero__container {
+  position: relative;
+  z-index: 30
+}
+
+.hero__movie-container {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%
+}
+
+@media (min-width: 992px) {
+  .hero__movie-container {
+    flex-direction: row
+  }
+}
+
+.hero__poster {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.hero__title {
+  color: #fff;
+  font-size: max(38px, min(3vw, 48px));
+  font-weight: 700;
+  text-transform: none;
+  text-transform: initial
+}
+
+@media (min-width: 992px) {
+  .hero__title {
+    font-size: 64px
+  }
+}
+
+.hero__unpublish-date {
+  margin-top: 30px !important
+}
+
+.hero__description {
+  max-width: 70%;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 20px
+}
+
+.hero__header {
+  max-width: 720px
+}
+
+.hero__header > * + *, .hero__footer > * + * {
+  margin-top: 30px
+}
+
+.hero__info {
+  z-index: 30;
+  width: 100%;
+  height: 100%;
+  padding: 15px
+}
+
+@media (min-width: 768px) {
+  .hero__info {
+    padding: 15px 30px
+  }
+}
+
+@media (min-width: 992px) {
+  .hero__info {
+    padding: 45px 60px
+  }
+}
+
+.hero__info > * + * {
+  margin-top: 30px
+}
+
+.hero__info.is-hidden {
+  opacity: 0
+}
+
+.hero--program .hero__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start
+}
+
+.hero--video .hero__info {
+  pointer-events: none
+}
+
+@media (min-width: 992px) {
+  .hero--video .hero__info {
+    position: absolute;
+    top: 0;
+    left: 0
+  }
+}
+
+.hero__follow-block, .hero__button {
+  pointer-events: all
+}
+
+.hero__child {
+  display: none
+}
+
+@media (min-width: 992px) {
+  .hero__child {
+    display: block
+  }
+}
+
+.hero__playlist {
+  margin: 20px 0
+}
+
+.hero__playlist .flickity-prev-next-button:after {
+  width: 30px;
+  height: 30px
+}
+
+.hero__playlist .flickity-prev-next-button svg {
+  width: 20px;
+  height: 20px
+}
+
+.hero-video {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  min-height: 133.3333333333vw;
+  height: auto;
+  margin-top: calc(-70px + env(safe-area-inset-top) * -1);
+  background-position: center;
+  background-size: cover
+}
+
+@media (min-width: 768px) {
+  .hero-video {
+    min-height: 56.25vw;
+    margin-top: -90px;
+    padding-bottom: 18.75vw;
+    margin-bottom: -18.75vw
+  }
+}
+
+.hero-video__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%
+}
+
+.hero-video__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background-position: center;
+  background-size: cover
+}
+
+.hero-video__overlay:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: radial-gradient(64.83% 69.89% at 50% 50%, rgba(20, 25, 30, 0) 43.75%, #14191e 100%);
+  opacity: .25
+}
+
+.hero-video__overlay:after {
+  content: "";
+  position: absolute;
+  inset: 80% 0 0;
+  background: linear-gradient(0, #14191e 0%, rgba(20, 25, 30, 0) 100%);
+  z-index: 4;
+  opacity: 1
+}
+
+.hero-video__readability {
+  position: absolute;
+  inset: 0;
+  z-index: 5
+}
+
+.hero-video__readability:before {
+  content: "";
+  position: absolute;
+  inset: -11.8% 33.33% 8.26% 0%;
+  background: linear-gradient(90deg, #14191e 8.96%, rgba(20, 25, 30, 0) 100%);
+  opacity: .25
+}
+
+.hero-video__player {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  overflow: hidden
+}
+
+.hero-video__player .video-js {
+  position: absolute;
+  inset: 0
+}
+
+.hero-video__player video {
+  object-fit: cover
+}
+
+.hero-video__player .vjs-paused .vjs-big-play-button, .hero-video__player .vjs-paused .play-button {
+  display: none !important
+}
+
+.hero-video__player:after {
+  content: "";
+  position: absolute;
+  inset: 0 0 -1px;
+  background-image: linear-gradient(transparent, #14191e);
+  z-index: 4
+}
+
+.hero-video__content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  padding-top: 130px;
+  text-align: left
+}
+
+@media (min-width: 768px) {
+  .hero-video__content {
+    padding-top: max(185px, 16vw)
+  }
+}
+
+.is-movie .hero-video__content {
+  padding-top: 30px
+}
+
+@media (max-width: 991px) {
+  .hero-video__controls {
+    position: absolute;
+    right: 30px;
+    bottom: 0
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-video__controls {
+    right: 5px
+  }
+}
+
+.hero-video__title {
+  font-weight: 600;
+  font-size: 36px
+}
+
+@media (min-width: 768px) {
+  .hero-video__title {
+    font-size: 44px
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-video__title {
+    font-size: 60px
+  }
+}
+
+.hero-video__description {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.hero-video__actions {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin: -5px
+}
+
+.hero-video__actions > * {
+  margin: 5px
+}
+
+.hero-video__inner {
+  max-width: 480px
+}
+
+.hero-video__inner > * + * {
+  margin-top: 10px
+}
+
+.carousel {
+  z-index: 10;
+  margin-top: 2rem;
+  padding: 0.5rem;
+
+  a{
+    text-decoration: none;
+  }
+}
+
+.carousel-cell {
+  width: 300px;
+  height: 150px;
+  margin-right: 10px;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+}
