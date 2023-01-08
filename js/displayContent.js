@@ -22,7 +22,6 @@ const showContent = function (jsonObject) {
         </a>`
         document.querySelector(".js-content").innerHTML += htmlstring_content;
     }
-    listenToClickOnCard();
 }
 
 const showFilteredContent = function (data) {
@@ -60,9 +59,7 @@ const listenToClickOnCard = function () {
 const listenToSearch = function () {
     searchbar.addEventListener('keyup', function (text) {
         const currentword = text.target.value;
-        const filteredMovies = dataStore[0].filter(data => data.title.toLowerCase().includes(currentword.toLowerCase()));
-        const filteredSeries = dataStore[1].filter(data => data.title.toLowerCase().includes(currentword.toLowerCase()));
-        const filteredData = filteredMovies.concat(filteredSeries);
+        const filteredData= dataStore.filter(o => o.title.toLowerCase().includes(currentword.toLowerCase()));
         showFilteredContent(filteredData)
     });
 }
@@ -77,11 +74,18 @@ const getMovies = function () {
 
 //handles the data Array if you fetch all the data and puts it in an Array
 const handleAllData = function (jsonObject) {
-    for (const content of jsonObject) {
-        showContent(content)
-        dataStore.push(content)
-    }
+    let movies = jsonObject[0]
+    let shows = jsonObject[1]
+    //create 1 Big list from 2 API calls
+    const data = movies.concat(shows);
+    //store the data in a List for later use
+    dataStore= data
+    //load the data in the HTML
+    showContent(data)
     displayLoading()
+
+    listenToClickOnCard();
+    listenToSearch();
 }
 
 const getAllContent = function () {
@@ -98,7 +102,6 @@ const displayContent = function () {
         loader = document.querySelector("#loading");
         searchbar = document.querySelector("#filterInput");
         getAllContent();
-        listenToSearch();
     } else {
         //do nothing cause not on the right page
     }
