@@ -21,7 +21,7 @@
     padding: 0;
     margin: 0;
 
-    &--text{
+    &--text {
       position: absolute;
       width: 100%;
       color: #fff;
@@ -32,12 +32,33 @@
       z-index: 2;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
-      background-color: rgba(0,0,0,.7);
+      background-color: rgba(0, 0, 0, .7);
       -webkit-transition: opacity .3s ease-in-out;
       transition: opacity .3s ease-in-out;
     }
   }
-  &:hover{
+
+  &:hover {
     transform: scale(1.01);
+  }
+}
+
+#loading {
+  z-index: 9999999999;
+  width: 2rem;
+  height: 2rem;
+  border: 5px solid color.$neutral-500;
+  border-top: 6px solid color.$accent-00;
+  border-radius: 100%;
+  margin: auto;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
