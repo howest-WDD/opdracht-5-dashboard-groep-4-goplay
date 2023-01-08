@@ -57,6 +57,16 @@ const listenToClickOnCard = function () {
     }
 }
 
+const listenToSearch = function () {
+    searchbar.addEventListener('keyup', function (text) {
+        const currentword = text.target.value;
+        const filteredMovies = dataStore[0].filter(data => data.title.toLowerCase().includes(currentword.toLowerCase()));
+        const filteredSeries = dataStore[1].filter(data => data.title.toLowerCase().includes(currentword.toLowerCase()));
+        const filteredData = filteredMovies.concat(filteredSeries);
+        showFilteredContent(filteredData)
+    });
+}
+
 const getTvShows = function () {
     handleData("https://goplayhowestapifunction.azurewebsites.net/api/getshows", showTvShows);
 }
@@ -88,14 +98,7 @@ const displayContent = function () {
         loader = document.querySelector("#loading");
         searchbar = document.querySelector("#filterInput");
         getAllContent();
-
-        searchbar.addEventListener('keyup', function (text) {
-            const currentword = text.target.value;
-            const filteredMovies = dataStore[0].filter(data => data.title.includes(currentword));
-            const filteredSeries = dataStore[1].filter(data => data.title.includes(currentword));
-            const filteredData = filteredMovies.concat(filteredSeries);
-            showFilteredContent(filteredData)
-        });
+        listenToSearch();
     } else {
         //do nothing cause not on the right page
     }
