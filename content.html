@@ -81,61 +81,23 @@
     </div>
 
 </nav>
-
 <main>
-    <div class="c-filters">
-        <label for="search" class="c-filters__search--label">search movie/serie</label>
-        <input type="text" id="search" class="c-filters__input" placeholder="movie/serie">
-
-        <label for="type">Choose a type:</label>
-        <select name="type" id="type">
-            <option value="All">All</option>
-            <option value="Movie">Movie</option>
-            <option value="Series">Series</option>
-            <option value="Podcast">Podcast</option>
-        </select>
-
-        <label for="genre">Choose a genre:</label>
-        <select name="genre" id=genre>
-            <option value="all">all</option>
-            <option value="Action">Ation</option>
-            <option value="Adventure">Adventure</option>
-            <option value="Drama">Drama</option>
-        </select>
+    <div class="c-content-filter">
+        <input type="text" class="c-content-filter__search" id="filterInput" placeholder="Search movies/shows">
+        <div class="c-content-filter__genre"><label for="language" hidden>
+            Language:</label>
+            <select name="language" id="language">
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+                <option value="c++" disabled>C++</option>
+                <option value="java" selected>Java</option>
+            </select></div>
+        <button class="c-button">add new</button>
     </div>
-
-    <div class="o-content">
-        <a class="c-content-card" href="#">
-            <p class="c-content-card__title">this is a test</p>
-            <img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-11/goplaympmpl1050x1500tsitls6-rktd75.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=13591f5f1bd39a4ffa2ca1e0a5267fcde1fe77b2e3bab42a9dab35bc50effacd"
-                 alt="image" class="c-content-card__image">
-        </a>
-
-        <div class="c-content-card">
-            <img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-12/goplaympmpl1050x1500bovkerstspecial-rmtn1j.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=4a35dc454961a3714524096cb87aec560b4a2069cd2e038fbdad773d65be651e"
-                 alt="image" class="c-content-card__image">
-        </div>
-        <div class="c-content-card">
-            <img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-11/goplaympmpl1050x1500patientpedro-rm42pi.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=0fd93a612aa12234a6693bf87840f2da2f2d1b94a6aa986e0aaee38618852132"
-                 alt="image" class="c-content-card__image">
-        </div>
-
-        <div class="c-content-card">
-            <img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-12/cryptoposter-rmxldg.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=1d9fe16be5b867ea54030d30d2bd1372190ae51ff6a157b241e64c918f8b40b1"
-                 alt="image" class="c-content-card__image">
-        </div>
-        <div class="c-content-card">
-            <img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-12/goplaympmpl1050x1500jdmkarendamen-rmrtui.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=d7692b8bee5f9680a2a4707f3257acc13c68a9521eee73ad95fdb20c2336ecec"
-                 alt="image" class="c-content-card__image">
-        </div>
-        <div class="c-content-card">
-            <img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-02/goplaympmpl1050x1500demol2022-r80eko.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=bd461b80faa61c49c84c35dc6e4d972eb7ca6bd1fdb0a594a2c106a959511697"
-                 alt="image" class="c-content-card__image">
-        </div>
-        <div class="c-content-card">
-            <img src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-08/goplaympmpl1050x1500klopjacht-rg3aep.jpg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=abab3c5af022e25dc1f0597a02fcc37da4f0120614c957fb499be1d7920282bb"
-                 alt="image" class="c-content-card__image">
-        </div>
+    </div>
+    <div class="js-loading u-hidden" id="loading"></div>
+    <div class="o-content js-content">
+        <!--data loaded with JS-->
     </div>
 </main>
 </body>

@@ -2,7 +2,6 @@
 @forward './component.nav';
 @forward './component.totals';
 @forward './component.button';
-@forward 'components.filters';
 @forward 'component.component-card';
 @forward './components.user';
 @forward './component.map';
@@ -11,8 +10,8 @@
 @forward './component.inputs';
 @forward './component.heading';
 @forward './component.modal';
-@forward "component.carrousel";
 @forward "component.formContent";
 @forward "c.component.editmovie";
 @forward './component.subscription';
 @forward "component.editserie";
+@forward "component.contentFilters";
