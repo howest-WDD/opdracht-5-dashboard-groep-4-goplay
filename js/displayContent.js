@@ -74,16 +74,21 @@ const getMovies = function () {
 
 //handles the data Array if you fetch all the data and puts it in an Array
 const handleAllData = function (jsonObject) {
+    //data from the API
     let movies = jsonObject[0]
     let shows = jsonObject[1]
+
     //create 1 Big list from 2 API calls
     const data = movies.concat(shows);
+
     //store the data in a List for later use
-    dataStore= data
+    dataStore = data
+
     //load the data in the HTML
     showContent(data)
     displayLoading()
 
+    //start listening to the events
     listenToClickOnCard();
     listenToSearch();
 }
