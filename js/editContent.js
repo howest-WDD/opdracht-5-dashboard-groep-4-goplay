@@ -105,13 +105,11 @@ const loadContentModal = function () {
         //check if you are editing a movie or a serie
         if (url.includes("edit_movie.html")) {
             //fetch the data from the API
-        } else if (url.includes("edit_serie.html")) {
-            html_show = document.querySelector(".js-show-data")
-            getShowById(id)
             getMovieById(id)
             html_movie = document.querySelector(".js-movie-data")
         } else if (url.includes("edit_serie.html")) {
-            console.log("serie")
+            html_show = document.querySelector(".js-show-data")
+            getShowById(id)
         } else {
             //no clue what would cause this to run
         }
