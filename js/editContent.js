@@ -1,4 +1,5 @@
-let html_show;
+let html_movie, html_show;
+
 const modalContentToggle = function () {
     console.log("i got it")
     //select the modal window
@@ -43,11 +44,7 @@ const showShow = function (jsonObject) {
                                                 <option value="java" selected>Java</option>
                                             </select></div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </header>
+                  </header>
             </div>
         </div>`
     html_show.innerHTML = htmlstring_show;
@@ -56,6 +53,47 @@ const showShow = function (jsonObject) {
 
 const getShowById = function (id) {
     handleData(`https://goplayhowestapifunction.azurewebsites.net/api/getshowbyid?_id=${id}`, showShow);
+}
+
+const showMovie = function (jsonObject) {
+    console.log(jsonObject)
+    html_movie.innerHTML = ""
+    let htmlstring_movie = `
+            <div class="c-movie-hero c-movie-hero--program is-movie">
+                <div class="c-movie-hero__bg has-blur"
+                     style="background-image: url(&quot;${jsonObject.backgroundImage}&quot;);"></div>
+                <div class="c-movie-hero__bg-readable"></div>
+                <div class="c-movie-hero__container c-movie-hero__movie-container" style="margin-top: 25px">
+                    <div class="c-movie-hero-video__container">
+                        <div class="c-movie-hero-video__content l-spacer">
+                            <div class="c-movie-hero-video__inner"><h1 class="c-movie-hero-video__title">${jsonObject.title}</h1>
+                                <div class="c-movie-hero-video__description"><p>${jsonObject.description}</p>
+                                </div>
+                                <div class="c-movie-hero__actions">
+                                    <a class="c-button"
+                                       href="https://www.goplay.be${jsonObject.file_link}" target="_blank">
+                                        <span class="button__text">Afspelen</span>
+                                    </a>
+                                    <a href="#" class="c-button"><span>Online</span></a>
+                                    <a href="content.html" class="c-button"><span>Terug naar Content</span></a>
+                                    <a href="#" class="c-button" id="editButton"><span>Aanpassen</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="c-movie-hero__poster c-button--poster" type="button">
+                        <div class="play-button"></div>
+                        <picture class="l-spacer">
+                            <img src="${jsonObject.thumbnailImage}"
+                                 alt="Winter's Dream" width="510" height="740"></picture>
+                    </button>
+                </div>
+            </div>`
+    html_movie.innerHTML = htmlstring_movie;
+}
+
+const getMovieById = function (id) {
+    handleData(`https://goplayhowestapifunction.azurewebsites.net/api/getmoviebyid?_id=${id}`, showMovie);
 }
 
 const loadContentModal = function () {
@@ -67,10 +105,13 @@ const loadContentModal = function () {
         //check if you are editing a movie or a serie
         if (url.includes("edit_movie.html")) {
             //fetch the data from the API
-
         } else if (url.includes("edit_serie.html")) {
             html_show = document.querySelector(".js-show-data")
             getShowById(id)
+            getMovieById(id)
+            html_movie = document.querySelector(".js-movie-data")
+        } else if (url.includes("edit_serie.html")) {
+            console.log("serie")
         } else {
             //no clue what would cause this to run
         }
