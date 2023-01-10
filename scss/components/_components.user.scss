@@ -31,17 +31,21 @@
         display: flex;
         position: relative;
     }
+    &__gobacktextcontainer{
+        background-color: color.$accent-300;
+        padding: 1rem;
+    }
     &__gobacktext{
-        color: color.$text-color-a;
+        color: black;
         font-size: 24px;
         cursor: pointer;
-        background-color: color.$accent-300;
-
-        padding: 1rem;
+        
+        margin-left: 2rem;
+        
         border-radius: 0.5px;
     }
     &__gobacksvg{
-        padding-right: 2rem;
+        margin-right: 4rem;
         position: absolute;
        
         
