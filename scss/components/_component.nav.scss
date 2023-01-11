@@ -71,13 +71,9 @@
 					transform: translateX(-50%);
 				}
 				&.active {
-					background-color: color.$bg-color-hov;
-					transition: 0.3s;
-					
-	
-	
-					
-	
+					&::after{
+						display: none !important;
+					}
 				}
 			}
 			&--accent {
@@ -143,7 +139,7 @@
 	}
 .c-profile {
 	
-	width: 150px;
+	width: 180px;
 	padding: 0.9375rem;
 	display: flex;
 	align-items: center;
@@ -177,7 +173,7 @@
 			position: relative;
 			align-items: flex-end;
 			padding-right: 3rem;
-			margin-top: -22px;
+			margin-top: 0px;
 		}
 
 		
