@@ -47,6 +47,11 @@
 			&.active {
 				background-color: color.$bg-color-hov;
 				transition: 0.3s;
+				
+
+
+				
+
 			}
 			a {
 				padding: 0.9375rem;
@@ -65,6 +70,15 @@
 					transition: 0.3s;
 					transform: translateX(-50%);
 				}
+				&.active {
+					background-color: color.$bg-color-hov;
+					transition: 0.3s;
+					&::after{
+						display: none;
+	
+					
+	
+				}
 			}
 			&--accent {
 				color: color.$accent-100 !important;
@@ -82,11 +96,24 @@
 			}
 			
 			&:hover {
+				.active {
+					a{
+						&::after{
+							width: 0% !important;
+						}
+
+					}
+				}
+
 				a{
 					&::after{
 						width: 50%;
 					}
+					
 				}
+				
+
+				
 			}
 		}
 		&__button {
