@@ -5,6 +5,23 @@
   display: flex;
   padding: 10px;
 
+  &__genre{
+    margin-top: 2rem;
+    margin-left: 1rem;
+
+    select{
+      background-color: color.$neutral-900;
+      border: 2px solid color.$accent-00;
+      border-radius: 10px;
+      justify-content: center;
+      box-shadow: none;
+      color: color.$text-color-a;
+      height: 32px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
   &__search {
     margin-left: 1rem;
     margin-bottom: 1rem;
