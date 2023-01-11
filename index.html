@@ -27,16 +27,16 @@
 		<script src="https://cdn.plot.ly/plotly-2.16.1.min.js"></script>
 	</head>
   <body class="o-darkmode o-grid">
-	<!-- FIXME: De hamburger menu heeft op mobile view een rare outline -->
-	<!-- FIXME: De account informatie verdwijnt op mobile ? -->
     <nav class="c-nav">
         <div class="c-sidebar c-nav__hide"> <!-- TODO: Als men klikt op de div in in alles kleiner dan 428 px klapt de hamburger menu uit-->
           <img class="c-sidebar__logo js-logo" src="/assets/svg/logo.svg" alt="GoPlay" />
           <img class="c-sidebar__logo js-logo u-hidden" src="/assets/svg/logo_dark.svg" alt="GoPlay" />
           <ul>
-            <li class="c-sidebar__item active"><a href="index.html">Dashboard</a></li>
-            <li class="c-sidebar__item"><a href="users.html">User management</a></li>
-            <li class="c-sidebar__item"><a href="content.html">Content managment</a></li> <!-- FIXME: De content management underline is kleiner dan die erboven ik zie de reden hiervan niet in net zoals settings en log out-->
+            <li class="c-sidebar__item active"><a class="active" href="index.html">Dashboard</a></li>
+            <li class="c-sidebar__item"><a href="users.html">Gebruikers beheer</a></li>
+            <li class="c-sidebar__item"><a href="content.html">Content beheer</a></li>
+			<li class="c-sidebar__item"><a href="startscherm.html">Startscherm beheer</a></li>
+			<li class="c-sidebar__item"><a href="settings.html">Website instellingen</a></li> <!-- FIXME: De content management underline is kleiner dan die erboven ik zie de reden hiervan niet in net zoals settings en log out-->
           </ul>
           <div class="c-sidebar__account">
             <h2>Account</h2>
@@ -52,8 +52,8 @@
                   </div>
                 </div>
               </li>
-              <li class="c-sidebar__item"><a href="#">Settings</a></li>
-              <li class="c-sidebar__item"><a class="c-sidebar__item--accent js-logout" href="#">Log Out</a></li>
+              <li class="c-sidebar__item"><a href="#">Instellingen</a></li>
+              <li class="c-sidebar__item"><a class="c-sidebar__item--accent js-logout" href="#">Uitloggen</a></li>
               <li class="c-sidebar__button"><a class="c-button js-darkmode" href="#">Light Mode</a></li> <!-- TODO: een hovermode zou leuk zijn -->
             </ul>
 			<p class="creddits">&copy; Howest - 2022</p>
@@ -70,9 +70,11 @@
 				</div>
           <div class="c-mobilenav__content u-hidden">
             <ul>
-              <li class="c-sidebar__item active"><a href="index.html">Dashboard</a></li>
-              <li class="c-sidebar__item"><a href="users.html">User management</a></li>
-              <li class="c-sidebar__item"><a href="content.html">Content managment</a></li>
+				<li class="c-sidebar__item active"><a class="active" href="index.html">Dashboard</a></li>
+				<li class="c-sidebar__item"><a href="users.html">Gebruikers beheer</a></li>
+				<li class="c-sidebar__item"><a href="content.html">Content beheer</a></li>
+				<li class="c-sidebar__item"><a href="startscherm.html">Startscherm beheer</a></li>
+				<li class="c-sidebar__item"><a href="settings.html">Website instellingen</a></li>
             </ul>
             <div class="c-mobilenav__account">
               <h2>Account</h2>
@@ -80,8 +82,8 @@
                 <li class="c-sidebar__item">
             
                 </li>
-                <li class="c-sidebar__item"><a href="#">Settings</a></li>
-                <li class="c-sidebar__item"><a class="c-sidebar__item--accent js-logout" href="#">Log Out</a></li>
+                <li class="c-sidebar__item"><a href="#">Instellingen</a></li>
+                <li class="c-sidebar__item"><a class="c-sidebar__item--accent js-logout" href="#">Uitloggen</a></li>
               </ul>
 			  <p class="creddits">&copy; Howest - 2022</p>
             </div>

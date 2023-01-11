@@ -47,6 +47,11 @@
 			&.active {
 				background-color: color.$bg-color-hov;
 				transition: 0.3s;
+				
+
+
+				
+
 			}
 			a {
 				padding: 0.9375rem;
@@ -65,6 +70,11 @@
 					transition: 0.3s;
 					transform: translateX(-50%);
 				}
+				&.active {
+					&::after{
+						display: none !important;
+					}
+				}
 			}
 			&--accent {
 				color: color.$accent-100 !important;
@@ -82,11 +92,24 @@
 			}
 			
 			&:hover {
+				.active {
+					a{
+						&::after{
+							width: 0% !important;
+						}
+
+					}
+				}
+
 				a{
 					&::after{
 						width: 50%;
 					}
+					
 				}
+				
+
+				
 			}
 		}
 		&__button {
@@ -116,7 +139,7 @@
 	}
 .c-profile {
 	
-	width: 150px;
+	width: 180px;
 	padding: 0.9375rem;
 	display: flex;
 	align-items: center;
@@ -150,7 +173,7 @@
 			position: relative;
 			align-items: flex-end;
 			padding-right: 3rem;
-			margin-top: -22px;
+			margin-top: 0px;
 		}
 
 		
