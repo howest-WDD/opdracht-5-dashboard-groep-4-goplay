@@ -193,11 +193,12 @@
         background-color: color.$accent-00;
         border: none;
         font-size: 16px;
-        padding: 0.3rem 1.5rem;
+        
         border-radius: 35%;
         width: 32px;
         height: 32px ;
         cursor: pointer;
+        color: black;
 
         &:hover{
             background-color: color.$accent-300;
@@ -208,7 +209,7 @@
         position: absolute;
         left: 0;
         padding-top: 1rem;
-        margin-top: 52px;
+        margin-top: 40px;
         background-color: color.$neutral-900;
         width: calc(100vw - 300px);
 
@@ -446,7 +447,7 @@
     }
     to{
         padding-top: 1rem;
-        margin-top: 52px;
+        margin-top: 40px;
         z-index: -1;
     }
 }
