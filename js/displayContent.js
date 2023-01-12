@@ -4,13 +4,10 @@ let loader, dataStore = [], searchbar, addNew, genreFilter;
 
 // showing loading logo
 function displayLoading() {
-    const addNewPlaceHolder = document.querySelector(".js-addNew--card")
     if (loader.classList.contains("u-hidden")) {
         loader.classList.remove("u-hidden");
-        addNewPlaceHolder.classList.add("u-hidden");
     } else {
         loader.classList.add("u-hidden");
-        addNewPlaceHolder.classList.remove("u-hidden");
     }
 }
 
@@ -23,6 +20,14 @@ const showGenres = function (genres) {
 }
 
 const showContent = function (jsonObject) {
+    //add the Add new card in to the inner HTML
+    document.querySelector(".js-content").innerHTML = `<a class="c-content-card js-addNew--card" href="#">
+            <figure class="c-content-card__figure">
+                <img class="c-content-card__figure--img" src="assets/img/addNew.png" alt="AddNewPlaceHolder">
+                <figcaption class="c-content-card__figure--text">Add new movie or tv-show</figcaption>
+            </figure>
+        </a>`;
+
     for (const content of jsonObject) {
         let htmlstring_content = `
             <a class="c-content-card js-card" href="#" data-id="${content._id}" data-type="${content.seasons}">
@@ -33,21 +38,12 @@ const showContent = function (jsonObject) {
         </a>`
         document.querySelector(".js-content").innerHTML += htmlstring_content;
     }
-}
 
-const showFilteredContent = function (data) {
-    document.querySelector(".js-content").innerHTML = "";
-    for (const content of data) {
-        let htmlstring_content = `
-            <a class="c-content-card js-card" href="#" data-id="${content._id}" data-type="${content.seasons}">
-            <figure class="c-content-card__figure">
-                <img class="c-content-card__figure--img" src="${content.thumbnailImage}" alt="Image" />
-                <figcaption class="c-content-card__figure--text">${content.title}</figcaption>
-            </figure>
-        </a>`
-        document.querySelector(".js-content").innerHTML += htmlstring_content;
-    }
+    //start listening to the events
     listenToClickOnCard();
+    listenToSearch();
+    listenToAddNew();
+    listenToCloseModal();
 }
 
 const showModalToggle = function () {
@@ -83,7 +79,7 @@ const listenToGenreFilter = function () {
     genreFilter.addEventListener('change', (event) => {
         const genre = event.target.value;
         if (genre.toString() === "allGenres") {
-            showFilteredContent(dataStore)
+            showContent(dataStore)
         } else {
             let arrData = []
             dataStore.forEach(data => {
@@ -91,7 +87,7 @@ const listenToGenreFilter = function () {
                     arrData.push(data)
                 }
             });
-            showFilteredContent(arrData)
+            showContent(arrData)
         }
     });
 }
@@ -100,7 +96,7 @@ const listenToSearch = function () {
     searchbar.addEventListener('keyup', function (text) {
         const currentword = text.target.value;
         const filteredData = dataStore.filter(o => o.title.toLowerCase().includes(currentword.toLowerCase()));
-        showFilteredContent(filteredData)
+        showContent(filteredData)
     });
 }
 
@@ -137,12 +133,6 @@ const handleAllData = function (jsonObject) {
     getGenres()
     showContent(data)
     displayLoading()
-
-    //start listening to the events
-    listenToClickOnCard();
-    listenToSearch();
-    listenToAddNew();
-    listenToCloseModal();
 }
 
 const getAllContent = function () {
