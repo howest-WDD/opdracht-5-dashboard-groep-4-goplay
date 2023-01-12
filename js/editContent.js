@@ -1,7 +1,6 @@
 let html_movie, html_show;
 
 const modalContentToggle = function () {
-    console.log("i got it")
     //select the modal window
     const modal = document.querySelector("#editContentModal");
     const classes = modal.classList
@@ -66,7 +65,7 @@ const showMovie = function (jsonObject) {
                 <div class="c-movie-hero__container c-movie-hero__movie-container" style="margin-top: 25px">
                     <div class="c-movie-hero-video__container">
                         <div class="c-movie-hero-video__content l-spacer">
-                            <div class="c-movie-hero-video__inner"><h1 class="c-movie-hero-video__title">${jsonObject.title}</h1>
+                            <div class="c-movie-hero-video__inner"><h1 class="c-movie-hero-video__title" contenteditable="true">${jsonObject.title}</h1>
                                 <div class="c-movie-hero-video__description"><p>${jsonObject.description}</p>
                                 </div>
                                 <div class="c-movie-hero__actions">
@@ -90,13 +89,16 @@ const showMovie = function (jsonObject) {
                 </div>
             </div>`
     html_movie.innerHTML = htmlstring_movie;
+    document.querySelector(".c-movie-hero-video__title").addEventListener("input", function() {
+        console.log(this.innerHTML)
+    }, false);
 }
 
 const getMovieById = function (id) {
     handleData(`https://goplayhowestapifunction.azurewebsites.net/api/getmoviebyid?_id=${id}`, showMovie);
 }
 
-const loadContentModal = function () {
+const editContent = function () {
     //split the url and take the 3 parameter
     const url = window.location.href;
     // check if you are on the movie/serie editing page
@@ -123,4 +125,4 @@ const loadContentModal = function () {
     }
 }
 
-document.addEventListener('DOMContentLoaded', loadContentModal);
+document.addEventListener('DOMContentLoaded', editContent);

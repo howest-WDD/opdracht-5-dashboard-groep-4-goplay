@@ -86,21 +86,32 @@
     </div>
 </nav>
 <main>
+    <div id="modalAddNew" class="c-modalContainer u-hidden">
+        <!-- content -->
+        <div class="c-modal c-modal--content">
+            <span class="c-modal__close" id="modalAddNewClose">&times;</span>
+        </div>
+    </div>
     <div class="c-content-filter">
-        <input type="text" class="c-content-filter__search" id="filterInput" placeholder="Search movies/shows">
-        <div class="c-content-filter__genre"><label for="genre" hidden>
+        <input type="text" class="c-content-filter__search" id="filterInput" placeholder="zoek films of shows">
+        <div class="c-content-filter__genre"><label for="genres" hidden>
             Genre:</label>
-            <select name="genre" id="genre">
-                <option value="javascript">JavaScript</option>
-                <option value="python">Python</option>
-                <option value="c++" disabled>C++</option>
-                <option value="java" selected>Java</option>
+            <select name="genres" id="genres">
+                <option value="allGenres" selected>Alle Categorieën</option>
+                <!--data loaded with JS-->
             </select>
         </div>
     </div>
     </div>
     <div class="js-loading u-hidden" id="loading"></div>
     <div class="o-content js-content">
+        <a class="c-content-card js-addNew--card" href="#">
+            <figure class="c-content-card__figure">
+                <img class="c-content-card__figure--img" src="assets/img/addNew.png" alt="AddNewPlaceHolder">
+                <figcaption class="c-content-card__figure--text">Add new movie or tv-show</figcaption>
+            </figure>
+        </a>
+
         <!--data loaded with JS-->
     </div>
 </main>

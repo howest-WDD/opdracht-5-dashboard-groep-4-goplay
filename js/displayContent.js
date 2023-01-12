@@ -1,14 +1,25 @@
 //#region ***  DOM references ***
-let loader, dataStore = [], searchbar;
+let loader, dataStore = [], searchbar, addNew, genreFilter;
 //#endregion
 
 // showing loading logo
 function displayLoading() {
+    const addNewPlaceHolder = document.querySelector(".js-addNew--card")
     if (loader.classList.contains("u-hidden")) {
         loader.classList.remove("u-hidden");
+        addNewPlaceHolder.classList.add("u-hidden");
     } else {
         loader.classList.add("u-hidden");
+        addNewPlaceHolder.classList.remove("u-hidden");
     }
+}
+
+const showGenres = function (genres) {
+    genres.forEach(genre => {
+        let htmlstring_content = `<option value="${genre}">${genre}</option>`
+        genreFilter.innerHTML += htmlstring_content
+    });
+    listenToGenreFilter();
 }
 
 const showContent = function (jsonObject) {
@@ -39,6 +50,18 @@ const showFilteredContent = function (data) {
     listenToClickOnCard();
 }
 
+const showModalToggle = function () {
+    const modalAddNew = document.querySelector("#modalAddNew");
+    const classes = modalAddNew.classList
+    if (classes.contains('u-hidden')) {
+        modalAddNew.classList.remove("u-hidden");
+    }
+    //makes the modal window not visible on cancel
+    else {
+        modalAddNew.classList.add("u-hidden");
+    }
+}
+
 const listenToClickOnCard = function () {
     const cards = document.querySelectorAll(".js-card");
     for (const card of cards) {
@@ -56,14 +79,40 @@ const listenToClickOnCard = function () {
     }
 }
 
+const listenToGenreFilter = function () {
+    genreFilter.addEventListener('change', (event) => {
+        const genre = event.target.value;
+        if (genre.toString() === "allGenres") {
+            showFilteredContent(dataStore)
+        } else {
+            let arrData = []
+            dataStore.forEach(data => {
+                if (data.genre === genre) {
+                    arrData.push(data)
+                }
+            });
+            showFilteredContent(arrData)
+        }
+    });
+}
+
 const listenToSearch = function () {
     searchbar.addEventListener('keyup', function (text) {
         const currentword = text.target.value;
-        const filteredData= dataStore.filter(o => o.title.toLowerCase().includes(currentword.toLowerCase()));
+        const filteredData = dataStore.filter(o => o.title.toLowerCase().includes(currentword.toLowerCase()));
         showFilteredContent(filteredData)
     });
 }
 
+const listenToAddNew = function () {
+    addNew = document.querySelector(".js-addNew--card");
+    addNew.addEventListener('click', showModalToggle)
+}
+
+const listenToCloseModal = function () {
+    const cancelButton = document.querySelector("#modalAddNewClose");
+    cancelButton.addEventListener('click', showModalToggle);
+}
 const getTvShows = function () {
     handleData("https://goplayhowestapifunction.azurewebsites.net/api/getshows", showTvShows);
 }
@@ -85,12 +134,15 @@ const handleAllData = function (jsonObject) {
     dataStore = data
 
     //load the data in the HTML
+    getGenres()
     showContent(data)
     displayLoading()
 
     //start listening to the events
     listenToClickOnCard();
     listenToSearch();
+    listenToAddNew();
+    listenToCloseModal();
 }
 
 const getAllContent = function () {
@@ -100,12 +152,23 @@ const getAllContent = function () {
     )).then(handleAllData)
 }
 
+const getGenres = function () {
+    const genres = []
+    dataStore.forEach(data => {
+        if (!genres.includes(data.genre)) {
+            genres.push(data.genre)
+        }
+    });
+    showGenres(genres)
+}
+
 const displayContent = function () {
     const url = window.location.href;
     // check if you are on the content page
     if (url.includes("content.html")) {
         loader = document.querySelector("#loading");
         searchbar = document.querySelector("#filterInput");
+        genreFilter = document.querySelector("#genres");
         getAllContent();
     } else {
         //do nothing cause not on the right page
