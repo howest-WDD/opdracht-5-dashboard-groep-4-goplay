@@ -72,6 +72,7 @@
 .c-logo {
 	&__wrapper {
 		display: flex;
-		justify-content: space-evenly;
+
+		gap: 50px;
 	}
 }

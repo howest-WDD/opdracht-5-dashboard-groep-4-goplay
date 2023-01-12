@@ -7,14 +7,16 @@ const createValues = function () {
 	for (let index = 0; index < inputs.length; index++) {
 		const input = inputs[index];
 		let value = input.value;
+		let inputID = input.id;
 		// console.log(value);
-		let valueDescriptor = input.nextElementSibling;
+		let valueDescriptor = document.getElementById(`${inputID}-value`);
 		changeValues(valueDescriptor, value);
 
 		input.addEventListener('change', function () {
 			let AELvalue = input.value;
+			let AELinputID = input.id;
 			// console.log(value);
-			let AELvalueDescriptor = input.nextElementSibling;
+			let AELvalueDescriptor = document.getElementById(`${AELinputID}-value`);
 			changeValues(AELvalueDescriptor, AELvalue);
 			// console.log('change');
 		});
