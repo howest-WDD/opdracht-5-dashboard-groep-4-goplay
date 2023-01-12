@@ -18,7 +18,7 @@
 		<!-- JS -->
 		<script type="module" src="./dist/main.js"></script>
 	</head>
-	<body class="o-darkmode o-grid js-page-settings">
+	<body class="o-darkmode o-grid js-page-settings u-bgColor">
 		<nav class="c-nav">
 			<div class="c-sidebar c-nav__hide">
 				<img class="c-sidebar__logo js-logo" src="/assets/svg/logo.svg" alt="GoPlay" />
@@ -80,6 +80,7 @@
 			<article class="c-settings">
 				<!-- layout settings content -->
 				<div>
+					<h1>Layout instellingen</h1>
 					<!-- logo settings -->
 					<!-- title -->
 					<h2>logo</h2>
@@ -127,66 +128,76 @@
 					<h2>Kleuren</h2>
 					<div id="site-colors" class="c-color__wrapper">
 						<!-- background colors -->
-						<div class="c-color__bigContainer c-color__bigContainer--1">
+						<div class="c-color__bigContainer">
 							<div>
 								<h4>achtergrond kleuren</h4>
 								<!-- background color for dark -->
 								<div class="c-color__container">
-									<label class="c-color__label" for="background-dark"> Achtergrond kleur dark-mode </label>
+									<div>
+										<label class="c-color__label" for="background-dark"> Achtergrond kleur dark-mode </label>
+										<p class="c-color__value" id="background-dark-value">value:</p>
+									</div>
 									<input class="c-color__input js-color-input" type="color" id="background-dark" name="background-dark" value="#1C242B" />
-									<p class="c-color__value" id="background-dark-value">value:</p>
 								</div>
 								<!-- background color for light -->
 								<div class="c-color__container">
-									<label class="c-color__label" for="background-light"> Achtergrond kleur light-mode </label>
+									<div>
+										<label class="c-color__label" for="background-light"> Achtergrond kleur light-mode </label>
+										<p class="c-color__value" id="background-light-value">value:</p>
+									</div>
 									<input class="c-color__input js-color-input" type="color" id="background-light" name="background-light" value="#ffffff" />
-									<p class="c-color__value" id="background-light-value">value:</p>
 								</div>
 							</div>
 						</div>
 						<!-- accent colors -->
-						<div class="c-color__bigContainer c-color__bigContainer--2">
+						<div class="c-color__bigContainer">
 							<div>
 								<h4>accent kleuren</h4>
 								<!-- accent color 00-->
 								<div class="c-color__container">
-									<label class="c-color__label" for="accent-00">Accent kleur 00</label>
+									<div>
+										<label class="c-color__label" for="accent-00">Accent kleur 00</label>
+										<p class="c-color__value" id="accent-00-value">value:</p>
+									</div>
 									<input class="c-color__input js-color-input" type="color" id="accent-00" name="background-dark" value="#00f0c8" />
-									<p class="c-color__value" id="accent-00-value">value:</p>
 								</div>
 								<!-- accent color 100-->
 								<div class="c-color__container">
-									<label class="c-color__label" for="accent-100">Accent kleur 100</label>
+									<div>
+										<label class="c-color__label" for="accent-100">Accent kleur 100</label>
+										<p class="c-color__value" id="accent-100-value">value:</p>
+									</div>
 									<input class="c-color__input js-color-input" type="color" id="accent-100" name="background-nav-dark" value="#ff8d90" />
-									<p class="c-color__value" id="accent-100-value">value:</p>
 								</div>
 								<!-- accent color 200-->
 								<div class="c-color__container">
-									<label class="c-color__label" for="accent-200">Accent kleur 200</label>
+									<div>
+										<label class="c-color__label" for="accent-200">Accent kleur 200</label>
+										<p class="c-color__value" id="accent-200-value">value:</p>
+									</div>
 									<input class="c-color__input js-color-input" type="color" id="accent-200" name="background-nav-dark" value="#00f0c8" />
-									<p class="c-color__value" id="accent-200-value">value:</p>
 								</div>
 							</div>
-							<!-- text colors -->
+						</div>
+						<!-- text colors -->
+						<div class="c-color__bigContainer">
 							<div>
 								<h4>text kleuren</h4>
 								<!-- text color light-->
 								<div class="c-color__container">
-									<label class="c-color__label" for="text-color-light">tekst kleur light</label>
+									<div>
+										<label class="c-color__label" for="text-color-light">tekst kleur light</label>
+										<p class="c-color__value" id="text-color-light-value">value:</p>
+									</div>
 									<input class="c-color__input js-color-input" type="color" id="text-color-light" name="background-dark" value="#ffffff" />
-									<p class="c-color__value" id="text-color-light-value">value:</p>
 								</div>
 								<!-- text color light-->
 								<div class="c-color__container">
-									<label class="c-color__label" for="text-color-a-dark">tekst kleur dark a</label>
+									<div>
+										<label class="c-color__label" for="text-color-a-dark">tekst kleur dark</label>
+										<p class="c-color__value" id="text-color-a-dark-value">value:</p>
+									</div>
 									<input class="c-color__input js-color-input" type="color" id="text-color-a-dark" name="background-dark" value="#1c242b" />
-									<p class="c-color__value" id="text-color-a-dark-value">value:</p>
-								</div>
-								<!-- text color light-->
-								<div class="c-color__container">
-									<label class="c-color__label" for="text-color-b-dark">tekst kleur dark b</label>
-									<input class="c-color__input js-color-input" type="color" id="text-color-b-dark" name="background-dark" value="#14191e" />
-									<p class="c-color__value" id="text-color-b-dark-value">value:</p>
 								</div>
 							</div>
 						</div>
@@ -206,6 +217,7 @@
 				</div>
 				<!-- subscription settings content -->
 				<div>
+					<h1>Subscripties</h1>
 					<!-- add new subscription panel -->
 					<div class="c-subscription c-subscription--new">
 						<h2>voeg nieuwe subscription toe</h2>
@@ -254,6 +266,7 @@
 				</div>
 				<!-- promos settings content -->
 				<div>
+					<h1>Promo's</h1>
 					<!-- add new subscription panel -->
 					<div class="c-subscription c-subscription--new c-promo--new">
 						<h2>voeg nieuwe promo toe</h2>
@@ -302,6 +315,7 @@
 				</div>
 				<!-- user settings content -->
 				<div>
+					<h1>Gebruikers instellingen</h1>
 					<div class="c-usersettings__container">
 						<div class="c-usersettings__accountcontainer">
 							<h2>sectie naam: <input type="text" value="Accountgegevens" /></h2>

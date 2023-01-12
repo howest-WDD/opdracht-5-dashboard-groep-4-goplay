@@ -4,10 +4,37 @@
 .c-color {
 	&__container {
 		margin: 20px 0;
+
+		display: flex;
+		align-content: center;
+		flex-direction: row;
+		flex-wrap: wrap;
+
+		gap: 0 !important;
 	}
 
 	&__input {
-		width: 100%;
+		// width: 100%;
+		-webkit-appearance: none;
+		border: none;
+		width: 32px;
+		height: 32px;
+
+		&::-webkit-color-swatch {
+			border: none;
+			border-radius: 10px;
+		}
+
+		&::-webkit-color-swatch-wrapper {
+			padding: 0 !important;
+			border-radius: 10px;
+		}
+
+		&[type='color' i] {
+			padding: 1px;
+			border-radius: 10px;
+			background-color: color.$text-color-a;
+		}
 	}
 
 	&__value {
@@ -33,6 +60,8 @@
 
 	&__wrapper {
 		display: flex;
+
+		gap: 50px;
 
 		h2 {
 			width: 100%;
