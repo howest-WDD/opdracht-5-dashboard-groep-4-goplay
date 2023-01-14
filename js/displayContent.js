@@ -21,7 +21,7 @@ const showGenres = function (genres) {
 
 const showContent = function (jsonObject) {
     //add the Add new card in to the inner HTML
-    document.querySelector(".js-content").innerHTML = `<a class="c-content-card js-addNew--card" href="#">
+    document.querySelector(".js-content").innerHTML = `<a class="c-content-card js-addNew--card" href="/create_new.html">
             <figure class="c-content-card__figure">
                 <img class="c-content-card__figure--img" src="assets/img/addNew.png" alt="AddNewPlaceHolder">
                 <figcaption class="c-content-card__figure--text">Add new movie or tv-show</figcaption>

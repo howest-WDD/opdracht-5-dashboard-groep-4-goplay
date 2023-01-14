@@ -7,21 +7,24 @@
 
   @include bp.up(tl) {
     flex-direction: column;
-    margin-left: 50px;
+    margin-left: 3rem;
   }
 }
 
 .c-addContent {
+  margin-top: 3rem;
   grid-area: content;
   display: grid;
   height: 100%;
 
-  grid-template-columns: 790px 395px 395px;
+  grid-template-columns: 750px 385px 385px;
 
   grid-template-areas:
 		'upload bg_preview pstr_preview'
 		'details settings .'
-		'details . buttons';
+		'details settings .'
+		'seasons seasons seasons'
+		'. . buttons';
 
   gap: 20px;
 
@@ -43,6 +46,10 @@
 
   &__settings {
     grid-area: settings;
+  }
+
+  &__seasons{
+    grid-area: seasons;
   }
 
   &__buttons {
