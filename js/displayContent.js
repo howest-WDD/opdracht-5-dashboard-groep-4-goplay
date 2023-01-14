@@ -1,5 +1,5 @@
 //#region ***  DOM references ***
-let loader, dataStore = [], searchbar;
+let loader, dataStore = [], searchbar, addNew, genreFilter;
 //#endregion
 
 // showing loading logo
@@ -11,7 +11,23 @@ function displayLoading() {
     }
 }
 
+const showGenres = function (genres) {
+    genres.forEach(genre => {
+        let htmlstring_content = `<option value="${genre}">${genre}</option>`
+        genreFilter.innerHTML += htmlstring_content
+    });
+    listenToGenreFilter();
+}
+
 const showContent = function (jsonObject) {
+    //add the Add new card in to the inner HTML
+    document.querySelector(".js-content").innerHTML = `<a class="c-content-card js-addNew--card" href="#">
+            <figure class="c-content-card__figure">
+                <img class="c-content-card__figure--img" src="assets/img/addNew.png" alt="AddNewPlaceHolder">
+                <figcaption class="c-content-card__figure--text">Add new movie or tv-show</figcaption>
+            </figure>
+        </a>`;
+
     for (const content of jsonObject) {
         let htmlstring_content = `
             <a class="c-content-card js-card" href="#" data-id="${content._id}" data-type="${content.seasons}">
@@ -22,21 +38,24 @@ const showContent = function (jsonObject) {
         </a>`
         document.querySelector(".js-content").innerHTML += htmlstring_content;
     }
+
+    //start listening to the events
+    listenToClickOnCard();
+    listenToSearch();
+    listenToAddNew();
+    listenToCloseModal();
 }
 
-const showFilteredContent = function (data) {
-    document.querySelector(".js-content").innerHTML = "";
-    for (const content of data) {
-        let htmlstring_content = `
-            <a class="c-content-card js-card" href="#" data-id="${content._id}" data-type="${content.seasons}">
-            <figure class="c-content-card__figure">
-                <img class="c-content-card__figure--img" src="${content.thumbnailImage}" alt="Image" />
-                <figcaption class="c-content-card__figure--text">${content.title}</figcaption>
-            </figure>
-        </a>`
-        document.querySelector(".js-content").innerHTML += htmlstring_content;
+const showModalToggle = function () {
+    const modalAddNew = document.querySelector("#modalAddNew");
+    const classes = modalAddNew.classList
+    if (classes.contains('u-hidden')) {
+        modalAddNew.classList.remove("u-hidden");
     }
-    listenToClickOnCard();
+    //makes the modal window not visible on cancel
+    else {
+        modalAddNew.classList.add("u-hidden");
+    }
 }
 
 const listenToClickOnCard = function () {
@@ -56,14 +75,40 @@ const listenToClickOnCard = function () {
     }
 }
 
-const listenToSearch = function () {
-    searchbar.addEventListener('keyup', function (text) {
-        const currentword = text.target.value;
-        const filteredData= dataStore.filter(o => o.title.toLowerCase().includes(currentword.toLowerCase()));
-        showFilteredContent(filteredData)
+const listenToGenreFilter = function () {
+    genreFilter.addEventListener('change', (event) => {
+        const genre = event.target.value;
+        if (genre.toString() === "allGenres") {
+            showContent(dataStore)
+        } else {
+            let arrData = []
+            dataStore.forEach(data => {
+                if (data.genre === genre) {
+                    arrData.push(data)
+                }
+            });
+            showContent(arrData)
+        }
     });
 }
 
+const listenToSearch = function () {
+    searchbar.addEventListener('keyup', function (text) {
+        const currentword = text.target.value;
+        const filteredData = dataStore.filter(o => o.title.toLowerCase().includes(currentword.toLowerCase()));
+        showContent(filteredData)
+    });
+}
+
+const listenToAddNew = function () {
+    addNew = document.querySelector(".js-addNew--card");
+    addNew.addEventListener('click', showModalToggle)
+}
+
+const listenToCloseModal = function () {
+    const cancelButton = document.querySelector("#modalAddNewClose");
+    cancelButton.addEventListener('click', showModalToggle);
+}
 const getTvShows = function () {
     handleData("https://goplayhowestapifunction.azurewebsites.net/api/getshows", showTvShows);
 }
@@ -85,12 +130,9 @@ const handleAllData = function (jsonObject) {
     dataStore = data
 
     //load the data in the HTML
+    getGenres()
     showContent(data)
     displayLoading()
-
-    //start listening to the events
-    listenToClickOnCard();
-    listenToSearch();
 }
 
 const getAllContent = function () {
@@ -100,12 +142,23 @@ const getAllContent = function () {
     )).then(handleAllData)
 }
 
+const getGenres = function () {
+    const genres = []
+    dataStore.forEach(data => {
+        if (!genres.includes(data.genre)) {
+            genres.push(data.genre)
+        }
+    });
+    showGenres(genres)
+}
+
 const displayContent = function () {
     const url = window.location.href;
     // check if you are on the content page
     if (url.includes("content.html")) {
         loader = document.querySelector("#loading");
         searchbar = document.querySelector("#filterInput");
+        genreFilter = document.querySelector("#genres");
         getAllContent();
     } else {
         //do nothing cause not on the right page
