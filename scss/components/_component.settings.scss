@@ -11,8 +11,11 @@
 		grid-area: 'content';
 
 		margin-top: 50px;
+		padding-bottom: 50px;
 
 		color: color.$text-color-a;
+
+		height: fit-content;
 	}
 }
 
