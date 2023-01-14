@@ -1,39 +1,41 @@
-*, :before, :after {
-  background-repeat: no-repeat;
-  box-sizing: border-box
-}
+.o-editsericontent {
+  *, :before, :after {
+    background-repeat: no-repeat;
+    box-sizing: border-box
+  }
 
-.u-margin__0 {
-  margin: 0
-}
+  .u-margin__0 {
+    margin: 0
+  }
 
-body {
-  position: relative;
-  color: #fff;
-  background-color: #14191e;
-  font-family: Barlow, -apple-system, blinkmacsystemfont, Segoe UI, roboto, oxygen-sans, ubuntu, cantarell, Helvetica Neue, sans-serif;
-  line-height: 1.2;
-  overflow-x: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased
-}
+  body {
+    position: relative;
+    color: #fff;
+    background-color: #14191e;
+    font-family: Barlow, -apple-system, blinkmacsystemfont, Segoe UI, roboto, oxygen-sans, ubuntu, cantarell, Helvetica Neue, sans-serif;
+    line-height: 1.2;
+    overflow-x: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased
+  }
 
-img, svg {
-  max-width: 100%;
-  vertical-align: middle
-}
+  img, svg {
+    max-width: 100%;
+    vertical-align: middle
+  }
 
-img {
-  height: auto
-}
+  img {
+    height: auto
+  }
 
-button {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border: 0;
-  cursor: pointer;
-  padding: 0;
-  color: inherit;
-  background-color: #0000
+  button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    color: inherit;
+    background-color: #0000
+  }
 }
