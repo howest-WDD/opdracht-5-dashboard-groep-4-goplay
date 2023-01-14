@@ -1,5 +1,5 @@
 //#region ***  DOM references ***
-let loader, dataStore = [], searchbar, addNew, genreFilter;
+let loader, dataStore = [], searchbar, genreFilter;
 //#endregion
 
 // showing loading logo
@@ -42,20 +42,6 @@ const showContent = function (jsonObject) {
     //start listening to the events
     listenToClickOnCard();
     listenToSearch();
-    listenToAddNew();
-    listenToCloseModal();
-}
-
-const showModalToggle = function () {
-    const modalAddNew = document.querySelector("#modalAddNew");
-    const classes = modalAddNew.classList
-    if (classes.contains('u-hidden')) {
-        modalAddNew.classList.remove("u-hidden");
-    }
-    //makes the modal window not visible on cancel
-    else {
-        modalAddNew.classList.add("u-hidden");
-    }
 }
 
 const listenToClickOnCard = function () {
@@ -100,15 +86,6 @@ const listenToSearch = function () {
     });
 }
 
-const listenToAddNew = function () {
-    addNew = document.querySelector(".js-addNew--card");
-    addNew.addEventListener('click', showModalToggle)
-}
-
-const listenToCloseModal = function () {
-    const cancelButton = document.querySelector("#modalAddNewClose");
-    cancelButton.addEventListener('click', showModalToggle);
-}
 const getTvShows = function () {
     handleData("https://goplayhowestapifunction.azurewebsites.net/api/getshows", showTvShows);
 }
