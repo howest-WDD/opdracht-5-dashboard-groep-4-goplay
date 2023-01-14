@@ -1,0 +1,52 @@
+@use '../settings/colors' as color;
+@use '../tools/tools.breakpoints' as bp;
+
+.c-createnew {
+  display: flex;
+  justify-content: center;
+
+  @include bp.up(tl) {
+    flex-direction: column;
+    margin-left: 50px;
+  }
+}
+
+.c-addContent {
+  grid-area: content;
+  display: grid;
+  height: 100%;
+
+  grid-template-columns: 790px 395px 395px;
+
+  grid-template-areas:
+		'upload bg_preview pstr_preview'
+		'details settings .'
+		'details . buttons';
+
+  gap: 20px;
+
+  &__upload {
+    grid-area: upload;
+  }
+
+  &__details {
+    grid-area: details;
+  }
+
+  &__bg {
+    grid-area: bg_preview;
+  }
+
+  &__poster {
+    grid-area: pstr_preview;
+  }
+
+  &__settings {
+    grid-area: settings;
+  }
+
+  &__buttons {
+    grid-area: buttons;
+  }
+}
+
