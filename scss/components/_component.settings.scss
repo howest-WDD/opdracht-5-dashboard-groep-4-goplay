@@ -10,12 +10,15 @@
 	&__container {
 		grid-area: 'content';
 
-		margin-top: 50px;
 		padding-bottom: 50px;
 
 		color: color.$text-color-a;
 
 		height: fit-content;
+
+		@include bp.down(ml) {
+			margin-top: 0;
+		}
 	}
 
 	h1 {
@@ -30,6 +33,10 @@
 
 	h4 {
 		margin-top: 0;
+	}
+
+	@include bp.down(ml) {
+		margin-left: 20px;
 	}
 }
 

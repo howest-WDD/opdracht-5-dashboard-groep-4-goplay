@@ -12,6 +12,10 @@
 		flex-wrap: wrap;
 
 		gap: 0 !important;
+
+		@include bp.down(tl) {
+			gap: 10px !important;
+		}
 	}
 
 	&__input {
@@ -51,18 +55,22 @@
 		display: flex;
 		justify-content: space-evenly;
 
-		&--1 {
-			width: 50%;
-		}
-		&--2 {
-			width: 50%;
+		@include bp.down(ml) {
+			width: 100%;
+			justify-content: start;
 		}
 	}
 
 	&__wrapper {
 		display: flex;
-
+		flex-wrap: wrap;
 		gap: 50px;
+
+		min-width: 200px;
+
+		@include bp.down(ml) {
+			gap: 10px;
+		}
 
 		h2 {
 			width: 100%;
@@ -75,5 +83,9 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 50px;
+
+		@include bp.down(ls) {
+			gap: 20px;
+		}
 	}
 }
