@@ -148,6 +148,13 @@
 		width: 20% !important;
 		height: 15% !important;
 
+		min-width: 200px;
+		min-height: 200px;
+
+		@include bp.down(ls) {
+			top: 25%;
+		}
+
 		color: color.$text-color-a;
 		text-align: center;
 	}
@@ -174,6 +181,12 @@
 	&__newSub {
 		width: 20%;
 		height: 40%;
+
+		min-height: 350px;
+
+		@include bp.down(ls) {
+			top: 25%;
+		}
 
 		display: flex;
 		flex-direction: column;
