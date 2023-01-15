@@ -3,6 +3,7 @@
 
 .c-subscription {
 	width: 200px;
+	min-width: 200px;
 	height: 300px;
 
 	outline: color.$accent-00 1px solid;
@@ -109,5 +110,9 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 50px;
+
+		@include bp.down(ls) {
+			gap: 20px;
+		}
 	}
 }

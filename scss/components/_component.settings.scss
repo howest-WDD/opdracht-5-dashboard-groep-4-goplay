@@ -70,9 +70,14 @@
 
 	&__setting {
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 
 		margin-bottom: 10px;
+
+		@include bp.down(ls) {
+			gap: 10px;
+		}
 
 		input,
 		select {
@@ -108,6 +113,8 @@
 
 	&__add {
 		color: color.$accent-00;
+
+		min-width: 200px;
 	}
 
 	&__button {
