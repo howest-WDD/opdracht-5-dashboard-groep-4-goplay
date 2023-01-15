@@ -1,0 +1,29 @@
+@use '../settings/colors' as color;
+@use '../tools/tools.breakpoints' as bp;
+
+.c-startscherm{
+    height: 100%;
+	width: calc(100vw - 400px);
+
+	margin-left: 50px;
+
+	&__container {
+		grid-area: 'content';
+
+		margin-top: 50px;
+        
+	}
+    
+}
+.c-draggable{
+    height:80px;
+    border: solid;
+    border-color: color.$accent-00;
+    border-radius: .625rem;
+    margin-bottom: 16px;
+    cursor: move;
+
+}
+.c-draggable.dragging{
+    opacity: .5;
+}
