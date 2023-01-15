@@ -34,14 +34,31 @@
 
   &__details {
     grid-area: details;
+    form{
+      textarea{
+        min-width: 50%;
+        max-width: 50%;
+        height: 150px;
+      }
+      input{
+        min-width: 50%;
+        max-width: 50%;
+      }
+    }
   }
 
   &__bg {
     grid-area: bg_preview;
+    img{
+      max-width: 100%;
+    }
   }
 
   &__poster {
     grid-area: pstr_preview;
+    img{
+      max-height: 216.56px;
+    }
   }
 
   &__settings {
