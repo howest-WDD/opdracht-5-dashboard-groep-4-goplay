@@ -87,44 +87,120 @@
 </nav>
 <div class="c-createnew">
     <div class="c-addContent">
-        <div class="c-addContent__upload">this are the upload buttons</div>
+        <div class="c-addContent__upload">
+            <div class="drag-area">
+                <header>Upload Poster</header>
+                <span>OR</span>
+                <button>Browse File</button>
+                <input type="file" hidden>
+            </div>
+            <div class="drag-area">
+                <header>Upload Background</header>
+                <span>OR</span>
+                <button>Browse File</button>
+                <input type="file" hidden>
+            </div>
+        </div>
         <div class="c-addContent__details">
             <form action="">
-                <label for="title">Titel</label><br>
-                <input type="text" id="title"><br>
-                <label for="description">Beschrijving</label><br>
-                <textarea name="description" id="description"></textarea><br>
-                <label for="Director">Regie</label><br>
-                <input type="text" id="Director"><br>
-                <label for="Cast">Cast</label><br>
-                <input type="text" id="Cast"><br>
+                <label for="title" hidden>Titel</label><br>
+                <input type="text" id="title" class="c-addContent__details--input" placeholder="Titel"><br>
+                <label for="description" hidden>Beschrijving</label><br>
+                <textarea name="description" id="description" class="c-addContent__details--input"
+                          placeholder="Description"></textarea><br>
+                <label for="Director" hidden>Regie</label><br>
+                <input type="text" id="Director" class="c-addContent__details--input" placeholder="Regie"><br>
+                <label for="Cast" hidden>Cast</label><br>
+                <input type="text" id="Cast" class="c-addContent__details--input" placeholder="Cast"><br>
             </form>
-            <div class="">
-                <select>
-                    <option>test1</option>
+            <div class="c-addContent__details--select">
+                <label for="type" hidden>Type</label>
+                <select id="type">
+                    <option selected>TVShow</option>
+                    <option>Film</option>
+                </select>
+                <label for="genre" hidden>Genre</label>
+                <select id="genre">
+                    <option>Actie</option>
                     <option>test2</option>
                     <option>test3</option>
                 </select>
-                <select>
-                    <option>test1</option>
-                    <option>test2</option>
-                    <option>test3</option>
-                </select>
-                <select>
-                    <option>test1</option>
-                    <option>test2</option>
-                    <option>test3</option>
+                <label for="language" hidden>Taal</label>
+                <select id="language">
+                    <option>Nederlands</option>
+                    <option>Engels</option>
+                    <option>Frans</option>
                 </select>
             </div>
         </div>
-        <div class="c-addContent__bg"><img
-                src="https://wmimages.goplay.be/styles/f7331df9e0140370408293ff5186b3cc1ba2ff25/2023-01/goplaywp3840x2160dtvv-1-ro8aq5.jpg?style=W3sianBlZyI6eyJxdWFsaXR5Ijo5MH19LHsicmVzaXplIjp7ImZpdCI6ImNvdmVyIiwid2lkdGgiOjM4NDAsImhlaWdodCI6MjE2MCwiZ3Jhdml0eSI6bnVsbCwid2l0aG91dEVubGFyZ2VtZW50IjpmYWxzZX19XQ==&sign=1240b2ba0a2922ef673d76c46e7de21ff73b8b0feb724f412a80dd929da419b8"
-                alt=""></div>
-        <div class="c-addContent__poster"><img
+        <div class="c-addContent__bg">
+            <p>preview background image:</p>
+            <img
+                    src="https://wmimages.goplay.be/styles/f7331df9e0140370408293ff5186b3cc1ba2ff25/2023-01/goplaywp3840x2160dtvv-1-ro8aq5.jpg?style=W3sianBlZyI6eyJxdWFsaXR5Ijo5MH19LHsicmVzaXplIjp7ImZpdCI6ImNvdmVyIiwid2lkdGgiOjM4NDAsImhlaWdodCI6MjE2MCwiZ3Jhdml0eSI6bnVsbCwid2l0aG91dEVubGFyZ2VtZW50IjpmYWxzZX19XQ==&sign=1240b2ba0a2922ef673d76c46e7de21ff73b8b0feb724f412a80dd929da419b8"
+                    alt="">
+        </div>
+        <div class="c-addContent__poster">
+            <p>preview poster image:</p><img
                 src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-08/goplaympmpl1050x1500dtvv-rhhesq.jpeg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=c42b1d2ed34c175f0e698e554f225c9251438befc26f97ea31619b31f23f93ce"
-                alt="Programma: Tafel Van Vier"></div>
+                alt="Programma: Tafel Van Vier">
+        </div>
         <div class="c-addContent__settings">this are the content settings</div>
-        <div class="c-addContent__seasons">this are the seasons</div>
+        <div class="c-addContent__seasons">
+            <button>Add New</button>
+            <table>
+                <tr>
+                    <th>Seizoen</th>
+                    <th>Titel</th>
+                    <th>Aantal Episodes</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>De Mol</td>
+                    <td>0</td>
+                    <td>Live</td>
+                    <td>
+                        <button>Live</button>
+                        <button>Live</button>
+                        <button>Live</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>De Mol</td>
+                    <td>0</td>
+                    <td>Live</td>
+                    <td>
+                        <button>Live</button>
+                        <button>Live</button>
+                        <button>Live</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>De Mol</td>
+                    <td>0</td>
+                    <td>Live</td>
+                    <td>
+                        <button>Live</button>
+                        <button>Live</button>
+                        <button>Live</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>De Mol</td>
+                    <td>0</td>
+                    <td>Live</td>
+                    <td>
+                        <button>Live</button>
+                        <button>Live</button>
+                        <button>Live</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
         <div class="c-addContent__buttons">
             <button>Terug</button>
             <button>Toevoegen</button>

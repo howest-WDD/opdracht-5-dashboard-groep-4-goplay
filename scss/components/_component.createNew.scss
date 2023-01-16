@@ -17,47 +17,148 @@
   display: grid;
   height: 100%;
 
-  grid-template-columns: 750px 385px 385px;
+  grid-template-columns: 550px 400px 500px;
 
   grid-template-areas:
 		'upload bg_preview pstr_preview'
-		'details settings .'
-		'details settings .'
-		'seasons seasons seasons'
+		'details settings seasons'
+		'details settings seasons'
 		'. . buttons';
 
   gap: 20px;
 
   &__upload {
     grid-area: upload;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    .drag-area{
+      height: 150px;
+      width: 30%;
+      padding: 1rem;
+      border: 2px dashed color.$accent-300;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .drag-area header{
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+    }
+    .drag-area span{
+      color: #fff;
+    }
+    .drag-area button{
+      padding: 10px 25px;
+      font-size: 20px;
+      font-weight: 500;
+      border: none;
+      outline: none;
+      background: color.$accent-300;
+      color: color.$neutral-900;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .drag-area img{
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+    }
   }
 
   &__details {
     grid-area: details;
-    form{
-      textarea{
-        min-width: 50%;
-        max-width: 50%;
+
+    &--input {
+      margin-top: 0.5rem;
+      border-radius: 10px;
+      padding-left: 1.5rem;
+      background-color: color.$neutral-900;
+      border: 2px solid color.$accent-00;
+      max-width: 100vh;
+      height: 32px;
+      justify-content: center;
+      box-shadow: none;
+      color: color.$text-color-a;
+
+      &:active {
+        box-shadow: none;
+        border: 2px solid color.$accent-00;
+      }
+
+      &:focus {
+        box-shadow: none;
+        border: 2px solid color.$accent-00;
+      }
+
+      &::placeholder {
+        color: color.$text-color-a;
+        box-shadow: none;
+      }
+    }
+
+    form {
+      textarea {
+        min-width: 70%;
+        max-width: 70%;
         height: 150px;
       }
-      input{
-        min-width: 50%;
-        max-width: 50%;
+
+      input {
+        min-width: 70%;
+        max-width: 70%;
+      }
+
+      select{
+        background-color: color.$neutral-900;
+        border: 2px solid color.$accent-00;
+        border-radius: 10px;
+        justify-content: center;
+        box-shadow: none;
+        color: color.$text-color-a;
+        height: 32px;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+    }
+
+    &--select{
+      display: flex;
+      flex-wrap: wrap;
+      select{
+        margin-right: 0.6rem;
+        margin-top: 1.5rem;
+        background-color: color.$neutral-900;
+        border: 2px solid color.$accent-00;
+        border-radius: 10px;
+        justify-content: center;
+        box-shadow: none;
+        color: color.$text-color-a;
+        height: 32px;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
       }
     }
   }
 
   &__bg {
     grid-area: bg_preview;
-    img{
+
+    img {
       max-width: 100%;
     }
   }
 
   &__poster {
     grid-area: pstr_preview;
-    img{
-      max-height: 216.56px;
+
+    img {
+      max-height: 225px;
     }
   }
 
@@ -65,12 +166,37 @@
     grid-area: settings;
   }
 
-  &__seasons{
+  &__seasons {
     grid-area: seasons;
   }
 
   &__buttons {
     grid-area: buttons;
+  }
+
+  @include bp.down(ll) {
+    grid-template-columns: 550px 285px 285px;
+  }
+
+  @include bp.down(ls) {
+    grid-template-columns: 320px 320px;
+    grid-template-areas:
+		'upload bg_preview'
+		'pstr_preview details'
+		'settings seasons'
+		'. buttons';
+  }
+
+  @include bp.down(ml) {
+    grid-template-columns: 320px;
+    grid-template-areas:
+		'upload'
+		'bg_preview'
+		'pstr_preview'
+		'details'
+		'settings'
+		'seasons'
+		'buttons';
   }
 }
 
