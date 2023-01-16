@@ -1,8 +1,27 @@
 'use strict';
 
 const addCarouselData = function(){
-    fetch("../json/tvshow.json")
-    .then((response) => response.json())
+    let htmlString = ``;
+
+    const getCarousel = document.querySelector(".js-Carousel");
+
+    fetch("../json/tvshows.json")
+    .then(function(resp){
+      return resp.json();
+    })
+    .then((data) => {
+      const shows = data.slice(0, 10)
+      for (let show of shows) {
+        
+        htmlString += `<img src="${show.thumbnailImage}">`
+
+        getCarousel.innerHTML += htmlString;
+      }
+    })
+    
+
+
+
     
 }
 
