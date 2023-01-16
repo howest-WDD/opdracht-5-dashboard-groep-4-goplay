@@ -3,7 +3,7 @@
 const addCarouselData = function(){
     let htmlString = ``;
 
-    const getCarousel = document.querySelector(".js-Carousel");
+    const getCarousel = document.querySelector(".js-CarouselRecomended");
 
     fetch("../json/tvshows.json")
     .then(function(resp){
@@ -13,7 +13,7 @@ const addCarouselData = function(){
       const shows = data.slice(0, 10)
       for (let show of shows) {
         
-        htmlString += `<img src="${show.thumbnailImage}">`
+        htmlString += `<img src="${show.thumbnailImage}" alt="${show.title}" class="c-carousel__item">`
 
         getCarousel.innerHTML += htmlString;
       }
@@ -40,7 +40,7 @@ document.addEventListener("click", e => {
   const throttleProgressBar = throttle(() => {
     document.querySelectorAll(".progress-bar").forEach(calculateProgressBar)
   }, 250)
-  window.addEventListener("resize", throttleProgressBar)
+  window.addEventListener("click", throttleProgressBar)
   
   document.querySelectorAll(".progress-bar").forEach(calculateProgressBar)
   
@@ -130,7 +130,7 @@ document.addEventListener("click", e => {
 }
 
   const checkCarousel = function () {
-	if (document.querySelector('.js-Carousel')) {
+	if (document.querySelector('.c-carousel')) {
         addCarouselData();
 		createCarouselFunc();
 	} else {
