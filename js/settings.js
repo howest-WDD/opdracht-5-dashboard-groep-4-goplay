@@ -37,7 +37,7 @@ const listenToSubscriptionEdit = function () {
 		// console.log(edituser);
 
 		editSub.addEventListener('click', function () {
-			console.log('click');
+			// console.log('click');
 			const inputs = document.querySelectorAll('.js-sub-input');
 			for (const input of inputs) {
 				// console.log('disableing');
@@ -56,7 +56,7 @@ const listenToPromoEdit = function () {
 		// console.log(edituser);
 
 		editPromo.addEventListener('click', function () {
-			console.log('click');
+			// console.log('click');
 			const inputs = document.querySelectorAll('.js-promo-input');
 			for (const input of inputs) {
 				// console.log('disableing');
