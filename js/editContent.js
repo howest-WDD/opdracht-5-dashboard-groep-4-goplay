@@ -1,30 +1,34 @@
+const showUpdateContent = function(dataObj){
+    console.log(dataObj)
+}
+
 const getShowById = function (id) {
-    handleData(`https://goplayhowestapifunction.azurewebsites.net/api/getshowbyid?_id=${id}`, showShow);
+    handleData(`https://goplayhowestapifunction.azurewebsites.net/api/getshowbyid?_id=${id}`, showUpdateContent);
 }
 
 const getMovieById = function (id) {
-    handleData(`https://goplayhowestapifunction.azurewebsites.net/api/getmoviebyid?_id=${id}`, showMovie);
+    handleData(`https://goplayhowestapifunction.azurewebsites.net/api/getmoviebyid?_id=${id}`, showUpdateContent);
 }
 
 const editContent = function () {
-    //split the url and take the 3 parameter
-    const url = window.location.href;
-    // check if you are on the movie/serie editing page
+    let url = window.location.href;
+    //check if you are on the right page
     if (url.includes("create_new_details.html")) {
+        //get the url and split it on ? and & then put it in to variables
         let [url, id, movie] = window.location.href.split(/[?&]/);
         //check if there is an id if not new show or movie
         if (!id) {
-            console.log("new show/movie")
+            //new
         }
         //Check if it is a movie
         else if (id && movie === "movie=true") {
-            console.log("is movie")
+            getMovieById(id)
         }
         //Check if it is a tvshow
         else if (id && movie === "movie=false") {
-            console.log("is tvshow")
+            getShowById(id)
         } else {
-            console.log(movie)
+            //should not be possible to get here
             console.log("idk buddy you did something wrong")
         }
     } else {
