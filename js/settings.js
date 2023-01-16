@@ -68,6 +68,93 @@ const listenToPromoEdit = function () {
 	}
 };
 
+const listenToEditSettings = function () {
+	const editSettings1 = document.querySelectorAll('.js-settings-edit--1');
+	const editSettings2 = document.querySelectorAll('.js-settings-edit--2');
+	const editSettings3 = document.querySelectorAll('.js-settings-edit--3');
+	const editSettings4 = document.querySelectorAll('.js-settings-edit--4');
+
+	// first section
+	for (const editSetting of editSettings1) {
+		editSetting.addEventListener('click', function () {
+			// console.log('click');
+			const inputs = document.querySelectorAll('.js-settings-input--1');
+			const deletes = document.querySelectorAll('.js-setting--1-delete');
+
+			let svg = editSetting.children;
+			listenToSettingsEditChange(svg);
+
+			for (const input of inputs) {
+				// console.log('disableing');
+				input.toggleAttribute('disabled');
+			}
+			for (const del of deletes) {
+				del.classList.toggle('u-hidden');
+			}
+		});
+	}
+	// second section
+	for (const editSetting of editSettings2) {
+		editSetting.addEventListener('click', function () {
+			// console.log('click');
+			const inputs = document.querySelectorAll('.js-settings-input--2');
+			const deletes = document.querySelectorAll('.js-setting--2-delete');
+
+			let svg = editSetting.children;
+			listenToSettingsEditChange(svg);
+
+			for (const input of inputs) {
+				// console.log('disableing');
+				input.toggleAttribute('disabled');
+			}
+			for (const del of deletes) {
+				// console.log('disableing');
+				del.classList.toggle('u-hidden');
+			}
+		});
+	}
+	// third section
+	for (const editSetting of editSettings3) {
+		editSetting.addEventListener('click', function () {
+			// console.log('click');
+			const inputs = document.querySelectorAll('.js-settings-input--3');
+			const deletes = document.querySelectorAll('.js-setting--3-delete');
+
+			let svg = editSetting.children;
+			listenToSettingsEditChange(svg);
+
+			for (const input of inputs) {
+				// console.log('disableing');
+				input.toggleAttribute('disabled');
+			}
+			for (const del of deletes) {
+				// console.log('disableing');
+				del.classList.toggle('u-hidden');
+			}
+		});
+	}
+	// fourth section
+	for (const editSetting of editSettings4) {
+		editSetting.addEventListener('click', function () {
+			// console.log('click');
+			const inputs = document.querySelectorAll('.js-settings-input--4');
+			const deletes = document.querySelectorAll('.js-setting--4-delete');
+
+			let svg = editSetting.children;
+			listenToSettingsEditChange(svg);
+
+			for (const input of inputs) {
+				// console.log('disableing');
+				input.toggleAttribute('disabled');
+			}
+			for (const del of deletes) {
+				// console.log('disableing');
+				del.classList.toggle('u-hidden');
+			}
+		});
+	}
+};
+
 // js from users.js listenToEditChange
 const listenToSettingsEditChange = function (editSvgs) {
 	// timeout so that the svg doesnt get reset before it actually changes
@@ -99,6 +186,7 @@ const checkSetting = function () {
 		createValues();
 		listenToSubscriptionEdit();
 		listenToPromoEdit();
+		listenToEditSettings();
 	}
 };
 

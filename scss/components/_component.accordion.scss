@@ -91,7 +91,7 @@
 
 	transition: all 200ms ease-out;
 
-	@include bp.down(ml) {
+	@include bp.down(tl) {
 		width: fit-content;
 		max-width: 280px;
 		gap: 10px;

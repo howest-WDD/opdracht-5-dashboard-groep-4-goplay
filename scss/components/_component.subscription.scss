@@ -91,6 +91,10 @@
 	&__buttons {
 		display: flex;
 		justify-content: center;
+
+		&--settings {
+			justify-content: start;
+		}
 	}
 
 	&__price {

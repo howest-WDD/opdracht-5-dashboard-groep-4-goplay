@@ -16,7 +16,7 @@ const createAccordionFunc = function () {
 				panel.style.maxHeight = null;
 				panel.classList.toggle('c-panel--active');
 			} else {
-				panel.style.maxHeight = panel.scrollHeight + 'px';
+				panel.style.maxHeight = panel.scrollHeight + 50 + 'px';
 				panel.classList.toggle('c-panel--active');
 			}
 		});
