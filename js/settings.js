@@ -74,6 +74,11 @@ const listenToEditSettings = function () {
 	const editSettings3 = document.querySelectorAll('.js-settings-edit--3');
 	const editSettings4 = document.querySelectorAll('.js-settings-edit--4');
 
+	const deleteModal = document.getElementById('js-modal-delete');
+	const deleteModalClose = document.getElementById('js-modal-delete-close');
+
+	const mainDeletes = document.querySelectorAll('.js-sub-delete--settings');
+
 	// first section
 	for (const editSetting of editSettings1) {
 		editSetting.addEventListener('click', function () {
@@ -90,6 +95,11 @@ const listenToEditSettings = function () {
 			}
 			for (const del of deletes) {
 				del.classList.toggle('u-hidden');
+
+				del.addEventListener('click', function () {
+					modalToggle(deleteModal, deleteModalClose, 'delete');
+					listenToSettingsDeleteButtons(deleteModal);
+				});
 			}
 		});
 	}
@@ -110,6 +120,11 @@ const listenToEditSettings = function () {
 			for (const del of deletes) {
 				// console.log('disableing');
 				del.classList.toggle('u-hidden');
+
+				del.addEventListener('click', function () {
+					modalToggle(deleteModal, deleteModalClose, 'delete');
+					listenToSettingsDeleteButtons(deleteModal);
+				});
 			}
 		});
 	}
@@ -130,6 +145,11 @@ const listenToEditSettings = function () {
 			for (const del of deletes) {
 				// console.log('disableing');
 				del.classList.toggle('u-hidden');
+
+				del.addEventListener('click', function () {
+					modalToggle(deleteModal, deleteModalClose, 'delete');
+					listenToSettingsDeleteButtons(deleteModal);
+				});
 			}
 		});
 	}
@@ -150,7 +170,19 @@ const listenToEditSettings = function () {
 			for (const del of deletes) {
 				// console.log('disableing');
 				del.classList.toggle('u-hidden');
+
+				del.addEventListener('click', function () {
+					modalToggle(deleteModal, deleteModalClose, 'delete');
+					listenToSettingsDeleteButtons(deleteModal);
+				});
 			}
+		});
+	}
+	// main deletes
+	for (const del of mainDeletes) {
+		del.addEventListener('click', function () {
+			modalToggle(deleteModal, deleteModalClose, 'delete');
+			listenToSettingsDeleteButtons(deleteModal);
 		});
 	}
 };
@@ -180,6 +212,30 @@ const listenToSettingsEditChange = function (editSvgs) {
 	}
 };
 
+const listenToAddNewSection = function () {
+	const AddNewSection = document.querySelector('.js-settings--addSection');
+	const addSectionModal = document.getElementById('js-settings-modal-addSection');
+	const addSectionModalClose = document.getElementById('js-settings-modal-addSection-close');
+
+	AddNewSection.addEventListener('click', function () {
+		modalToggle(addSectionModal, addSectionModalClose, 'section');
+	});
+};
+
+const listenToAddNewSetting = function () {
+	const addNewSettings = document.querySelectorAll('.js-settings--add');
+	console.log(addNewSettings);
+	const addSettingModal = document.getElementById('js-settings-modal-addSetting');
+	const addSettingModalClose = document.getElementById('js-settings-modal-addSetting-close');
+
+	for (const addSetting of addNewSettings) {
+		console.log(addSetting);
+		addSetting.addEventListener('click', function () {
+			modalToggle(addSettingModal, addSettingModalClose, 'setting');
+		});
+	}
+};
+
 // checks if you are on the settings page
 const checkSetting = function () {
 	if (document.querySelector('.js-page-settings')) {
@@ -187,6 +243,8 @@ const checkSetting = function () {
 		listenToSubscriptionEdit();
 		listenToPromoEdit();
 		listenToEditSettings();
+		listenToAddNewSection();
+		listenToAddNewSetting();
 	}
 };
 

@@ -377,12 +377,12 @@
 										</svg>
 									</button>
 								</div>
-								<h5 class="c-usersettings__add">
+								<h5 class="c-usersettings__add js-settings--add">
 									Voeg een nieuwe setting toe voor deze sectie
 									<span class="c-usersettings__plus">&#43;</span>
 								</h5>
 								<div class="c-subscription__buttons c-subscription__buttons--settings">
-									<button class="c-users__delete js-sub-delete--1" id="js-sub-delete--1">
+									<button class="c-users__delete js-sub-delete--settings" id="js-sub-delete--1">
 										<svg style="width: 24px; height: 24px" class="c-users__deletesvg" viewBox="0 0 24 24">
 											<path fill="currentColor" class="c-users__deletepath" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
 										</svg>
@@ -497,12 +497,12 @@
 										</svg>
 									</button>
 								</div>
-								<h5 class="c-usersettings__add">
+								<h5 class="c-usersettings__add js-settings--add">
 									Voeg een nieuwe setting toe voor deze sectie
 									<span class="c-usersettings__plus">&#43;</span>
 								</h5>
 								<div class="c-subscription__buttons c-subscription__buttons--settings">
-									<button class="c-users__delete js-sub-delete--2" id="js-sub-delete--2">
+									<button class="c-users__delete js-sub-delete--settings" id="js-sub-delete--2">
 										<svg style="width: 24px; height: 24px" class="c-users__deletesvg" viewBox="0 0 24 24">
 											<path fill="currentColor" class="c-users__deletepath" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
 										</svg>
@@ -663,12 +663,12 @@
 										</svg>
 									</button>
 								</div>
-								<h5 class="c-usersettings__add">
+								<h5 class="c-usersettings__add js-settings--add">
 									Voeg een nieuwe setting toe voor deze sectie
 									<span class="c-usersettings__plus">&#43;</span>
 								</h5>
 								<div class="c-subscription__buttons c-subscription__buttons--settings">
-									<button class="c-users__delete js-sub-delete--3" id="js-sub-delete--3">
+									<button class="c-users__delete js-sub-delete--settings" id="js-sub-delete--3">
 										<svg style="width: 24px; height: 24px" class="c-users__deletesvg" viewBox="0 0 24 24">
 											<path fill="currentColor" class="c-users__deletepath" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
 										</svg>
@@ -737,12 +737,12 @@
 										</svg>
 									</button>
 								</div>
-								<h5 class="c-usersettings__add">
+								<h5 class="c-usersettings__add js-settings--add">
 									Voeg een nieuwe setting toe voor deze sectie
 									<span class="c-usersettings__plus">&#43;</span>
 								</h5>
 								<div class="c-subscription__buttons c-subscription__buttons--settings">
-									<button class="c-users__delete js-sub-delete--4" id="js-sub-delete--4">
+									<button class="c-users__delete js-sub-delete--settings" id="js-sub-delete--4">
 										<svg style="width: 24px; height: 24px" class="c-users__deletesvg" viewBox="0 0 24 24">
 											<path fill="currentColor" class="c-users__deletepath" d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z" />
 										</svg>
@@ -755,7 +755,7 @@
 								</div>
 							</div>
 						</div>
-						<h3 class="c-usersettings__add">
+						<h3 class="c-usersettings__add js-settings--addSection">
 							Voeg een nieuwe sectie toe
 							<span class="c-usersettings__plus">&#43;</span>
 						</h3>
@@ -763,5 +763,47 @@
 				</div>
 			</article>
 		</section>
+		<div class="c-modalContainer u-hidden" id="js-settings-modal-addSection">
+			<div class="c-modal c-modal__newSetting">
+				<span class="c-modal__close" id="js-settings-modal-addSection-close">&times;</span>
+				<label>
+					Sectie naam
+					<input type="text" />
+				</label>
+				<label>
+					Hoeveel settings
+					<input type="number" min="1" max="10" />
+				</label>
+				<div class="c-modal__buttons">
+					<button class="c-modal__button c-modal__button--delete" id="js-save">creëren</button>
+					<button class="c-modal__button c-modal__button--no" id="js-cancel">cancel</button>
+				</div>
+			</div>
+		</div>
+		<div class="c-modalContainer u-hidden" id="js-settings-modal-addSetting">
+			<div class="c-modal c-modal__newSetting">
+				<span class="c-modal__close" id="js-settings-modal-addSetting-close">&times;</span>
+				<label>
+					Input naam:
+					<input type="text" />
+				</label>
+				<label>
+					Input type:
+					<select>
+						<option value="tekst" selected>tekst</option>
+						<option value="nummer">nummer</option>
+						<option value="e-mail">E-mail</option>
+						<option value="telefoon">telefoon</option>
+						<option value="datum">datum</option>
+						<option value="select">select</option>
+						<option value="check">Checkbox</option>
+					</select>
+				</label>
+				<div class="c-modal__buttons">
+					<button class="c-modal__button c-modal__button--delete" id="js-save">creëren</button>
+					<button class="c-modal__button c-modal__button--no" id="js-cancel">cancel</button>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
