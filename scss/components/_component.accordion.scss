@@ -11,6 +11,8 @@
 	cursor: pointer;
 
 	padding: 18px;
+	padding-left: 0;
+	margin: 0;
 	margin-top: 20px;
 
 	width: 100%;
@@ -19,20 +21,9 @@
 
 	transition: 0.4s;
 
-	border: 1px color.$accent-00 solid;
-
 	border-radius: 15px;
 
 	outline: none;
-
-	transition: all 0.4s;
-
-	&:hover {
-		outline: 5px color.$accent-00 solid;
-		transition: outline 0.4s;
-
-		background-color: color.$bg-color-hov;
-	}
 
 	&::after {
 		position: absolute;
@@ -41,45 +32,75 @@
 		color: color.$text-color-a;
 
 		transition: all 0.4s;
-
-		content: '\02795'; /* unicode for + */
 	}
 
 	&--active {
 		background-color: transparent;
 
-		border: 2px color.$accent-00 solid !important;
+		span {
+			svg {
+				rotate: 180deg !important;
+			}
+		}
+	}
 
-		border-bottom: none !important;
+	&__line {
+		width: fit-content;
 
-		&::after {
-			content: '\2796'; /* unicode for - */
+		span {
+			svg {
+				transition: all 0.4s;
+
+				rotate: 0deg;
+
+				@include bp.down(ml) {
+					width: 20px;
+					height: 20px;
+				}
+			}
 		}
 
-		border-bottom-left-radius: 0;
-		border-bottom-right-radius: 0;
+		font-size: 1.5rem;
+
+		input {
+			@include bp.down(ml) {
+				width: 200px;
+				margin-top: 10px;
+				font-size: 1.2rem;
+			}
+		}
+
+		@include bp.down(ml) {
+			padding-right: 0;
+		}
 	}
 }
 
 .c-panel {
 	padding: 0px 20px;
 
-	background-color: color.$bg-color-nav;
+	// background-color: color.$bg-color-nav;
 
 	max-height: 0;
 
 	overflow: hidden;
 
-	transition: max-height 0.2s ease-out;
-
 	border: none;
 
 	color: color.$text-color-a;
 
+	transition: all 200ms ease-out;
+
+	@include bp.down(tl) {
+		width: fit-content;
+		max-width: 280px;
+		gap: 10px;
+		padding-right: 0 !important;
+		padding-left: 10px !important;
+	}
+
 	&--active {
 		border-top: none !important;
-
-		border: 2px color.$accent-00 solid;
 
 		padding: 30px 20px;
 	}
