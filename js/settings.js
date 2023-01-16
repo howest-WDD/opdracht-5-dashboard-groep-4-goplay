@@ -98,7 +98,6 @@ const checkSetting = function () {
 	if (document.querySelector('.js-page-settings')) {
 		createValues();
 		listenToSubscriptionEdit();
-		// listenToSettingsEditChange();
 		listenToPromoEdit();
 	}
 };
