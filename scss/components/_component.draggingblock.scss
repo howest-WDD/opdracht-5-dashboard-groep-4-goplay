@@ -16,14 +16,35 @@
     
 }
 .c-draggable{
-    height:80px;
-    border: solid;
+    
+    border: .0625rem solid;
     border-color: color.$accent-00;
     border-radius: .625rem;
     margin-bottom: 16px;
     cursor: move;
+    
 
 }
 .c-draggable.dragging{
     opacity: .5;
+    
+}
+.c-selector{
+    display: flex;
+  
+
+  
+    margin-top: 2rem;
+    margin-left: 1rem;
+   
+        background-color: color.$neutral-900;
+        border: .125rem solid color.$accent-00;
+        border-radius: .625rem;
+        justify-content: center;
+        box-shadow: none;
+        color: color.$text-color-a;
+        height: 2rem;
+        padding-left: .3125rem;
+        padding-right: .3125rem;
+      
 }
