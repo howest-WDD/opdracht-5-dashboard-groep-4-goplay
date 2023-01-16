@@ -149,7 +149,7 @@
 		height: 15% !important;
 
 		min-width: 200px;
-		min-height: 200px;
+		min-height: 150px;
 
 		@include bp.down(ls) {
 			top: 25%;
