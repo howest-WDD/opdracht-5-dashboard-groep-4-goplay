@@ -12,11 +12,16 @@ const editContent = function () {
     // check if you are on the movie/serie editing page
     if (url.includes("create_new_details.html")) {
         let [url, id, movie] = window.location.href.split(/[?&]/);
+        //check if there is an id if not new show or movie
         if (!id) {
             console.log("new show/movie")
-        } else if (id && movie === "movie=true") {
+        }
+        //Check if it is a movie
+        else if (id && movie === "movie=true") {
             console.log("is movie")
-        } else if (id && movie === "movie=false") {
+        }
+        //Check if it is a tvshow
+        else if (id && movie === "movie=false") {
             console.log("is tvshow")
         } else {
             console.log(movie)
