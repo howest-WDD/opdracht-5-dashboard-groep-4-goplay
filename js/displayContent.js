@@ -1,5 +1,5 @@
 //#region ***  DOM references ***
-let loader, dataStore = [], searchbar, addNew, genreFilter;
+let loader, dataStore = [], searchbar, genreFilter;
 //#endregion
 
 // showing loading logo
@@ -21,7 +21,7 @@ const showGenres = function (genres) {
 
 const showContent = function (jsonObject) {
     //add the Add new card in to the inner HTML
-    document.querySelector(".js-content").innerHTML = `<a class="c-content-card js-addNew--card" href="#">
+    document.querySelector(".js-content").innerHTML = `<a class="c-content-card js-addNew--card" href="/create_new_details.html">
             <figure class="c-content-card__figure">
                 <img class="c-content-card__figure--img" src="assets/img/addNew.png" alt="AddNewPlaceHolder">
                 <figcaption class="c-content-card__figure--text">Add new movie or tv-show</figcaption>
@@ -42,20 +42,6 @@ const showContent = function (jsonObject) {
     //start listening to the events
     listenToClickOnCard();
     listenToSearch();
-    listenToAddNew();
-    listenToCloseModal();
-}
-
-const showModalToggle = function () {
-    const modalAddNew = document.querySelector("#modalAddNew");
-    const classes = modalAddNew.classList
-    if (classes.contains('u-hidden')) {
-        modalAddNew.classList.remove("u-hidden");
-    }
-    //makes the modal window not visible on cancel
-    else {
-        modalAddNew.classList.add("u-hidden");
-    }
 }
 
 const listenToClickOnCard = function () {
@@ -65,9 +51,9 @@ const listenToClickOnCard = function () {
             let id = card.getAttribute("data-id");
             let type = card.getAttribute("data-type");
             if (type === "undefined") {
-                window.location.href = `http://127.0.0.1:8080/edit_movie.html?${id}`;
+                window.location.href = `http://127.0.0.1:8080/create_new_details.html?${id}&movie=true`;
             } else if (type === "[object Object]") {
-                window.location.href = `http://127.0.0.1:8080/edit_serie.html?${id}`;
+                window.location.href = `http://127.0.0.1:8080/create_new_details.html?${id}?movie=false`;
             } else {
                 console.log("euh no idea what this is");
             }
@@ -100,15 +86,6 @@ const listenToSearch = function () {
     });
 }
 
-const listenToAddNew = function () {
-    addNew = document.querySelector(".js-addNew--card");
-    addNew.addEventListener('click', showModalToggle)
-}
-
-const listenToCloseModal = function () {
-    const cancelButton = document.querySelector("#modalAddNewClose");
-    cancelButton.addEventListener('click', showModalToggle);
-}
 const getTvShows = function () {
     handleData("https://goplayhowestapifunction.azurewebsites.net/api/getshows", showTvShows);
 }
