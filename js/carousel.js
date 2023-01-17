@@ -10,10 +10,11 @@ const addCarouselData = function(){
       return resp.json();
     })
     .then((data) => {
-      const shows = data.slice(0, 10)
+      const shows = data.slice(0, 20)
+
       for (let show of shows) {
         
-        htmlString += `<img src="${show.thumbnailImage}" alt="${show.title}" class="c-carousel__item">`
+        htmlString = `<img src="${show.thumbnailImage}" alt="${show.title}" class="c-carousel__item">`
 
         getCarousel.innerHTML += htmlString;
       }
@@ -28,6 +29,7 @@ const addCarouselData = function(){
 const createCarouselFunc = function(){
 
 document.addEventListener("click", e => {
+  e.preventDefault() 
     let handle
     if (e.target.matches(".handle")) {
       handle = e.target
@@ -40,7 +42,7 @@ document.addEventListener("click", e => {
   const throttleProgressBar = throttle(() => {
     document.querySelectorAll(".progress-bar").forEach(calculateProgressBar)
   }, 250)
-  window.addEventListener("click", throttleProgressBar)
+  window.addEventListener("mousemove", throttleProgressBar)
   
   document.querySelectorAll(".progress-bar").forEach(calculateProgressBar)
   
@@ -127,11 +129,12 @@ document.addEventListener("click", e => {
       setTimeout(timeoutFunc, delay)
     }
   }
+  addCarouselData();
 }
 
   const checkCarousel = function () {
-	if (document.querySelector('.c-carousel')) {
-        addCarouselData();
+	if (document.querySelector('.js-page-startscherm')) {
+       
 		createCarouselFunc();
 	} else {
 		console.log('no Carousel here');

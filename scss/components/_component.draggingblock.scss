@@ -1,6 +1,8 @@
 @use '../settings/colors' as color;
 @use '../tools/tools.breakpoints' as bp;
 
+
+
 .c-startscherm{
     height: 100%;
 	width: calc(100vw - 400px);
@@ -24,6 +26,18 @@
     cursor: move;
     
 
+     input{
+        background-color: color.$neutral-800;
+        border: 2px solid grey;
+        border-radius: 4px;
+        color: color.$text-color-a;
+        margin-right: 2rem;
+        line-height: 2rem;
+    }
+    h2{
+        
+    }
+
 }
 .c-draggable.dragging{
     opacity: .5;
@@ -36,6 +50,7 @@
   
     margin-top: 2rem;
     margin-left: 1rem;
+    margin-bottom: 32px;
    
         background-color: color.$neutral-900;
         border: .125rem solid color.$accent-00;
@@ -46,5 +61,31 @@
         height: 2rem;
         padding-left: .3125rem;
         padding-right: .3125rem;
+        
       
+}
+.c-addButton{
+
+    
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+    background-color: #00f0c8;
+    font-size: 3rem;
+    color: #14191e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3rem;
+
+    span{
+        padding-bottom: .3125rem;
+    }
+}    
+
+.c-addShow{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
 }
