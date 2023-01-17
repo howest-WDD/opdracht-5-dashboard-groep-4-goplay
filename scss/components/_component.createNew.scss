@@ -259,6 +259,10 @@
     }
   }
 
+  label{
+    color: color.$text-color-a;
+  }
+
   @include bp.down(ml){
     grid-template-columns: repeat(1, 320px);
     grid-template-areas:
