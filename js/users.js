@@ -125,7 +125,38 @@ const loadJson = function () {
 				}
 			}
 
-			// console.log(htmlString)
+			console.log(htmlString)
+			const btnFilterId = document.querySelector(".js-filterid"); // de filter buttons die geactiveerd worde n
+			const btnFilterANaam = document.querySelector(".js-filteranaam")
+			const btnFilterVNaam = document.querySelector(".js-filtervnaam")
+			const btnFilterMail = document.querySelector(".js-filtermail")
+			console.log(btnFilterId)
+			console.log(btnFilterANaam)
+			console.log(btnFilterVNaam)
+			console.log(btnFilterMail)
+
+			btnFilterId.addEventListener("click",function(){
+				console.log("click")
+				// fetch("../json/users.json")
+				// .then((response) => response.json())
+				// .then((json) => {
+				// 	users = json.users;
+				// 	console.log(users)
+				// })
+
+				
+			})
+			btnFilterANaam.addEventListener("click",function(){
+				console.log(btnFilterANaam)
+			})
+			btnFilterVNaam.addEventListener("click",function(){
+				console.log(btnFilterVNaam)
+			})
+			btnFilterMail.addEventListener("click",function(){
+				console.log(btnFilterMail)
+			})
+
+
 
 			return json;
 		});
@@ -398,30 +429,30 @@ const searchBar = function () {
 	})
 };
 
-const listenToExpand = function () {
-	// function for the expand window
-	const expandButtons = document.querySelectorAll(`.js-expand`); // de button
+// const listenToExpand = function () {
+// 	// function for the expand window
+// 	const expandButtons = document.querySelectorAll(`.js-expand`); // de button
 
-	for (const expandButton of expandButtons) {
-		// console.log(expandButton);
-		expandButton.addEventListener("click", function () {
-			const idnumber = expandButton.getAttribute("data-id"); // de expand button id
-			const extraTexts = document.getElementById(`js-extra${idnumber}`); // welke expand is het
-			// extraTexts.classList.toggle('u-hidden');
-			extraTexts.classList.toggle("u-hidden"); // spreekt voor zichzelf
-			extraTexts.classList.toggle("c-expandanimation"); // animation voor het eruit te latne komen
+// 	for (const expandButton of expandButtons) {
+// 		// console.log(expandButton);
+// 		expandButton.addEventListener("click", function () {
+// 			const idnumber = expandButton.getAttribute("data-id"); // de expand button id
+// 			const extraTexts = document.getElementById(`js-extra${idnumber}`); // welke expand is het
+// 			// extraTexts.classList.toggle('u-hidden');
+// 			extraTexts.classList.toggle("u-hidden"); // spreekt voor zichzelf
+// 			extraTexts.classList.toggle("c-expandanimation"); // animation voor het eruit te latne komen
 
-			const extraMenu = document.getElementById(`extraMenu${idnumber}`);
-			// console.log(`extraMenu${idnumber}`);
-			// console.log(extraMenu);
-			extraMenu.classList.toggle("c-spacetop");
-			extraMenu.classList.toggle("c-makespace");
-			// const nextNumb = idnumber - 1;
-			// const nextText = document.getElementById(`js-extra${nextNumb}`);
-			// nextText.classList.toggle('c-spacetop');
-		});
-	}
-};
+// 			const extraMenu = document.getElementById(`extraMenu${idnumber}`);
+// 			// console.log(`extraMenu${idnumber}`);
+// 			// console.log(extraMenu);
+// 			extraMenu.classList.toggle("c-spacetop");
+// 			extraMenu.classList.toggle("c-makespace");
+// 			// const nextNumb = idnumber - 1;
+// 			// const nextText = document.getElementById(`js-extra${nextNumb}`);
+// 			// nextText.classList.toggle('c-spacetop');
+// 		});
+// 	}
+// };
 
 const listenToEdit = function () {
 	const editusers = document.querySelectorAll(".js-edit"); // edit button
@@ -507,18 +538,8 @@ const listenToEditChange = function () {
 
 const filterbuttons = function () {
 	// functie die een active state terug geeft aan de filter buttons
-	const thbuttons = document.querySelectorAll(".js-filter"); // de filter buttons die geactiveerd worde n
-
-	for (const thbutton of thbuttons) {
-		// console.log(thbutton)
-		thbutton.addEventListener("click", function () {
-			if (!thbutton.classList.contains("c-users__id--active")) {
-				thbutton.classList.add("c-users__id--active");
-			} else if (thbutton.classList.contains("c-users__id--active")) {
-				thbutton.classList.remove("c-users__id--active");
-			}
-		});
-	}
+	
+	
 };
 
 const listenToGoBack = function () {
@@ -534,7 +555,7 @@ const accordeonUsers = function () {
 
 	if (document.getElementById("menu")) {
 		loadJson();
-		setTimeout(listenToExpand, 1000);
+		//  
 		setTimeout(listenToEditChange, 1000);
 		setTimeout(listenTodelete, 1000);
 		setTimeout(listenToEdit, 1000);

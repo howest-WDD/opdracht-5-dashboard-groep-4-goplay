@@ -199,7 +199,7 @@
         height: 32px ;
         cursor: pointer;
         color: black;
-
+        transform: rotate(-90deg);
         &:hover{
             background-color: color.$accent-300;
         }

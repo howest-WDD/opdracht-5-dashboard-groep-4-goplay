@@ -25,7 +25,7 @@ const buttons = function(){
   const editButton = document.querySelector(".js-edit")
   const inputs = document.querySelectorAll(".js-input")
   const modal = document.querySelector(".js-modal")
-
+  console.log(modal)
   editButton.addEventListener("click",function(){
     console.log("clickity edit")
     for(const input of inputs){
@@ -36,7 +36,7 @@ const buttons = function(){
   
   deleteButton.addEventListener("click",function(){
     console.log("clickity delete")
-    modal.classList.toggle('u-hidden');
+    modal.className.remove('u-hidden');
   })
 }
 const editModal = function(){
@@ -44,12 +44,12 @@ const editModal = function(){
   const modalDelete = document.querySelector(".js-delete");
   const modalCancel = document.querySelector(".js-cancel")
   const modal = document.querySelector(".js-modal")
-
+  
   modalClose.addEventListener("click",function(){
     modal.classList.toggle("u-hidden")
   })
   modalDelete.addEventListener("click",function(){
-    modal.classList.toggle("u-hidden")
+    modal.classListnj.toggle("u-hidden")
   })
   modalCancel.addEventListener("click",function(){
     modal.classList.toggle("u-hidden")
@@ -58,22 +58,25 @@ const editModal = function(){
 
 
 
-const showUser = function(){
+const showUser = function(json){
+  const url = document.URL
+  const urlId = url.split("?")
+  const id = urlId.at(-1);
+
+  console.log(id)
+
   const user = document.querySelector(".js-userdetails")
   console.log(user)
+  // console.log(json)
 }
 const showNaam = function(){
   const naam = document.querySelector(".js-userdetailname")
   console.log(naam)
 }
-const showJson = function(json){
-  console.log(json)
-}
 
 const userdetailinit = function(){
   showUser()
   showNaam()
-  showJson()
   buttons()
   editModal()
   openTab()

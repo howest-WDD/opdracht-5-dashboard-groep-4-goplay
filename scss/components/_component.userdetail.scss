@@ -45,6 +45,9 @@
     &__contactcontainer{
         display: flex;
     }
+    &__tabs{
+        margin-left: 1.2rem;
+    }
     &__contactsvg{
         margin-right: 1rem;
         margin-top: 0.5rem;
@@ -55,8 +58,37 @@
         clear: both;
         width: 100%;
     }
+    &__gobacktext{
+        width: 5%;
+        background-color: color.$accent-00;
+    }
+
     &__input{
         width: 100%;
+        border: none;
+        background-color:color.$neutral-900 ;
+        border: 2px solid color.$accent-00;
+        justify-content: center;
+        box-shadow: none;
+        color: color.$text-color-a;
+        margin-top: 0.5rem;
+        &:active{
+            box-shadow: none;
+            border: 2px solid color.$accent-00;
+        }
+        
+        &:focus{
+            box-shadow: none;
+            border: 2px solid color.$accent-00;
+        }
+        &::placeholder{
+            color: color.$text-color-a;
+            box-shadow: none;
+        }
+        &:disabled{
+            border: 2px solid color.$accent-200;
+            color: grey;
+        }
         
     }
 
@@ -93,6 +125,12 @@
     }
     &__button{
         color: color.$shades-00;
+    }
+    &__contacttitel{
+        color: color.$accent-00;
+    }
+    &__detailform{
+        margin-bottom: 2rem;
     }
 
 
