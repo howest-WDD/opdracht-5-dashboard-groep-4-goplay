@@ -11,7 +11,7 @@ const togglecontent = function(){
 const lisentonav = function(){
     const nav = document.querySelector('.js-togglenav');
 
-    nav.addEventListener("click", togglecontent)
+    nav.addEventListener("click", function() {togglecontent()})
    
  
  };
