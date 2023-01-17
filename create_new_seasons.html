@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Content management</title>
+    <title>Dashboard</title>
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
@@ -85,28 +85,65 @@
         </div>
     </div>
 </nav>
-<main>
-    <div id="modalAddNew" class="c-modalContainer u-hidden">
-        <!-- content -->
-        <div class="c-modal c-modal--content">
-            <span class="c-modal__close" id="modalAddNewClose">&times;</span>
+<div class="c-createnew">
+    <div class="c-addContentSeaons">
+        <div class="c-addContentSeaons__header"><h1>2. Bewerk/Voeg Seizoenen toe</h1></div>
+        <div class="c-addContentSeaons__addNewBtn"><button>Voeg Toe</button></div>
+        <div class="c-addContentSeaons__table">
+            <table>
+                <tr>
+                    <th>Seizoen</th>
+                    <th>Aantal Episodes</th>
+                    <th>Status</th>
+                    <th>Acties</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>20</td>
+                    <td>Niet Live</td>
+                    <td>
+                        <button>bewerken</button>
+                        <button>toggle live</button>
+                        <button>delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>Live</td>
+                    <td>
+                        <button>bewerken</button>
+                        <button>toggle live</button>
+                        <button>delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>Live</td>
+                    <td>
+                        <button>bewerken</button>
+                        <button>toggle live</button>
+                        <button>delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>Live</td>
+                    <td>
+                        <button>bewerken</button>
+                        <button>toggle live</button>
+                        <button>delete</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="c-addContentSeaons__buttons">
+            <button>Terug</button>
+            <button>Toevoegen</button>
         </div>
     </div>
-    <div class="c-content-filter">
-        <input type="text" class="c-content-filter__search" id="filterInput" placeholder="zoek films of shows">
-        <div class="c-content-filter__genre"><label for="genres" hidden>
-            Genre:</label>
-            <select name="genres" id="genres">
-                <option value="allGenres" selected>Alle Categorieën</option>
-                <!--data loaded with JS-->
-            </select>
-        </div>
-    </div>
-    </div>
-    <div class="js-loading u-hidden" id="loading"></div>
-    <div class="o-content js-content">
-        <!--data loaded with JS-->
-    </div>
-</main>
+</div>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Content management</title>
+    <title>Dashboard</title>
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
@@ -15,6 +15,7 @@
     <meta name="theme-color" content="#000000"/>
     <!-- CSS -->
     <link rel="stylesheet" href="./dist/index.css"/>
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
     <!-- JS -->
     <script type="module" src="./dist/main-min.js"></script>
 </head>
@@ -85,28 +86,59 @@
         </div>
     </div>
 </nav>
-<main>
-    <div id="modalAddNew" class="c-modalContainer u-hidden">
-        <!-- content -->
-        <div class="c-modal c-modal--content">
-            <span class="c-modal__close" id="modalAddNewClose">&times;</span>
+<div class="c-createnew">
+    <div class="c-addContentDetails">
+        <div class="c-addContentDetails__header"><h1>1. Voeg Informatie van de Film/TVShow toe</h1></div>
+        <div class="c-addContentDetails__details">
+            <h2 class="c-addContentDetails__details--title">Algemene Info</h2>
+            <form action="">
+                <label for="title" hidden>Titel</label><br>
+                <input type="text" id="title" class="c-addContentDetails__details--input" placeholder="Titel"><br>
+                <label for="description" hidden>Beschrijving</label><br>
+                <textarea name="description" id="description" class="c-addContentDetails__details--input"
+                          placeholder="Description"></textarea><br>
+                <label for="Director" hidden>Regie</label><br>
+                <input type="text" id="Director" class="c-addContentDetails__details--input" placeholder="Regie"><br>
+                <label for="Cast" hidden>Cast</label><br>
+                <input type="text" id="Cast" class="c-addContentDetails__details--input" placeholder="Cast"><br>
+                <label for="trailer" hidden>Trailer</label><br>
+                <input type="url" id="trailer" class="c-addContentDetails__details--input" placeholder="Trailer Url"><br>
+            </form>
+            <div class="c-addContent__details--select">
+                <label for="type" hidden>Type</label>
+                <select id="type">
+                    <option selected>TVShow</option>
+                    <option>Film</option>
+                </select>
+                <label for="genre" hidden>Genre</label>
+                <select id="genre">
+                    <option>Actie</option>
+                    <option>test2</option>
+                    <option>test3</option>
+                </select>
+                <label for="language" hidden>Taal</label>
+                <select id="language">
+                    <option>Nederlands</option>
+                    <option>Engels</option>
+                    <option>Frans</option>
+                </select>
+            </div>
+        </div>
+        <div class="c-addContentDetails__settings">
+            <h2 class="c-addContentDetails__settings--title">Instellingen</h2>
+            <label for="release_date" hidden>Release Datum</label>
+            <input class="js-release-date" type="datetime-local" placeholder="Maak Beschikbaar Op" id="release_date">
+            <label for="release_date" hidden>Beschikbaar tot Datum</label>
+            <input class="js-availbleTill-date" type="datetime-local" placeholder="Beschikbaar Tot">
+        </div>
+        <div class="c-addContentDetails__buttons">
+            <a href="content.html">
+                <button>Terug</button>
+            </a>
+            <button>Volgende</button>
         </div>
     </div>
-    <div class="c-content-filter">
-        <input type="text" class="c-content-filter__search" id="filterInput" placeholder="zoek films of shows">
-        <div class="c-content-filter__genre"><label for="genres" hidden>
-            Genre:</label>
-            <select name="genres" id="genres">
-                <option value="allGenres" selected>Alle Categorieën</option>
-                <!--data loaded with JS-->
-            </select>
-        </div>
-    </div>
-    </div>
-    <div class="js-loading u-hidden" id="loading"></div>
-    <div class="o-content js-content">
-        <!--data loaded with JS-->
-    </div>
-</main>
+</div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </html>
