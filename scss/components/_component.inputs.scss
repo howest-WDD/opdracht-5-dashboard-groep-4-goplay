@@ -4,10 +4,42 @@
 .c-color {
 	&__container {
 		margin: 20px 0;
+
+		display: flex;
+		align-content: center;
+		justify-content: space-between;
+		flex-direction: row;
+		flex-wrap: wrap;
+
+		gap: 0 !important;
+
+		@include bp.down(tl) {
+			gap: 10px !important;
+		}
 	}
 
 	&__input {
-		width: 100%;
+		// width: 100%;
+		-webkit-appearance: none;
+		border: none;
+		width: 32px;
+		height: 32px;
+
+		&::-webkit-color-swatch {
+			border: none;
+			border-radius: 10px;
+		}
+
+		&::-webkit-color-swatch-wrapper {
+			padding: 0 !important;
+			border-radius: 10px;
+		}
+
+		&[type='color' i] {
+			padding: 1px;
+			border-radius: 10px;
+			background-color: color.$text-color-a;
+		}
 	}
 
 	&__value {
@@ -23,16 +55,22 @@
 		display: flex;
 		justify-content: space-evenly;
 
-		&--1 {
-			width: 50%;
-		}
-		&--2 {
-			width: 50%;
+		@include bp.down(ml) {
+			width: 100%;
+			justify-content: start;
 		}
 	}
 
 	&__wrapper {
 		display: flex;
+		flex-wrap: wrap;
+		gap: 50px;
+
+		min-width: 200px;
+
+		@include bp.down(ml) {
+			gap: 10px;
+		}
 
 		h2 {
 			width: 100%;
@@ -43,6 +81,11 @@
 .c-logo {
 	&__wrapper {
 		display: flex;
-		justify-content: space-evenly;
+		flex-wrap: wrap;
+		gap: 50px;
+
+		@include bp.down(ls) {
+			gap: 20px;
+		}
 	}
 }
