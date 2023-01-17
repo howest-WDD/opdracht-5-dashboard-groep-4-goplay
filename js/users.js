@@ -1,173 +1,226 @@
 let modal;
 let sect;
 let id;
-let htmlString = ``;
-let users;
 
+let users;
+let list = [];
 
 const loadJson = function () {
-	const getElement = document.getElementById("menu");
-	const filterbutton = document.querySelector(".js-filter");
+
+
 
 	fetch("../json/users.json")
 		.then((response) => response.json())
 		.then((json) => {
 			users = json.users;
+			list = users; 
+			ShowTable(users)
 
-			for (let user of users) {
-				id = user.UID;
-				const voornaam = user.voornaam;
-				const achternaam = user.achternaam;
-				const mail = user.mail;
-				// const geslacht = user.geslacht;
-				// const geboortedatum = user.geboortedatum;
-				// const postcode = user.postcode;
-				// const gemeente = user.gemeente;
-				// const straatnaam = user.straatnaam;
-				// const phone = user.phone;
-				// const nr = user.nr;
-				// const bus = user.bus;
-				// const nieuwsbrief = user.nieuwsbrief;
-				// const reclame = user.reclame;
-				// const admin = user.admin;
+		
+			
 
-				// console.log(getExtra.innerHTML)
+			// // htmlstings for binary options
+			// const htmlOption1 = `
+			// 	<option value="ja" selected class="c-users__option">ja</option>
+			// 	<option value="nee" class="c-users__option">nee</option>
+			// 	`;
+			// const htmlOption2 = `
+			// 	<option value="ja" class="c-users__option">ja</option>
+			// 	<option value="nee" selected class="c-users__option">nee</option>
+			// 	`;
 
-				// dit is de htmlstring also known as the moshpit
-				htmlString += `
-                    <table id="menu"  class="c-users__table " style="overflow-x:auto;">
-                        <tr  class="c-users__tablerow js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
-                            <td class="c-users__category js-id"><input class="c-users__input  js-adduser  js-geboortedatum js-disable" type="text" value="${id}" disabled /></td>
-                            <td class="c-users__category js-achternaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${achternaam}" disabled /></td>
-                            <td class="c-users__category js-voornaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${voornaam}" disabled /></td>
-                            <td class="c-users__category js-mail"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${mail}" disabled /></td>
-                            <td class="c-users__category ">
-                                <a href="users_detail.html?${id}" id="js-expandid${id}" class="c-users__expandbutton js-expand " data-id="${id}">
-                                    <svg id="${id}" class="c-users__expandicon js-expandbutton js-expandbutton${id}" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M7,10L12,15L17,10H7Z" />
-                                    </svg>
-                                </a>
-                            </td>
-                            <div id="extraMenu${id}" class="c-users__extracontainer " style="overflow-x:auto;" >
-                                <td id="js-extra${id}" class="c-users__extradata u-hidden  d-flex js-extra c-expandborder" >
-                                </td>
-                            </div>
-                        </tr>
-                    </table>`;
+			// // htmlstrings for sex
+			// const htmlOptionSex1 = `
+			// 	<option value="0" selected class="c-users__option">Man</option>
+			// 	<option value="1" class="c-users__option">Vrouw</option>
+			// 	<option value="2"  class="c-users__option">Non-binair</option>
+			// 	`;
+			// const htmlOptionSex2 = `
+			// 	<option value="0" class="c-users__option">Man</option>
+			// 	<option value="1" selected class="c-users__option">Vrouw</option>
+			// 	<option value="2"  class="c-users__option">Non-binair</option>
+			// 	`;
+			// const htmlOptionSex3 = `
+			// 	<option value="0" class="c-users__option">Man</option>
+			// 	<option value="1"  class="c-users__option">Vrouw</option>
+			// 	<option value="2" selected class="c-users__option">Non-binair</option>
+			// 	`;
 
-				// console.log(htmlString);
-			}
+			// for (const user of users) {
+			// 	const uid = user.UID;
 
-			getElement.innerHTML += htmlString;
+			// 	const nieuwsbriefSelector = document.querySelector(`[nieuwsbrief-id='${uid}']`);
+			// 	// console.log(nieuwsbriefSelector.getAttribute(`value`));
+			// 	if (nieuwsbriefSelector.getAttribute(`value`) == 0) {
+			// 		nieuwsbriefSelector.innerHTML = htmlOption2;
+			// 	} else {
+			// 		nieuwsbriefSelector.innerHTML = htmlOption1;
+			// 	}
 
-			// htmlstings for binary options
-			const htmlOption1 = `
-				<option value="ja" selected class="c-users__option">ja</option>
-				<option value="nee" class="c-users__option">nee</option>
-				`;
-			const htmlOption2 = `
-				<option value="ja" class="c-users__option">ja</option>
-				<option value="nee" selected class="c-users__option">nee</option>
-				`;
+			// 	const reclameSelectors = document.querySelector(`[reclame-id='${uid}']`);
+			// 	// console.log(reclameSelectors.getAttribute(`value`));
+			// 	if (reclameSelectors.getAttribute(`value`) == 0) {
+			// 		reclameSelectors.innerHTML = htmlOption2;
+			// 	} else {
+			// 		reclameSelectors.innerHTML = htmlOption1;
+			// 	}
 
-			// htmlstrings for sex
-			const htmlOptionSex1 = `
-				<option value="0" selected class="c-users__option">Man</option>
-				<option value="1" class="c-users__option">Vrouw</option>
-				<option value="2"  class="c-users__option">Non-binair</option>
-				`;
-			const htmlOptionSex2 = `
-				<option value="0" class="c-users__option">Man</option>
-				<option value="1" selected class="c-users__option">Vrouw</option>
-				<option value="2"  class="c-users__option">Non-binair</option>
-				`;
-			const htmlOptionSex3 = `
-				<option value="0" class="c-users__option">Man</option>
-				<option value="1"  class="c-users__option">Vrouw</option>
-				<option value="2" selected class="c-users__option">Non-binair</option>
-				`;
+			// 	const adminSelector = document.querySelector(`[admin-id='${uid}']`);
+			// 	// console.log(adminSelector.getAttribute(`value`));
+			// 	if (adminSelector.getAttribute(`value`) == 0) {
+			// 		adminSelector.innerHTML = htmlOption2;
+			// 	} else {
+			// 		adminSelector.innerHTML = htmlOption1;
+			// 	}
 
-			for (const user of users) {
-				const uid = user.UID;
-
-				const nieuwsbriefSelector = document.querySelector(`[nieuwsbrief-id='${uid}']`);
-				// console.log(nieuwsbriefSelector.getAttribute(`value`));
-				if (nieuwsbriefSelector.getAttribute(`value`) == 0) {
-					nieuwsbriefSelector.innerHTML = htmlOption2;
-				} else {
-					nieuwsbriefSelector.innerHTML = htmlOption1;
-				}
-
-				const reclameSelectors = document.querySelector(`[reclame-id='${uid}']`);
-				// console.log(reclameSelectors.getAttribute(`value`));
-				if (reclameSelectors.getAttribute(`value`) == 0) {
-					reclameSelectors.innerHTML = htmlOption2;
-				} else {
-					reclameSelectors.innerHTML = htmlOption1;
-				}
-
-				const adminSelector = document.querySelector(`[admin-id='${uid}']`);
-				// console.log(adminSelector.getAttribute(`value`));
-				if (adminSelector.getAttribute(`value`) == 0) {
-					adminSelector.innerHTML = htmlOption2;
-				} else {
-					adminSelector.innerHTML = htmlOption1;
-				}
-
-				const sexSelector = document.querySelector(`[sex-id='${uid}']`);
-				// console.log(sexSelector.getAttribute(`value`));
-				if (sexSelector.getAttribute(`value`) == 0) {
-					sexSelector.innerHTML = htmlOptionSex1;
-				} else if (sexSelector.getAttribute(`value`) == 1) {
-					sexSelector.innerHTML = htmlOptionSex2;
-				} else {
-					sexSelector.innerHTML = htmlOptionSex3;
-				}
-			}
-
-			console.log(htmlString)
-			const btnFilterId = document.querySelector(".js-filterid"); // de filter buttons die geactiveerd worde n
-			const btnFilterANaam = document.querySelector(".js-filteranaam")
-			const btnFilterVNaam = document.querySelector(".js-filtervnaam")
-			const btnFilterMail = document.querySelector(".js-filtermail")
-			console.log(btnFilterId)
-			console.log(btnFilterANaam)
-			console.log(btnFilterVNaam)
-			console.log(btnFilterMail)
-
-			btnFilterId.addEventListener("click",function(){
-				console.log("click")
-				// fetch("../json/users.json")
-				// .then((response) => response.json())
-				// .then((json) => {
-				// 	users = json.users;
-				// 	console.log(users)
-				// })
-
-				
-			})
-			btnFilterANaam.addEventListener("click",function(){
-				console.log(btnFilterANaam)
-			})
-			btnFilterVNaam.addEventListener("click",function(){
-				console.log(btnFilterVNaam)
-			})
-			btnFilterMail.addEventListener("click",function(){
-				console.log(btnFilterMail)
-			})
-
-
+			// 	const sexSelector = document.querySelector(`[sex-id='${uid}']`);
+			// 	// console.log(sexSelector.getAttribute(`value`));
+			// 	if (sexSelector.getAttribute(`value`) == 0) {
+			// 		sexSelector.innerHTML = htmlOptionSex1;
+			// 	} else if (sexSelector.getAttribute(`value`) == 1) {
+			// 		sexSelector.innerHTML = htmlOptionSex2;
+			// 	} else {
+			// 		sexSelector.innerHTML = htmlOptionSex3;
+			// 	}
+			// }
 
 			return json;
 		});
 };
 
+const ShowTable = function(users){
+	const getElement = document.getElementById("menu");
+	let htmlString = ``; 
+	const htmlheaders = `<tr class="c-users__tablemainrow">
+	<th class="c-users__id c-users__id--active js-filterid">
+		Id
+		<span class="c-users__active "><svg xmlns="http://www.w3.org/2000/svg" class="c-users__activesvg js-filtersvg" viewBox="0 0 24 24"><path class="c-users__activesvgpath" d="M7,10L12,15L17,10H7Z" /></svg></span>
+	</th>
+	<th class="c-users__achternaam js-filteranaam">
+		Achternaam
+		<span class="c-users__active "><svg xmlns="http://www.w3.org/2000/svg" class="c-users__activesvg js-filtersvg" viewBox="0 0 24 24"><path class="c-users__activesvgpath" d="M7,10L12,15L17,10H7Z" /></svg></span>
+	</th>
+	<th class="c-users__voornaam js-filtervnaam">
+		Voornaam
+		<span class="c-users__active "><svg xmlns="http://www.w3.org/2000/svg" class="c-users__activesvg js-filtersvg" viewBox="0 0 24 24"><path class="c-users__activesvgpath" d="M7,10L12,15L17,10H7Z" /></svg></span>
+	</th>
+		
+	<th class="c-users__mail js-filtermail">
+		Mail
+		<span class="c-users__active "><svg xmlns="http://www.w3.org/2000/svg" class="c-users__activesvg js-filtersvg" viewBox="0 0 24 24"><path class="c-users__activesvgpath" d="M7,10L12,15L17,10H7Z" /></svg></span>
+	</th>
+	<th class="c-users__expand js-filter"></th>
+</tr>`; 
+	for (let user of users) {
+		id = user.UID;
+		const voornaam = user.voornaam;
+		const achternaam = user.achternaam;
+		const mail = user.mail;
+
+		// dit is de htmlstring also known as the moshpit
+		htmlString += `
+			
+			<tr  class="c-users__tablerow js-background c-users__tablerow--first  js-deleteuser js-adduser " data-deleteuser="${id}" id="userdelete${id}">
+				<td class="c-users__category js-id"><input class="c-users__input  js-adduser  js-geboortedatum js-disable" type="text" value="${id}" disabled /></td>
+				<td class="c-users__category js-achternaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${achternaam}" disabled /></td>
+				<td class="c-users__category js-voornaam"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${voornaam}" disabled /></td>
+				<td class="c-users__category js-mail"><input class="c-users__input js-adduser  js-geboortedatum js-disable" data-disabledid="${id}" type="text" value="${mail}" disabled /></td>
+				<td class="c-users__category ">
+					<a href="users_detail.html?${id}" id="js-expandid${id}" class="c-users__expandbutton js-expand " data-id="${id}">
+						<svg id="${id}" class="c-users__expandicon js-expandbutton js-expandbutton${id}" viewBox="0 0 24 24">
+							<path fill="currentColor" d="M7,10L12,15L17,10H7Z" />
+						</svg>
+					</a>
+				</td>
+				<div id="extraMenu${id}" class="c-users__extracontainer " style="overflow-x:auto;" >
+					<td id="js-extra${id}" class="c-users__extradata u-hidden  d-flex js-extra c-expandborder" >
+					</td>
+				</div>
+			</tr>
+			`;
+
+		
+
+
+
+	}
+	getElement.innerHTML = htmlheaders + htmlString;
+
+	listenToFilterId()
+	listenToFilterAchternaam()
+	listenToFilterVoornaamButton()
+	listenToFilterMailButton()
+}
+
+const sortById = function(){
+	let sortedIdsList = list.sort(
+		(p1, p2) => (p1.UID < p2.UID) ? 1 : (p1.UID > p2.UID) ? -1 : 0);
+	console.log(sortedIdsList)
+	ShowTable(sortedIdsList)
+}
+const sortByAchternaam = function(){
+
+	let sortedAchternaamlist = list.sort(
+		(p1,p2) => (p1.achternaam < p2.achternaam) ? 1 : (p1.achternaam > p2.achternaam) ? -1 : 0);
+	console.log(sortedAchternaamlist)
+	ShowTable(sortedAchternaamlist)
+}
+
+const sortByVoornaam = function(){
+	let sortedVoornaamList = list.sort(
+		(p1,p2) => (p1.voornaam < p2.voornaam) ? 1 : (p1.voornaam > p2.voornaam) ? -1 : 0);
+	console.log(sortedVoornaamList)
+	ShowTable(sortedVoornaamList)
+}
+
+const sortByMail = function(){
+	let sortedMailList = list.sort(
+		(p1,p2) => (p1.mail < p2.mail) ? 1 : (p1.mail > p2.mail) ? -1 : 0);
+	console.log(sortedMailList)
+	ShowTable(sortedMailList)
+}
+
+const listenToFilterMailButton = function(){
+	const filterMailButton = document.querySelector(".js-filtermail")
+
+	filterMailButton.addEventListener("click",function(){
+		sortByMail()
+	})
+}
+
+const listenToFilterVoornaamButton = function(){
+	const filterVoornaamButton = document.querySelector(".js-filtervnaam")
+	
+	filterVoornaamButton.addEventListener("click",function(){
+		sortByVoornaam()
+	})
+	
+}
+
+
+const listenToFilterAchternaam = function(){
+	const filterAchternaamButton = document.querySelector(".js-filteranaam")
+
+	filterAchternaamButton.addEventListener("click",function(){
+		sortByAchternaam()
+	})
+}
+
+const listenToFilterId = function(){
+	const filterButton = document.querySelector(".js-filterid")
+
+	filterButton.addEventListener("click",function(){
+		sortById()
+		
+	})
+}
+
 function findInValues(arr, search) {
 	/** cast to string and lowercase to have non-dependant type and case search */
 	search = String(search).toLowerCase();
-	return arr.filter(object =>
+	return arr.filter((object) =>
 		/** get only values from iterated objects */
-		Object.values(object).some(objValue =>
+		Object.values(object).some((objValue) =>
 			/** casting field values to the same shape */
 			String(objValue).toLowerCase().includes(search)
 		)
@@ -222,12 +275,11 @@ const searchBar = function () {
 		.then((json) => {
 			const user = json.users;
 			searchbar.addEventListener("keyup", function (event) {
-			
 				if (event.key === "Enter") {
-					const currentWord = event.target.value
+					const currentWord = event.target.value;
 
-					let users = findInValues(user, currentWord)
-					console.log(users)
+					let users = findInValues(user, currentWord);
+					console.log(users);
 					// console.log(ids)
 					// console.log(voornaams)
 					// console.log(achternaam)
@@ -280,153 +332,148 @@ const searchBar = function () {
 				}
 
 				const expandButtons = document.querySelectorAll(`.js-expand`); // de button
-	
 
-			for (const expandButton of expandButtons) {
-				// console.log(expandButton);
-				expandButton.addEventListener('click', function () {
-					const idnumber = expandButton.getAttribute('data-id'); // de expand button id 
-					const extraTexts = document.getElementById(`js-extra${idnumber}`); // welke expand is het
-					// extraTexts.classList.toggle('u-hidden');
-					extraTexts.classList.toggle("u-hidden") // spreekt voor zichzelf
-					extraTexts.classList.toggle("c-expandanimation") // animation voor het eruit te latne komen 
-				
-					const extraMenu = document.getElementById(`extraMenu${idnumber}`);
-					// console.log(`extraMenu${idnumber}`);
-					// console.log(extraMenu);
-					extraMenu.classList.toggle('c-spacetop');
-					extraMenu.classList.toggle("c-makespace")
-					// const nextNumb = idnumber - 1;
-					// const nextText = document.getElementById(`js-extra${nextNumb}`);
-					// nextText.classList.toggle('c-spacetop');
-				});
-			}
+				for (const expandButton of expandButtons) {
+					// console.log(expandButton);
+					expandButton.addEventListener("click", function () {
+						const idnumber = expandButton.getAttribute("data-id"); // de expand button id
+						const extraTexts = document.getElementById(`js-extra${idnumber}`); // welke expand is het
+						// extraTexts.classList.toggle('u-hidden');
+						extraTexts.classList.toggle("u-hidden"); // spreekt voor zichzelf
+						extraTexts.classList.toggle("c-expandanimation"); // animation voor het eruit te latne komen
 
-			
-			
+						const extraMenu = document.getElementById(`extraMenu${idnumber}`);
+						// console.log(`extraMenu${idnumber}`);
+						// console.log(extraMenu);
+						extraMenu.classList.toggle("c-spacetop");
+						extraMenu.classList.toggle("c-makespace");
+						// const nextNumb = idnumber - 1;
+						// const nextText = document.getElementById(`js-extra${nextNumb}`);
+						// nextText.classList.toggle('c-spacetop');
+					});
+				}
 
-			const editusers = document.querySelectorAll('.js-edit'); // edit button 
-			for (const edituser of editusers) { // overlopen van alle editbutton
-				// console.log(edituser);
-		
-				edituser.addEventListener('click', function () {
-					console.log('click');
-					const deleteid = edituser.getAttribute('data-editid'); // data attribuut in de editbutton
-					// console.log(deleteid);
-					const inputs = document.querySelectorAll(`[data-disabledid='${deleteid}']`); //disabled attribuut in de input fields
-					// console.log(inputs);
-					// console.log(disable);
-					for (const input of inputs) {
-						// console.log('disableing');
-						input.toggleAttribute('disabled');
+				const editusers = document.querySelectorAll(".js-edit"); // edit button
+				for (const edituser of editusers) {
+					// overlopen van alle editbutton
+					// console.log(edituser);
+
+					edituser.addEventListener("click", function () {
+						console.log("click");
+						const deleteid = edituser.getAttribute("data-editid"); // data attribuut in de editbutton
+						// console.log(deleteid);
+						const inputs = document.querySelectorAll(`[data-disabledid='${deleteid}']`); //disabled attribuut in de input fields
+						// console.log(inputs);
+						// console.log(disable);
+						for (const input of inputs) {
+							// console.log('disableing');
+							input.toggleAttribute("disabled");
+						}
+					});
+				}
+
+				const deletebuttons = document.querySelectorAll(".js-delete"); // deletbuttons
+				// const deleteusers = document.getElementsByClassName('js-deleteuser');
+
+				// deze zijn voor De modal window en aanpassingen aan de body
+				const darkbackground = document.querySelector(".js-darkbackground"); //darkbackground voor de modal
+				const modal = document.querySelector(".js-modal"); // modal win dow
+				const verwijder = document.querySelector(".js-verwijder"); // verwijder userbutton
+				const cancel = document.querySelector(".js-cancel"); // cancel button
+				for (const deletebutton of deletebuttons) {
+					deletebutton.addEventListener("click", function () {
+						// de forloop die zorgt dat als je op de deletebutotn klikt dat de modal window en darkbackground tevoorschijn komt
+						modal.classList.remove("u-hidden");
+						darkbackground.classList.toggle("c-darkbackground");
+					});
+				}
+
+				verwijder.addEventListener("click", function () {
+					// verwijder de user en de modal window
+					// modal.classList.add('u-hidden');
+					// darkbackground.classList.remove('c-darkbackground');
+
+					for (const deletebutton of deletebuttons) {
+						deletebutton.addEventListener("click", function () {
+							const deleteuserid = deletebutton.getAttribute(`data-deleteid`);
+
+							const deleteuser = document.querySelector(`[data-deleteuser="${deleteuserid}"]`);
+							console.log(deleteuser);
+							deleteuser.classList.add("u-hidden");
+						});
 					}
 				});
-			}
-
-			const deletebuttons = document.querySelectorAll('.js-delete'); // deletbuttons 
-			// const deleteusers = document.getElementsByClassName('js-deleteuser');
-		
-		
-			// deze zijn voor De modal window en aanpassingen aan de body
-			const darkbackground = document.querySelector('.js-darkbackground'); //darkbackground voor de modal 
-			const modal = document.querySelector('.js-modal'); // modal win dow 
-			const verwijder = document.querySelector('.js-verwijder'); // verwijder userbutton 
-			const cancel = document.querySelector('.js-cancel'); // cancel button 
-			for (const deletebutton of deletebuttons) {
-				deletebutton.addEventListener('click', function () { // de forloop die zorgt dat als je op de deletebutotn klikt dat de modal window en darkbackground tevoorschijn komt
-					modal.classList.remove('u-hidden');
-					darkbackground.classList.toggle('c-darkbackground');
-		
-
+				cancel.addEventListener("click", function () {
+					// cancel de modal  window
+					modal.classList.add("u-hidden");
+					darkbackground.classList.remove("c-darkbackground");
 				});
-			}
-		
-		
-			verwijder.addEventListener('click', function () { // verwijder de user en de modal window 
-				// modal.classList.add('u-hidden');
-				// darkbackground.classList.remove('c-darkbackground');
-				
-				for(const deletebutton of deletebuttons){
-					deletebutton.addEventListener("click",function(){
-						const deleteuserid = deletebutton.getAttribute(`data-deleteid`)
-						
-						const deleteuser = document.querySelector(`[data-deleteuser="${deleteuserid}"]`)
-						console.log(deleteuser)
-						deleteuser.classList.add("u-hidden")
-					})
-		
-				}
-			});
-			cancel.addEventListener('click', function () { // cancel de modal  window 
-				modal.classList.add('u-hidden');
-				darkbackground.classList.remove('c-darkbackground');
-			});
 
-			const htmlOption1 = `
+				const htmlOption1 = `
 				<option value="ja" selected class="c-users__option">ja</option>
 				<option value="nee" class="c-users__option">nee</option>
 				`;
-			const htmlOption2 = `
+				const htmlOption2 = `
 				<option value="ja" class="c-users__option">ja</option>
 				<option value="nee" selected class="c-users__option">nee</option>
 				`;
 
-			// htmlstrings for sex
-			const htmlOptionSex1 = `
+				// htmlstrings for sex
+				const htmlOptionSex1 = `
 				<option value="0" selected class="c-users__option">Man</option>
 				<option value="1" class="c-users__option">Vrouw</option>
 				<option value="2"  class="c-users__option">Non-binair</option>
 				`;
-			const htmlOptionSex2 = `
+				const htmlOptionSex2 = `
 				<option value="0" class="c-users__option">Man</option>
 				<option value="1" selected class="c-users__option">Vrouw</option>
 				<option value="2"  class="c-users__option">Non-binair</option>
 				`;
-			const htmlOptionSex3 = `
+				const htmlOptionSex3 = `
 				<option value="0" class="c-users__option">Man</option>
 				<option value="1"  class="c-users__option">Vrouw</option>
 				<option value="2" selected class="c-users__option">Non-binair</option>
 				`;
 
-			for (const user of users) {
-				const uid = user.UID;
+				for (const user of users) {
+					const uid = user.UID;
 
-				const nieuwsbriefSelector = document.querySelector(`[nieuwsbrief-id='${uid}']`);
-				// console.log(nieuwsbriefSelector.getAttribute(`value`));
-				if (nieuwsbriefSelector.getAttribute(`value`) == 0) {
-					nieuwsbriefSelector.innerHTML = htmlOption2;
-				} else {
-					nieuwsbriefSelector.innerHTML = htmlOption1;
-				}
+					const nieuwsbriefSelector = document.querySelector(`[nieuwsbrief-id='${uid}']`);
+					// console.log(nieuwsbriefSelector.getAttribute(`value`));
+					if (nieuwsbriefSelector.getAttribute(`value`) == 0) {
+						nieuwsbriefSelector.innerHTML = htmlOption2;
+					} else {
+						nieuwsbriefSelector.innerHTML = htmlOption1;
+					}
 
-				const reclameSelectors = document.querySelector(`[reclame-id='${uid}']`);
-				// console.log(reclameSelectors.getAttribute(`value`));
-				if (reclameSelectors.getAttribute(`value`) == 0) {
-					reclameSelectors.innerHTML = htmlOption2;
-				} else {
-					reclameSelectors.innerHTML = htmlOption1;
-				}
+					const reclameSelectors = document.querySelector(`[reclame-id='${uid}']`);
+					// console.log(reclameSelectors.getAttribute(`value`));
+					if (reclameSelectors.getAttribute(`value`) == 0) {
+						reclameSelectors.innerHTML = htmlOption2;
+					} else {
+						reclameSelectors.innerHTML = htmlOption1;
+					}
 
-				const adminSelector = document.querySelector(`[admin-id='${uid}']`);
-				// console.log(adminSelector.getAttribute(`value`));
-				if (adminSelector.getAttribute(`value`) == 0) {
-					adminSelector.innerHTML = htmlOption2;
-				} else {
-					adminSelector.innerHTML = htmlOption1;
-				}
+					const adminSelector = document.querySelector(`[admin-id='${uid}']`);
+					// console.log(adminSelector.getAttribute(`value`));
+					if (adminSelector.getAttribute(`value`) == 0) {
+						adminSelector.innerHTML = htmlOption2;
+					} else {
+						adminSelector.innerHTML = htmlOption1;
+					}
 
-				const sexSelector = document.querySelector(`[sex-id='${uid}']`);
-				// console.log(sexSelector.getAttribute(`value`));
-				if (sexSelector.getAttribute(`value`) == 0) {
-					sexSelector.innerHTML = htmlOptionSex1;
-				} else if (sexSelector.getAttribute(`value`) == 1) {
-					sexSelector.innerHTML = htmlOptionSex2;
-				} else {
-					sexSelector.innerHTML = htmlOptionSex3;
+					const sexSelector = document.querySelector(`[sex-id='${uid}']`);
+					// console.log(sexSelector.getAttribute(`value`));
+					if (sexSelector.getAttribute(`value`) == 0) {
+						sexSelector.innerHTML = htmlOptionSex1;
+					} else if (sexSelector.getAttribute(`value`) == 1) {
+						sexSelector.innerHTML = htmlOptionSex2;
+					} else {
+						sexSelector.innerHTML = htmlOptionSex3;
+					}
 				}
-			}
+			});
 		});
-	})
 };
 
 // const listenToExpand = function () {
@@ -538,8 +585,6 @@ const listenToEditChange = function () {
 
 const filterbuttons = function () {
 	// functie die een active state terug geeft aan de filter buttons
-	
-	
 };
 
 const listenToGoBack = function () {
@@ -555,7 +600,7 @@ const accordeonUsers = function () {
 
 	if (document.getElementById("menu")) {
 		loadJson();
-		//  
+		//
 		setTimeout(listenToEditChange, 1000);
 		setTimeout(listenTodelete, 1000);
 		setTimeout(listenToEdit, 1000);

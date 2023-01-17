@@ -4,18 +4,20 @@
 .c-detailuser{
     grid-area: 'content';
     width: calc(100vw - 400px);
+    margin-left: 50px;
     
     &__titel{
         font-size: 48px;
         color: color.$accent-00;
+        
     }
 
     &__tabs {
         display: flex;
-        justify-content: space-around;
+      
         list-style-type: none;
         margin: 0;
-        width: 25vh;
+        width: 20vh;
         padding: 0;
         border-bottom: 1px solid black;
     }
@@ -29,7 +31,7 @@
     }
     
     &__tabcontent {
-        margin-left: 20px;
+        margin-top: 2rem;
         margin-right: 20px;
         width: 50%;
     }
@@ -58,9 +60,21 @@
         clear: both;
         width: 100%;
     }
+    &__gobacklink{
+        text-decoration: none;
+        text-align: center;
+        color:color.$neutral-900;
+        font-weight: 600;
+        
+    }
     &__gobacktext{
         width: 5%;
+        border-radius: 10px;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
         background-color: color.$accent-00;
+        text-decoration: none;
+
     }
 
     &__input{
