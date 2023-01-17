@@ -1,24 +1,53 @@
 'use strict';
 
-const addCarouselData = function(){
-    let htmlString = ``;
+const addCarouselData = function(selection){
+    let htmlStringRecomended = ``;
+    console.log(selection)
 
-    const getCarousel = document.querySelector(".js-CarouselRecomended");
 
-    fetch("../json/tvshows.json")
+    let getCarouselRecomended = document.querySelectorAll(`.js-Carousel${selection}`).forEach(function(getCarouselRecomended) {
+
+      fetch("../json/tvshows.json")
     .then(function(resp){
       return resp.json();
     })
+
+    
     .then((data) => {
-      const shows = data.slice(0, 20)
+      let sliced = []
+
+      if (selection === 'Aangeboden'){
+          sliced = [0,20]
+      }else if(selection === 'Recent')
+      {
+        sliced = [21,41]
+    }else if(selection === 'Favoriet')
+    {
+      sliced = [42,62]
+  }else if(selection === 'Exclusief')
+  {
+    sliced = [63,83]
+}else if(selection === 'Show')
+{
+  sliced = [84,104]
+}
+
+
+
+      const shows = data.slice(sliced[0],sliced[1])
 
       for (let show of shows) {
         
-        htmlString = `<img src="${show.thumbnailImage}" alt="${show.title}" class="c-carousel__item">`
+        htmlStringRecomended = `<img src="${show.thumbnailImage}" alt="${show.title}" class="c-carousel__item">`
 
-        getCarousel.innerHTML += htmlString;
+        getCarouselRecomended.innerHTML += htmlStringRecomended;
       }
     })
+    });
+    
+
+    
+  
     
 
 

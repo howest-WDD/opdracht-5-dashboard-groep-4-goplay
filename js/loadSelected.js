@@ -2,7 +2,7 @@
 
 
 const addBlocks = function(selection){
-    console.log(selection)
+    
      const container = document.querySelector('.c-startscherm__container')
 
      container.innerHTML += `<div class="c-draggable" draggable="true">
@@ -26,6 +26,9 @@ const addBlocks = function(selection){
          </div>
        </div>
    </div>`
+   addCarouselData(selection)
+   listenToButton()
+   loadStartschermFuncties()
 }
 
 
