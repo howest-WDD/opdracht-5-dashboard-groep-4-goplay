@@ -1,5 +1,22 @@
-const showUpdateContent = function(dataObj){
+const showUpdateContent = function (dataObj) {
     console.log(dataObj)
+}
+
+const showDateSelector = function (){
+    //add the date selector
+    flatpickr(".js-release-date", {
+        enableTime: true,
+        dateFormat: "Y-m-d H:i",
+        minDate: "today",
+        time_24hr: true
+    })
+
+    flatpickr(".js-availbleTill-date", {
+        enableTime: true,
+        dateFormat: "Y-m-d H:i",
+        minDate: "today",
+        time_24hr: true,
+    })
 }
 
 const getShowById = function (id) {
@@ -31,6 +48,7 @@ const editContent = function () {
             //should not be possible to get here
             console.log("idk buddy you did something wrong")
         }
+        showDateSelector()
     } else {
         //do nothing cause not on the right page
     }

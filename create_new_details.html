@@ -15,10 +15,9 @@
     <meta name="theme-color" content="#000000"/>
     <!-- CSS -->
     <link rel="stylesheet" href="./dist/index.css"/>
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
     <!-- JS -->
     <script type="module" src="./dist/main-min.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
 </head>
 <body class="o-darkmode o-grid">
 <nav class="c-nav">
@@ -91,18 +90,19 @@
     <div class="c-addContentDetails">
         <div class="c-addContentDetails__header"><h1>1. Voeg Informatie van de Film/TVShow toe</h1></div>
         <div class="c-addContentDetails__details">
+            <h2 class="c-addContentDetails__details--title">Algemene Info</h2>
             <form action="">
                 <label for="title" hidden>Titel</label><br>
-                <input type="text" id="title" class="c-addContent__details--input" placeholder="Titel"><br>
+                <input type="text" id="title" class="c-addContentDetails__details--input" placeholder="Titel"><br>
                 <label for="description" hidden>Beschrijving</label><br>
-                <textarea name="description" id="description" class="c-addContent__details--input"
+                <textarea name="description" id="description" class="c-addContentDetails__details--input"
                           placeholder="Description"></textarea><br>
                 <label for="Director" hidden>Regie</label><br>
-                <input type="text" id="Director" class="c-addContent__details--input" placeholder="Regie"><br>
+                <input type="text" id="Director" class="c-addContentDetails__details--input" placeholder="Regie"><br>
                 <label for="Cast" hidden>Cast</label><br>
-                <input type="text" id="Cast" class="c-addContent__details--input" placeholder="Cast"><br>
+                <input type="text" id="Cast" class="c-addContentDetails__details--input" placeholder="Cast"><br>
                 <label for="trailer" hidden>Trailer</label><br>
-                <input type="url" id="trailer" class="c-addContent__details--input" placeholder="Trailer Url"><br>
+                <input type="url" id="trailer" class="c-addContentDetails__details--input" placeholder="Trailer Url"><br>
             </form>
             <div class="c-addContent__details--select">
                 <label for="type" hidden>Type</label>
@@ -125,8 +125,11 @@
             </div>
         </div>
         <div class="c-addContentDetails__settings">
-            <input class="js-release_date" type="datetime-local" placeholder="Maak Beschikbaar Op">
-            <input class="js-availbleTill_date" type="datetime-local" placeholder="Beschikbaar Tot">
+            <h2 class="c-addContentDetails__settings--title">Instellingen</h2>
+            <label for="release_date" hidden>Release Datum</label>
+            <input class="js-release-date" type="datetime-local" placeholder="Maak Beschikbaar Op" id="release_date">
+            <label for="release_date" hidden>Beschikbaar tot Datum</label>
+            <input class="js-availbleTill-date" type="datetime-local" placeholder="Beschikbaar Tot">
         </div>
         <div class="c-addContentDetails__buttons">
             <a href="content.html">

@@ -148,29 +148,124 @@
   height: 100%;
   gap: 20px;
 
-  grid-template-columns: repeat(3, 500px);
+  grid-template-columns: repeat(2, 750px);
 
   grid-template-areas:
-		'header header header'
-		'details settings .'
-		'details settings .'
-		'. . buttons';
+		'header header'
+		'details settings'
+		'details settings'
+		'. buttons';
 
   &__header {
     grid-area: header;
-    color: color.$neutral-500;
+    color: color.$text-color-a;
   }
 
   &__details {
     grid-area: details;
+
+    &--title{
+      color: color.$text-color-a;
+    }
   }
 
   &__settings {
     grid-area: settings;
+
+    &--title{
+      color: color.$text-color-a;
+    }
   }
 
   &__buttons{
     grid-area: buttons;
+    margin-left: 18rem;
+    a{
+      text-decoration: none;
+    }
+  }
+
+  input{
+    width: 50%;
+    margin-top: 1rem;
+    border-radius: 10px;
+    padding-left: 1.5rem;
+    background-color: color.$neutral-900;
+    border: 2px solid color.$accent-00;
+    height: 32px;
+    justify-content: center;
+    box-shadow: none;
+    color: color.$text-color-a;
+    transition: 800ms ease;
+
+    &:active {
+      box-shadow: none;
+      border: 2px solid color.$accent-00;
+    }
+
+    &:focus {
+      box-shadow: none;
+      border: 2px solid color.$accent-00;
+    }
+
+    &::placeholder {
+      color: color.$text-color-a;
+      box-shadow: none;
+    }
+
+    &:disabled{
+      display: none;
+    }
+  }
+
+  select{
+    background-color: color.$neutral-900;
+    border: 2px solid color.$accent-00;
+    border-radius: 10px;
+    justify-content: center;
+    box-shadow: none;
+    color: color.$text-color-a;
+    height: 36px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  textarea{
+    width: 50%;
+    margin-top: 1rem;
+    border-radius: 10px;
+    padding-left: 1.5rem;
+    background-color: color.$neutral-900;
+    border: 2px solid color.$accent-00;
+    height: 150px;
+    justify-content: center;
+    box-shadow: none;
+    color: color.$text-color-a;
+
+    &:active {
+      box-shadow: none;
+      border: 2px solid color.$accent-00;
+    }
+
+    &:focus {
+      box-shadow: none;
+      border: 2px solid color.$accent-00;
+    }
+
+    &::placeholder {
+      color: color.$text-color-a;
+      box-shadow: none;
+    }
+  }
+
+  @include bp.down(ml){
+    grid-template-columns: repeat(1, 320px);
+    grid-template-areas:
+		'header'
+		'details'
+		'settings'
+		'buttons';
   }
 }
 
