@@ -2,10 +2,19 @@
 
 
 const addBlocks = function(selection){
-    
-     const container = document.querySelector('.c-startscherm__container')
 
-     container.innerHTML += `<div class="c-draggable" draggable="true">
+  setTimeout(() => {
+    const container = document.querySelector('.c-startscherm__container');
+      let oldBlock = ``;
+       oldBlock = container.innerHTML;
+
+      
+      let newBlock = ``;
+
+      
+
+
+     newBlock = `<div class="c-draggable" draggable="true">
                 
      <h2>${selection}<input type="text" value="${selection}"></h2>
 
@@ -26,9 +35,18 @@ const addBlocks = function(selection){
          </div>
        </div>
    </div>`
+
+   
+
+   container.innerHTML = ``;
+   container.innerHTML = newBlock+oldBlock;
+
    addCarouselData(selection)
    listenToButton()
    loadStartschermFuncties()
+  }, 10);
+    
+     
 }
 
 
@@ -38,6 +56,7 @@ const listenToButton = function(){
        addButton.addEventListener('click',function(){
         let selected = document.querySelector('.c-selector').value
         addBlocks(selected)
+        console.log('clicked')
        } )
 }
 
