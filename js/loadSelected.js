@@ -41,8 +41,7 @@ const addBlocks = function(selection){
    container.innerHTML = ``;
    container.innerHTML = newBlock+oldBlock;
 
-   addCarouselData(selection)
-   listenToButton()
+   addCarouselData(selection) 
    loadStartschermFuncties()
   }, 10);
     
