@@ -111,12 +111,12 @@ var layoutM = {
 const createGrowthGraph = function () {
 	// first checks if growth-graph exists
 	if (document.getElementById('growth-graph')) {
-		console.log('yes user growth graph');
+		// console.log('yes user growth graph');
 		// create the graph
 		Plotly.newPlot('growth-graph', data, layout);
 		Plotly.newPlot('growth-graph-modal', dataM, layoutM);
 	} else {
-		console.log('no user growth graph');
+		// console.log('no user growth graph');
 	}
 };
 

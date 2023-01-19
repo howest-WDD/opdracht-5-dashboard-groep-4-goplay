@@ -28,7 +28,7 @@ const checkAccordion = function () {
 	if (document.querySelector('.js-accordion')) {
 		createAccordionFunc();
 	} else {
-		console.log('no accordion here');
+		// console.log('no accordion here');
 	}
 };
 
