@@ -4,9 +4,9 @@
 var data = [
 	{
 		values: [20000, 130000],
-		labels: ['new visitors', 'returning'],
+		labels: ['nieuwe gebruikers', 'terugkerende gebruikers'],
 		domain: { column: 0 },
-		name: 'daily visitors',
+		name: 'dagelijkese gebruikers',
 		textinfo: 'value+percent',
 		hoverinfo: 'label',
 		hole: 0,
@@ -39,11 +39,11 @@ var layout = {
 const createDailyGraph = function () {
 	// first checks if daily-graph exists
 	if (document.getElementById('daily-graph')) {
-		console.log('yes user daily graph');
+		// console.log('yes user daily graph');
 		// create the chart
 		Plotly.newPlot('daily-graph', data, layout);
 	} else {
-		console.log('no user daily graph');
+		// console.log('no user daily graph');
 	}
 };
 

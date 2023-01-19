@@ -224,12 +224,12 @@ const listenToAddNewSection = function () {
 
 const listenToAddNewSetting = function () {
 	const addNewSettings = document.querySelectorAll('.js-settings--add');
-	console.log(addNewSettings);
+	// console.log(addNewSettings);
 	const addSettingModal = document.getElementById('js-settings-modal-addSetting');
 	const addSettingModalClose = document.getElementById('js-settings-modal-addSetting-close');
 
 	for (const addSetting of addNewSettings) {
-		console.log(addSetting);
+		// console.log(addSetting);
 		addSetting.addEventListener('click', function () {
 			modalToggle(addSettingModal, addSettingModalClose, 'setting');
 		});

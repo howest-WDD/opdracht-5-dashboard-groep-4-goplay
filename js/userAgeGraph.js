@@ -39,11 +39,11 @@ var layout = {
 const createAgeGraph = function () {
 	// first checks if age-chart exists
 	if (document.getElementById('age-chart')) {
-		console.log('yes user age chart');
+		// console.log('yes user age chart');
 		// create the chart
 		Plotly.newPlot('age-chart', data, layout);
 	} else {
-		console.log('no user age chart');
+		// console.log('no user age chart');
 	}
 };
 

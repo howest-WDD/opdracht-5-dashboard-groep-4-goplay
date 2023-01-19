@@ -3,7 +3,7 @@
 const createCostGraph = function () {
 	// first checks if cost-graph exists
 	if (document.getElementById('cost-graph')) {
-		console.log('yes user cost graph');
+		// console.log('yes user cost graph');
 		// create the chart
 		var graphWidth = document.querySelector('.js-costs').clientWidth;
 
@@ -62,7 +62,7 @@ const createCostGraph = function () {
 		];
 		Plotly.newPlot('cost-graph', traces, layout);
 	} else {
-		console.log('no user cost graph');
+		// console.log('no user cost graph');
 	}
 };
 
