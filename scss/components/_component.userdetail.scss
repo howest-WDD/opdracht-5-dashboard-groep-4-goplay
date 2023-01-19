@@ -23,7 +23,7 @@
         }
 
 
-    }&__
+    }
     &__text{
         color: white;
     }
@@ -78,7 +78,7 @@
             flex-direction: column;
             
         }
-        @include bp(ls){
+        @include bp.down(ls){
             display: flex;
             flex-direction: column;
         }
@@ -98,7 +98,7 @@
         height: 147.072px;
 
         
-        @include bp(tl){
+        @include bp.down(tl){
             max-width: 400px;
             min-width: 50%;
             width: 136.57px;
