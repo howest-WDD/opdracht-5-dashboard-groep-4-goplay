@@ -24,7 +24,7 @@ const showUser = function (user) {
 	let htmlString = `
   <div class="c-detailuser__tabcontent">
     <div id="home" data-tab-content class="active c-detailuser__gebruikerkolomcontainer js-userdetails">
-    <h3 class="c-detailuser__smalltitle">Basic informatie: </h3>
+    <h3 class="c-detailuser__smalltitle">Basis informatie: </h3>
       <div class="c-detailuser__contactcontainer">
         <div class="c-detailuser__avatar">
           <svg xmlns="http://www.w3.org/2000/svg" class="c-detailuser__contactsvg" width="68.285" height="73.536" viewBox="0 0 68.285 73.536">
