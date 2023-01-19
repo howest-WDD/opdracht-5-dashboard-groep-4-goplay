@@ -15,6 +15,7 @@
     <meta name="theme-color" content="#000000"/>
     <!-- CSS -->
     <link rel="stylesheet" href="./dist/index.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- JS -->
     <script type="module" src="./dist/main-min.js"></script>
 </head>
@@ -48,7 +49,7 @@
                 </li>
                 <li class="c-sidebar__item"><a href="#">Instellingen</a></li>
                 <li class="c-sidebar__item"><a class="c-sidebar__item--accent js-logout" href="#">Uitloggen</a></li>
-                <li class="c-sidebar__button"><a class="c-button js-darkmode" href="#">Light Mode</a></li>
+                
                 <!-- TODO: een hovermode zou leuk zijn -->
             </ul>
             <p class="creddits">&copy; Howest - 2022</p>
@@ -88,60 +89,66 @@
 <div class="c-createnew">
     <div class="c-addContentSeaons">
         <div class="c-addContentSeaons__header"><h1>2. Bewerk/Voeg Seizoenen toe</h1></div>
-        <div class="c-addContentSeaons__addNewBtn"><button>Voeg Toe</button></div>
         <div class="c-addContentSeaons__table">
             <table>
                 <tr>
                     <th>Seizoen</th>
                     <th>Aantal Episodes</th>
                     <th>Status</th>
-                    <th>Acties</th>
+                    <th>
+                        Acties
+                    </th>
                 </tr>
                 <tr>
                     <td>1</td>
                     <td>20</td>
                     <td>Niet Live</td>
                     <td>
-                        <button>bewerken</button>
-                        <button>toggle live</button>
-                        <button>delete</button>
+                        <i class="material-icons c-editIcon">edit</i>
+                        <i class="material-icons c-visibilityIcon--offline">visibility_off</i>
+                        <i class="material-icons c-deleteIcon">delete</i>
                     </td>
                 </tr>
                 <tr>
-                    <td>1</td>
+                    <td>2</td>
                     <td>0</td>
                     <td>Live</td>
                     <td>
-                        <button>bewerken</button>
-                        <button>toggle live</button>
-                        <button>delete</button>
+                        <i class="material-icons c-editIcon">edit</i>
+                        <i class="material-icons c-visibilityIcon">visibility</i>
+                        <i class="material-icons c-deleteIcon">delete</i>
                     </td>
                 </tr>
                 <tr>
-                    <td>1</td>
+                    <td>3</td>
                     <td>0</td>
                     <td>Live</td>
                     <td>
-                        <button>bewerken</button>
-                        <button>toggle live</button>
-                        <button>delete</button>
+                        <i class="material-icons c-editIcon">edit</i>
+                        <i class="material-icons c-visibilityIcon">visibility</i>
+                        <i class="material-icons c-deleteIcon">delete</i>
                     </td>
                 </tr>
                 <tr>
-                    <td>1</td>
+                    <td>4</td>
                     <td>0</td>
                     <td>Live</td>
                     <td>
-                        <button>bewerken</button>
-                        <button>toggle live</button>
-                        <button>delete</button>
+                        <i class="material-icons c-editIcon">edit</i>
+                        <i class="material-icons c-visibilityIcon">visibility</i>
+                        <i class="material-icons c-deleteIcon">delete</i>
                     </td>
                 </tr>
             </table>
+            <button class="c-button"><i class="material-icons c-addButton">add</i></button>
         </div>
         <div class="c-addContentSeaons__buttons">
-            <button>Terug</button>
-            <button>Toevoegen</button>
+            <a href="create_new_details.html">
+                <button class="c-button">Terug</button>
+            </a>
+            <a href="create_new_upload.html">
+                <button class="c-button">Volgende</button>
+            </a>
         </div>
     </div>
 </div>
