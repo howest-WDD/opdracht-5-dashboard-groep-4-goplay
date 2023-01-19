@@ -15,6 +15,7 @@
     <meta name="theme-color" content="#000000"/>
     <!-- CSS -->
     <link rel="stylesheet" href="./dist/index.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- JS -->
     <script type="module" src="./dist/main-min.js"></script>
 </head>
@@ -107,6 +108,12 @@
                 <button>Browse File</button>
                 <input type="file" hidden>
             </div>
+            <div class="drag-area">
+                <header>Drag & Drop Trailer</header>
+                <span>of</span>
+                <button>Browse File</button>
+                <input type="file" hidden>
+            </div>
         </div>
         <div class="c-addContentUpload__bg">
             <p>preview background image:</p>
@@ -120,8 +127,10 @@
                 alt="Programma: Tafel Van Vier">
         </div>
         <div class="c-addContentUpload__buttons">
-            <button>Terug</button>
-            <button>Toevoegen</button>
+            <a href="create_new_seasons.html">
+                <button class="c-button">Terug</button>
+            </a>
+            <button class="c-button">Toevoegen</button>
         </div>
     </div>
 </div>
