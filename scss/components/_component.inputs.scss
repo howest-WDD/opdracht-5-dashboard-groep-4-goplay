@@ -3,7 +3,8 @@
 
 .c-color {
 	&__container {
-		margin: 20px 0;
+		margin-top: 50px;
+		margin-bottom: 50px;
 
 		display: flex;
 		align-content: center;
@@ -11,10 +12,19 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 
+		border-radius: 2px;
+
+		outline: 2px color.$accent-00 solid;
+		outline-offset: 15px;
+
 		gap: 0 !important;
 
 		@include bp.down(tl) {
 			gap: 10px !important;
+		}
+
+		&--first {
+			margin-top: 20px;
 		}
 	}
 

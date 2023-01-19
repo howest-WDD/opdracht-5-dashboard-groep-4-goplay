@@ -9,7 +9,7 @@ const modalToggle = function (modal, close, graphname) {
             modal.classList.add('u-hidden');
         });
     } else {
-        console.log(`${graphname} not pressable`);
+        // console.log(`${graphname} not pressable`);
     }
 };
 
@@ -96,7 +96,7 @@ const listenToGraphs = function () {
                 modalToggle(graphModule.modal, graphModule.modalClose, graphModule.name, graphModule.function);
             });
         } else {
-            console.log(`no ${graphModule.graph}  graph to press`);
+            // console.log(`no ${graphModule.graph}  graph to press`);
         }
     }
 };
@@ -115,7 +115,7 @@ const listenToLogo = function () {
             modalToggle(logoLightModal, logoLightModalClose, 'light logo');
         });
     } else {
-        console.log(`no Logo light to press`);
+        // console.log(`no Logo light to press`);
     }
 
     if (logoDark) {
@@ -123,7 +123,7 @@ const listenToLogo = function () {
             modalToggle(logoDarkModal, logoDarkModalClose, 'light logo');
         });
     } else {
-        console.log(`no Logo light to press`);
+        // console.log(`no Logo light to press`);
     }
 };
 

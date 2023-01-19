@@ -5,11 +5,37 @@
     grid-area: 'content';
     width: calc(100vw - 400px);
     margin-left: 50px;
+
+
     
     &__titel{
         font-size: 48px;
         color: color.$accent-00;
         
+    }
+    &__smalltitle{
+        color: color.$accent-00;
+        border-bottom: 2px solid color.$accent-00;
+        margin-bottom: 2rem;
+
+        @include bp.down(tl){
+            min-width: 300px;
+        }
+
+
+    }
+    &__text{
+        color: white;
+    }
+    &__avatar{
+        border-right: 2px solid color.$accent-00;
+        font-size: 64px;
+        max-width: 100%;
+        @include bp.down(tl){
+            border: none;
+
+
+        }
     }
 
     &__tabs {
@@ -46,19 +72,53 @@
     }
     &__contactcontainer{
         display: flex;
+
+        @include bp.down(tl){
+            display: flex;
+            flex-direction: column;
+            
+        }
+        @include bp.down(ls){
+            display: flex;
+            flex-direction: column;
+        }
+        @include bp.down(ls){
+            display: flex;
+            flex-direction: column;
+        }
     }
     &__tabs{
         margin-left: 1.2rem;
     }
     &__contactsvg{
         margin-right: 1rem;
+        max-width: 200%;
         margin-top: 0.5rem;
+        width: 136.57px;
+        height: 147.072px;
+
+        
+        @include bp.down(tl){
+            max-width: 400px;
+            min-width: 50%;
+            width: 136.57px;
+            height: 147.072px;
+        }
+    }
+    &__contactsvgpath{
+        width: 200%;
     }
     &__gebruikerkolomcontainer::after{
         content: "";
         display: table;
         clear: both;
         width: 100%;
+    }
+    &__formcontainers{
+        @include bp.down(tl){
+            display: flex;
+            flex-direction: column;
+        }
     }
     &__gobacklink{
         text-decoration: none;
@@ -68,16 +128,30 @@
         
     }
     &__gobacktext{
-        width: 5%;
+        max-width: 100px;
         border-radius: 10px;
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
         background-color: color.$accent-00;
         text-decoration: none;
+        @include bp.down(tl){
+            min-width:30% ;
+            width: 100px;
+            
+        }
+        @include bp.down(ls){
+            min-width: 30%;
+            width: 150px;
+        }
 
+    }
+    &__label{
+        color: color.$shades-00;
     }
 
     &__input{
+        max-width: 300%;
+        min-width: 100%;
         width: 100%;
         border: none;
         background-color:color.$neutral-900 ;
@@ -100,9 +174,17 @@
             box-shadow: none;
         }
         &:disabled{
-            border: 2px solid color.$accent-200;
+            border: none;
+            background-color: transparent;
             color: grey;
         }
+        
+        width: 100% !important;
+        @include bp.down(tl){
+            min-width: 150px;
+            width: 300% !important;
+        }
+        
         
     }
 
@@ -110,6 +192,9 @@
         float: left;
         width: 25%;
         margin-right: 2rem;
+        @include bp.down(tl){
+            width: 100%;
+        }
 
     }
     &__gebruikerkolomlast{
@@ -118,24 +203,51 @@
     }
     &__buttonscontainer{
         display: flex;
+
+        @include bp.down(tl){
+            display: flex;
+            flex-direction: column;
+        }
     }
     &__editbuttoncontainer{
         
         display: flex;      
         cursor: pointer;
+
+        
     }
     &__editbuttonsvg{
         margin-top: 1rem;
         margin-right: 1rem;
+        color: color.$shades-00;
+
+        @include bp.down(tl){
+            min-width: 15px;
+        }
+    }
+    &__bewerkentext{
+        color: color.$shades-00;
+    }
+    &__verwijderentext{
+        color: color.$shades-00;
     }
     &__deletebuttoncontainer{
         display: flex;
         margin-left: 2rem;
         cursor: pointer;
+
+        @include bp.down(tl){
+            margin-left: 0;
+        }
     }
     &__deletebuttonsvg{
         margin-top: 1rem;
         margin-right: 1rem;
+        color: color.$shades-00;
+
+        @include bp.down(tl){
+            min-width: 15px;
+        }
     }
     &__button{
         color: color.$shades-00;
@@ -145,6 +257,23 @@
     }
     &__detailform{
         margin-bottom: 2rem;
+
+        @include bp.down(tl){
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            width: 100%;
+            overflow:visible;
+        }
+      
+    }
+
+    &__basicinformatieform{
+        margin-top: 1rem;
+        margin-left: 1rem;
+        
+        @include bp.down(tl){
+            margin-left: 0;
+        }
     }
 
 

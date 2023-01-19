@@ -3,7 +3,7 @@
 const createIncomeGraph = function () {
 	// first checks if income-graph exists
 	if (document.getElementById('income-graph')) {
-		console.log('yes user income graph');
+		// console.log('yes user income graph');
 
 		var graphWidth = document.querySelector('.js-income').clientWidth;
 
@@ -66,7 +66,7 @@ const createIncomeGraph = function () {
 		// create the chart
 		Plotly.newPlot('income-graph', traces, layout, config);
 	} else {
-		console.log('no user income graph');
+		// console.log('no user income graph');
 	}
 };
 

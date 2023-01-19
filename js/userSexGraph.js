@@ -77,12 +77,12 @@ var layoutM = {
 const createSexGraph = function () {
 	// first checks if sex-chart exists
 	if (document.getElementById('sex-chart')) {
-		console.log('yes user sex chart');
+		// console.log('yes user sex chart');
 		// create the chart
 		Plotly.newPlot('sex-chart', data, layout);
 		Plotly.newPlot('sex-chart-modal', dataM, layoutM);
 	} else {
-		console.log('no user sex chart');
+		// console.log('no user sex chart');
 	}
 };
 

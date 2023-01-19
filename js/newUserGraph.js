@@ -39,11 +39,11 @@ var layout = {
 const createNewGraph = function () {
 	// first checks if new-graph exists
 	if (document.getElementById('new-graph')) {
-		console.log('yes user new graph');
+		// console.log('yes user new graph');
 		// create the chart
 		Plotly.newPlot('new-graph', data, layout);
 	} else {
-		console.log('no user new graph');
+		// console.log('no user new graph');
 	}
 };
 
