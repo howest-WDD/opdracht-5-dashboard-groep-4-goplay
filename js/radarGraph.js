@@ -3,7 +3,7 @@
 const createGenreGraph = function () {
 	if (document.getElementById('genreGraph')) {
 		const data = {
-			labels: ['action', 'crime', 'kids', 'comedy', 'reality', 'soaps'],
+			labels: ['actie', 'misdaad', 'kinder', 'komedie', 'reality', 'soaps'],
 			datasets: [
 				{
 					label: 'Popularity',
@@ -67,7 +67,7 @@ const createGenreGraph = function () {
 			options: options,
 		});
 	} else {
-		console.log('no genre graph');
+		// console.log('no genre graph');
 	}
 };
 

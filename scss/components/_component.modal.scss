@@ -27,9 +27,11 @@
 	&--logo {
 		width: 20% !important;
 		height: 10% !important;
+
+		min-height: 150px;
 	}
 
-	&--content{
+	&--content {
 		width: 25% !important;
 		height: 15% !important;
 	}
@@ -64,6 +66,8 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+
+			margin-top: 40px;
 
 			p {
 				width: 50%;
@@ -167,12 +171,15 @@
 	&__buttons {
 		display: flex;
 		justify-content: space-evenly;
+		gap: 20px;
 	}
 
 	&__button {
 		font-size: 1.2rem;
 
 		padding: 10px 20px;
+
+		border: none;
 
 		&--delete {
 			background-color: color.$accent-100;
@@ -188,6 +195,7 @@
 		height: 40%;
 
 		min-height: 350px;
+		max-height: 400px;
 
 		@include bp.down(ls) {
 			top: 25%;
@@ -248,12 +256,22 @@
 		p:nth-child(n) {
 			width: 80%;
 		}
+
+		.c-modal__button--delete {
+			background-color: color.$accent-00;
+		}
+
+		.c-modal__button--no {
+			background-color: color.$accent-100;
+		}
 	}
 
 	&__newSetting {
 		color: color.$text-color-a;
 
+		max-width: 400px;
 		min-width: 200px;
+		max-height: 300px;
 		min-height: 200px;
 
 		@include bp.down(tl) {
@@ -268,6 +286,10 @@
 		> label {
 			top: 20%;
 			position: relative;
+			display: block;
+			width: 100%;
+
+			margin-top: 20px;
 		}
 
 		input,
@@ -300,6 +322,14 @@
 				background-color: transparent;
 				border: none;
 			}
+		}
+
+		.c-modal__button--delete {
+			background-color: color.$accent-00;
+		}
+
+		.c-modal__button--no {
+			background-color: color.$accent-100;
 		}
 	}
 }
