@@ -11,9 +11,12 @@
 	position: relative;
 
 	@include bp.down(tl) {
-		height: 400px;
-		max-width: 300px;
+		// max-width: 300px;
 		min-width: 300px;
+	}
+
+	@include bp.down(ml) {
+		height: 400px;
 	}
 
 	&__graph {
