@@ -5,6 +5,7 @@
     
     grid-area: "content";
     width: calc(100vw - 300px);
+
     
 
     // width 100% op mobile 
@@ -101,9 +102,7 @@
         padding-left: 1.5rem;
         background-color:color.$neutral-900 ;
         border: 2px solid color.$accent-00;
-        max-width: 100vh;
-        width: 100vh;
-        height: 32px;
+        
         justify-content: center;
         box-shadow: none;
         color: color.$text-color-a;
@@ -121,9 +120,13 @@
             color: color.$text-color-a;
             box-shadow: none;
         }
-
+        // @include bp.up(tl){
+        //     max-width: 100vh;
+        //     width: 100vh;
+        //     height: 32px;
+        // }
         @include bp.down(tl){
-            width: 50vh;
+            width: 250px !important;
         }
     }
     &__tablemainrow{
