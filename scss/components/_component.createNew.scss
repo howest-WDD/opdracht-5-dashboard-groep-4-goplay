@@ -9,6 +9,10 @@
     flex-direction: column;
     margin-left: 3rem;
   }
+
+  button {
+    display: inline-block;
+  }
 }
 
 .c-addContentUpload {
@@ -19,6 +23,7 @@
   height: 100%;
 
   grid-template-columns: repeat(3, 350px);
+  grid-template-rows: 100px;
 
   grid-template-areas:
 		'header header header'
@@ -110,10 +115,10 @@
   height: 100%;
 
   grid-template-columns: repeat(3, 500px);
+  grid-template-rows: 100px;
 
   grid-template-areas:
 		'header header header'
-		'. . addNewBtn'
 		'table table table'
 		'. . buttons';
 
@@ -121,21 +126,26 @@
     grid-area: header;
     color: color.$neutral-500;
   }
+
   &__addNewBtn {
     grid-area: addNewBtn;
   }
+
   &__table {
     grid-area: table;
-    table{
+
+    table {
       width: 100%;
       color: color.$text-color-a;;
       text-align: center;
-      td, th{
+
+      td, th {
         padding: 0.5rem;
         background: color.$neutral-900;
       }
     }
   }
+
   &__buttons {
     grid-area: buttons;
   }
@@ -149,6 +159,7 @@
   gap: 20px;
 
   grid-template-columns: repeat(2, 750px);
+  grid-template-rows: 100px;
 
   grid-template-areas:
 		'header header'
@@ -164,30 +175,46 @@
   &__details {
     grid-area: details;
 
-    &--title{
-      color: color.$text-color-a;
+    label{
+      display: inline-block;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    &--select {
+      display: flex;
+      flex-wrap: wrap;
+
+      select {
+        margin-left: 0.5rem;
+      }
+
+      #type{
+        margin-left: 0;
+      }
     }
   }
 
   &__settings {
     grid-area: settings;
 
-    &--title{
-      color: color.$text-color-a;
+    label{
+      display: inline-block;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
     }
   }
 
-  &__buttons{
+  &__buttons {
     grid-area: buttons;
-    margin-left: 18rem;
-    a{
+
+    a {
       text-decoration: none;
     }
   }
 
-  input{
+  input {
     width: 50%;
-    margin-top: 1rem;
     border-radius: 10px;
     padding-left: 1.5rem;
     background-color: color.$neutral-900;
@@ -213,12 +240,12 @@
       box-shadow: none;
     }
 
-    &:disabled{
+    &:disabled {
       display: none;
     }
   }
 
-  select{
+  select {
     background-color: color.$neutral-900;
     border: 2px solid color.$accent-00;
     border-radius: 10px;
@@ -228,17 +255,17 @@
     height: 36px;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    margin-top: 2rem;
   }
 
-  textarea{
-    width: 50%;
-    margin-top: 1rem;
+  textarea {
+    min-width: 50%;
+    max-width: 50%;
     border-radius: 10px;
     padding-left: 1.5rem;
     background-color: color.$neutral-900;
     border: 2px solid color.$accent-00;
-    height: 150px;
+    min-height: 150px;
+    max-height: 150px;
     justify-content: center;
     box-shadow: none;
     color: color.$text-color-a;
@@ -259,17 +286,79 @@
     }
   }
 
-  label{
+  label {
     color: color.$text-color-a;
   }
 
-  @include bp.down(ml){
+  @include bp.down(ml) {
     grid-template-columns: repeat(1, 320px);
     grid-template-areas:
 		'header'
 		'details'
 		'settings'
 		'buttons';
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
+.slider {
+  border: 2px solid color.$accent-300;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: color.$neutral-800;
+  -webkit-transition: .4s;
+  transition: .4s;
+  &:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 2px;
+    bottom: 2px;
+    background-color: color.$neutral-500;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+}
+input {
+  &:checked {
+    + {
+      .slider {
+        background-color: color.$accent-00;
+        &:before {
+          -webkit-transform: translateX(26px);
+          -ms-transform: translateX(26px);
+          transform: translateX(26px);
+        }
+      }
+    }
+  }
+  &:focus {
+    + {
+      .slider {
+        box-shadow: 0 0 1px color.$accent-00;
+      }
+    }
+  }
+}
+.slider.round {
+  border-radius: 34px;
+  &:before {
+    border-radius: 50%;
   }
 }
 

@@ -60,7 +60,8 @@ const showDateSelector = function (){
         enableTime: true,
         dateFormat: "Y-m-d H:i",
         minDate: "today",
-        time_24hr: true
+        time_24hr: true,
+        disableMobile: "true"
     })
 
     flatpickr(".js-availbleTill-date", {
@@ -68,6 +69,7 @@ const showDateSelector = function (){
         dateFormat: "Y-m-d H:i",
         minDate: "today",
         time_24hr: true,
+        disableMobile: "true"
     })
 }
 
