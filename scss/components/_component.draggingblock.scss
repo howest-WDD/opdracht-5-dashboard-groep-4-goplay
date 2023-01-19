@@ -29,6 +29,7 @@
 }
 .c-draggable{
     
+    
     border: .0625rem solid;
     border-color: color.$accent-00;
     border-radius: .625rem;
@@ -37,6 +38,7 @@
     
 
      input{
+        display: flex;
         background-color: color.$neutral-800;
         border: 2px solid grey;
         border-radius: 4px;
@@ -50,6 +52,8 @@
         padding-left: 1rem;
         
     }
+
+    
 
 }
 .c-draggable.dragging{
@@ -101,4 +105,16 @@
     justify-content: flex-start;
     align-items: center;
 
+}
+.c-input{
+    display: flex;
+    align-items: center ;
+    
+
+    &__icon{
+        display: flex;
+        margin-left: calc(100vw - 55rem);
+        width: 1.4375rem;
+        height: 1.875rem;
+    }
 }

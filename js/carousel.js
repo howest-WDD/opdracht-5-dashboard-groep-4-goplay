@@ -57,7 +57,9 @@ const addCarouselData = function(selection){
 
 const createCarouselFunc = function(){
 
-document.addEventListener("click", e => {
+  const carousel = document.querySelector('.c-startscherm')
+
+carousel.addEventListener("click", e => {
   e.preventDefault() 
     let handle
     if (e.target.matches(".handle")) {

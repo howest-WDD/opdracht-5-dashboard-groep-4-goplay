@@ -16,7 +16,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./dist/index.css" />
     <!-- JS -->
-    <script type="module" src="./dist/main.js"></script>
+    <script type="module" src="./dist/main-min.js"></script>
     <script src="./dist/main.js"></script>
   </head>
   <body class="o-darkmode o-grid js-page-startscherm">
@@ -49,7 +49,7 @@
             </li>
             <li class="c-sidebar__item"><a href="#">Instellingen</a></li>
             <li class="c-sidebar__item"><a class="c-sidebar__item--accent js-logout" href="#">Uitloggen</a></li>
-            <li class="c-sidebar__button"><a class="c-button js-darkmode" href="#">Light Mode</a></li>
+            
             <!-- TODO: een hovermode zou leuk zijn -->
           </ul>
           <p class="creddits">&copy; Howest - 2022</p>
@@ -85,27 +85,28 @@
       </div>
     </nav>
     <section class="c-startscherm">
+        <div class="c-addShow">
+                    <select class="c-selector">
+                      <option value="Aangeboden" selected class="c-selector__optie">Aangeboden</option>
+                      <option value="Recent"  class="c-selector__optie">Recent bekeken</option>
+                      <option value="Favoriet" class="c-selector__optie">Favoriet</option>
+                      <option value="Exclusief" class="c-selector__optie">Exclusief</option>
+                      <option value="Show" class="c-selector__optie">Show</option>
+                  </select>
+          
+                  <div class="c-addButton">
+                    <span>+</span>
+                  </div>
+                  </div>
 
+                  <div class="c-draggable" draggable="true">
+                  </div>
         <div class="c-startscherm__container">
 
-          <div class="c-addShow">
-            <select class="c-selector">
-              <option value="Aangeboden" selected class="c-selector__optie">Aangeboden</option>
-              <option value="Recent"  class="c-selector__optie">Recent bekeken</option>
-              <option value="Favoriet" class="c-selector__optie">Favoriet</option>
-              <option value="Exclusief" class="c-selector__optie">Exclusief</option>
-              <option value="Show" class="c-selector__optie">Show</option>
-          </select>
-  
-          <div class="c-addButton">
-            <span>+</span>
-          </div>
-          </div>
-
+          
+          
             
 
-            <div class="c-draggable" draggable="true">
-            </div>
             
 
         </div>
