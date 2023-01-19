@@ -18,6 +18,10 @@
         border-bottom: 2px solid color.$accent-00;
         margin-bottom: 2rem;
 
+        @include bp.down(tl){
+            min-width: 300px;
+        }
+
 
     }&__
     &__text{
@@ -74,6 +78,14 @@
             flex-direction: column;
             
         }
+        @include bp(ls){
+            display: flex;
+            flex-direction: column;
+        }
+        @include bp.down(ls){
+            display: flex;
+            flex-direction: column;
+        }
     }
     &__tabs{
         margin-left: 1.2rem;
@@ -86,8 +98,11 @@
         height: 147.072px;
 
         
-        @include bp.down(tl){
-            width: 400%;
+        @include bp(tl){
+            max-width: 400px;
+            min-width: 50%;
+            width: 136.57px;
+            height: 147.072px;
         }
     }
     &__contactsvgpath{
@@ -113,14 +128,20 @@
         
     }
     &__gobacktext{
-        width: 5%;
+        max-width: 100px;
         border-radius: 10px;
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
         background-color: color.$accent-00;
         text-decoration: none;
         @include bp.down(tl){
-            width: 30%;
+            min-width:30% ;
+            width: 100px;
+            
+        }
+        @include bp.down(ls){
+            min-width: 30%;
+            width: 150px;
         }
 
     }
@@ -160,7 +181,7 @@
         
         width: 100% !important;
         @include bp.down(tl){
-            
+            min-width: 150px;
             width: 300% !important;
         }
         
@@ -182,16 +203,27 @@
     }
     &__buttonscontainer{
         display: flex;
+
+        @include bp.down(tl){
+            display: flex;
+            flex-direction: column;
+        }
     }
     &__editbuttoncontainer{
         
         display: flex;      
         cursor: pointer;
+
+        
     }
     &__editbuttonsvg{
         margin-top: 1rem;
         margin-right: 1rem;
         color: color.$shades-00;
+
+        @include bp.down(tl){
+            min-width: 15px;
+        }
     }
     &__bewerkentext{
         color: color.$shades-00;
@@ -203,11 +235,19 @@
         display: flex;
         margin-left: 2rem;
         cursor: pointer;
+
+        @include bp.down(tl){
+            margin-left: 0;
+        }
     }
     &__deletebuttonsvg{
         margin-top: 1rem;
         margin-right: 1rem;
         color: color.$shades-00;
+
+        @include bp.down(tl){
+            min-width: 15px;
+        }
     }
     &__button{
         color: color.$shades-00;
