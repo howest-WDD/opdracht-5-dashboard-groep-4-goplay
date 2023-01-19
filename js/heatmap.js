@@ -2,10 +2,10 @@
 
 const checkHeatmap = function () {
 	if (document.getElementById('heatmapContainer')) {
-		console.log('yes heatmap');
+		// console.log('yes heatmap');
 		createHeatmap();
 	} else {
-		console.log('no heatmap');
+		// console.log('no heatmap');
 	}
 };
 
@@ -16,15 +16,15 @@ const createHeatmap = function () {
 	// create data set
 	var dataSet = anychart.data.set([
 		// limburg
-		{ id: 'BE.490', value: 220000, newUsers: 10000, returningUsers: 200000 },
+		{ id: 'BE.490', value: 320000, newUsers: 10000, returningUsers: 200000 },
 		// brussel
-		{ id: 'BE.BU', value: 200000, newUsers: 20000, returningUsers: 180000 },
+		{ id: 'BE.BU', value: 100000, newUsers: 20000, returningUsers: 180000 },
 		// vlaams brabant
 		{ id: 'BE.VB', value: 250000, newUsers: 50000, returningUsers: 200000 },
 		// oost vlaanderen
-		{ id: 'BE.OV', value: 220000, newUsers: 20000 },
+		{ id: 'BE.OV', value: 400000, newUsers: 20000 },
 		// west vlaanderen
-		{ id: 'BE.3534', value: 230000, newUsers: 30000, returningUsers: 200000 },
+		{ id: 'BE.3534', value: 500000, newUsers: 30000, returningUsers: 200000 },
 		// antwerpen
 		{ id: 'BE.3535', value: 24000, newUsers: 4000, returningUsers: 20000 },
 	]);
@@ -32,7 +32,7 @@ const createHeatmap = function () {
 	// create choropleth series
 	var series = map.choropleth(dataSet);
 	series.tooltip().format(function (e) {
-		return 'new users: ' + e.getData('newUsers').toLocaleString('nl-BE') + '\n' + 'returning users: ' + e.getData('returningUsers').toLocaleString('nl-BE');
+		return 'nieuwe gebruikers: ' + e.getData('newUsers').toLocaleString('nl-BE') + '\n' + 'terugkerende gebruikers: ' + e.getData('returningUsers').toLocaleString('nl-BE');
 	});
 
 	// set geoIdField to 'id', this field contains in geo data meta properties
