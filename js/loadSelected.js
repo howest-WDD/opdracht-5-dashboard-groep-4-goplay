@@ -44,7 +44,7 @@ const addBlocks = function(selection){
         </svg>
       </button>
       
-      <img src="/assets/svg/movable.svg" alt="move_item" class="c-input__icon js-addShow">
+      <img src="/assets/svg/movable.svg" alt="move_item" class="c-input__icon">
 
       
     
@@ -57,12 +57,13 @@ const addBlocks = function(selection){
             </button>
             <div class="progress-bar"></div>
             <div class="slider c-carousel js-Carousel${selection}">
-              <img src="./assets/img/addNew.png" alt="addNew" class="c-carousel__item">
+            <img src="./assets/img/addNew.png" alt="addNew" class="c-carousel__item js-addShow">
               
             </div>
             <button class="handle right-handle">
             <img src="./assets/svg/carouselRight.svg" alt="arrow">
             </button>
+            
             
           </div>
         </div>
@@ -73,6 +74,7 @@ const addBlocks = function(selection){
     
    container.innerHTML = ``;
    container.innerHTML = newBlock+oldBlock;
+   listenToAddShow();
    listenToDelete();
    addCarouselData(selection) 
    loadStartschermFuncties()

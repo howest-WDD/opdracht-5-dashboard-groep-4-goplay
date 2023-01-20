@@ -18,7 +18,7 @@ const listenToAddShow = function(){
 let addButton = document.querySelectorAll('.js-addShow');
     for(let button of addButton){
         button.addEventListener('click', function(){
-
+            console.log('opji')
             modalOpen();
         })
     }
