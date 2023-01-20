@@ -16,162 +16,6 @@
   }
 }
 
-.c-addContentUpload {
-  margin-top: 3rem;
-  grid-area: content;
-  display: grid;
-  gap: 20px;
-  height: 100%;
-
-  grid-template-columns: repeat(3, 350px);
-  grid-template-rows: 100px;
-
-  grid-template-areas:
-		'header header header'
-		'upload upload upload'
-		'bg_preview pstr_preview .'
-		'. . buttons';
-
-  &__header {
-    grid-area: header;
-    color: color.$neutral-500;
-  }
-
-  &__upload {
-    grid-area: upload;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-
-    .drag-area {
-      height: 150px;
-      width: 30%;
-      padding: 1rem;
-      border: 2px dashed color.$accent-300;
-      border-radius: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-
-    .drag-area header {
-      font-size: 16px;
-      font-weight: 500;
-      color: #fff;
-    }
-
-    .drag-area span {
-      color: #fff;
-    }
-
-    .drag-area button {
-      padding: 10px 25px;
-      font-size: 20px;
-      font-weight: 500;
-      border: none;
-      outline: none;
-      background: color.$accent-300;
-      color: color.$neutral-900;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .drag-area img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      border-radius: 5px;
-    }
-  }
-
-  &__bg {
-    grid-area: bg_preview;
-    color: color.$neutral-500;
-
-    img {
-      max-width: 100%;
-    }
-  }
-
-  &__poster {
-    grid-area: pstr_preview;
-    color: color.$neutral-500;
-
-    img {
-      max-height: 225px;
-    }
-  }
-
-  &__buttons {
-    grid-area: buttons;
-  }
-}
-
-.c-addContentSeaons {
-  margin-top: 3rem;
-  grid-area: content;
-  display: grid;
-  gap: 20px;
-  height: 100%;
-
-  grid-template-columns: repeat(3, 500px);
-  grid-template-rows: 100px;
-
-  grid-template-areas:
-		'header header header'
-		'table table table'
-		'. . buttons';
-
-  &__header {
-    grid-area: header;
-    color: color.$neutral-500;
-  }
-
-  &__addNewBtn {
-    grid-area: addNewBtn;
-  }
-
-  &__table {
-    grid-area: table;
-
-    table {
-      width: 100%;
-      color: color.$text-color-a;;
-      text-align: center;
-
-      td, th {
-        padding: 0.5rem;
-        background: color.$neutral-900;
-      }
-    }
-  }
-
-  &__buttons {
-    grid-area: buttons;
-  }
-
-  .material-icons {
-    margin-left: 1rem;
-  }
-
-  .c-addButton {
-    margin-left: 0;
-  }
-
-  .c-deleteIcon {
-    color: color.$accent-100;
-  }
-
-  .c-visibilityIcon {
-    color: color.$accent-300;
-
-    &--offline {
-      color: color.$accent-100;
-    }
-  }
-}
-
 .c-addContentDetails {
   margin-top: 3rem;
   grid-area: content;
@@ -381,6 +225,15 @@
     }
   }
 
+  @include bp.down(ls) {
+    grid-template-columns: repeat(1, 520px);
+    grid-template-areas:
+		'header'
+		'details'
+		'settings'
+		'buttons';
+  }
+
   @include bp.down(ml) {
     grid-template-columns: repeat(1, 320px);
     grid-template-areas:
@@ -388,6 +241,201 @@
 		'details'
 		'settings'
 		'buttons';
+  }
+}
+
+.c-addContentUpload {
+  margin-top: 3rem;
+  grid-area: content;
+  display: grid;
+  gap: 20px;
+  height: 100%;
+
+  grid-template-columns: repeat(3, 350px);
+  grid-template-rows: 100px;
+
+  grid-template-areas:
+		'header header header'
+		'upload upload upload'
+		'bg_preview pstr_preview .'
+		'. . buttons';
+
+  &__header {
+    grid-area: header;
+    color: color.$neutral-500;
+  }
+
+  &__upload {
+    grid-area: upload;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    .drag-area {
+      height: 150px;
+      width: 30%;
+      padding: 1rem;
+      border: 2px dashed color.$accent-300;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .drag-area header {
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    .drag-area span {
+      color: #fff;
+    }
+
+    .drag-area button {
+      padding: 10px 25px;
+      font-size: 20px;
+      font-weight: 500;
+      border: none;
+      outline: none;
+      background: color.$accent-300;
+      color: color.$neutral-900;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .drag-area img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+
+  &__bg {
+    grid-area: bg_preview;
+    color: color.$neutral-500;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__poster {
+    grid-area: pstr_preview;
+    color: color.$neutral-500;
+
+    img {
+      max-height: 225px;
+    }
+  }
+
+  &__buttons {
+    grid-area: buttons;
+  }
+
+  @include bp.down(ls) {
+    padding: 1rem;
+
+    grid-template-columns: repeat(2, 320px);
+    grid-template-areas:
+		'header header'
+		'upload upload'
+		'bg_preview pstr_preview'
+		'. buttons';
+
+    .c-addContentUpload__upload{
+      flex-wrap: wrap;
+    }
+
+    .c-addContentUpload__buttons{
+      display: flex;
+    }
+  }
+
+  @include bp.down(tl) {
+    padding: 1rem;
+
+    grid-template-columns: repeat(1, 520px);
+    grid-template-areas:
+		'header'
+		'upload'
+		'bg_preview'
+        'pstr_preview'
+		'buttons';
+
+    .c-addContentUpload__upload{
+      flex-wrap: wrap;
+    }
+
+    .c-addContentUpload__bg{
+      max-width: 300px;
+    }
+  }
+}
+
+.c-addContentSeaons {
+  margin-top: 3rem;
+  grid-area: content;
+  display: grid;
+  gap: 20px;
+  height: 100%;
+
+  grid-template-columns: repeat(3, 500px);
+  grid-template-rows: 100px;
+
+  grid-template-areas:
+		'header header header'
+		'table table table'
+		'. . buttons';
+
+  &__header {
+    grid-area: header;
+    color: color.$neutral-500;
+  }
+
+  &__addNewBtn {
+    grid-area: addNewBtn;
+  }
+
+  &__table {
+    grid-area: table;
+
+    table {
+      width: 100%;
+      color: color.$text-color-a;;
+      text-align: center;
+
+      td, th {
+        padding: 0.5rem;
+        background: color.$neutral-900;
+      }
+    }
+  }
+
+  &__buttons {
+    grid-area: buttons;
+  }
+
+  .material-icons {
+    margin-left: 1rem;
+  }
+
+  .c-addButton {
+    margin-left: 0;
+  }
+
+  .c-deleteIcon {
+    color: color.$accent-100;
+  }
+
+  .c-visibilityIcon {
+    color: color.$accent-300;
+
+    &--offline {
+      color: color.$accent-100;
+    }
   }
 }
 

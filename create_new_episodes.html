@@ -88,72 +88,75 @@
 </nav>
 <div class="c-createnew">
     <div class="c-addContentSeaons">
-        <div class="c-addContentSeaons__header"><h1>Bewerk/Voeg Episodes toe</h1></div>
-        <div class="c-addContentSeaons__addNewBtn">
-            <button>Voeg Toe</button>
-        </div>
+        <div class="c-addContentSeaons__header"><h1>4. Bewerk/Voeg Episodes toe</h1></div>
         <div class="c-addContentSeaons__table">
-            <table>
-                <tr>
+            <table id="seasons">
+                <tr id="row_0">
                     <th>Episode</th>
-                    <th>Titel</th>
+                    <th>Title</th>
                     <th>Status</th>
-                    <th>Acties</th>
+                    <th>
+                        Acties
+                    </th>
                 </tr>
-                <tr>
+                <tr id="row_1">
                     <td>1</td>
-                    <td>Jantje zoek ...</td>
+                    <td>Winter Is Coming</td>
                     <td>Niet Live</td>
                     <td>
-                    <td>
-                        <i class="material-icons">edit</i>
-                        <i class="material-icons">visibility_off</i>
-                        <i class="material-icons">delete</i>
-                    </td>
+                        <i class="material-icons c-editIcon js-editBtn">edit</i>
+                        <i class="material-icons c-visibilityIcon--offline js-visibilityBtn">visibility_off</i>
+                        <i class="material-icons c-deleteIcon js-deleteBtn" id="btn_1">delete</i>
                     </td>
                 </tr>
-                <tr>
+                <tr id="row_2">
                     <td>2</td>
-                    <td>0</td>
+                    <td>The Kingsroad</td>
                     <td>Live</td>
                     <td>
-                    <td>
-                        <i class="material-icons">edit</i>
-                        <i class="material-icons">visibility_off</i>
-                        <i class="material-icons">delete</i>
-                    </td>
+                        <i class="material-icons c-editIcon js-editBtn">edit</i>
+                        <i class="material-icons c-visibilityIcon js-visibilityBtn">visibility_off</i>
+                        <i class="material-icons c-deleteIcon js-deleteBtn" id="btn_2">delete</i>
                     </td>
                 </tr>
-                <tr>
+                <tr id="row_3">
                     <td>3</td>
-                    <td>0</td>
+                    <td>Lord Snow</td>
                     <td>Live</td>
                     <td>
-                    <td>
-                        <i class="material-icons">edit</i>
-                        <i class="material-icons">visibility_off</i>
-                        <i class="material-icons">delete</i>
-                    </td>
+                        <i class="material-icons c-editIcon js-editBtn">edit</i>
+                        <i class="material-icons c-visibilityIcon js-visibilityBtn">visibility_off</i>
+                        <i class="material-icons c-deleteIcon js-deleteBtn" id="btn_3">delete</i>
                     </td>
                 </tr>
-                <tr>
+                <tr id="row_4">
                     <td>4</td>
-                    <td>0</td>
+                    <td>Cripples, Bastards, and Broken Things</td>
                     <td>Live</td>
                     <td>
-                    <td>
-                        <i class="material-icons">edit</i>
-                        <i class="material-icons">visibility_off</i>
-                        <i class="material-icons">delete</i>
-                    </td>
+                        <i class="material-icons c-editIcon js-editBtn">edit</i>
+                        <i class="material-icons c-visibilityIcon js-visibilityBtn">visibility_off</i>
+                        <i class="material-icons c-deleteIcon js-deleteBtn" id="btn_4">delete</i>
                     </td>
                 </tr>
             </table>
+            <button class="c-button"><i class="material-icons c-addButton js-newEpisode">add</i></button>
         </div>
         <div class="c-addContentSeaons__buttons">
-            <button>Terug</button>
-            <button>Toevoegen</button>
+            <button class="c-button js-seasons-back">Terug</button>
+            <button class="c-button js-seasons-next">Toevoegen</button>
         </div>
     </div>
+    <div class="c-modal2 js-modalSeasons js-darkbackground u-hidden">
+        <div class="c-modal2__container ">
+            <label for="season"></label>
+            <input type="text" id="season" placeholder="seasonNr">
+            <div class="c-modal2__buttoncontainer d-flex justify-content-center">
+                <button class="c-modal2__verwijderknop js-add">toevoegen</button>
+                <button class="c-modal2__cancelknop js-cancel">nee</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

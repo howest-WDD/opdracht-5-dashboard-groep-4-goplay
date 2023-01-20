@@ -15,6 +15,7 @@
     <meta name="theme-color" content="#000000"/>
     <!-- CSS -->
     <link rel="stylesheet" href="./dist/index.css"/>
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- JS -->
     <script type="module" src="./dist/main-min.js"></script>
@@ -87,50 +88,56 @@
     </div>
 </nav>
 <div class="c-createnew">
-    <div class="c-addContentUpload">
-        <div class="c-addContentUpload__header"><h1>1. Upload de Data</h1></div>
-        <div class="c-addContentUpload__upload">
-            <div class="drag-area">
-                <header>Drag & Drop Film</header>
-                <span>of</span>
-                <button>Browse File</button>
-                <input type="file" hidden>
-            </div>
-            <div class="drag-area">
-                <header>Drag & Drop Background</header>
-                <span>of</span>
-                <button>Browse File</button>
-                <input type="file" hidden>
-            </div>
-            <div class="drag-area">
-                <header>Drag & Drop Poster</header>
-                <span>of</span>
-                <button>Browse File</button>
-                <input type="file" hidden>
-            </div>
-            <div class="drag-area">
-                <header>Drag & Drop Trailer</header>
-                <span>of</span>
-                <button>Browse File</button>
-                <input type="file" hidden>
+    <div class="c-addContentDetails js-contentdata">
+        <div class="c-addContentDetails__header"><h1>5. Bewerk/voeg Episode toe</h1></div>
+        <div class="c-addContentDetails__details">
+            <form action="">
+                <label for="title">Titel</label><br>
+                <input type="text" id="title" class="c-addContentDetails__details--input" placeholder="Titel"><br>
+                <label for="description">Beschrijving</label><br>
+                <textarea name="description" id="description" class="c-addContentDetails__details--input"
+                          placeholder="Description"></textarea><br>
+                <label for="Director">Regie</label><br>
+                <input type="text" id="Director" class="c-addContentDetails__details--input" placeholder="Regie"><br>
+                <label for="Cast">Cast</label><br>
+                <input type="text" id="Cast" class="c-addContentDetails__details--input" placeholder="Cast"><br>
+            </form>
+            <div class="c-addContentDetails__details--select">
+                <div><label for="genreContent">Genre</label><br>
+                    <select id="genreContent">
+                        <!--js loaded-->
+                        <option value="Film">Film</option>
+                        <option value="Fictie">Fictie</option>
+                        <option value="Lifestyle">Lifestyle</option>
+                        <option value="Reality">Reality</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Humor">Humor</option>
+                    </select>
+                </div>
+                <div><label for="language">Taal</label><br>
+                    <select id="language">
+                        <option>Nederlands</option>
+                        <option>Engels</option>
+                        <option>Frans</option>
+                    </select>
+                </div>
             </div>
         </div>
-        <div class="c-addContentUpload__bg">
-            <p>Achtergrond foto:</p>
-            <img
-                    src="https://wmimages.goplay.be/styles/f7331df9e0140370408293ff5186b3cc1ba2ff25/2023-01/goplaywp3840x2160dtvv-1-ro8aq5.jpg?style=W3sianBlZyI6eyJxdWFsaXR5Ijo5MH19LHsicmVzaXplIjp7ImZpdCI6ImNvdmVyIiwid2lkdGgiOjM4NDAsImhlaWdodCI6MjE2MCwiZ3Jhdml0eSI6bnVsbCwid2l0aG91dEVubGFyZ2VtZW50IjpmYWxzZX19XQ==&sign=1240b2ba0a2922ef673d76c46e7de21ff73b8b0feb724f412a80dd929da419b8"
-                    alt="">
+        <div class="c-addContentDetails__settings">
+            <div class="js-release-date__checker"><label for="release_date">Release Datum</label><br>
+                <input class="js-release-date" type="datetime-local" placeholder="Maak Beschikbaar Op"
+                       id="release_date">
+            </div>
+            <div><label for="release_date">Beschikbaar tot Datum</label><br>
+                <input class="js-availbleTill-date" type="datetime-local" placeholder="Beschikbaar Tot">
+            </div>
         </div>
-        <div class="c-addContentUpload__poster">
-            <p>poster foto:</p><img
-                src="https://wmimages.goplay.be/styles/d03a19a83908ec0fa0ca867113b0553c8bce6d67/2022-08/goplaympmpl1050x1500dtvv-rhhesq.jpeg?style=W3sicmVzaXplIjp7ImZpdCI6Imluc2lkZSIsIndpZHRoIjo0MDAsImhlaWdodCI6NTgwLCJ3aXRob3V0RW5sYXJnZW1lbnQiOmZhbHNlfX0seyJqcGVnIjp7InF1YWxpdHkiOjk1fX1d&sign=c42b1d2ed34c175f0e698e554f225c9251438befc26f97ea31619b31f23f93ce"
-                alt="Programma: Tafel Van Vier">
-        </div>
-        <div class="c-addContentUpload__buttons">
-            <button class="c-button js-upload-back">Terug</button>
-            <button class="c-button js-upload-next">Volgende</button>
+        <div class="c-addContentDetails__buttons">
+            <button class="c-button js-episode-back">Terug</button>
+            <button class="c-button js-episode-next">Toevoegen</button>
         </div>
     </div>
 </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </html>
