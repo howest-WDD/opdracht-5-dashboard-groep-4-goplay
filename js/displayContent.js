@@ -21,7 +21,7 @@ const showGenres = function (genres) {
 
 const showContent = function (jsonObject) {
     //add the Add new card in to the inner HTML
-    document.querySelector(".js-content").innerHTML = `<a class="c-content-card js-addNew--card" href="/create_new_details.html">
+    document.querySelector(".js-content").innerHTML = `<a class="c-content-card js-addNew--card" href="/create_new_upload.html">
             <figure class="c-content-card__figure">
                 <img class="c-content-card__figure--img" src="assets/img/addNew.png" alt="AddNewPlaceHolder">
                 <figcaption class="c-content-card__figure--text">Add new movie or tv-show</figcaption>
@@ -51,9 +51,9 @@ const listenToClickOnCard = function () {
             let id = card.getAttribute("data-id");
             let type = card.getAttribute("data-type");
             if (type === "undefined") {
-                window.location.href = `http://127.0.0.1:8080/create_new_details.html?${id}&movie=true`;
+                window.location.href = `http://127.0.0.1:8080/create_new_upload.html?${id}&movie=true`;
             } else if (type === "[object Object]") {
-                window.location.href = `http://127.0.0.1:8080/create_new_details.html?${id}?movie=false`;
+                window.location.href = `http://127.0.0.1:8080/create_new_upload.html?${id}?movie=false`;
             } else {
                 console.log("euh no idea what this is");
             }
@@ -84,14 +84,6 @@ const listenToSearch = function () {
         const filteredData = dataStore.filter(o => o.title.toLowerCase().includes(currentword.toLowerCase()));
         showContent(filteredData)
     });
-}
-
-const getTvShows = function () {
-    handleData("https://goplayhowestapifunction.azurewebsites.net/api/getshows", showTvShows);
-}
-
-const getMovies = function () {
-    handleData("https://goplayhowestapifunction.azurewebsites.net/api/getmovies", showMovies);
 }
 
 //handles the data Array if you fetch all the data and puts it in an Array

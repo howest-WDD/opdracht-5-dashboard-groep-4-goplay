@@ -89,7 +89,7 @@
 </nav>
 <div class="c-createnew">
     <div class="c-addContentDetails js-contentdata">
-        <div class="c-addContentDetails__header"><h1>1. Voeg Informatie van de Film/TVShow toe</h1></div>
+        <div class="c-addContentDetails__header"><h1>2. Voeg Informatie van de Film/TVShow toe</h1></div>
         <div class="c-addContentDetails__details">
             <form action="">
                 <label for="title">Titel</label><br>
@@ -104,16 +104,14 @@
             </form>
             <div class="c-addContentDetails__details--select">
                 <div><label for="type">Type</label><br>
-                    <select id="type">
+                    <select id="type" class="js-type-details">
                         <option selected>TVShow</option>
                         <option>Film</option>
                     </select>
                 </div>
-                <div><label for="genre">Genre</label><br>
-                    <select id="genre">
-                        <option>Entertainment</option>
-                        <option>test2</option>
-                        <option>test3</option>
+                <div><label for="genreContent">Genre</label><br>
+                    <select id="genreContent">
+                        <!--js loaded-->
                     </select>
                 </div>
                 <div><label for="language">Taal</label><br>
@@ -126,7 +124,7 @@
             </div>
         </div>
         <div class="c-addContentDetails__settings">
-            <div><label for="release_date">Release Datum</label><br>
+            <div class="js-release-date__checker"><label for="release_date">Release Datum</label><br>
                 <input class="js-release-date" type="datetime-local" placeholder="Maak Beschikbaar Op"
                        id="release_date">
             </div>
@@ -143,12 +141,8 @@
             </div>
         </div>
         <div class="c-addContentDetails__buttons">
-            <a href="content.html">
-                <button class="c-button">Terug</button>
-            </a>
-            <a href="create_new_seasons.html">
-                <button class="c-button">Volgende</button>
-            </a>
+            <button class="c-button js-details-back">Terug</button>
+            <button class="c-button js-details-next">Toevoegen</button>
         </div>
     </div>
 </div>

@@ -15,6 +15,7 @@
     <meta name="theme-color" content="#000000"/>
     <!-- CSS -->
     <link rel="stylesheet" href="./dist/index.css"/>
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- JS -->
     <script type="module" src="./dist/main-min.js"></script>
@@ -49,7 +50,7 @@
                 </li>
                 <li class="c-sidebar__item"><a href="#">Instellingen</a></li>
                 <li class="c-sidebar__item"><a class="c-sidebar__item--accent js-logout" href="#">Uitloggen</a></li>
-                
+                <li class="c-sidebar__button"><a class="c-button js-darkmode" href="#">Light Mode</a></li>
                 <!-- TODO: een hovermode zou leuk zijn -->
             </ul>
             <p class="creddits">&copy; Howest - 2022</p>
@@ -87,76 +88,56 @@
     </div>
 </nav>
 <div class="c-createnew">
-    <div class="c-addContentSeaons">
-        <div class="c-addContentSeaons__header"><h1>4. Bewerk/Voeg Episodes toe</h1></div>
-        <div class="c-addContentSeaons__table">
-            <table id="seasons">
-                <tr id="row_0">
-                    <th>Episode</th>
-                    <th>Title</th>
-                    <th>Status</th>
-                    <th>
-                        Acties
-                    </th>
-                </tr>
-                <tr id="row_1">
-                    <td>1</td>
-                    <td>Winter Is Coming</td>
-                    <td>Niet Live</td>
-                    <td>
-                        <i class="material-icons c-editIcon js-editBtn">edit</i>
-                        <i class="material-icons c-visibilityIcon--offline js-visibilityBtn">visibility_off</i>
-                        <i class="material-icons c-deleteIcon js-deleteBtn" id="btn_1">delete</i>
-                    </td>
-                </tr>
-                <tr id="row_2">
-                    <td>2</td>
-                    <td>The Kingsroad</td>
-                    <td>Live</td>
-                    <td>
-                        <i class="material-icons c-editIcon js-editBtn">edit</i>
-                        <i class="material-icons c-visibilityIcon js-visibilityBtn">visibility_off</i>
-                        <i class="material-icons c-deleteIcon js-deleteBtn" id="btn_2">delete</i>
-                    </td>
-                </tr>
-                <tr id="row_3">
-                    <td>3</td>
-                    <td>Lord Snow</td>
-                    <td>Live</td>
-                    <td>
-                        <i class="material-icons c-editIcon js-editBtn">edit</i>
-                        <i class="material-icons c-visibilityIcon js-visibilityBtn">visibility_off</i>
-                        <i class="material-icons c-deleteIcon js-deleteBtn" id="btn_3">delete</i>
-                    </td>
-                </tr>
-                <tr id="row_4">
-                    <td>4</td>
-                    <td>Cripples, Bastards, and Broken Things</td>
-                    <td>Live</td>
-                    <td>
-                        <i class="material-icons c-editIcon js-editBtn">edit</i>
-                        <i class="material-icons c-visibilityIcon js-visibilityBtn">visibility_off</i>
-                        <i class="material-icons c-deleteIcon js-deleteBtn" id="btn_4">delete</i>
-                    </td>
-                </tr>
-            </table>
-            <button class="c-button"><i class="material-icons c-addButton js-newEpisode">add</i></button>
-        </div>
-        <div class="c-addContentSeaons__buttons">
-            <button class="c-button js-seasons-back">Terug</button>
-            <button class="c-button js-seasons-next">Toevoegen</button>
-        </div>
-    </div>
-    <div class="c-modal2 js-modalSeasons js-darkbackground u-hidden">
-        <div class="c-modal2__container ">
-            <label for="season"></label>
-            <input type="text" id="season" placeholder="seasonNr">
-            <div class="c-modal2__buttoncontainer d-flex justify-content-center">
-                <button class="c-modal2__verwijderknop js-add">toevoegen</button>
-                <button class="c-modal2__cancelknop js-cancel">nee</button>
+    <div class="c-addContentDetails js-contentdata">
+        <div class="c-addContentDetails__header"><h1>5. Bewerk/voeg Episode toe</h1></div>
+        <div class="c-addContentDetails__details">
+            <form action="">
+                <label for="title">Titel</label><br>
+                <input type="text" id="title" class="c-addContentDetails__details--input" placeholder="Titel"><br>
+                <label for="description">Beschrijving</label><br>
+                <textarea name="description" id="description" class="c-addContentDetails__details--input"
+                          placeholder="Description"></textarea><br>
+                <label for="Director">Regie</label><br>
+                <input type="text" id="Director" class="c-addContentDetails__details--input" placeholder="Regie"><br>
+                <label for="Cast">Cast</label><br>
+                <input type="text" id="Cast" class="c-addContentDetails__details--input" placeholder="Cast"><br>
+            </form>
+            <div class="c-addContentDetails__details--select">
+                <div><label for="genreContent">Genre</label><br>
+                    <select id="genreContent">
+                        <!--js loaded-->
+                        <option value="Film">Film</option>
+                        <option value="Fictie">Fictie</option>
+                        <option value="Lifestyle">Lifestyle</option>
+                        <option value="Reality">Reality</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Humor">Humor</option>
+                    </select>
+                </div>
+                <div><label for="language">Taal</label><br>
+                    <select id="language">
+                        <option>Nederlands</option>
+                        <option>Engels</option>
+                        <option>Frans</option>
+                    </select>
+                </div>
             </div>
+        </div>
+        <div class="c-addContentDetails__settings">
+            <div class="js-release-date__checker"><label for="release_date">Release Datum</label><br>
+                <input class="js-release-date" type="datetime-local" placeholder="Maak Beschikbaar Op"
+                       id="release_date">
+            </div>
+            <div><label for="release_date">Beschikbaar tot Datum</label><br>
+                <input class="js-availbleTill-date" type="datetime-local" placeholder="Beschikbaar Tot">
+            </div>
+        </div>
+        <div class="c-addContentDetails__buttons">
+            <button class="c-button js-episode-back">Terug</button>
+            <button class="c-button js-episode-next">Toevoegen</button>
         </div>
     </div>
 </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </html>
