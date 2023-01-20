@@ -42,6 +42,10 @@ const addCarouselData = function(selection){
 
         getCarouselRecomended.innerHTML += htmlStringRecomended;
       }
+      
+      
+
+
     })
     });
     

@@ -44,7 +44,7 @@ const addBlocks = function(selection){
         </svg>
       </button>
       
-      <img src="/assets/svg/movable.svg" alt="move_item" class="c-input__icon">
+      <img src="/assets/svg/movable.svg" alt="move_item" class="c-input__icon js-addShow">
 
       
     
@@ -92,12 +92,41 @@ const listenToButton = function(){
        } )
 }
 
+const addListData = function(){
+  let listTitle = ``;
+
+  fetch("../json/tvshows.json").then(function(resp){
+      return resp.json();
+    }).then((data) => {
+      
+
+
+      let getListCreate = document.querySelectorAll('.js-showList');
+      const titles = data;
+
+        for(let block of getListCreate){
+          
+          
+      for(let titel of titles){
+        listTitle = `<option value="${titel.title}" selected="">${titel.title}</option>`;
+        block.innerHTML += listTitle;
+
+      }
+    }
+
+    })
+
+
+  
+}
+
         
 
 const checkstartscherm = function () {
         let i = 0;
 
 	if (document.querySelector('.c-startscherm')) {
+        addListData();
         listenToDelete();
         listenToButton();
 	} else {
