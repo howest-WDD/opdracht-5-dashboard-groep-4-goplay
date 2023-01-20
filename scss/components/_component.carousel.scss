@@ -25,7 +25,7 @@
     max-width: calc(100% / var(--items-per-screen));
     aspect-ratio: 117 / 167;
     padding: var(--img-gap);
-    border-radius: 1rem;
+    
     padding-right: .3125rem;
     object-fit: cover;
     transition: 0.1s;
@@ -38,7 +38,7 @@
   
   .handle {
     border: none;
-    border-radius: 1rem;
+    border-radius: .5rem;
     flex-grow: 0;
     flex-shrink: 0;
     background-color: color.$bg-color-nav;
@@ -107,17 +107,23 @@
     background-color: color.$bg-color-hov;
   }
   
-  
-	@include bp.up(tl) {
-        .slider {
-            --items-per-screen:10;
-          }
-    }
-
-  
-  @media (max-width: 500px) {
+@include bp.down(ls) {
     .slider {
-      --items-per-screen: 2;
+        --items-per-screen:5;
+      }
+}
+
+@include bp.down(tl) {
+    .slider {
+      --items-per-screen: 3;
+      
     }
   }
+  @include bp.down(ml) {
+    .slider {
+      --items-per-screen: 2;
+      
+    }
+      
+    }
   

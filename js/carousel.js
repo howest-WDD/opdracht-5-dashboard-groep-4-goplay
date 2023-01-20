@@ -42,6 +42,10 @@ const addCarouselData = function(selection){
 
         getCarouselRecomended.innerHTML += htmlStringRecomended;
       }
+      
+      
+
+
     })
     });
     
@@ -51,7 +55,7 @@ const addCarouselData = function(selection){
     
 
 
-
+  
     
 }
 

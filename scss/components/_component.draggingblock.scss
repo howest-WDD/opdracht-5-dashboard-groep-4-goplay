@@ -5,7 +5,7 @@
 
 .c-startscherm{
     height: 100%;
-	width: calc(100vw - 400px);
+	width: calc(100vw - 6.25rem);
 
 	margin-left: 50px;
 
@@ -26,6 +26,13 @@
         
     }
     
+
+    @include bp.up(tl) {
+		
+        width: calc(100vw - 25rem);
+	}
+
+    
 }
 .c-draggable{
     
@@ -44,8 +51,16 @@
         border-radius: 4px;
         color: color.$text-color-a;
         margin-right: 2rem;
-        margin-left: 5rem;
+      
         line-height: 2rem;
+
+        @include bp.down(ml) {
+           
+            margin-right: 0rem;
+            width: 200px;
+        }
+
+        
     }
     h2{
         color: color.$text-color-a;
@@ -104,6 +119,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    
 
 }
 .c-input{
@@ -113,8 +129,15 @@
 
     &__icon{
         display: flex;
-        margin-left: calc(100vw - 55rem);
+        margin-left: calc(100vw - 50rem);
         width: 1.4375rem;
         height: 1.875rem;
+
+        @include bp.down(tl) {
+            margin-left: calc(100vw - 31rem)
+        }
+        @include bp.down(ml) {
+            margin-left: calc(100vw - 25rem)
+        }
     }
 }
